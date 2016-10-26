@@ -27,7 +27,17 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
-\use_hyperref false
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref section
+\pdf_pdfusetitle true
 \papersize default
 \use_geometry false
 \use_package amsmath 1
@@ -75,7 +85,8 @@ Requirements
 \end_layout
 
 \begin_layout Standard
-In order to satisfy goals listed above we've written requirements for our
+In order to satisfy goals in section [Section Goals] under domain assumptions
+ in Section [Section domain Assumption] we've derived requirements for our
  system.
 \end_layout
 
@@ -85,45 +96,151 @@ In order to satisfy goals listed above we've written requirements for our
 
 \begin_deeper
 \begin_layout Itemize
-[R1] The system must provide Sign Up functionality.
+[R1] The system shall provide Sign Up functionality.
 \end_layout
 
 \begin_layout Itemize
-[R2] GUEST receive back his password by email.
+[R2] The system shall send the password to the email provided by the user.
 \end_layout
 
 \begin_layout Itemize
-[R3] GUEST must provide informations like driving license and credit card.
+[R3] The system shall require user's credit card.
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
-Searching for car near a selected position or near user's position:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-[R4] The system must provide the closest car to position provided by user
- or according to user's GPS.
+[R4] The system shall require user's driving license information.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Reservation of a car:
+[G2] Login of a registered USER:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-[R5] The system can modify a car state (available, occupied).
+[R
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G2] Searching for cars near a selected position:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R5] The system shall provide the closest cars to position provided by the
+ USER.
 \end_layout
 
 \begin_layout Itemize
-[R6] The system must modify car state to occupied a car only if the car
- is available and is requested by a USER.
+[R6
+\begin_inset CommandInset label
+LatexCommand label
+name "[R6]"
+
+\end_inset
+
+] The system shall be able to detect cars' position.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G3] Searching for cars near USER's position:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R7] The system shall provide the closest cars to USER's position.
 \end_layout
 
 \begin_layout Itemize
-[R7]
+[R8] The system shall be able to detect USER's position according to GPS.
+\end_layout
+
+\begin_layout Itemize
+[R6]
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "[R6]"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G4] Reservation of a car:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R9] The system can modify car's state (available, occupied).
+\end_layout
+
+\begin_layout Itemize
+[R10] The system shall reserve a car only if the car is available.
+ 
+\end_layout
+
+\begin_layout Itemize
+[R11] The system shall reserve a car only if the user hasn't already reserved
+ another car.
+\end_layout
+
+\begin_layout Itemize
+[R12] The system shall be able to associate a car to the USER who has reserved
+ it.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G5] USER must be sanctioned if he doesn't pick up the car within one hour
+ from reservation: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R13] The system shall be able to charge USER by his payment method.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G6] Car reservation expires after one hour if the user does not pick it
+ up:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R9] 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G7] USER that has reserved a car can unlock it if he's suffiently closed
+ to it:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R14] The System shall be able to manage machine hardware communicating
+ with car.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G8] USER must be aware, during the ride, of how much he's going to pay:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R15] Car provide a way to show ride's price (is this a domain assumption?)
+\end_layout
+
+\begin_layout Itemize
+[R16] System shall be able to compute ride's cost according to information
+ received from the car.
 \end_layout
 
 \end_deeper
