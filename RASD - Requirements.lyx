@@ -6,6 +6,7 @@
 \origin unavailable
 \textclass article
 \use_default_options true
+\master RASD.lyx
 \maintain_unincluded_children false
 \language english
 \language_package default
@@ -244,5 +245,97 @@ reference "[R6]"
 \end_layout
 
 \end_deeper
+\begin_layout Subsection
+Functional Requirements
+\end_layout
+
+\begin_layout Standard
+After having defined main features of our system we can identify some functional
+ requirements grouped under each defined actor:
+\end_layout
+
+\begin_layout Itemize
+GUEST, he can:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Sign up.
+\end_layout
+
+\begin_layout Itemize
+Viewing cars' map.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+USER, he can:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Log in.
+\end_layout
+
+\begin_layout Itemize
+Reserve car.
+\end_layout
+
+\begin_layout Itemize
+Use a reserved car (unlocking it).
+\end_layout
+
+\begin_layout Itemize
+View his profile (also his discounts).
+\end_layout
+
+\begin_layout Itemize
+Modify his profile.
+\end_layout
+
+\begin_layout Itemize
+View his recent movement.
+\end_layout
+
+\begin_layout Itemize
+Search car near to his location.
+\end_layout
+
+\begin_layout Itemize
+Search car near a selected location.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+OPERATOR, he can:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+View car's status (battery and location).
+\end_layout
+
+\begin_layout Itemize
+Set a car as available or under maintainance.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Non-functional Requirements
+\end_layout
+
+\begin_layout Subsubsection
+User Interface
+\end_layout
+
+\begin_layout Standard
+In order to make PowerEnJoy available for many people as possible we need
+ to develop a Cross-Platform application with a Framework like Xamarin.
+ In this way we can develop a single application and deploy it for Windows
+ Phone, Android and iOS.
+ We have also to develop a Web Application in order to allow also people
+ to use our system in many way as possible.
+\end_layout
+
 \end_body
 \end_document

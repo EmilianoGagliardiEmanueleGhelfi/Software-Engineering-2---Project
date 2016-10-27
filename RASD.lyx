@@ -6,7 +6,6 @@
 \origin unavailable
 \textclass article
 \use_default_options true
-\master RASD.lyx
 \maintain_unincluded_children false
 \language english
 \language_package default
@@ -28,7 +27,6 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
-\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -72,57 +70,67 @@
 
 \begin_body
 
-\begin_layout Section
-Scenario Identifyng
-\end_layout
-
-\begin_layout Subsection
-Scenario 1
-\end_layout
-
-\begin_layout Standard
-\align left
-Paul, a businessman, has to go to Milan by train in order to participate
- to an important meeting.
- As the office where they have to meet is 5 km far (away?) from the railway
- station and taxis are too much expensive, he decides to use 
-\emph on
+\begin_layout Title
 Power EnJoy
-\emph default
- from his smartphone.
- He notices, thanks to the map on the app, that there is a parking area
- next to the railway station with a lot of available cars.
- He then reserves one of these electric cars so that, as soon as he arrives
- there, he'll be able to reach the office very quickly and in a green way.
- 
 \end_layout
 
-\begin_layout Subsection
-Scenario 2
+\begin_layout Author
+Emanuele Ghelfi 
+\begin_inset Newline newline
+\end_inset
+
+ Emiliano Gagliardi 
 \end_layout
 
 \begin_layout Standard
-Paul is a students that goes to Politecnico University in Milan.
- He live in a city near Milan but unfortunately train's schedule is very
- prohibitive: he should wake up at 5 o'clock in the morning in order to
- arrive on time at the lecture that starts at 8:00.
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-He found out about PowerEnJoy from two of his friends in his city that attend
- to the same University.
- They decide to use together car-sharing service so they can have save much
- money using the two passegners discount.
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Since their city is full of electric-car they every day make a reservation
- of a car and go to the University together.
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand input
+filename "RASD - Requirements.lyx"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-In this way they save money and also are much more comfortable in reaching
- the University.
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand input
+filename "RASD - Scenario.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \end_body
