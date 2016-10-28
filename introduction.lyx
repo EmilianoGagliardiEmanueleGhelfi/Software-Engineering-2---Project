@@ -130,6 +130,65 @@ OPERATOR: an employee of the company that takes maintenance of cars and
 \end_layout
 
 \begin_layout Subsection
+Assumptions
+\end_layout
+
+\begin_layout Standard
+There are few point that aren't well specified int he assignement document.
+ This section's purpose is to formalize some facts that complete the specificati
+on.
+\end_layout
+
+\begin_layout Itemize
+Also GUESTs are able to search cars, in order to induce them to create an
+ account.
+\end_layout
+
+\begin_layout Itemize
+There are no information about cars' maintenance, so in the document is
+ made the assumption that cars need OPERATOR presence to keep an acceptable
+ status.
+\end_layout
+
+\begin_layout Itemize
+USERs can't delete reservations.
+\end_layout
+
+\begin_layout Itemize
+The system relies on external payment methods.
+ The accepted methods are Mastercard, Visa, PayPal, PostePay.
+\end_layout
+
+\begin_layout Itemize
+If a payment fails for a insufficient money availabiity of the user, the
+ USER is suspended from the service until the payment is done.
+\end_layout
+
+\begin_layout Subsection
+Domain assumptions
+\end_layout
+
+\begin_layout Itemize
+[D1] The car positions provided by GPS are accurate,
+\end_layout
+
+\begin_layout Itemize
+[D2] The USER and GUEST position provided by GPS are accurate.
+\end_layout
+
+\begin_layout Itemize
+[D3] The cars provide remote comunication API
+\end_layout
+
+\begin_layout Itemize
+/*se un utente apre sale, va dove vuole andare e non si schianta*/
+\end_layout
+
+\begin_layout Itemize
+/*non danno in giro la password*/
+\end_layout
+
+\begin_layout Subsection
 Goals
 \end_layout
 
@@ -148,8 +207,7 @@ The objectives of the software to be developed are the following:
 \end_layout
 
 \begin_layout Itemize
-[G1.2] USER should be able to unlock reseved car when they are close to the
- it.
+[G1.2] USER should be able to unlock reseved car when they are close to it.
 \end_layout
 
 \begin_layout Itemize
@@ -212,39 +270,19 @@ The objectives of the software to be developed are the following:
  user pays a fee of 1 EUR.
 \end_layout
 
+\begin_layout Itemize
+[G4.7] If a payment fails for a insufficient money availabiity of the USER,
+ the USER should be suspended from the service until the payment is done.
+\end_layout
+
 \end_deeper
+\begin_layout Itemize
+[G5] USER have to pay an amount of money based on the ride's duration.
+\end_layout
+
 \begin_layout Itemize
 [G5] OPERATOR must be able to do car mantainance, knowing their position
  and status.
-\end_layout
-
-\begin_layout Subsection
-Domain assumptions
-\end_layout
-
-\begin_layout Subsection
-Assumptions
-\end_layout
-
-\begin_layout Standard
-There are few point that aren't well specified int he assignement document.
- This section's purpose is to formalize some facts that complete the specificati
-on.
-\end_layout
-
-\begin_layout Itemize
-Also GUESTs are able to search cars, in order to induce them to create an
- account.
-\end_layout
-
-\begin_layout Itemize
-There are no information about cars' maintenance, so in the document is
- made the assumption that cars need OPERATOR presence to keep an acceptable
- status.
-\end_layout
-
-\begin_layout Itemize
-USERs can't delete reservations.
 \end_layout
 
 \begin_layout Subsection
