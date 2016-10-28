@@ -99,6 +99,15 @@ The purpose of this document is to support the developement of a software
 \end_layout
 
 \begin_layout Subsection
+Glossary and abbreviations
+\end_layout
+
+\begin_layout Itemize
+VIRTUOUS BEHAVIOUR: are behaviour thate makes simple the maintance of the
+ cars and reservation areas, but also helps to reduce the traffic impact.
+\end_layout
+
+\begin_layout Subsection
 Actors
 \end_layout
 
@@ -129,25 +138,121 @@ The objectives of the software to be developed are the following:
 \end_layout
 
 \begin_layout Itemize
-[G1] Registered users must be able to reserve a car.
+[G1] USERs must be able to reserve a car and use it.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[G1.1] USER should be able to reserve a car\SpecialChar endofsentence
+
 \end_layout
 
 \begin_layout Itemize
-[G2] Registered users must be able to find car nearest to a specified position.
+[G1.2] USER should be able to unlock reseved car when they are close to the
+ it.
 \end_layout
 
 \begin_layout Itemize
-[G3] Registered users must be able to unlock their reserved car whene they
- are near tho that.
+[G1.3] USER should be aware of how much they are going to pay during the
+ ride.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G2] The reservation of two (or more) cars at a time must be forbidden.
 \end_layout
 
 \begin_layout Itemize
-[G4] Induce users to keep a behavior that simplifies the cars maintainance.
+[G3] USER and GUEST must be able to search cars.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[G3.1] USER should be able to search car near his position.
 \end_layout
 
 \begin_layout Itemize
-[G5] Operators must be able to do car mantainance, knowing their position
+[G3.2] USER should be able to search car near a selected position.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G4] Induce USER to keep a VIRTUOUS BEHAVIOUR.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[G4.1] A discount of 10% should be applied to rides with at least two passengers.
+ 
+\end_layout
+
+\begin_layout Itemize
+[G4.2] If a car is left with no more than 50% battery empty, a discount of
+ 20% should be applied to the last ride.
+\end_layout
+
+\begin_layout Itemize
+[G4.3] If a car is left at more than 3 km from the nearest charging area,
+ the system should charges 30% more on the last ride.
+\end_layout
+
+\begin_layout Itemize
+[G4.4] If a car is left with more than 80% battery empty, the system should
+ charges 30% more on the last ride.
+ 
+\end_layout
+
+\begin_layout Itemize
+[G4.5] If a car is left in a charging area and the user plugs the car into
+ the power grid, a discount of 30% should be applied to the last ride.
+\end_layout
+
+\begin_layout Itemize
+[G4.6] If a car is not picked up within one hour from the reservation, the
+ user pays a fee of 1 EUR.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G5] OPERATOR must be able to do car mantainance, knowing their position
  and status.
+\end_layout
+
+\begin_layout Subsection
+Domain assumptions
+\end_layout
+
+\begin_layout Subsection
+Assumptions
+\end_layout
+
+\begin_layout Standard
+There are few point that aren't well specified int he assignement document.
+ This section's purpose is to formalize some facts that complete the specificati
+on.
+\end_layout
+
+\begin_layout Itemize
+Also GUESTs are able to search cars, in order to induce them to create an
+ account.
+\end_layout
+
+\begin_layout Itemize
+There are no information about cars' maintenance, so in the document is
+ made the assumption that cars need OPERATOR presence to keep an acceptable
+ status.
+\end_layout
+
+\begin_layout Itemize
+USERs can't delete reservations.
+\end_layout
+
+\begin_layout Subsection
+Document overview
+\end_layout
+
+\begin_layout Standard
+/*here we will describe the document contents organization*/
 \end_layout
 
 \end_body
