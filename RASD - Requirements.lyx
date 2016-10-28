@@ -168,7 +168,11 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[R8] The system a func
+[R8] The system shall commission the payment to external payment service.
+\end_layout
+
+\begin_layout Itemize
+[R9]
 \end_layout
 
 \begin_layout Itemize
@@ -176,6 +180,32 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 \end_layout
 
 \end_deeper
+\begin_layout Itemize
+[G4.7] If a payment fails for a insufficient money availabiity of the USER,
+ the USER should be suspended from the service until the payment is done.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R9] The system shall take care of the result of the payment.
+\end_layout
+
+\begin_layout Itemize
+[R10] The system shall suspend USER that can't afford the payment.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+/* TODO */
+\end_layout
+
 \begin_layout Itemize
 [R1] The system shall provide Sign Up functionality.
 \end_layout
