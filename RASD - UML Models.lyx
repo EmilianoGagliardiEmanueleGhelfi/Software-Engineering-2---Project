@@ -26,7 +26,7 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
-\float_placement !tph
+\float_placement H
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -125,22 +125,6 @@ Use Case Diagram
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-FloatBarrier
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 Sequence Diagram
 \end_layout
@@ -198,22 +182,6 @@ Login
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-FloatBarrier
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsubsection
 Car Reservation
 \end_layout
@@ -254,22 +222,6 @@ Car Reservation
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-FloatBarrier
 \end_layout
 
 \end_inset
