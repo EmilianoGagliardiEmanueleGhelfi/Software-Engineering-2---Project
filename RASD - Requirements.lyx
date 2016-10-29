@@ -27,6 +27,7 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement !tph
 \paperfontsize default
 \spacing single
 \use_hyperref true
@@ -414,12 +415,51 @@ User Interface
 \end_layout
 
 \begin_layout Standard
-In order to make PowerEnJoy available for many people as possible we need
- to develop a Cross-Platform application with a Framework like Xamarin.
- In this way we can develop a single application and deploy it for Windows
- Phone, Android and iOS.
- We have also to develop a Web Application in order to allow also people
- to use our system in many way as possible.
+In order to make PowerEnJoy available for many people as possible a Cross-Platfo
+rm application has to be devloped, with a Framework like Xamarin.
+ In this way could be developed a single application and then could be deployed
+ for Windows Phone, Android and iOS.
+ A Web Application has also to be devloped in order to allow people to use
+ our system in many way as possible.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Mockup/Map.png
+	lyxscale 25
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Map UI
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
