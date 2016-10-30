@@ -350,7 +350,11 @@ Sign up.
 \end_layout
 
 \begin_layout Itemize
-Viewing cars' map.
+Search for a car near his location.
+\end_layout
+
+\begin_layout Itemize
+Search for a car near a selected location.
 \end_layout
 
 \end_deeper
@@ -380,7 +384,7 @@ Modify his profile.
 \end_layout
 
 \begin_layout Itemize
-View his recent movement.
+View his recent reservations.
 \end_layout
 
 \begin_layout Itemize
@@ -459,6 +463,64 @@ Map UI
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Subsubsection
+Security
+\end_layout
+
+\begin_layout Standard
+The system has to satisfy an high level of security regarding the communication
+ protocol with the cars.
+\begin_inset Newline newline
+\end_inset
+
+The communication with the cars needs to be encrypted in order to avoid
+ unauthorized unlocks and use.
+ Futhermore the system should have the way to stop cars when used in an
+ unauthorized way.
+\begin_inset Newline newline
+\end_inset
+
+Regarding the security of payment, the system does't care about it because
+ it relies on external payment system.
+\begin_inset Newline newline
+\end_inset
+
+Another critical security point is the managing of user's information: all
+ user informations need to be encrypted before being sent.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Documentation
+\end_layout
+
+\begin_layout Standard
+These documents will be released in order to well-organize the work in the
+ way to obtain the best quality-cost ratio as possible:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\boldsymbol{RASD}$
+\end_inset
+
+: Requirements Analysis and Specification Document, to well-understand the
+ given problem and to analyze system's boundaries and goal.
+ RASD is also important to understan system's requirements and specifications
+ in order to reach the goals.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{\boldsymbol{DD}}:$
+\end_inset
+
+Design Document, to define the structure of the the system, his tiers, and
+ the interaction between them.
+\end_layout
+
+\begin_layout Itemize
 
 \end_layout
 

@@ -147,12 +147,8 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Graphics
-	filename UML/png/Collaboration1__Interaction1__SequenceDiagram1_2.png
+	filename UML/png/Collaboration1__Interaction1__Login_2.png
 	lyxscale 15
 	scale 15
 
@@ -194,12 +190,8 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Graphics
-	filename UML/png/Collaboration2__Interaction1__ReserveCar_3.png
+	filename UML/png/Collaboration2__Interaction1__ReserveCar_6.png
 	lyxscale 15
 	scale 15
 
@@ -213,6 +205,96 @@ status collapsed
 
 \begin_layout Plain Layout
 Car Reservation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Search Cars
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename UML/png/Collaboration4__Interaction1__SearchCar_4.png
+	lyxscale 15
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Search for a car
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Unlock Car
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename UML/png/Collaboration3__Interaction1__UnlockCar_3.png
+	lyxscale 15
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Unlock Car
 \end_layout
 
 \end_inset
