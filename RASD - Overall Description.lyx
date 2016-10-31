@@ -90,7 +90,7 @@ Payment methods
 
 \begin_layout Standard
 In order to manage in a good way the payment process, and to ensure a well
- managing of exceptional situations like users unavailability of money,
+ managing of exceptional situations like users unavailability of money USERs,
  the software to be developed relies on external transactional system.
  So the system doesn't care about how the payments are done, but only that
  the USER has provided one of the payment methods defined in the assuption
@@ -102,8 +102,41 @@ In order to manage in a good way the payment process, and to ensure a well
 Car technology
 \end_layout
 
+\begin_layout Standard
+The software to be developed will use the tecnologies provided by a system
+ already present on cars, in order to carry out the needed actions.
+ The used API provides a secure connection between cars and the central
+ system via internet, and the following commands that the central system
+ can impose on car:
+\end_layout
+
+\begin_layout Itemize
+Lock: locks the car doors.
+\end_layout
+
+\begin_layout Itemize
+Unlock: unlocks the car doors.
+\end_layout
+
+\begin_layout Itemize
+Get position: the car sends to the central system its position.
+\end_layout
+
+\begin_layout Itemize
+Get status: the car sends to the central system detailed information about
+ his current status.
+\end_layout
+
 \begin_layout Subsubsection
 Operators
+\end_layout
+
+\begin_layout Standard
+The cars availability depends heavily on the presence of a staff that does
+ cars maintenance.
+ So the sotware to be developed relies on the presence of the staff in order
+ to guarantees availability of cars, and will provide to operators informations
+ that helps the cars maintenance.
 \end_layout
 
 \end_body
