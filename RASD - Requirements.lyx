@@ -27,7 +27,7 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
-\float_placement !tph
+\float_placement H
 \paperfontsize default
 \spacing single
 \use_hyperref true
@@ -98,7 +98,11 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \begin_deeper
 \begin_layout Itemize
-[R1] The system can modify car's status (available, occupied).
+[R1] The system can modify car's status (available, occupied, in use).
+\end_layout
+
+\begin_layout Itemize
+[R2] The system shall be able to know car's status.
 \end_layout
 
 \begin_layout Itemize
@@ -145,6 +149,21 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \end_deeper
 \begin_layout Itemize
+[G1.3] USER should be aware of how much they are going to pay during the
+ ride.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R7] The system shall be able to calculate ride's cost based on duration.
+\end_layout
+
+\begin_layout Itemize
+[R8] The system shall be able to communicate to the car ride's cost.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
 [G2] The reservation of two (or more) cars at a time must be forbidden.
 \end_layout
 
@@ -160,16 +179,188 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \end_deeper
 \begin_layout Itemize
+[G3.1] USER or GUEST should be able to search car near his position.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R4]
+\end_layout
+
+\begin_layout Itemize
+[R5]
+\end_layout
+
+\begin_layout Itemize
+[R9] The system shall provide the closest cars to user's position.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G3.2] USER or GUEST should be able to search car near a selected position.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R4]
+\end_layout
+
+\begin_layout Itemize
+[R5]
+\end_layout
+
+\begin_layout Itemize
+[R10] The system shall provide the closest cars to position provided by
+ the USER.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G4.1] A discount of 10% should be applied to rides with at least two passengers.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R11] The system shall bel able to detect if in there are at least two passenger
+s in the car.
+\end_layout
+
+\begin_layout Itemize
+[D...] the car should detect if there are more than two passengers.
+\end_layout
+
+\begin_layout Itemize
+[R12] The system shall be able to apply a discount on the ride.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G4.2] If a car is left with no more than 50% battery empty, a discount of
+ 20% should be applied to the last ride.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R13] The system shall be able to know the battery level of the car.
+\end_layout
+
+\begin_layout Itemize
+[R12]
+\end_layout
+
+\begin_layout Itemize
+[D...] The car should be able to tell the system his battery level
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G4.3] If a car is left at more than 3 km from the nearest charging area,
+ the system should charges 30% more on the last ride.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R4]
+\end_layout
+
+\begin_layout Itemize
+[R13]
+\end_layout
+
+\begin_layout Itemize
+[R14] The system shall be able to apply a charge on the ride.
+\end_layout
+
+\begin_layout Itemize
+[R15] The system shall be able to calculate distance between car's position
+ and the nearest charging area.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G4.4] If a car is left with more than 80% battery empty, the system should
+ charges 30% more on the last ride.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R13]
+\end_layout
+
+\begin_layout Itemize
+[R14]
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G4.5] If a car is left in a charging area and the user plugs the car into
+ the power grid, a discount of 30% should be applied to the last ride.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R15] The system shall be able to detect if the user has plugged the car
+ into the power grid.
+\end_layout
+
+\begin_layout Itemize
+[R12]
+\end_layout
+
+\begin_layout Itemize
+[R4]
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G4.6] If a car is not picked up within one hour from the reservation, the
+ user pays a fee of 1 EUR.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R16] The system shall be able to monitor car's reservations.
+\end_layout
+
+\begin_layout Itemize
+[R17] The system shall be able to know if a user has picked up a car.
+ 
+\end_layout
+
+\begin_layout Itemize
+[R2]
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G4.7] If a payment fails for a insufficient money availability of the USER,
+ the USER should be suspended from the service until the payment is done.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R18] The system shall take care of the result of the payment.
+\end_layout
+
+\begin_layout Itemize
+[R19] The system shall suspend USER that can't afford the payment.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
 [G5] USER have to pay an amount of money based on the ride's duration.
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-[R7] The system shall be able to calculate ride's cost based on duration.
+[R7] 
 \end_layout
 
 \begin_layout Itemize
-[R8] The system shall commission the payment to external payment service.
+[R20] The system shall charge an extenernal payment service with doing the
+ payment.
 \end_layout
 
 \begin_layout Itemize
@@ -182,152 +373,21 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \end_deeper
 \begin_layout Itemize
-[G4.7] If a payment fails for a insufficient money availabiity of the USER,
- the USER should be suspended from the service until the payment is done.
+[G6] OPERATOR must be able to do car mantainance, knowing their position
+ and status.
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-[R9] The system shall take care of the result of the payment.
+[R21] The system shall offer a backend panel to Operator
 \end_layout
 
 \begin_layout Itemize
-[R10] The system shall suspend USER that can't afford the payment.
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-/* TODO */
+[R1]
 \end_layout
 
 \begin_layout Itemize
-[R1] The system shall provide Sign Up functionality.
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-[R2] The system shall send the password to the email provided by the user.
-\end_layout
-
-\begin_layout Itemize
-[R3] The system shall require user's credit card.
-\end_layout
-
-\begin_layout Itemize
-[R4] The system shall require user's driving license information.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-[G2] Login of a registered USER:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-[R
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-[G2] Searching for cars near a selected position:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-[R5] The system shall provide the closest cars to position provided by the
- USER.
-\end_layout
-
-\begin_layout Itemize
-[R6
-\begin_inset CommandInset label
-LatexCommand label
-name "[R6]"
-
-\end_inset
-
-] The system shall be able to detect cars' position.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-[G3] Searching for cars near USER's position:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-[R7] The system shall provide the closest cars to USER's position.
-\end_layout
-
-\begin_layout Itemize
-[R8] The system shall be able to detect USER's position according to GPS.
-\end_layout
-
-\begin_layout Itemize
-[R6]
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "[R6]"
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-[G5] USER must be sanctioned if he doesn't pick up the car within one hour
- from reservation: 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-[R13] The system shall be able to charge USER by his payment method.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-[G6] Car reservation expires after one hour if the user does not pick it
- up:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-[R9] 
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-[G7] USER that has reserved a car can unlock it if he's suffiently closed
- to it:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-[R14] The System shall be able to manage machine hardware communicating
- with car.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-[G8] USER must be aware, during the ride, of how much he's going to pay:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-[R15] Car provide a way to show ride's price (is this a domain assumption?)
-\end_layout
-
-\begin_layout Itemize
-[R16] System shall be able to compute ride's cost according to information
- received from the car.
+[R2]
 \end_layout
 
 \end_deeper
@@ -423,8 +483,20 @@ In order to make PowerEnJoy available for many people as possible a Cross-Platfo
 rm application has to be devloped, with a Framework like Xamarin.
  In this way could be developed a single application and then could be deployed
  for Windows Phone, Android and iOS.
- A Web Application has also to be devloped in order to allow people to use
- our system in many way as possible.
+ A Web Application has also to be developed in order to allow people to
+ use our system in many way as possible.
+\begin_inset Newline newline
+\end_inset
+
+The User Interface needs to be as user friendly as possible, a user that
+ uses for the first time Power EnJoy should be able to learn in a few seconds
+ how to make use of it.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Here are presented a few screen of the app to provide an example.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -521,7 +593,26 @@ Design Document, to define the structure of the the system, his tiers, and
 \end_layout
 
 \begin_layout Itemize
+\begin_inset Formula $\boldsymbol{ITPD}$
+\end_inset
 
+: Integration Test Plan Document, to describe the planning to accomplish
+ the integration test.
+ This document is uspposed to be written before the integration test really
+ happens.
+ Moreover this document needs to explain to the developer team what to test,
+ in which sequence, which tools are needed for testing and wich need to
+ be devloped.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\boldsymbol{PP}$
+\end_inset
+
+: Project Plan, aims at defining a planning for the project.
+ It regard in particular the estimation of effort and cost, the scheduling
+ for project's task and the allocation of resources to tasks.
+ 
 \end_layout
 
 \end_body
