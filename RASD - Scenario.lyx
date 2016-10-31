@@ -165,8 +165,25 @@ After that he's able to reserve the car for special occasion.
 Scenario 4
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection
+Scenario 5
+\end_layout
 
+\begin_layout Standard
+Amy is driving an electrical car reserved with 
+\begin_inset Formula $\mathit{PowerEnJoy}$
+\end_inset
+
+.
+ As always she is very late today, and she notice that, if she want to arrive
+ in time, she wont manage to bring the car at the station where it can be
+ charged.
+ So she decides to park the car as close as possible to her destination.
+ After she has parked, the OPERATOR Jonathan, receives a notification on
+ his maintenance service view, that tells where the car just left by Amy
+ is, and that it is almost completely discharged.
+ Now Jonathan can go take the car and make it again available for the next
+ customer.
 \end_layout
 
 \end_body
