@@ -162,6 +162,10 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 [R8] The system shall be able to communicate to the car ride's cost.
 \end_layout
 
+\begin_layout Itemize
+[D4]
+\end_layout
+
 \end_deeper
 \begin_layout Itemize
 [G2] The reservation of two (or more) cars at a time must be forbidden.
@@ -227,7 +231,7 @@ s in the car.
 \end_layout
 
 \begin_layout Itemize
-[D...] the car should detect if there are more than two passengers.
+[D5]
 \end_layout
 
 \begin_layout Itemize
@@ -250,7 +254,7 @@ s in the car.
 \end_layout
 
 \begin_layout Itemize
-[D...] The car should be able to tell the system his battery level
+[D7]
 \end_layout
 
 \end_deeper
@@ -313,6 +317,10 @@ s in the car.
 [R4]
 \end_layout
 
+\begin_layout Itemize
+[D6]
+\end_layout
+
 \end_deeper
 \begin_layout Itemize
 [G4.6] If a car is not picked up within one hour from the reservation, the
@@ -348,6 +356,14 @@ s in the car.
 [R19] The system shall suspend USER that can't afford the payment.
 \end_layout
 
+\begin_layout Itemize
+[R20] The system shall unsuspend a USER when his old undone payment is done.
+\end_layout
+
+\begin_layout Itemize
+[D8]
+\end_layout
+
 \end_deeper
 \begin_layout Itemize
 [G5] USER have to pay an amount of money based on the ride's duration.
@@ -359,7 +375,7 @@ s in the car.
 \end_layout
 
 \begin_layout Itemize
-[R20] The system shall charge an extenernal payment service with doing the
+[R21] The system shall charge an extenernal payment service with doing the
  payment.
 \end_layout
 
@@ -379,7 +395,16 @@ s in the car.
 
 \begin_deeper
 \begin_layout Itemize
-[R21] The system shall offer a backend panel to Operator
+[R22] The system shall offer a backend panel to Operator
+\end_layout
+
+\begin_layout Itemize
+[R23] The system shall notify the operator when a car in his competence
+ area needs to be charged.
+\end_layout
+
+\begin_layout Itemize
+[D7]
 \end_layout
 
 \begin_layout Itemize
@@ -466,6 +491,10 @@ View car's status (battery and location).
 \end_layout
 
 \begin_layout Itemize
+Receive notification when a car need to be charged.
+\end_layout
+
+\begin_layout Itemize
 Set a car as available or under maintainance.
 \end_layout
 
@@ -504,7 +533,7 @@ Here are presented a few screen of the app to provide an example.
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics

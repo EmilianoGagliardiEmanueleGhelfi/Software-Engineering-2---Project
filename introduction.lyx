@@ -169,7 +169,7 @@ Domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[D1] The car positions provided by GPS are accurate,
+[D1] Cars positions provided by GPS are accurate,
 \end_layout
 
 \begin_layout Itemize
@@ -177,7 +177,28 @@ Domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[D3] The cars provide remote comunication API
+[D3] Cars provide remote comunication API
+\end_layout
+
+\begin_layout Itemize
+[D4] Cars provide screen to display current charge to user.
+\end_layout
+
+\begin_layout Itemize
+[D5] Cars can detect how many passengers are on it.
+\end_layout
+
+\begin_layout Itemize
+[D6] Cars can detect if they are plugged.
+\end_layout
+
+\begin_layout Itemize
+[D7] Cars can detect their battery level.
+\end_layout
+
+\begin_layout Itemize
+[D8] Payments API provides the service of notifying the system when an old
+ undone payments is done.
 \end_layout
 
 \begin_layout Itemize
