@@ -128,7 +128,7 @@ Get status: the car sends to the central system detailed information about
 \end_layout
 
 \begin_layout Subsubsection
-Operators, maintenance, malfunctions and damanges.
+Operators
 \end_layout
 
 \begin_layout Standard
@@ -137,9 +137,9 @@ The cars availability depends heavily on the presence of a staff that does
  So the sotware to be developed relies on the presence of the staff in order
  to guarantees availability of cars, and will provide to operators informations
  that helps the cars maintenance.
- Operators will manage damanges to cars and consequence for the responsible,
- so the system will only help the OPERATORs in maintenance, and guarantee
- a way to comunicate malfunction and damanges.
+ Operators will manage damange to cars and consequence for the responsible,
+ the system will only help maintenance, and guaantee dmanges comunication
+ by 
 \end_layout
 
 \end_body

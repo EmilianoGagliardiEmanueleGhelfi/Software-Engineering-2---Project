@@ -360,6 +360,10 @@ s in the car.
 [R20] The system shall unsuspend a USER when his old undone payment is done.
 \end_layout
 
+\begin_layout Itemize
+[D11]
+\end_layout
+
 \end_deeper
 \begin_layout Itemize
 [G5] USER have to pay an amount of money based on the ride's duration.
@@ -381,28 +385,6 @@ s in the car.
 
 \begin_layout Itemize
 [D4] 
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-[G6] Guarantee a ready maintenance of cars.
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-[G6.1]
-\end_layout
-
-\begin_layout Itemize
-[G6.2]
-\end_layout
-
-\begin_layout Itemize
-[D9]
-\end_layout
-
-\begin_layout Itemize
-[D10]
 \end_layout
 
 \end_deeper
@@ -435,17 +417,6 @@ s in the car.
 
 \begin_layout Itemize
 [R2]
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-[G6.2]
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-[R24] The system shall offer a functionality that let USERs to comunicate
- manfunctions and damages.
 \end_layout
 
 \end_deeper
@@ -511,10 +482,6 @@ Search car near to his location.
 
 \begin_layout Itemize
 Search car near a selected location.
-\end_layout
-
-\begin_layout Itemize
-Comunicate camlfunction or damages to the system.
 \end_layout
 
 \end_deeper
