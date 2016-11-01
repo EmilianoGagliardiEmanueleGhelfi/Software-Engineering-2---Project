@@ -108,8 +108,15 @@ VIRTUOUS BEHAVIOUR:
 
 \begin_deeper
 \begin_layout Itemize
-Behaviour thate makes simple the maintance of the cars and reservation areas,
- but also helps to reduce the traffic impact.
+Behaviour thate makes simple the maintance of the cars and reservation areas.
+\end_layout
+
+\begin_layout Itemize
+Behaviour helps to reduce the traffic impact.
+\end_layout
+
+\begin_layout Itemize
+To park in defined safe areas.
 \end_layout
 
 \end_deeper
@@ -168,6 +175,11 @@ The system relies on external payment methods.
 \begin_layout Itemize
 If a payment fails for a insufficient money availabiity of the user, the
  USER is suspended from the service until the payment is done.
+\end_layout
+
+\begin_layout Itemize
+In order to induce USER to park in safe areas, USER that does not park in
+ safe areas will pay a fee.
 \end_layout
 
 \begin_layout Subsection
@@ -302,12 +314,17 @@ The objectives of the software to be developed are the following:
 
 \begin_layout Itemize
 [G4.6] If a car is not picked up within one hour from the reservation, the
- user pays a fee of 1 EUR.
+ USER should a fee of 1 EUR.
 \end_layout
 
 \begin_layout Itemize
 [G4.7] If a payment fails for a insufficient money availabiity of the USER,
  the USER should be suspended from the service until the payment is done.
+\end_layout
+
+\begin_layout Itemize
+[G4.8] If a USER parks in an area that is not a safe area, the USER should
+ pay a fee.
 \end_layout
 
 \end_deeper
