@@ -1,0 +1,344 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Subsection
+Description of the given problem
+\end_layout
+
+\begin_layout Standard
+The purpose of this document is to support the developement of a software
+ that manages a car sharing services.
+ The software that will be developed has the aim to make the reservation
+ of cars simple and qick.
+ So the system should provide users with real time information about avaiability
+ of cars, and their positions.
+ Cars will be parked in some pre-defined parking area, where user can directly
+ get them afther the reservation.
+ The service will be provide only to user that have made the registration,
+ giving some personal information and data needed to the payment.
+ The price of the ride is computed with a fixed amount of minutes, displayed
+ by the car, and finally charged.
+ To avoid useless reservation, where a user doesn't pick up the car, the
+ system should be able to detect that after a fixed time, retag the car
+ avaiable, and charge with a fee the user.
+ Cars must be loked in the safe areas, and unlokable only by users that
+ has made a reservation on them.
+\end_layout
+
+\begin_layout Subsection
+Glossary and abbreviations
+\end_layout
+
+\begin_layout Itemize
+VIRTUOUS BEHAVIOUR:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Behaviour thate makes simple the maintance of the cars and reservation areas,
+ but also helps to reduce the traffic impact.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Actors
+\end_layout
+
+\begin_layout Standard
+These are the people that will be involved in the use cases of the software
+ to be developed:
+\end_layout
+
+\begin_layout Itemize
+GUEST: a person that hasn't made the registration to the service.
+\end_layout
+
+\begin_layout Itemize
+USER: a person that has already registered to the system.
+\end_layout
+
+\begin_layout Itemize
+OPERATOR: an employee of the company that takes maintenance of cars and
+ charging area.
+\end_layout
+
+\begin_layout Subsection
+Assumptions
+\end_layout
+
+\begin_layout Standard
+There are few point that aren't well specified int he assignement document.
+ This section's purpose is to formalize some facts that complete the specificati
+on.
+\end_layout
+
+\begin_layout Itemize
+Also GUESTs are able to search cars, in order to induce them to create an
+ account.
+\end_layout
+
+\begin_layout Itemize
+There are no information about cars' maintenance, so in the document is
+ made the assumption that cars need OPERATOR presence to keep an acceptable
+ status.
+\end_layout
+
+\begin_layout Itemize
+USERs can't delete reservations.
+\end_layout
+
+\begin_layout Itemize
+The system relies on external payment methods.
+ The accepted methods are Mastercard, Visa, PayPal, PostePay.
+\end_layout
+
+\begin_layout Itemize
+If a payment fails for a insufficient money availabiity of the user, the
+ USER is suspended from the service until the payment is done.
+\end_layout
+
+\begin_layout Subsection
+Domain assumptions
+\end_layout
+
+\begin_layout Itemize
+[D1] Cars positions provided by GPS are accurate,
+\end_layout
+
+\begin_layout Itemize
+[D2] The USER and GUEST position provided by GPS are accurate.
+\end_layout
+
+\begin_layout Itemize
+[D3] Cars provide remote comunication API
+\end_layout
+
+\begin_layout Itemize
+[D4] Cars provide screen to display current charge to user.
+\end_layout
+
+\begin_layout Itemize
+[D5] Cars can detect how many passengers are on it.
+\end_layout
+
+\begin_layout Itemize
+[D6] Cars can detect if they are plugged.
+\end_layout
+
+\begin_layout Itemize
+[D7] Cars can detect their battery level.
+\end_layout
+
+\begin_layout Itemize
+[D8] Cars can detect information about maintenance needs.
+\end_layout
+
+\begin_layout Itemize
+[D9] If a USER detect a malfuncion comunicate it.
+\end_layout
+
+\begin_layout Itemize
+[D10] If an OPERATOR is notified by the system about a maintenance need,
+ he take care of that.
+\end_layout
+
+\begin_layout Itemize
+/*se un utente apre sale, va dove vuole andare e non si schianta*/
+\end_layout
+
+\begin_layout Itemize
+/*non danno in giro la password*/
+\end_layout
+
+\begin_layout Subsection
+Goals
+\end_layout
+
+\begin_layout Standard
+The objectives of the software to be developed are the following:
+\end_layout
+
+\begin_layout Itemize
+[G1] USERs must be able to reserve a car and use it.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[G1.1] USER should be able to reserve a car\SpecialChar endofsentence
+
+\end_layout
+
+\begin_layout Itemize
+[G1.2] USER should be able to unlock reseved car when they are close to it.
+\end_layout
+
+\begin_layout Itemize
+[G1.3] USER should be aware of how much they are going to pay during the
+ ride.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G2] The reservation of two (or more) cars at a time must be forbidden.
+\end_layout
+
+\begin_layout Itemize
+[G3] USER and GUEST must be able to search cars.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[G3.1] USER should be able to search car near his position.
+\end_layout
+
+\begin_layout Itemize
+[G3.2] USER should be able to search car near a selected position.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G4] Induce USER to keep a VIRTUOUS BEHAVIOUR.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[G4.1] A discount of 10% should be applied to rides with at least two passengers.
+ 
+\end_layout
+
+\begin_layout Itemize
+[G4.2] If a car is left with no more than 50% battery empty, a discount of
+ 20% should be applied to the last ride.
+\end_layout
+
+\begin_layout Itemize
+[G4.3] If a car is left at more than 3 km from the nearest charging area,
+ the system should charges 30% more on the last ride.
+\end_layout
+
+\begin_layout Itemize
+[G4.4] If a car is left with more than 80% battery empty, the system should
+ charges 30% more on the last ride.
+ 
+\end_layout
+
+\begin_layout Itemize
+[G4.5] If a car is left in a charging area and the user plugs the car into
+ the power grid, a discount of 30% should be applied to the last ride.
+\end_layout
+
+\begin_layout Itemize
+[G4.6] If a car is not picked up within one hour from the reservation, the
+ user pays a fee of 1 EUR.
+\end_layout
+
+\begin_layout Itemize
+[G4.7] If a payment fails for a insufficient money availabiity of the USER,
+ the USER should be suspended from the service until the payment is done.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G5] USER have to pay an amount of money based on the ride's duration.
+\end_layout
+
+\begin_layout Itemize
+[G6] Guarantee a ready maintenance of cars.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[G6.1] OPERATOR must be able to do car mantainance, knowing their position
+ and status.
+\end_layout
+
+\begin_layout Itemize
+[G6.2] USER must be able to comunicate to the system cars damages and malfunction
+s.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Document overview
+\end_layout
+
+\begin_layout Standard
+/*here we will describe the document contents organization*/
+\end_layout
+
+\end_body
+\end_document
