@@ -439,7 +439,9 @@ s in the car.
 
 \end_deeper
 \begin_layout Itemize
-[G6.2]
+[G6.2] USER must be able to comunicate to the system cars damages and malfunction
+s.
+ 
 \end_layout
 
 \begin_deeper
@@ -514,7 +516,7 @@ Search car near a selected location.
 \end_layout
 
 \begin_layout Itemize
-Comunicate camlfunction or damages to the system.
+Comunicate malfunction or damages to the system.
 \end_layout
 
 \end_deeper

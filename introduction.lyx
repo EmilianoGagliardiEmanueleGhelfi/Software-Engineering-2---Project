@@ -103,10 +103,16 @@ Glossary and abbreviations
 \end_layout
 
 \begin_layout Itemize
-VIRTUOUS BEHAVIOUR: are behaviour thate makes simple the maintance of the
- cars and reservation areas, but also helps to reduce the traffic impact.
+VIRTUOUS BEHAVIOUR:
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+Behaviour thate makes simple the maintance of the cars and reservation areas,
+ but also helps to reduce the traffic impact.
+\end_layout
+
+\end_deeper
 \begin_layout Subsection
 Actors
 \end_layout
