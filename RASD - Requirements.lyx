@@ -548,7 +548,7 @@ User Interface
 
 \begin_layout Standard
 In order to make PowerEnJoy available for many people as possible a Cross-Platfo
-rm application has to be devloped, with a Framework like Xamarin.
+rm application has to be developed, with a Framework like Xamarin.
  In this way could be developed a single application and then could be deployed
  for Windows Phone, Android and iOS.
  A Web Application has also to be developed in order to allow people to
@@ -572,7 +572,7 @@ Here are presented a few screen of the app to provide an example.
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -627,6 +627,48 @@ Regarding the security of payment, the system does't care about it because
 Another critical security point is the managing of user's information: all
  user informations need to be encrypted before being sent.
  
+\end_layout
+
+\begin_layout Subsubsection
+Availability
+\end_layout
+
+\begin_layout Standard
+The application needs to be online 24h/day and 7day/week in order to satisfy
+ all users.
+ This is a constraints because an hour of unavailablity could induce users
+ to use another car sharing service.
+ To achieve an high level of availability could be necessary to use a dedicated
+ server and all the system could be hosted in a cloud platform like OVH.
+ The system should be able to support a high number of users connected at
+ the same time and could be necessary to scale resources depending on this.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Portability
+\end_layout
+
+\begin_layout Standard
+The client-part of the system (application) could be used on any mobile
+ OS in order to make it available for as many people as possible.
+ It is expected a Web Application to increase the possible number of users.
+\begin_inset Newline newline
+\end_inset
+
+The server-part of the system could be used on any OS which supports JVM
+ and DBMS.
+\end_layout
+
+\begin_layout Subsubsection
+Maintainability
+\end_layout
+
+\begin_layout Standard
+The system code will be documented in order to make easier future improvements
+ or changes by other developers.
+ It needs to be clear how the system works, how the system communicate with
+ cars, and how the system has been developed.
 \end_layout
 
 \begin_layout Subsubsection

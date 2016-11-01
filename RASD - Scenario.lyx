@@ -105,7 +105,7 @@ Scenario 2
 \end_layout
 
 \begin_layout Standard
-Paul is a students that goes to Politecnico University in Milan.
+Paul is a student that goes to Politecnico University in Milan.
  He live in a city near Milan but unfortunately train's schedule is very
  prohibitive: he should wake up at 5 o'clock in the morning in order to
  arrive on time at the lecture that starts at 8:00.
@@ -116,19 +116,27 @@ He found out about
 \begin_inset Formula $\mathit{PowerEnJoy}$
 \end_inset
 
- from two of his friends in his city that attend to the same University.
- They decide to use together car-sharing service so they can have save much
- money using the two passegners discount.
+ from two of his friends in his city that attend the same University.
+ They decide to use together car-sharing service so they can save money
+ using the 
+\begin_inset Quotes eld
+\end_inset
+
+two passegners
+\begin_inset Quotes erd
+\end_inset
+
+ discount.
 \begin_inset Newline newline
 \end_inset
 
-Since their city is full of electric-car they every day make a reservation
+Since their city is full of electric-car, everyday they make a reservation
  of a car and go to the University together.
 \begin_inset Newline newline
 \end_inset
 
-In this way they save money and also are much more comfortable in reaching
- the University.
+In this way, not only they save money, but they are also much more comfortable
+ in reaching the University.
 \end_layout
 
 \begin_layout Subsection
