@@ -120,6 +120,32 @@ To park in defined safe areas.
 \end_layout
 
 \end_deeper
+\begin_layout Itemize
+Car STATUS, that can assume the following meaning:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Free: it can be reserved.
+\end_layout
+
+\begin_layout Itemize
+Reserved: has alreasy been reserved.
+\end_layout
+
+\begin_layout Itemize
+Busy: a user is driving the car.
+\end_layout
+
+\begin_layout Itemize
+Under maintenance: an OPERATOR is fixing some car problem.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Car INFORMATION are technical information about car, useful for mantainance.
+\end_layout
+
 \begin_layout Subsection
 Actors
 \end_layout
@@ -140,6 +166,10 @@ USER: a person that has already registered to the system.
 \begin_layout Itemize
 OPERATOR: an employee of the company that takes maintenance of cars and
  charging area.
+\end_layout
+
+\begin_layout Itemize
+ADMIN: a person that can manages system status with privileged actions.
 \end_layout
 
 \begin_layout Subsection
@@ -180,6 +210,12 @@ If a payment fails for a insufficient money availabiity of the user, the
 \begin_layout Itemize
 In order to induce USER to park in safe areas, USER that does not park in
  safe areas will pay a fee.
+\end_layout
+
+\begin_layout Itemize
+There are no assumptions on how the safe areas are managed, so it is assumed
+ that it is possible for ADMINs to add or remove them in order to ensure
+ flexibility of the system.
 \end_layout
 
 \begin_layout Subsection
@@ -225,6 +261,14 @@ Domain assumptions
 \begin_layout Itemize
 [D10] If an OPERATOR is notified by the system about a maintenance need,
  he take care of that.
+\end_layout
+
+\begin_layout Itemize
+[D11] OPERATORs does not share their credential.
+\end_layout
+
+\begin_layout Itemize
+[D12] ADMINs does not share their credential.
 \end_layout
 
 \begin_layout Itemize
@@ -346,6 +390,20 @@ The objectives of the software to be developed are the following:
 [G6.2] USER must be able to comunicate to the system cars damages and malfunction
 s.
  
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G7] ADMIN must be able to manage the system.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[G7.1] ADMIN must be able to manage safe areas.
+\end_layout
+
+\begin_layout Itemize
+[G7.2] ADMIN must be able to manage OPERATORs.
 \end_layout
 
 \end_deeper

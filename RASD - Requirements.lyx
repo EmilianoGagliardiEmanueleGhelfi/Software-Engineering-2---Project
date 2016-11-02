@@ -93,7 +93,7 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[G1.1] USER should be able to reserve a car:
+[G1.1] Only USER should be able to reserve a car:
 \end_layout
 
 \begin_deeper
@@ -114,6 +114,14 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 [R3] The system shall be able to associate a car to the USER who has reserved
  it.
  
+\end_layout
+
+\begin_layout Itemize
+[R_] The system shall provide the login functionality.
+\end_layout
+
+\begin_layout Itemize
+[R_] The system shall provide sign up functionality.
 \end_layout
 
 \end_deeper
@@ -385,29 +393,7 @@ s in the car.
 
 \end_deeper
 \begin_layout Itemize
-[G6] Guarantee a ready maintenance of cars.
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-[G6.1]
-\end_layout
-
-\begin_layout Itemize
-[G6.2]
-\end_layout
-
-\begin_layout Itemize
-[D9]
-\end_layout
-
-\begin_layout Itemize
-[D10]
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-[G6.1] OPERATOR must be able to do car mantainance, knowing their position
+[G6.1] Only OPERATOR must be able to do car mantainance, knowing their position
  and status.
 \end_layout
 
@@ -430,6 +416,14 @@ s in the car.
 \end_layout
 
 \begin_layout Itemize
+[D9]
+\end_layout
+
+\begin_layout Itemize
+[D10]
+\end_layout
+
+\begin_layout Itemize
 [R1]
 \end_layout
 
@@ -448,6 +442,42 @@ s.
 \begin_layout Itemize
 [R24] The system shall offer a functionality that let USERs to comunicate
  manfunctions and damages.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G7.1] Only ADMIN must be able to manage safe areas.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R25] The system shall offer the functionality of add or remove safe areas.
+\end_layout
+
+\begin_layout Itemize
+[R26] The system shall offer log in functionality for admin.
+\end_layout
+
+\begin_layout Itemize
+[D11]
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G7.2] Only ADMIN must be able to manage OPERATORs.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R26]
+\end_layout
+
+\begin_layout Itemize
+[R27] The system shall offer the functionality of add or remove safe areas
+\end_layout
+
+\begin_layout Itemize
+[D11]
 \end_layout
 
 \end_deeper
@@ -516,7 +546,7 @@ Search car near a selected location.
 \end_layout
 
 \begin_layout Itemize
-Comunicate malfunction or damages to the system.
+Communicate malfunction or damages to the system.
 \end_layout
 
 \end_deeper
@@ -525,6 +555,10 @@ OPERATOR, he can:
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+Log in.
+\end_layout
+
 \begin_layout Itemize
 View car's status (battery and location).
 \end_layout
@@ -535,6 +569,36 @@ Receive notification when a car need to be charged.
 
 \begin_layout Itemize
 Set a car as available or under maintainance.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+ADMIN, he can:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Log in.
+\end_layout
+
+\begin_layout Itemize
+Add or delete safe areas.
+\end_layout
+
+\begin_layout Itemize
+Manage car status.
+\end_layout
+
+\begin_layout Itemize
+Consult car position.
+\end_layout
+
+\begin_layout Itemize
+Add or delete OPERATORs account.
+\end_layout
+
+\begin_layout Itemize
+Manage other ADMINs.
 \end_layout
 
 \end_deeper
