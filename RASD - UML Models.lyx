@@ -90,7 +90,7 @@ With the Use Case Diagram are highlighted the main function of our system
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -367,11 +367,11 @@ In all this case the visitor is alert and the app explains the problem.
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename UML/png/png/Collaboration6__Interaction1__Registration_8.png
+	filename UML/png/Collaboration6__Interaction1__Registration_8.png
 	lyxscale 30
 	scale 30
 
@@ -631,7 +631,7 @@ In the second case the user is notified that he can't use the service because
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -1624,7 +1624,8 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename UML/png/ComunicateDamagesMalfunctions.png
-	lyxscale 70
+	lyxscale 30
+	scale 30
 
 \end_inset
 
