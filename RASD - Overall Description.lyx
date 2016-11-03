@@ -79,9 +79,9 @@ Product perspective
 \end_layout
 
 \begin_layout Standard
-In this section the system boundaries are described, like the interfaces
- porvided by external systems that the software to be developed will use
- in order to provide the required functionalities.
+In this section the system boundaries are described.
+ Are described the interfaces provided by external systems that the software
+ to be will use to provide the required functionalities.
 \end_layout
 
 \begin_layout Subsubsection
@@ -89,10 +89,14 @@ Payment methods
 \end_layout
 
 \begin_layout Standard
-In order to manage in a good way the payment process, and to ensure a well
- managing of exceptional situations like users unavailability of money USERs,
- the software to be developed relies on external transactional system.
- So the system doesn't care about how the payments are done, but only that
+The software relies on external transactional system in order to administer
+ in a good way the payment process and to be able to manage exceptional
+ situations too (like users unavailability of money USERs).
+ 
+\begin_inset Newline newline
+\end_inset
+
+So the system doesn't care about how the payments are done, but only that
  the USER has provided one of the payment methods defined in the assuption
  section.
  
@@ -103,8 +107,8 @@ Car technology
 \end_layout
 
 \begin_layout Standard
-The software to be developed will use the tecnologies provided by a system
- already present on cars, in order to carry out the needed actions.
+The software to be will use the tecnologies provided by a system already
+ present on cars, in order to carry out the needed actions.
  The used API provides a secure connection between cars and the central
  system via internet, and the following commands that the central system
  can impose on car:
@@ -134,9 +138,9 @@ Operators, maintenance, malfunctions and damanges.
 \begin_layout Standard
 The cars availability depends heavily on the presence of a staff that does
  cars maintenance.
- So the sotware to be developed relies on the presence of the staff in order
- to guarantees availability of cars, and will provide to operators informations
- that helps the cars maintenance.
+ So the sotware to be relies on the presence of the staff in order to guarantee
+ availability of cars, and it will provide to operators information that
+ helps the cars maintenance.
  Operators will manage damanges to cars and consequence for the responsible,
  so the system will only help the OPERATORs in maintenance, and guarantee
  a way to comunicate malfunction and damanges.

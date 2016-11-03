@@ -126,7 +126,8 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \end_deeper
 \begin_layout Itemize
-[G1.2] USER should be able to unlock reseved car when they are close to it.
+[G1.2] USER should be able to unlock reserved car when they are close to
+ it.
 \end_layout
 
 \begin_deeper
@@ -234,8 +235,8 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \begin_deeper
 \begin_layout Itemize
-[R11] The system shall bel able to detect if in there are at least two passenger
-s in the car.
+[R11] The system shall bel able to detect if there are at least two passengers
+ in the car.
 \end_layout
 
 \begin_layout Itemize
@@ -268,7 +269,7 @@ s in the car.
 \end_deeper
 \begin_layout Itemize
 [G4.3] If a car is left at more than 3 km from the nearest charging area,
- the system should charges 30% more on the last ride.
+ the system should charge 30% more on the last ride.
 \end_layout
 
 \begin_deeper
@@ -433,15 +434,15 @@ s in the car.
 
 \end_deeper
 \begin_layout Itemize
-[G6.2] USER must be able to comunicate to the system cars damages and malfunction
-s.
+[G6.2] USER must be able to communicate to the system cars damages and malfunctio
+ns.
  
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 [R24] The system shall offer a functionality that let USERs to comunicate
- manfunctions and damages.
+ malfunctions and damages.
 \end_layout
 
 \end_deeper
@@ -518,7 +519,7 @@ Log in.
 \end_layout
 
 \begin_layout Itemize
-Reserve car.
+Reserve cars.
 \end_layout
 
 \begin_layout Itemize
@@ -538,11 +539,11 @@ View his recent reservations.
 \end_layout
 
 \begin_layout Itemize
-Search car near to his location.
+Search cars near to his location.
 \end_layout
 
 \begin_layout Itemize
-Search car near a selected location.
+Search cars near a selected location.
 \end_layout
 
 \begin_layout Itemize
@@ -612,18 +613,18 @@ User Interface
 
 \begin_layout Standard
 \align left
-In order to make PowerEnJoy available for many people as possible a Cross-Platfo
-rm application has to be developed, with a Framework like Xamarin.
- In this way could be developed a single application and then could be deployed
+In order to make PowerEnJoy available for many people as possible, a Cross-Platf
+orm application has to be developed, with a Framework like Xamarin.
+ In this way, a single application could be developed and then deployed
  for Windows Phone, Android and iOS.
  A Web Application has also to be developed in order to allow people to
  use our system in many way as possible.
 \begin_inset Newline newline
 \end_inset
 
-The User Interface needs to be as user friendly as possible, a user that
- uses for the first time Power EnJoy should be able to learn in a few seconds
- how to make use of it.
+The User Interface needs to be as user friendly as possible: that's to say
+ that a user who uses Power EnJoy for the first time should be able to learn
+ in a few seconds how to make use of it.
  
 \begin_inset Newline newline
 \end_inset
@@ -999,7 +1000,7 @@ Design Document, to define the structure of the the system, his tiers, and
  happens.
  Moreover this document needs to explain to the developer team what to test,
  in which sequence, which tools are needed for testing and wich need to
- be devloped.
+ be developed.
 \end_layout
 
 \begin_layout Itemize
@@ -1007,7 +1008,7 @@ Design Document, to define the structure of the the system, his tiers, and
 \end_inset
 
 : Project Plan, aims at defining a planning for the project.
- It regard in particular the estimation of effort and cost, the scheduling
+ It regards in particular the estimation of effort and cost, the scheduling
  for project's task and the allocation of resources to tasks.
  
 \end_layout

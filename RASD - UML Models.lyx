@@ -90,12 +90,12 @@ With the Use Case Diagram are highlighted the main function of our system
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename UML/png/Model__UseCaseDiagram1_1.png
-	lyxscale 20
+	lyxscale 40
 	scale 15
 	clip
 
@@ -220,11 +220,7 @@ All
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $Entry$
-\end_inset
-
- 
-\begin_inset Formula $\mathbf{Conditions}$
+\begin_inset Formula $\mathbf{EntryConditions}$
 \end_inset
 
 

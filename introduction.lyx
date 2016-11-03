@@ -79,23 +79,23 @@ Description of the given problem
 \end_layout
 
 \begin_layout Standard
-The purpose of this document is to support the developement of a software
+The purpose of this document is to support the development of a software
  that manages a car sharing services.
- The software that will be developed has the aim to make the reservation
- of cars simple and qick.
+ The aim of this software is to make the reservation of cars simple and
+ quick.
  So the system should provide users with real time information about avaiability
  of cars, and their positions.
- Cars will be parked in some pre-defined parking area, where user can directly
- get them afther the reservation.
- The service will be provide only to user that have made the registration,
+ Users, after the resevation, can directly get their cars in pre-defined
+ parking areas.
+ The service will be sccessible only to user that have made the registration,
  giving some personal information and data needed to the payment.
  The price of the ride is computed with a fixed amount of minutes, displayed
  by the car, and finally charged.
  To avoid useless reservation, where a user doesn't pick up the car, the
  system should be able to detect that after a fixed time, retag the car
  avaiable, and charge with a fee the user.
- Cars must be loked in the safe areas, and unlokable only by users that
- has made a reservation on them.
+ Cars must be loked in the safe areas, and only users that have made the
+ reservation can unlock them.
 \end_layout
 
 \begin_layout Subsection
@@ -108,7 +108,7 @@ VIRTUOUS BEHAVIOUR:
 
 \begin_deeper
 \begin_layout Itemize
-Behaviour thate makes simple the maintance of the cars and reservation areas.
+Behaviour that makes simple the maintance of the cars and reservation areas.
 \end_layout
 
 \begin_layout Itemize
@@ -169,7 +169,7 @@ OPERATOR: an employee of the company that takes maintenance of cars and
 \end_layout
 
 \begin_layout Itemize
-ADMIN: a person that can manages system status with privileged actions.
+ADMIN: a person that can manage system status with privileged actions.
 \end_layout
 
 \begin_layout Subsection
@@ -177,9 +177,9 @@ Assumptions
 \end_layout
 
 \begin_layout Standard
-There are few point that aren't well specified int he assignement document.
- This section's purpose is to formalize some facts that complete the specificati
-on.
+There are few point that aren't well specified in the assignement document.
+ The purpose of this section is to formalize some facts that complete the
+ specification.
 \end_layout
 
 \begin_layout Itemize
@@ -203,8 +203,8 @@ The system relies on external payment methods.
 \end_layout
 
 \begin_layout Itemize
-If a payment fails for a insufficient money availabiity of the user, the
- USER is suspended from the service until the payment is done.
+If a payment fails because of an insufficient money availability of the
+ user, the USER is suspended from the service until the payment is done.
 \end_layout
 
 \begin_layout Itemize
@@ -284,7 +284,7 @@ Goals
 \end_layout
 
 \begin_layout Standard
-The objectives of the software to be developed are the following:
+The objectives of the software to be are the following:
 \end_layout
 
 \begin_layout Itemize
@@ -317,11 +317,11 @@ The objectives of the software to be developed are the following:
 
 \begin_deeper
 \begin_layout Itemize
-[G3.1] USER should be able to search car near his position.
+[G3.1] USER should be able to search cars near his position.
 \end_layout
 
 \begin_layout Itemize
-[G3.2] USER should be able to search car near a selected position.
+[G3.2] USER should be able to search cars near a selected position.
 \end_layout
 
 \end_deeper
@@ -358,12 +358,13 @@ The objectives of the software to be developed are the following:
 
 \begin_layout Itemize
 [G4.6] If a car is not picked up within one hour from the reservation, the
- USER should a fee of 1 EUR.
+ USER should pay a fee of 1 EUR.
 \end_layout
 
 \begin_layout Itemize
-[G4.7] If a payment fails for a insufficient money availabiity of the USER,
- the USER should be suspended from the service until the payment is done.
+[G4.7] If a payment fails because of insufficient money availability of the
+ USER, the USER should be suspended from the service until the payment is
+ done.
 \end_layout
 
 \begin_layout Itemize
