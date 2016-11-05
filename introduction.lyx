@@ -141,6 +141,10 @@ Busy: a user is driving the car.
 Under maintenance: an OPERATOR is fixing some car problem.
 \end_layout
 
+\begin_layout Itemize
+In charge: the car is plugged in a charging station.
+\end_layout
+
 \end_deeper
 \begin_layout Itemize
 Car INFORMATION are technical information about car, useful for mantainance.
