@@ -150,6 +150,14 @@ In charge: the car is plugged in a charging station.
 Car INFORMATION are technical information about car, useful for mantainance.
 \end_layout
 
+\begin_layout Itemize
+SAFE AREA
+\end_layout
+
+\begin_layout Itemize
+CHARGING AREA
+\end_layout
+
 \begin_layout Subsection
 Actors
 \end_layout

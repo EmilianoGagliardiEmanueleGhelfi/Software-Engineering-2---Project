@@ -1378,6 +1378,14 @@ In the second case the app shows to the user that he have to near the car
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1442,7 +1450,7 @@ Comunicate Damages And Malfucntions
 \begin_inset Text
 
 \begin_layout Plain Layout
-Comunicate Damages And Malfucntions
+Communicate Damages And Malfunctions
 \end_layout
 
 \end_inset
@@ -1543,8 +1551,8 @@ User fill the form with description of the damage and identification of
 \end_layout
 
 \begin_layout Enumerate
-If the form is accepted the server sent an acknowledge to the user and noificate
- the operator wich competence area contains the car.
+If the form is accepted the server sent an acknowledge to the user and notificat
+e the operator wich competence area contains the car.
  
 \end_layout
 
@@ -1608,6 +1616,14 @@ The request is refused and the user is suggested to check his form.
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1615,7 +1631,7 @@ The request is refused and the user is suggested to check his form.
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -1632,7 +1648,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Comunicate Damages And Malfucntions
+Communicate Damages And Malfunctions
 \end_layout
 
 \end_inset
@@ -1642,6 +1658,22 @@ Comunicate Damages And Malfucntions
 
 \end_inset
 
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Statechart Diagram
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 

@@ -217,7 +217,7 @@ After she has parked, the OPERATOR Jonathan, receives a notification on
 \begin_inset Newline newline
 \end_inset
 
-Now Jonathan can go take the car and make it again available for the next
+Now Jonathan can go to the car and make it available again for the next
  customer.
 \end_layout
 
@@ -231,11 +231,42 @@ Amy is driving an electrical car reserved with
 \end_inset
 
 .
- Arrived at is destination, she starts a parking maneuver, but she hurts
+ Arrived at her destination, she starts a parking maneuver, but she hurts
  a light pole, doing a damage to the vehicle.
  Amy is an honest person, and following the application instruction she
- comunicates to the system that she has damaged the car.
- The system will comunicate to an OPERATOR about the damage.
+ communicates to the system that she has damaged the car.
+ The system will communicate to an OPERATOR about the damage.
+\begin_inset Newline newline
+\end_inset
+
+Paul is an operator of Power EnJoy, when Amy communicates the damages he
+ receives a notification in the operator panel.
+\begin_inset Newline newline
+\end_inset
+
+Paul, through the operator panel can see car location and can edit car status.
+ He changes the status into 
+\begin_inset Quotes eld
+\end_inset
+
+under maintainance
+\begin_inset Quotes erd
+\end_inset
+
+, in this way no one can reserve the damaged car.
+\begin_inset Newline newline
+\end_inset
+
+Then he goes to the car and repairs it.
+ After the reparation he edits the status into 
+\begin_inset Quotes eld
+\end_inset
+
+Available
+\begin_inset Quotes erd
+\end_inset
+
+ so the car in reservable by users.
 \end_layout
 
 \end_body
