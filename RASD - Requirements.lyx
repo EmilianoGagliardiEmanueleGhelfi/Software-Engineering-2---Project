@@ -177,6 +177,18 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \end_deeper
 \begin_layout Itemize
+[G1.4] If reserved car pass under maintenance, the USER that made the reservation
+ must be notified.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R_] The system shall be able to notify the USER when his reserved car switches
+ to under maintainance.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
 [G2] The reservation of two (or more) cars at a time must be forbidden.
 \end_layout
 

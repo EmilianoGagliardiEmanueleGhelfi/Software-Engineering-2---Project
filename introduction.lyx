@@ -318,6 +318,11 @@ The objectives of the software to be are the following:
  ride.
 \end_layout
 
+\begin_layout Itemize
+[G1.4] If reserved car pass under maintenance, the USER that made the reservation
+ must be notified.
+\end_layout
+
 \end_deeper
 \begin_layout Itemize
 [G2] The reservation of two (or more) cars at a time must be forbidden.

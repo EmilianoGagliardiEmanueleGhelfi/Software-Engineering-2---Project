@@ -180,9 +180,59 @@ assert canUnlockAssert{
 	
 }
 
+/*------------------------Dinamic modeling----------------------------------*/
 
-run show for 3 but 4 Operator
+//Plugging a car
+pred pluggingCar[c: Car, c': Car, u': User] { //the user is required to ensure that car.~reservedCar does not change
+	//initial condition
+	#c.connectedPlug = 0
+	c in ChargingArea.carsInSafeArea
+	//not involved informations don't change
+	c'.carPosition = c.carPosition
+	c'.status = c.status
+	c in User.reservedCar implies (all u: User | u.reservedCar = c implies (
+									   u'.userPosition = u.userPosition and
+									   u'.inUseCar = u.inUseCar and
+									   u'.reservedCar = c' and
+									   u' not in SuspendedUser))
+	//final condition
+	#c'.connectedPlug = 1
+}
 
+//Reservation
+pred reserveCar[u: User, c: Car, u': User, c': Car] {
+	//initial conditions for reserving
+	not u in SuspendedUser
+	#u.reservedCar = 0
+	#u.inUseCar = 0
+	c.status in Available
+	//informations non involved in reservation don't change
+	c'.connectedPlug = c.connectedPlug
+	c'.carPosition = c.carPosition
+	u'.userPosition = u.userPosition
+	u'.inUseCar = u.inUseCar
+	//final conditions
+	c'.status in Reserved
+	u'.reservedCar = c'
+}
+
+//From reserved to in use
+pred fromReservedToInUse[u: User, c: Car, u': User, c': Car] {
+	// initial conditions
+	u.reservedCar = c
+	#u.inUseCar = 0
+	u.canUnlock = c
+	//final contition
+	#c'.connectedPlug = 0
+	u'.inUseCar = c'
+	//c'.status in Busy
+}
+
+/*--------------------------------------------------------------------------*/
+
+run reserveCar
+run fromReservedToInUse
+run pluggingCar
 check canUnlockAssert
 
 
