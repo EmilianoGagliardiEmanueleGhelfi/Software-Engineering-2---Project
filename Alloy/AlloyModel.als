@@ -1,55 +1,9 @@
-sig Car{
-	connectedPlug: lone Plug,
-	status: one CarStatus,	
-	carPosition: one Position, 
-	//capacity: Int,
-	//batteryLevel: Int
-}{
-	this in User.reservedCar iff status in Reserved
-	this in User.inUseCar iff status in Busy
-	this in SafeArea.carsInSafeArea iff status!=Busy
-	// car can be plugged only if it's in a charging area
-	#connectedPlug = 1 implies (connectedPlug.~plugs).safeAreaPosition = carPosition 
-	#connectedPlug = 1 implies not status in Busy 
-}
 
-
-
-sig Position{
-}
-
-
-//CAR STATUS
-
-abstract sig CarStatus{}
-
-one sig Reserved extends CarStatus{}
-
-one sig Available extends CarStatus{}
-
-one sig Busy extends CarStatus{}
-
-one sig UnderMaintainance extends CarStatus {}
-
+/*------------------------------UTIL---------------------------------*/
 sig Date{}
+sig Position{}
 
-
-/*
-
-
-sig Ride{
-	cost: Int,
-	duration: Int,
-	passengers: Int
-}
-// passengers < capacity
-
-
-sig Guest extends Person{}
-*/
-
-// PERSON
-
+/*----------------------------PERSON--------------------------------*/
 abstract sig Person{}
 
 sig User extends Person{
@@ -62,8 +16,17 @@ sig User extends Person{
 {
 	#reservedCar = 1 implies #inUseCar=0
 	#inUseCar = 1 implies #reservedCar = 0
-	// se macchine in uso hanno la stessa posizione
-	#inUseCar = 1 implies userPosition = inUseCar.carPosition
+}
+// Different users have different cars in use and different reserved cars
+fact {
+	no disj u1,u2:User | u1.inUseCar = u2.inUseCar and #u1.inUseCar=1
+	no disj u1,u2:User | u1.reservedCar=u2.reservedCar and #u1.reservedCar = 1
+	
+}
+// A user can unlock a car if is near that, and has reserved that or is in a pause ride
+fact{
+	// can unlock only if reserved and same position
+	canUnlock = (reservedCar + (rideStatus.Pause).rideUser <: inUseCar) & userPosition.~carPosition
 }
 
 sig SuspendedUser extends User{}
@@ -74,25 +37,67 @@ sig SuspendedUser extends User{}
 
 sig Admin extends Person{}
 
-// OPERATOR
+sig Operator extends Person{
+	competenceArea: one CompetenceArea,
+	carInMaintenance: set Car
+}
+{
+	all c : Car | c in carInMaintenance iff c.status = UnderMaintenance 
+	all c : Car | c in carInMaintenance implies c.carPosition in competenceArea.positions
+}
+// Different operators have disjoint competence area
+fact{
+	all disj o1,o2:Operator | o1.competenceArea != o2.competenceArea
+}
+
+/*------------------------------CAR---------------------------------*/
+sig Car{
+	connectedPlug: lone Plug,
+	status: one CarStatus,	
+	carPosition: one Position, 
+	capacity: Int
+	//batteryLevel: Int
+}{
+	this in User.reservedCar iff status in Reserved
+	this in User.inUseCar iff status in Busy
+	//this in SafeArea.carsInSafeArea iff status!=Busy
+	status = Busy implies this not in SafeArea.carsInSafeArea
+	// car can be plugged only if it's in a charging area
+	#connectedPlug = 1 implies (connectedPlug.~plugs).safeAreaPosition = carPosition 
+	#connectedPlug = 1 implies not status in Busy 
+	capacity > 0
+}
+// If a car is in a safe area, they have the same position
+fact {
+	all c : Car, safeArea: SafeArea | c in safeArea.carsInSafeArea iff c.carPosition = safeArea.safeAreaPosition 
+}
+/*---------------------------CAR STATUS------------------------------*/
+abstract sig CarStatus{}
+
+one sig Reserved extends CarStatus{}
+
+one sig Available extends CarStatus{}
+
+one sig Busy extends CarStatus{}
+
+one sig UnderMaintenance extends CarStatus {}
+
+/*-------------------------------AREA-------------------------------*/
+
 sig CompetenceArea{
 	positions : set Position
 }{
-	// tutte competence appartengono ad op
+	// each competence area belongs to an operator
 	this in Operator.competenceArea
 	#positions >0
 }
-
-sig Operator extends Person{
-	competenceArea: one CompetenceArea,
-	carInMaintainance: set Car
+// CompetenceAreas.positions induces a partition on Position
+fact {
+	// Empty intersection
+	all disj c1,c2: CompetenceArea | c1.positions & c2.positions = none
+	// There doesn't exist position that are not in a competence area
+	all p:Position | p in CompetenceArea.positions 
 }
-{
-	all c : Car | c in carInMaintainance iff c.status = UnderMaintainance 
-	all c : Car | c in carInMaintainance implies c.carPosition in competenceArea.positions
-}
-
-
 
 sig SafeArea{
 	capacity: Int,
@@ -103,15 +108,9 @@ sig SafeArea{
 	capacity>0
 	#carsInSafeArea <= capacity
 }
-
-
-
-// CHARGING AREA
-sig Plug{
-	carConnected: lone Car
-}
-{
-	all p:Plug | p in ChargingArea.plugs
+// There doesn't exist different safe areas with same position
+fact {
+	no disj s1,s2: SafeArea | s1.safeAreaPosition = s2.safeAreaPosition
 }
 
 sig ChargingArea extends SafeArea{
@@ -122,85 +121,57 @@ sig ChargingArea extends SafeArea{
 	#plugs>0
 	#plugs<=capacity
 }
-//prese <= capacità
 
+sig Plug{
+	carConnected: lone Car
+}
+{
+	all p:Plug | p in ChargingArea.plugs
+}
 // a plug is only in a one charging area
 fact plugUnique{
 	no disj c1,c2: ChargingArea | some p:Plug | p in c1.plugs and p in c2.plugs
 }
-
 // connectedPlug is the same of caConnected transposed
 fact {
 		connectedPlug = ~carConnected
 }
 
+/*-------------------------------RIDE------------------------------------*/
+sig Ride{
+	cost: Int,
+	duration: Int,
+	passengers: Int,
+	rideCar: Car,
+	rideUser: User,
+	rideStatus: RideStatus
+}
+{
+	cost > 0
+	passengers > 0
+	duration > 0
+	passengers < rideCar.capacity
+	// If the status of the ride is Run, user and his used car have the same position
+	rideStatus in Run implies rideCar.carPosition = rideUser.userPosition
+}
+// Set user and car in Ride like in the relation User.inUseCar
 fact {
-		all c : Car, safeArea: SafeArea | c in safeArea.carsInSafeArea iff c.carPosition = safeArea.safeAreaPosition 
+	(~rideUser).rideCar = inUseCar
+	#Ride = #inUseCar
 }
 
-// non esistono safe area con stessa pos
-fact {
-	no disj s1,s2: SafeArea | s1.safeAreaPosition = s2.safeAreaPosition
-}
+/*------------------------------RIDE STATUS------------------------------*/
+abstract sig RideStatus{}
+one sig Run extends RideStatus{}
+one sig Pause extends RideStatus{}
 
+/*--------------------------------PREDICATES-----------------------------*/
+pred show{} //dummy predicate
 
-// car di ut diversi reserved e in uso diverse
-fact {
-	no disj u1,u2:User | u1.inUseCar = u2.inUseCar and #u1.inUseCar=1
-	no disj u1,u2:User | u1.reservedCar=u2.reservedCar and #u1.reservedCar = 1
-	
-}
+/*------------------DINAMIC MODELING PREDICATES-------------------------*/
 
-
-
-fact {
-	// partizione 
-	all disj c1,c2: CompetenceArea | c1.positions & c2.positions = none
-	// tutte posizioni sono in competence 
-	all p:Position | p in CompetenceArea.positions 
-}
-
-// operator diversi hanno competence diverse
-fact{
-	all disj o1,o2:Operator | o1.competenceArea != o2.competenceArea
-}
-
-//Can unlock
-fact{
-	// can unlock only if reserved and same position
-	canUnlock = (reservedCar & userPosition.~carPosition)
-}
-
-
-
-pred show(){}
-
-assert canUnlockAssert{
-	all u : User, c : Car | (u.userPosition = c.carPosition and u.reservedCar = c) implies u.canUnlock = c
-	
-}
-
-/*------------------------Dinamic modeling----------------------------------*/
-
-//Plugging a car
-pred pluggingCar[c: Car, c': Car, u': User] { //the user is required to ensure that car.~reservedCar does not change
-	//initial condition
-	#c.connectedPlug = 0
-	c in ChargingArea.carsInSafeArea
-	//not involved informations don't change
-	c'.carPosition = c.carPosition
-	c'.status = c.status
-	c in User.reservedCar implies (all u: User | u.reservedCar = c implies (
-									   u'.userPosition = u.userPosition and
-									   u'.inUseCar = u.inUseCar and
-									   u'.reservedCar = c' and
-									   u' not in SuspendedUser))
-	//final condition
-	#c'.connectedPlug = 1
-}
-
-//Reservation
-pred reserveCar[u: User, c: Car, u': User, c': Car] {
+//From available to reserved
+pred carFromAvailableToReserved [u: User, c: Car, u': User, c': Car] {
 	//initial conditions for reserving
 	not u in SuspendedUser
 	#u.reservedCar = 0
@@ -216,23 +187,108 @@ pred reserveCar[u: User, c: Car, u': User, c': Car] {
 	u'.reservedCar = c'
 }
 
-//From reserved to in use
-pred fromReservedToInUse[u: User, c: Car, u': User, c': Car] {
-	// initial conditions
+//From reserved to busy
+pred carFromReservedToInUse [u: User, c: Car, u': User, c': Car] {
+	//initial conditions
 	u.reservedCar = c
 	#u.inUseCar = 0
 	u.canUnlock = c
 	//final contition
 	#c'.connectedPlug = 0
 	u'.inUseCar = c'
-	//c'.status in Busy
+	c'.status in Busy
 }
 
+//From available to under maintenance
+pred carFromAvailableToUnderMaintenance [c: Car, c': Car] {
+	//initial conditions
+	c.status in Available
+	//not involved informations don't change
+	c'.connectedPlug = c.connectedPlug
+	c'.carPosition = c.carPosition
+	//final condition
+	c'.status in UnderMaintenance
+}
+
+// From busy to available
+pred carFromBusyToAvailable [c: Car, c': Car, u:User, u':User]{
+	// initial condition
+	c.status in Busy
+	c in u.inUseCar
+	// not involved information don't change
+	u'.userPosition = u.userPosition
+	c'.carPosition = c.carPosition
+	// final condition
+	c'.status in Available
+}
+
+//Plugging a car
+pred pluggingCar [c: Car, c': Car, u': User] { //the user is required to ensure that car.~reservedCar does not change
+	//initial condition
+	#c.connectedPlug = 0
+	c in ChargingArea.carsInSafeArea
+	//not involved informations don't change
+	c'.carPosition = c.carPosition
+	c'.status = c.status
+	c in User.reservedCar implies (all u: User | u.reservedCar = c implies (
+									   u'.userPosition = u.userPosition and
+									   u'.inUseCar = u.inUseCar and
+									   u'.reservedCar = c' and
+									   u' not in SuspendedUser))
+	//final condition
+	#c'.connectedPlug = 1
+}
+
+//Stopping a run (to pause status)
+pred rideFromRunToPause [r: Ride, r': Ride, u: User, u': User, c: Car, c': Car] {
+	//initial condition
+	r.rideStatus in Run
+	r.rideUser = u
+	r.rideCar = c
+	//informations that do not change
+	r'.cost = r.cost
+	r'.duration = r.duration
+	r'.passengers = r.passengers
+	r'.rideCar = c'
+	r'.rideUser = u'
+	c'.connectedPlug = c.connectedPlug
+	c'.status = c.status
+	c'.carPosition = c.carPosition
+	c'.capacity = c.capacity
+	u'.userPosition = u.userPosition
+	//final condition
+	r'.rideStatus in Pause
+}
+
+/*------------------------------ASSERTIONS-----------------------------------*/
+
+assert inMaintenanceImpliesExistOperator{
+	all c: Car | (c.status in UnderMaintenance) implies (some o: Operator | c in o.carInMaintenance)
+}
+
+assert canUnlockAssert {
+	all u : User, c : Car | (u.userPosition = c.carPosition and u.reservedCar = c) implies u.canUnlock = c
+	all r: Ride, u: User, c: Car | (r.rideStatus = Pause and r.rideUser = u and u.userPosition = c.carPosition and r.rideCar = c) implies u.canUnlock = c        
+}
+
+// a car is busy iff exists a ride with that car
+assert busyCarInARIde {
+	all c: Car | c.status = Busy iff (some r: Ride | r.rideCar = c)
+}
 /*--------------------------------------------------------------------------*/
 
-run reserveCar
-run fromReservedToInUse
+run carFromAvailableToReserved
+run carFromReservedToInUse
 run pluggingCar
+run carFromAvailableToUnderMaintenance
+run carFromBusyToAvailable
+run rideFromRunToPause
+run show for 4 but 3 Position
 check canUnlockAssert
+check inMaintenanceImpliesExistOperator
+check busyCarInARIde
+
+
+
 
 
