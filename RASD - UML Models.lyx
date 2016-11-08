@@ -93,10 +93,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename UML/png/Model__UseCaseDiagram1_1.png
 	lyxscale 40
-	scale 15
+	width 50page%
 	clip
 
 \end_inset
@@ -140,7 +141,7 @@ Registration
 \end_layout
 
 \begin_layout Standard
-\align left
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
 <features tabularvalignment="middle">
@@ -366,10 +367,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename UML/png/Collaboration6__Interaction1__Registration_8.png
 	lyxscale 30
-	scale 30
+	width 50page%
 
 \end_inset
 
@@ -410,6 +412,7 @@ Login
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
 <features tabularvalignment="middle">
@@ -630,10 +633,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename UML/png/Collaboration1__Interaction1__Login_2.png
 	lyxscale 15
-	scale 20
+	width 50page%
 
 \end_inset
 
@@ -666,6 +670,7 @@ Car Reservation
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
 <features tabularvalignment="middle">
@@ -894,10 +899,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename UML/png/Collaboration2__Interaction1__ReserveCar_6.png
 	lyxscale 15
-	scale 20
+	width 50page%
 
 \end_inset
 
@@ -930,6 +936,7 @@ Search Cars
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
 <features tabularvalignment="middle">
@@ -1141,10 +1148,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename UML/png/Collaboration4__Interaction1__SearchCar_4.png
 	lyxscale 15
-	scale 25
+	width 50page%
 
 \end_inset
 
@@ -1177,6 +1185,7 @@ Unlock Car
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
 <features tabularvalignment="middle">
@@ -1396,10 +1405,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename UML/png/Collaboration3__Interaction1__UnlockCar_3.png
 	lyxscale 15
-	scale 25
+	width 50page%
 
 \end_inset
 
@@ -1428,6 +1438,7 @@ Comunicate Damages And Malfucntions
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
 <features tabularvalignment="middle">
@@ -1631,13 +1642,14 @@ The request is refused and the user is suggested to check his form.
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename UML/png/ComunicateDamagesMalfunctions.png
 	lyxscale 30
-	scale 30
+	width 50pheight%
 
 \end_inset
 
@@ -1669,11 +1681,143 @@ Communicate Damages And Malfunctions
 
 \end_layout
 
+\begin_layout Subsubsection
+Lock Car
+\end_layout
+
+\begin_layout Standard
+/* TODO */
+\end_layout
+
 \begin_layout Subsection
 Statechart Diagram
 \end_layout
 
+\begin_layout Subsubsection
+Car State Machine
+\end_layout
+
 \begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename UML/png/StateMachine1__CarStateChart_10.png
+	lyxscale 30
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Car State Machine
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+User State Machine
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename UML/png/StateMachine3__UserStateChart_12.png
+	lyxscale 30
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+User State Machine
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Reservation State Machine
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename UML/png/StateMachine2__ReservationStateChart_11.png
+	lyxscale 30
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Reservation State Machine
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 

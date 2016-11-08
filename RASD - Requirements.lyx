@@ -637,13 +637,14 @@ Here are presented a few screen of the app to provide an example.
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Mockup/Register.png
 	lyxscale 30
-	scale 30
+	width 50page%
 
 \end_inset
 
@@ -680,13 +681,14 @@ Registration
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Mockup/Login.png
 	lyxscale 30
-	scale 30
+	width 50page%
 
 \end_inset
 
@@ -727,13 +729,14 @@ Login
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Mockup/Map.png
 	lyxscale 25
-	scale 15
+	width 50page%
 
 \end_inset
 
@@ -766,17 +769,14 @@ Map UI
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Mockup/Profile.png
 	lyxscale 30
-	scale 30
+	width 50page%
 
 \end_inset
 
@@ -809,17 +809,14 @@ User Profile
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Mockup/Admin Panel.png
 	lyxscale 30
-	scale 30
+	width 50page%
 
 \end_inset
 
@@ -856,17 +853,14 @@ Admin Panel
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Mockup/Operator Panel.png
 	lyxscale 30
-	scale 30
+	width 50page%
 
 \end_inset
 
