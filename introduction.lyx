@@ -158,6 +158,18 @@ SAFE AREA
 CHARGING AREA
 \end_layout
 
+\begin_layout Itemize
+Malfunction
+\end_layout
+
+\begin_layout Itemize
+Under maintenance
+\end_layout
+
+\begin_layout Itemize
+Pause Status of a Ride
+\end_layout
+
 \begin_layout Subsection
 Actors
 \end_layout
@@ -230,6 +242,45 @@ There are no assumptions on how the safe areas are managed, so it is assumed
  flexibility of the system.
 \end_layout
 
+\begin_layout Itemize
+In order to improve the quality of our system has been added the possibility
+ of 
+\begin_inset Quotes eld
+\end_inset
+
+pausing
+\begin_inset Quotes erd
+\end_inset
+
+ a ride.
+ So a user can 
+\begin_inset Quotes eld
+\end_inset
+
+pause
+\begin_inset Quotes erd
+\end_inset
+
+ a ride, he can maintain the reservation on the car and he can pay a reduced
+ amount of money.
+ It could be a good function for USER.
+ Pause status expires after 1h and then car returns in the Available state.
+ This is done in order to avoid very long pauses.
+\end_layout
+
+\begin_layout Itemize
+A car can go 
+\begin_inset Quotes eld
+\end_inset
+
+Under Maintenance
+\begin_inset Quotes erd
+\end_inset
+
+ even if it's reserved by a USER, in this case the user is notified and
+ its reservation is deleted.
+\end_layout
+
 \begin_layout Subsection
 Domain assumptions
 \end_layout
@@ -288,7 +339,7 @@ Domain assumptions
 \end_layout
 
 \begin_layout Itemize
-/*non danno in giro la password*/
+[D13] USERs doesn't share their password
 \end_layout
 
 \begin_layout Subsection
@@ -320,7 +371,15 @@ The objectives of the software to be are the following:
 
 \begin_layout Itemize
 [G1.4] If reserved car pass under maintenance, the USER that made the reservation
- must be notified.
+ must be notified and the reservation should be deleted.
+\end_layout
+
+\begin_layout Itemize
+[G1.5] User should be able to set Pause status during a ride.
+\end_layout
+
+\begin_layout Itemize
+[G1.6] User should be able to restart a paused ride.
 \end_layout
 
 \end_deeper

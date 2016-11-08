@@ -93,7 +93,7 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[G1.1] Only USER should be able to reserve a car:
+[G1.1] Only USER should be able to reserve a car.
 \end_layout
 
 \begin_deeper
@@ -106,22 +106,26 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[R2] The system shall reserve a car only if the car is available.
+[R3] The system shall reserve a car only if the car is available.
  
 \end_layout
 
 \begin_layout Itemize
-[R3] The system shall be able to associate a car to the USER who has reserved
+[R4] The system shall be able to associate a car to the USER who has reserved
  it.
  
 \end_layout
 
 \begin_layout Itemize
-[R_] The system shall provide the login functionality.
+[R5] The system shall provide the login functionality.
 \end_layout
 
 \begin_layout Itemize
-[R_] The system shall provide sign up functionality.
+[R6] The system shall provide sign up functionality.
+\end_layout
+
+\begin_layout Itemize
+[D13]
 \end_layout
 
 \end_deeper
@@ -132,15 +136,15 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \begin_deeper
 \begin_layout Itemize
-[R4] The system shall know cars' location according to cars' GPS.
+[R7] The system shall know cars' location according to cars' GPS.
 \end_layout
 
 \begin_layout Itemize
-[R5] The system shall know user's location according to his GPS.
+[R8] The system shall know users' location according to his GPS.
 \end_layout
 
 \begin_layout Itemize
-[R6] The system shall provide a functionality to unlock the car.
+[R9] The system shall provide a functionality to unlock the car.
  
 \end_layout
 
@@ -164,11 +168,11 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \begin_deeper
 \begin_layout Itemize
-[R7] The system shall be able to calculate ride's cost based on duration.
+[R10] The system shall be able to calculate ride's cost based on duration.
 \end_layout
 
 \begin_layout Itemize
-[R8] The system shall be able to communicate to the car ride's cost.
+[R11] The system shall be able to communicate to the car ride's cost.
 \end_layout
 
 \begin_layout Itemize
@@ -183,8 +187,36 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \begin_deeper
 \begin_layout Itemize
-[R_] The system shall be able to notify the USER when his reserved car switches
- to under maintainance.
+[R12] The system shall be able to notify the USER when his reserved car
+ switches to under maintainance.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G1.5] User should be able to set Pause status during a ride.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R13] The system shall offer the functionality to pause a ride.
+\end_layout
+
+\begin_layout Itemize
+[R14] The system shall be able to manage paused ride.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G1.6] User should be able to restart a paused ride.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R14]
+\end_layout
+
+\begin_layout Itemize
+[R15] The system shall offer the functionality to restart a paused ride
 \end_layout
 
 \end_deeper
@@ -194,12 +226,12 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \begin_deeper
 \begin_layout Itemize
-[R7] The system shall reserve a car only if the user hasn't already reserved
+[R16] The system shall reserve a car only if the user hasn't already reserved
  another car.
 \end_layout
 
 \begin_layout Itemize
-[R3]
+[R4]
 \end_layout
 
 \end_deeper
@@ -209,15 +241,15 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \begin_deeper
 \begin_layout Itemize
-[R4]
+[R7]
 \end_layout
 
 \begin_layout Itemize
-[R5]
+[R8]
 \end_layout
 
 \begin_layout Itemize
-[R9] The system shall provide the closest cars to user's position.
+[R17] The system shall provide the closest cars to user's position.
 \end_layout
 
 \end_deeper
@@ -227,15 +259,15 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \begin_deeper
 \begin_layout Itemize
-[R4]
+[R7]
 \end_layout
 
 \begin_layout Itemize
-[R5]
+[R8]
 \end_layout
 
 \begin_layout Itemize
-[R10] The system shall provide the closest cars to position provided by
+[R18] The system shall provide the closest cars to position provided by
  the USER.
 \end_layout
 
@@ -247,7 +279,7 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \begin_deeper
 \begin_layout Itemize
-[R11] The system shall bel able to detect if there are at least two passengers
+[R19] The system shall bel able to detect if there are at least two passengers
  in the car.
 \end_layout
 
@@ -256,7 +288,7 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[R12] The system shall be able to apply a discount on the ride.
+[R20] The system shall be able to apply a discount on the ride.
 \end_layout
 
 \end_deeper
@@ -267,11 +299,11 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \begin_deeper
 \begin_layout Itemize
-[R13] The system shall be able to know the battery level of the car.
+[R21] The system shall be able to know the battery level of the car.
 \end_layout
 
 \begin_layout Itemize
-[R12]
+[R20]
 \end_layout
 
 \begin_layout Itemize
@@ -286,19 +318,19 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \begin_deeper
 \begin_layout Itemize
-[R4]
+[R7]
 \end_layout
 
 \begin_layout Itemize
-[R13]
+[R21]
 \end_layout
 
 \begin_layout Itemize
-[R14] The system shall be able to apply a charge on the ride.
+[R22] The system shall be able to apply a charge on the ride.
 \end_layout
 
 \begin_layout Itemize
-[R15] The system shall be able to calculate distance between car's position
+[R23] The system shall be able to calculate distance between car's position
  and the nearest charging area.
 \end_layout
 
@@ -311,11 +343,11 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \begin_deeper
 \begin_layout Itemize
-[R13]
+[R21]
 \end_layout
 
 \begin_layout Itemize
-[R14]
+[R22]
 \end_layout
 
 \end_deeper
@@ -326,12 +358,12 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \begin_deeper
 \begin_layout Itemize
-[R15] The system shall be able to detect if the user has plugged the car
+[R24] The system shall be able to detect if the user has plugged the car
  into the power grid.
 \end_layout
 
 \begin_layout Itemize
-[R12]
+[R20]
 \end_layout
 
 \begin_layout Itemize
@@ -350,11 +382,11 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \begin_deeper
 \begin_layout Itemize
-[R16] The system shall be able to monitor car's reservations.
+[R25] The system shall be able to monitor car's reservations.
 \end_layout
 
 \begin_layout Itemize
-[R17] The system shall be able to know if a user has picked up a car.
+[R26] The system shall be able to know if a user has picked up a car.
  
 \end_layout
 
@@ -370,15 +402,15 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \begin_deeper
 \begin_layout Itemize
-[R18] The system shall take care of the result of the payment.
+[R27] The system shall take care of the result of the payment.
 \end_layout
 
 \begin_layout Itemize
-[R19] The system shall suspend USER that can't afford the payment.
+[R28] The system shall suspend USER that can't afford the payment.
 \end_layout
 
 \begin_layout Itemize
-[R20] The system shall unsuspend a USER when his old undone payment is done.
+[R29] The system shall unsuspend a USER when his old undone payment is done.
 \end_layout
 
 \end_deeper
@@ -388,16 +420,16 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \begin_deeper
 \begin_layout Itemize
-[R7] 
+[R10] 
 \end_layout
 
 \begin_layout Itemize
-[R21] The system shall charge an extenernal payment service with doing the
+[R30] The system shall charge an extenernal payment service with doing the
  payment.
 \end_layout
 
 \begin_layout Itemize
-[R9]
+[R17]
 \end_layout
 
 \begin_layout Itemize
@@ -412,11 +444,11 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \begin_deeper
 \begin_layout Itemize
-[R22] The system shall offer a backend panel to Operator
+[R31] The system shall offer a backend panel to Operator
 \end_layout
 
 \begin_layout Itemize
-[R23] The system shall notify the operator when a car in his competence
+[R32] The system shall notify the operator when a car in his competence
  area needs some kind of maintenance.
 \end_layout
 
@@ -453,7 +485,7 @@ ns.
 
 \begin_deeper
 \begin_layout Itemize
-[R24] The system shall offer a functionality that let USERs to comunicate
+[R33] The system shall offer a functionality that let USERs to comunicate
  malfunctions and damages.
 \end_layout
 
@@ -464,11 +496,11 @@ ns.
 
 \begin_deeper
 \begin_layout Itemize
-[R25] The system shall offer the functionality of add or remove safe areas.
+[R34] The system shall offer the functionality of add or remove safe areas.
 \end_layout
 
 \begin_layout Itemize
-[R26] The system shall offer log in functionality for admin.
+[R35] The system shall offer log in functionality for admin.
 \end_layout
 
 \begin_layout Itemize
@@ -482,11 +514,11 @@ ns.
 
 \begin_deeper
 \begin_layout Itemize
-[R26]
+[R35]
 \end_layout
 
 \begin_layout Itemize
-[R27] The system shall offer the functionality of add or remove safe areas
+[R36] The system shall offer the functionality of add or remove safe areas
 \end_layout
 
 \begin_layout Itemize
@@ -560,6 +592,14 @@ Search cars near a selected location.
 
 \begin_layout Itemize
 Communicate malfunctions or damages to the system.
+\end_layout
+
+\begin_layout Itemize
+Pause a ride.
+\end_layout
+
+\begin_layout Itemize
+Restart a ride.
 \end_layout
 
 \end_deeper
