@@ -485,6 +485,22 @@ s.
 
 \end_deeper
 \begin_layout Subsection
+Stakeholder identification
+\end_layout
+
+\begin_layout Standard
+The principal stakeholder is the customer, a company that offers a car sharing
+ service and needs a platform to manage it and make it easy for possible
+ user.
+ Other involved people are the employees of the company, who will work with
+ the software.
+ Evidently also the users of the application are stakeholders.
+ In the end, related to more technical purposes, other possible developers
+ that will consult the software documentation are stakeholder.
+ 
+\end_layout
+
+\begin_layout Subsection
 Document overview
 \end_layout
 
