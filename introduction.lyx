@@ -103,7 +103,7 @@ Glossary and abbreviations
 \end_layout
 
 \begin_layout Itemize
-VIRTUOUS BEHAVIOUR:
+Virtuous behaviour:
 \end_layout
 
 \begin_deeper
@@ -121,7 +121,7 @@ To park in defined safe areas.
 
 \end_deeper
 \begin_layout Itemize
-Car STATUS, that can assume the following meaning:
+Car Status, that can assume the following meanings:
 \end_layout
 
 \begin_deeper
@@ -147,36 +147,48 @@ In charge: the car is plugged in a charging station.
 
 \end_deeper
 \begin_layout Itemize
-Car INFORMATION are technical information about car, useful for mantainance.
+Car Information: technical information about car, useful for mantainance.
 \end_layout
 
 \begin_layout Itemize
-SAFE AREA
+Safe Area: special, pre-defined parking area where cars can be parked.
+ It can be also a Charging Area.
 \end_layout
 
 \begin_layout Itemize
-CHARGING AREA
+Charging Area: an area where cars can be recharged.
+ It is always a Safe Area.
 \end_layout
 
 \begin_layout Itemize
-Malfunction
+Malfunction: The car has some problems that can be repaired by an operator.
 \end_layout
 
 \begin_layout Itemize
-Under maintenance
+Ride: //todo
 \end_layout
 
 \begin_layout Itemize
-Pause Status of a Ride
+Ride Status:
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+Active
+\end_layout
+
+\begin_layout Itemize
+Paused
+\end_layout
+
+\end_deeper
 \begin_layout Subsection
 Actors
 \end_layout
 
 \begin_layout Standard
 These are the people that will be involved in the use cases of the software
- to be developed:
+ to be:
 \end_layout
 
 \begin_layout Itemize
@@ -278,7 +290,7 @@ Under Maintenance
 \end_inset
 
  even if it's reserved by a USER, in this case the user is notified and
- its reservation is deleted.
+ his reservation is deleted.
 \end_layout
 
 \begin_layout Subsection
@@ -286,7 +298,7 @@ Domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[D1] Cars positions provided by GPS are accurate,
+[D1] Cars positions provided by GPS are accurate.
 \end_layout
 
 \begin_layout Itemize
@@ -294,7 +306,7 @@ Domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[D3] Cars provide remote comunication API
+[D3] Cars provide remote comunication API.
 \end_layout
 
 \begin_layout Itemize
@@ -323,15 +335,15 @@ Domain assumptions
 
 \begin_layout Itemize
 [D10] If an OPERATOR is notified by the system about a maintenance need,
- he take care of that.
+ he takes care of that.
 \end_layout
 
 \begin_layout Itemize
-[D11] OPERATORs does not share their credential.
+[D11] OPERATORs do not share their credential.
 \end_layout
 
 \begin_layout Itemize
-[D12] ADMINs does not share their credential.
+[D12] ADMINs do not share their credential.
 \end_layout
 
 \begin_layout Itemize

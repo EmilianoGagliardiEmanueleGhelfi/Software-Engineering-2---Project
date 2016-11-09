@@ -125,7 +125,7 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[D13]
+[D13] USERs doesn't share their password.
 \end_layout
 
 \end_deeper
@@ -149,15 +149,15 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[D1]
+[D1] Cars positions provided by GPS are accurate.
 \end_layout
 
 \begin_layout Itemize
-[D2]
+[D2] The USER and GUEST position provided by GPS are accurate.
 \end_layout
 
 \begin_layout Itemize
-[D3]
+[D3] Cars provide remote comunication API in order to manage them remotely.
 \end_layout
 
 \end_deeper
@@ -176,7 +176,7 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[D4]
+[D4] Cars provide screen to display current charge to user.
 \end_layout
 
 \end_deeper
@@ -212,7 +212,7 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \begin_deeper
 \begin_layout Itemize
-[R14]
+[R14] The system shall be able to manage paused ride.
 \end_layout
 
 \begin_layout Itemize
@@ -231,7 +231,9 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[R4]
+[R4] The system shall be able to associate a car to the USER who has reserved
+ it.
+ 
 \end_layout
 
 \end_deeper
@@ -241,15 +243,23 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \begin_deeper
 \begin_layout Itemize
-[R7]
+[R7] The system shall know cars' location according to cars' GPS.
 \end_layout
 
 \begin_layout Itemize
-[R8]
+[R8] The system shall know users' location according to his GPS.
 \end_layout
 
 \begin_layout Itemize
 [R17] The system shall provide the closest cars to user's position.
+\end_layout
+
+\begin_layout Itemize
+[D2] USERs and GUESTs positions provided by GPS are accurate.
+\end_layout
+
+\begin_layout Itemize
+[D1] Cars positions provided by GPS are accurate.
 \end_layout
 
 \end_deeper
@@ -259,16 +269,20 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \begin_deeper
 \begin_layout Itemize
-[R7]
+[R7] The system shall know cars' location according to cars' GPS.
 \end_layout
 
 \begin_layout Itemize
-[R8]
+[R8] The system shall know users' location according to his GPS.
 \end_layout
 
 \begin_layout Itemize
 [R18] The system shall provide the closest cars to position provided by
  the USER.
+\end_layout
+
+\begin_layout Itemize
+[D1] Cars positions provided by GPS are accurate.
 \end_layout
 
 \end_deeper
@@ -284,11 +298,15 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[D5]
+[R20] The system shall be able to apply a discount on the ride.
 \end_layout
 
 \begin_layout Itemize
-[R20] The system shall be able to apply a discount on the ride.
+[D5] Cars can detect how many passengers are on it.
+\end_layout
+
+\begin_layout Itemize
+[D3] Cars provide remote comunication API.
 \end_layout
 
 \end_deeper
@@ -303,11 +321,15 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[R20]
+[R20] The system shall be able to apply a discount on the ride.
 \end_layout
 
 \begin_layout Itemize
-[D7]
+[D3] Cars provide remote comunication API.
+\end_layout
+
+\begin_layout Itemize
+[D7] Cars can detect their battery level.
 \end_layout
 
 \end_deeper
@@ -318,11 +340,11 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \begin_deeper
 \begin_layout Itemize
-[R7]
+[R7] The system shall know cars' location according to cars' GPS.
 \end_layout
 
 \begin_layout Itemize
-[R21]
+[R21] The system shall be able to know the battery level of the car.
 \end_layout
 
 \begin_layout Itemize
@@ -334,6 +356,14 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
  and the nearest charging area.
 \end_layout
 
+\begin_layout Itemize
+[D1] Cars positions provided by GPS are accurate.
+\end_layout
+
+\begin_layout Itemize
+[D3] Cars provide remote comunication API.
+\end_layout
+
 \end_deeper
 \begin_layout Itemize
 [G4.4] If a car is left with more than 80% battery empty, the system should
@@ -343,11 +373,15 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \begin_deeper
 \begin_layout Itemize
-[R21]
+[R21] The system shall be able to know the battery level of the car.
 \end_layout
 
 \begin_layout Itemize
-[R22]
+[R22] The system shall be able to apply a charge on the ride.
+\end_layout
+
+\begin_layout Itemize
+[D7] Cars can detect their battery level.
 \end_layout
 
 \end_deeper
@@ -363,15 +397,17 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[R20]
+[R20] The system shall be able to apply a discount on the ride.
 \end_layout
 
 \begin_layout Itemize
-[R4]
+[R4] The system shall be able to associate a car to the USER who has reserved
+ it.
+ 
 \end_layout
 
 \begin_layout Itemize
-[D6]
+[D6] Cars can detect if they are plugged.
 \end_layout
 
 \end_deeper
@@ -391,7 +427,7 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[R2]
+[R2] The system shall be able to know car's status.
 \end_layout
 
 \end_deeper
@@ -420,7 +456,7 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 
 \begin_deeper
 \begin_layout Itemize
-[R10] 
+[R10] The system shall be able to calculate ride's cost based on duration.
 \end_layout
 
 \begin_layout Itemize
@@ -429,11 +465,11 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[R17]
+[R17] ???
 \end_layout
 
 \begin_layout Itemize
-[D4] 
+[D4] Cars provide screen to display current charge to user.
 \end_layout
 
 \end_deeper
@@ -453,27 +489,32 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[D7] 
+[R1] The system can modify car's status (available, occupied, in use).
 \end_layout
 
 \begin_layout Itemize
-[D8]
+[R2] The system shall be able to know car's status.
 \end_layout
 
 \begin_layout Itemize
-[D9]
+[D7] Cars can detect their battery level.
 \end_layout
 
 \begin_layout Itemize
-[D10]
+[D8] Cars can detect information about maintenance needs.
 \end_layout
 
 \begin_layout Itemize
-[R1]
+[D9] If a USER detect a malfuncion comunicate it.
 \end_layout
 
 \begin_layout Itemize
-[R2]
+[D10] If an OPERATOR is notified by the system about a maintenance need,
+ he takes care of that.
+\end_layout
+
+\begin_layout Itemize
+[D11] OPERATORs do not share their credential.
 \end_layout
 
 \end_deeper
@@ -504,7 +545,7 @@ ns.
 \end_layout
 
 \begin_layout Itemize
-[D11]
+[D12] OPERATORs do not share their credential.
 \end_layout
 
 \end_deeper
@@ -514,7 +555,7 @@ ns.
 
 \begin_deeper
 \begin_layout Itemize
-[R35]
+[R35] The system shall offer log in functionality for admin.
 \end_layout
 
 \begin_layout Itemize
@@ -522,7 +563,7 @@ ns.
 \end_layout
 
 \begin_layout Itemize
-[D11]
+[D12] OPERATORs do not share their credential.
 \end_layout
 
 \end_deeper
@@ -681,7 +722,9 @@ The User Interface needs to be as user friendly as possible: that's to say
 \begin_inset Newline newline
 \end_inset
 
-Here are presented a few screen of the app to provide an example.
+Screens here presented provide an example of the UI and the main functions
+ of the system.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -689,7 +732,7 @@ Here are presented a few screen of the app to provide an example.
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -722,18 +765,14 @@ Registration
 \end_inset
 
 
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
-\begin_inset Newline newline
-\end_inset
-
-
+\begin_layout Standard
+\align center
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -766,14 +805,6 @@ Login
 \end_inset
 
 
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -781,7 +812,7 @@ Login
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -810,18 +841,14 @@ Map UI
 \end_inset
 
 
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
-\begin_inset Newline newline
-\end_inset
-
-
+\begin_layout Standard
+\align center
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -850,18 +877,50 @@ User Profile
 \end_inset
 
 
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
-\begin_inset Newline newline
-\end_inset
-
-
+\begin_layout Standard
+\align center
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Mockup/RideUI.png
+	lyxscale 20
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ride UI
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -894,18 +953,14 @@ Admin Panel
 \end_inset
 
 
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
-\begin_inset Newline newline
-\end_inset
-
-
+\begin_layout Standard
+\align center
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
