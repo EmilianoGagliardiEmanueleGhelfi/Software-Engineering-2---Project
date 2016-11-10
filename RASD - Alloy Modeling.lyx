@@ -72,7 +72,7 @@
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "numbers=left,morekeywords={{sig, abstract, one, lone, one, set};},commentstyle={\itshape\color{lightgray}}"
+lstparams "language=C,numbers=left,morekeywords={one},commentstyle={\color{magenta}\itshape},morecomment={[l] { \\ }},morecomment={[s] [\color{blue}] {/**} {*/}}"
 inline false
 status open
 
@@ -103,7 +103,12 @@ sig Car{
 
 \begin_layout Plain Layout
 
-	//batteryLevel: Int }{
+	/**batteryLevel: Int */
+\end_layout
+
+\begin_layout Plain Layout
+
+}{
 \end_layout
 
 \begin_layout Plain Layout
@@ -123,9 +128,27 @@ sig Car{
 
 \begin_layout Plain Layout
 
-	// car can be plugged only if it's in a charging area 	#connectedPlug =
- 1 implies (connectedPlug.~plugs).safeAreaPosition = carPosition  	#connectedPlug
- = 1 implies not status in Busy  }
+	// car can be plugged only if it's in a charging area 
+\end_layout
+
+\begin_layout Plain Layout
+
+	#connectedPlug = 1 implies (connectedPlug.~plugs).safeAreaPosition = carPosition
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+	#connectedPlug = 1 implies not status in Busy 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
