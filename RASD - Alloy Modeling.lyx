@@ -70,6 +70,14 @@
 
 \begin_body
 
+\begin_layout Section
+Alloy Modeling
+\end_layout
+
+\begin_layout Subsection
+Model
+\end_layout
+
 \begin_layout Standard
 \begin_inset listings
 lstparams "language=C,numbers=left,morekeywords={one},commentstyle={\color{magenta}\itshape},morecomment={[l] { \\ }},morecomment={[s] [\color{blue}] {/**} {*/}}"
@@ -197,6 +205,282 @@ sig Date{}
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Subsection
+Facts
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C,numbers=left,morekeywords={one},commentstyle={\color{magenta}\itshape},morecomment={[l] { \\ }},morecomment={[s] [\color{blue}] {/**} {*/}}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+sig Car{ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	connectedPlug: lone Plug,
+\end_layout
+
+\begin_layout Plain Layout
+
+	status: one CarStatus,
+\end_layout
+
+\begin_layout Plain Layout
+
+	carPosition: one Position,
+\end_layout
+
+\begin_layout Plain Layout
+
+	//capacity: Int, 
+\end_layout
+
+\begin_layout Plain Layout
+
+	/**batteryLevel: Int */
+\end_layout
+
+\begin_layout Plain Layout
+
+}{
+\end_layout
+
+\begin_layout Plain Layout
+
+	this in User.reservedCar iff status in Reserved
+\end_layout
+
+\begin_layout Plain Layout
+
+	this in User.inUseCar iff status in Busy
+\end_layout
+
+\begin_layout Plain Layout
+
+	this in SafeArea.carsInSafeArea iff status!=Busy
+\end_layout
+
+\begin_layout Plain Layout
+
+	// car can be plugged only if it's in a charging area 
+\end_layout
+
+\begin_layout Plain Layout
+
+	#connectedPlug = 1 implies (connectedPlug.~plugs).safeAreaPosition = carPosition
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+	#connectedPlug = 1 implies not status in Busy 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Position{ }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//CAR STATUS
+\end_layout
+
+\begin_layout Plain Layout
+
+abstract sig CarStatus{}
+\end_layout
+
+\begin_layout Plain Layout
+
+one sig Reserved extends CarStatus{}
+\end_layout
+
+\begin_layout Plain Layout
+
+one sig Available extends CarStatus{}
+\end_layout
+
+\begin_layout Plain Layout
+
+one sig Busy extends CarStatus{}
+\end_layout
+
+\begin_layout Plain Layout
+
+one sig UnderMaintainance extends CarStatus {}
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Date{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Assertions
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C,numbers=left,morekeywords={one},commentstyle={\color{magenta}\itshape},morecomment={[l] { \\ }},morecomment={[s] [\color{blue}] {/**} {*/}}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+sig Car{ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	connectedPlug: lone Plug,
+\end_layout
+
+\begin_layout Plain Layout
+
+	status: one CarStatus,
+\end_layout
+
+\begin_layout Plain Layout
+
+	carPosition: one Position,
+\end_layout
+
+\begin_layout Plain Layout
+
+	//capacity: Int, 
+\end_layout
+
+\begin_layout Plain Layout
+
+	/**batteryLevel: Int */
+\end_layout
+
+\begin_layout Plain Layout
+
+}{
+\end_layout
+
+\begin_layout Plain Layout
+
+	this in User.reservedCar iff status in Reserved
+\end_layout
+
+\begin_layout Plain Layout
+
+	this in User.inUseCar iff status in Busy
+\end_layout
+
+\begin_layout Plain Layout
+
+	this in SafeArea.carsInSafeArea iff status!=Busy
+\end_layout
+
+\begin_layout Plain Layout
+
+	// car can be plugged only if it's in a charging area 
+\end_layout
+
+\begin_layout Plain Layout
+
+	#connectedPlug = 1 implies (connectedPlug.~plugs).safeAreaPosition = carPosition
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+	#connectedPlug = 1 implies not status in Busy 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Position{ }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//CAR STATUS
+\end_layout
+
+\begin_layout Plain Layout
+
+abstract sig CarStatus{}
+\end_layout
+
+\begin_layout Plain Layout
+
+one sig Reserved extends CarStatus{}
+\end_layout
+
+\begin_layout Plain Layout
+
+one sig Available extends CarStatus{}
+\end_layout
+
+\begin_layout Plain Layout
+
+one sig Busy extends CarStatus{}
+\end_layout
+
+\begin_layout Plain Layout
+
+one sig UnderMaintainance extends CarStatus {}
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Date{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Worlds Generated
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 

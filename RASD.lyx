@@ -228,5 +228,33 @@ filename "RASD - Alloy Modeling.lyx"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand input
+filename "RASD - Used Tools.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand input
+filename "RASD - Hours of Work.lyx"
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
