@@ -82,7 +82,14 @@
 \begin_body
 
 \begin_layout Title
-Power EnJoy
+\begin_inset Formula $\mathbf{Power}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{EnJoy}$
+\end_inset
+
+
 \begin_inset Newline newline
 \end_inset
 
@@ -110,7 +117,7 @@ ocument
 \begin_inset Newline newline
 \end_inset
 
-
+Software Engineering 2
 \begin_inset Newline newline
 \end_inset
 

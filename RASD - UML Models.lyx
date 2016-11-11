@@ -81,8 +81,8 @@ Use Case Diagram
 \end_layout
 
 \begin_layout Standard
-With the Use Case Diagram are highlighted the main function of our system
- and the interaction between ACTORS and the related Use Case.
+With the Use Case Diagram are highlighted the main functions of our system
+ and the interactions between actors and the related Use Cases.
 \end_layout
 
 \begin_layout Standard
@@ -117,10 +117,13 @@ Use Case Diagram
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -131,9 +134,9 @@ Sequence Diagram
 \end_layout
 
 \begin_layout Standard
-With Sequence Diagram are highlighted the main function of the system and
- the High-Level sequence of actions that focuses on the way in which happens
- the interaction between ACTORS and system.
+With Sequence Diagram are highlighted the main functions of the system.
+ Are described the High-Level sequences of actions focusing on the interaction
+ between actors and system.
 \end_layout
 
 \begin_layout Subsubsection
@@ -386,10 +389,13 @@ Registration
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -610,12 +616,12 @@ In the second case the user is notified that he can't use the service because
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename UML/png/Collaboration1__Interaction1__Login_2.png
+	filename UML/png/Collaboration1__Interaction1__Login_3.png
 	lyxscale 15
 	width 50page%
 
@@ -640,6 +646,13 @@ Login
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -868,12 +881,12 @@ In the second case appp notifies user that he has already reserved another
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename UML/png/Collaboration2__Interaction1__ReserveCar_6.png
+	filename UML/png/Collaboration2__Interaction1__ReserveCar_4.png
 	lyxscale 15
 	width 50page%
 
@@ -898,6 +911,13 @@ Car Reservation
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -1114,7 +1134,7 @@ status collapsed
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename UML/png/Collaboration4__Interaction1__SearchCar_4.png
+	filename UML/png/Collaboration4__Interaction1__SearchCar_6.png
 	lyxscale 15
 	width 50page%
 
@@ -1139,6 +1159,13 @@ Search for a car
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -1363,7 +1390,7 @@ status collapsed
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename UML/png/Collaboration3__Interaction1__UnlockCar_3.png
+	filename UML/png/Collaboration3__Interaction1__UnlockCar_5.png
 	lyxscale 15
 	width 50page%
 
@@ -1389,8 +1416,15 @@ Unlock Car
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
-Comunicate Damages And Malfucntions
+Communicate Damages And Malfucntions
 \end_layout
 
 \begin_layout Standard
@@ -1523,6 +1557,10 @@ e the operator wich competence area contains the car.
  
 \end_layout
 
+\begin_layout Enumerate
+If it's a real malfunction the operator change status car to Under Maintenance
+\end_layout
+
 \end_inset
 </cell>
 </row>
@@ -1544,8 +1582,10 @@ e the operator wich competence area contains the car.
 
 \begin_layout Plain Layout
 The user has comunicated a damage to a car or a malfunction.
-\backslash
+\end_layout
 
+\begin_layout Plain Layout
+The car status is Under Maintenance.
 \end_layout
 
 \end_inset
@@ -1571,8 +1611,17 @@ The user has comunicated a damage to a car or a malfunction.
 The form is not correctly filled.
 \end_layout
 
+\begin_layout Enumerate
+The car hasn't a malfunction.
+\end_layout
+
 \begin_layout Plain Layout
-The request is refused and the user is suggested to check his form.
+In the case (1) the request is refused and the user is suggested to check
+ his form.
+\end_layout
+
+\begin_layout Plain Layout
+In the case (2) the operator doesn't change car status.
 \end_layout
 
 \end_inset
@@ -1595,7 +1644,7 @@ status collapsed
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename UML/png/ComunicateDamagesMalfunctions.png
+	filename UML/png/Collaboration5__Interaction1__CommunicateDamagesMalfunctions_7.png
 	lyxscale 30
 	width 50pheight%
 
@@ -1621,12 +1670,26 @@ Communicate Damages And Malfunctions
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Lock Car
 \end_layout
 
 \begin_layout Standard
 /* TODO */
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -1883,6 +1946,13 @@ Malfunctions detection and notifications
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Statechart Diagram
 \end_layout
@@ -1922,6 +1992,13 @@ Car State Machine
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 

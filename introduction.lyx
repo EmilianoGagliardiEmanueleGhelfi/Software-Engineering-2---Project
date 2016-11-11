@@ -161,11 +161,17 @@ Charging Area: an area where cars can be recharged.
 \end_layout
 
 \begin_layout Itemize
-Malfunction: The car has some problems that can be repaired by an operator.
+Malfunction: the car has some problems that can be repaired by an operator.
 \end_layout
 
 \begin_layout Itemize
-Ride: //todo
+Damage: it's like a malfunction but caused by the user.
+\end_layout
+
+\begin_layout Itemize
+Ride: when a user unlocks the car and then use it to go from a place to
+ another.
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -174,14 +180,20 @@ Ride Status:
 
 \begin_deeper
 \begin_layout Itemize
-Active
+Active: the user is driving the car.
 \end_layout
 
 \begin_layout Itemize
-Paused
+Paused: the user has paused the ride and so he can maintain the reservation
+ paying a certain amount of money per minute.
 \end_layout
 
 \end_deeper
+\begin_layout Itemize
+Payment method: a method of payment the user can use in order to pay Power
+ EnJoy services.
+\end_layout
+
 \begin_layout Subsection
 Actors
 \end_layout
@@ -497,18 +509,21 @@ s.
 
 \end_deeper
 \begin_layout Subsection
-Stakeholder identification
+Stakeholders identification
 \end_layout
 
 \begin_layout Standard
 The principal stakeholder is the customer, a company that offers a car sharing
  service and needs a platform to manage it and make it easy for possible
- user.
+ users.
  Other involved people are the employees of the company, who will work with
  the software.
  Evidently also the users of the application are stakeholders.
- In the end, related to more technical purposes, other possible developers
- that will consult the software documentation are stakeholder.
+\begin_inset Newline newline
+\end_inset
+
+In the end, related to more technical purposes, other possible developers
+ that will consult the software documentation are stakeholders.
  
 \end_layout
 
