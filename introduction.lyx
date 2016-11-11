@@ -234,161 +234,6 @@ ADMIN: a person that can manage system status with privileged actions.
 \end_layout
 
 \begin_layout Subsection
-Assumptions
-\end_layout
-
-\begin_layout Standard
-There are few point that aren't well specified in the assignement document.
- The purpose of this section is to formalize some facts that complete the
- specification.
-\end_layout
-
-\begin_layout Itemize
-Also guests are able to search cars, in order to induce them to create an
- account.
-\end_layout
-
-\begin_layout Itemize
-There are no information about cars' maintenance, so in the document is
- made the assumption that cars need operators presence to keep an acceptable
- status.
-\end_layout
-
-\begin_layout Itemize
-Users can't delete reservations.
-\end_layout
-
-\begin_layout Itemize
-The system relies on external payment methods.
- The accepted methods are Mastercard, Visa, PayPal, PostePay.
-\end_layout
-
-\begin_layout Itemize
-If a payment fails because of an insufficient money availability of the
- user, the user is suspended from the service until the payment is done.
-\end_layout
-
-\begin_layout Itemize
-In order to induce users to park in safe areas, users that do not park in
- safe areas will pay a fee.
-\end_layout
-
-\begin_layout Itemize
-There are no assumptions on how the safe areas are managed, so it is assumed
- that it is possible for admins to add or remove them in order to ensure
- flexibility of the system.
-\end_layout
-
-\begin_layout Itemize
-In order to improve the quality of our system has been added the possibility
- of 
-\begin_inset Quotes eld
-\end_inset
-
-pausing
-\begin_inset Quotes erd
-\end_inset
-
- a ride.
- So a user can 
-\begin_inset Quotes eld
-\end_inset
-
-pause
-\begin_inset Quotes erd
-\end_inset
-
- a ride, he can maintain the reservation on the car and he can pay a reduced
- amount of money.
- It could be a good function for USER.
- Pause status expires after 1h and then car returns in the Available state.
- This is done in order to avoid very long pauses.
-\end_layout
-
-\begin_layout Itemize
-A car can go 
-\begin_inset Quotes eld
-\end_inset
-
-Under Maintenance
-\begin_inset Quotes erd
-\end_inset
-
- even if it's reserved by a user, in this case the user is notified and
- his reservation is deleted.
-\end_layout
-
-\begin_layout Itemize
-The user is free to reserve a car even if its battery is low.
-\end_layout
-
-\begin_layout Itemize
-Discount aren't cumulative: in a ride with more discount applicable it's
- applied only the highest one.
-\end_layout
-
-\begin_layout Itemize
-Fee are cumulative.
-\end_layout
-
-\begin_layout Subsection
-Domain assumptions
-\end_layout
-
-\begin_layout Itemize
-[D1] Cars positions provided by GPS are accurate.
-\end_layout
-
-\begin_layout Itemize
-[D2] The user and guest position provided by GPS are accurate.
-\end_layout
-
-\begin_layout Itemize
-[D3] Cars provide remote comunication API.
-\end_layout
-
-\begin_layout Itemize
-[D4] Cars provide screen to display current charge to user.
-\end_layout
-
-\begin_layout Itemize
-[D5] Cars can detect how many passengers are on it.
-\end_layout
-
-\begin_layout Itemize
-[D6] Cars can detect if they are plugged.
-\end_layout
-
-\begin_layout Itemize
-[D7] Cars can detect their battery level.
-\end_layout
-
-\begin_layout Itemize
-[D8] Cars can detect information about maintenance needs.
-\end_layout
-
-\begin_layout Itemize
-[D9] If a user detect a malfuncion comunicate it.
-\end_layout
-
-\begin_layout Itemize
-[D10] If an operator is notified by the system about a maintenance need,
- he takes care of that.
-\end_layout
-
-\begin_layout Itemize
-[D11] Operators do not share their credential.
-\end_layout
-
-\begin_layout Itemize
-[D12] Admins do not share their credential.
-\end_layout
-
-\begin_layout Itemize
-[D13] Users do not share their password.
-\end_layout
-
-\begin_layout Subsection
 Goals
 \end_layout
 
@@ -555,7 +400,35 @@ Document overview
 \end_layout
 
 \begin_layout Standard
-/*here we will describe the document contents organization*/
+The document is structured in the following four parts:
+\end_layout
+
+\begin_layout Itemize
+Introduction: this is the introduction of the document, where is given a
+ general view of the problem, and are exposed the fundaental purposes of
+ the software to be developed
+\end_layout
+
+\begin_layout Itemize
+Overall description: it describes the assumptions made on the domain in
+ wich the software will work, and its dependecies with the used interfaces
+\end_layout
+
+\begin_layout Itemize
+Requirements: it describes the functional and non functional requirements,
+ and their relation with the goals and the domain assumptions
+\end_layout
+
+\begin_layout Itemize
+Scenario: it describes some possible situations that involve the system
+\end_layout
+
+\begin_layout Itemize
+UML model
+\end_layout
+
+\begin_layout Itemize
+Alloy modeling
 \end_layout
 
 \end_body

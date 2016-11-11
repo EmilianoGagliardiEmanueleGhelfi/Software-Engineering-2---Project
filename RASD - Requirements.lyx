@@ -465,7 +465,7 @@ In order to satisfy goals in section [Section Goals] under domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[R17] ???
+[R22] The system shall be able to apply a charge on the ride.
 \end_layout
 
 \begin_layout Itemize
@@ -1062,56 +1062,6 @@ The system code will be documented in order to make easier future improvements
  or changes by other developers.
  It needs to be clear how the system works, how the system communicate with
  cars, and how the system has been developed.
-\end_layout
-
-\begin_layout Subsubsection
-Documentation
-\end_layout
-
-\begin_layout Standard
-These documents will be released in order to well-organize the work in the
- way to obtain the best quality-cost ratio as possible:
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\boldsymbol{RASD}$
-\end_inset
-
-: Requirements Analysis and Specification Document, to well-understand the
- given problem and to analyze system's boundaries and goal.
- RASD is also important to understan system's requirements and specifications
- in order to reach the goals.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\mathbf{\boldsymbol{DD}}:$
-\end_inset
-
-Design Document, to define the structure of the the system, his tiers, and
- the interaction between them.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\boldsymbol{ITPD}$
-\end_inset
-
-: Integration Test Plan Document, to describe the planning to accomplish
- the integration test.
- This document is supposed to be written before the integration test really
- happens.
- Moreover this document needs to explain to the developer team what to test,
- in which sequence, which tools are needed for testing and wich need to
- be developed.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\boldsymbol{PP}$
-\end_inset
-
-: Project Plan, aims at defining a planning for the project.
- It regards in particular the estimation of effort and cost, the scheduling
- for project's task and the allocation of resources to tasks.
- 
 \end_layout
 
 \end_body
