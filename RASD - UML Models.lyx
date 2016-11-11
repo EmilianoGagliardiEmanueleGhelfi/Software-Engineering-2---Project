@@ -90,7 +90,7 @@ With the Use Case Diagram are highlighted the main functions of our system
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -236,7 +236,7 @@ All
 \begin_inset Text
 
 \begin_layout Plain Layout
-Guest isn't already registered to the application.
+The guest isn't already registered to the application.
 \end_layout
 
 \end_inset
@@ -304,8 +304,8 @@ Email with registration confirmation is sent by the server to the email
 \begin_inset Text
 
 \begin_layout Plain Layout
-GUEST ends registration procedure and become a USER.
- Now he/she can login and use all functionalities offeredby the system.
+The guest ends registration procedure and become a user.
+ Now he/she can login and use all functionalities offered by the system.
 \end_layout
 
 \end_inset
@@ -363,7 +363,7 @@ In all this case the visitor is alert and the app explains the problem.
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -498,7 +498,7 @@ All
 \begin_inset Text
 
 \begin_layout Plain Layout
-USER is registered into the system
+The user is registered into the system
 \end_layout
 
 \end_inset
@@ -755,7 +755,7 @@ USER
 \begin_inset Text
 
 \begin_layout Plain Layout
-USER is registered into the system and has already logged in.
+The user is registered into the system and has already logged in.
 \end_layout
 
 \end_inset
@@ -778,7 +778,7 @@ USER is registered into the system and has already logged in.
 \begin_inset Text
 
 \begin_layout Enumerate
-USER selects a car.
+User selects a car.
 \end_layout
 
 \begin_layout Enumerate
@@ -1547,7 +1547,7 @@ User opens the app.
 \end_layout
 
 \begin_layout Enumerate
-User fill the form with description of the damage and identification of
+User fills the form with description of the damage and identification of
  the car.
 \end_layout
 
@@ -1608,7 +1608,7 @@ The car status is Under Maintenance.
 \begin_inset Text
 
 \begin_layout Enumerate
-The form is not correctly filled.
+The form is not filled correctly.
 \end_layout
 
 \begin_layout Enumerate
@@ -1678,11 +1678,247 @@ Communicate Damages And Malfunctions
 \end_layout
 
 \begin_layout Subsubsection
-Lock Car
+End of the Ride
 \end_layout
 
 \begin_layout Standard
-/* TODO */
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="10cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\boldsymbol{\mathbf{Name}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Communicate Damages And Malfunctions
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathbf{Actors}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+USER, External Payment service
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathbf{Goal}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+[G1], [G5]
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathbf{EntryConditions}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+User has reserved and is using the car
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathbf{EventFlow}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Enumerate
+User click on STOP ride button
+\end_layout
+
+\begin_layout Enumerate
+System checks the validity of the request
+\end_layout
+
+\begin_layout Enumerate
+System locks the car.
+\end_layout
+
+\begin_layout Enumerate
+System asks to the external payment service to complete the payment of the
+ user after having calculated discount and charges.
+\end_layout
+
+\begin_layout Enumerate
+Payment service returns the result of the payment.
+\end_layout
+
+\begin_layout Enumerate
+System notifies payment result.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathbf{OutputCondition}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The user finishes his ride and the payment is done.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathbf{Exception}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Enumerate
+User can't afford the payment.
+\end_layout
+
+\begin_layout Plain Layout
+In this case the user is suspended until he can't pay.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename UML/png/Collaboration7__Interaction1__endRide_14.png
+	lyxscale 10
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+End of the ride
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1966,12 +2202,12 @@ Car State Machine
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename UML/png/StateMachine1__CarStateChart_10.png
+	filename UML/png/Car Statechart.png
 	lyxscale 30
 	width 50page%
 
@@ -2013,12 +2249,12 @@ User State Machine
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename UML/png/StateMachine3__UserStateChart_12.png
+	filename UML/png/User Statechart.png
 	lyxscale 30
 	width 50page%
 
@@ -2032,6 +2268,61 @@ status collapsed
 
 \begin_layout Plain Layout
 User State Machine
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Class Diagram
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename UML/png/Class diagram.png
+	lyxscale 20
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Class Diagram
 \end_layout
 
 \end_inset

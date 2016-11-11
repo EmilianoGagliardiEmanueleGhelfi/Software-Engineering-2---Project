@@ -74,6 +74,23 @@
 Alloy Modeling
 \end_layout
 
+\begin_layout Standard
+The purpose of the Alloy Modeling is to check the consinstency of the system
+ model.
+\begin_inset Newline newline
+\end_inset
+
+The abstraction level is fundamental in this point and here aren't described
+ implementative or low level details.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Discounts and charges haven't been modeled because these two details could
+ augment too much the complexity of the model without adding significative
+ information about system status.
+\end_layout
+
 \begin_layout Subsection
 Model
 \end_layout
@@ -478,10 +495,6 @@ sig Date{}
 
 \begin_layout Subsection
 Worlds Generated
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \end_body
