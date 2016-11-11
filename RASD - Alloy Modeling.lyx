@@ -26,7 +26,9 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -97,13 +99,171 @@ Model
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=C,numbers=left,morekeywords={one},commentstyle={\color{magenta}\itshape},morecomment={[l] { \\ }},morecomment={[s] [\color{blue}] {/**} {*/}}"
+lstparams "language=C,numbers=left,morekeywords={one, sig, abstract, lone, set, #, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or},commentstyle={\color{blue}\itshape},morecomment={[l] { \\ }},morecomment={[s] [\color{blue}] {/**} {*/}}"
 inline false
 status open
 
 \begin_layout Plain Layout
 
-sig Car{ 	
+/*------------------------------UTIL---------------------------------*/
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Position{}
+\end_layout
+
+\begin_layout Plain Layout
+
+/*----------------------------PERSON--------------------------------*/ abstract
+ sig Person{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig User extends Person{ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	userPosition: one Position,
+\end_layout
+
+\begin_layout Plain Layout
+
+	reservedCar: lone Car,
+\end_layout
+
+\begin_layout Plain Layout
+
+	inUseCar: lone Car,
+\end_layout
+
+\begin_layout Plain Layout
+
+	canUnlock: lone Car 
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+{ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	#reservedCar = 1 implies #inUseCar=0
+\end_layout
+
+\begin_layout Plain Layout
+
+	#inUseCar = 1 implies #reservedCar = 0 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig SuspendedUser extends User{} {
+\end_layout
+
+\begin_layout Plain Layout
+
+	#reservedCar = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+	#inUseCar = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Admin extends Person{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Operator extends Person{
+\end_layout
+
+\begin_layout Plain Layout
+
+	competenceArea: one CompetenceArea,
+\end_layout
+
+\begin_layout Plain Layout
+
+	carInMaintenance: set Car
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+{ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	all c : Car | c in carInMaintenance iff c.status = UnderMaintenance 
+\end_layout
+
+\begin_layout Plain Layout
+
+	all c : Car | c in carInMaintenance implies c.carPosition in
+\end_layout
+
+\begin_layout Plain Layout
+
+										competenceArea.positions
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/*------------------------------CAR---------------------------------*/ sig
+ Car{
 \end_layout
 
 \begin_layout Plain Layout
@@ -118,22 +278,17 @@ sig Car{
 
 \begin_layout Plain Layout
 
-	carPosition: one Position,
+	carPosition: one Position
 \end_layout
 
 \begin_layout Plain Layout
 
-	//capacity: Int, 
+ }
 \end_layout
 
 \begin_layout Plain Layout
 
-	/**batteryLevel: Int */
-\end_layout
-
-\begin_layout Plain Layout
-
-}{
+{
 \end_layout
 
 \begin_layout Plain Layout
@@ -148,23 +303,122 @@ sig Car{
 
 \begin_layout Plain Layout
 
-	this in SafeArea.carsInSafeArea iff status!=Busy
+	status = Busy implies this not in SafeArea.carsInSafeArea
 \end_layout
 
 \begin_layout Plain Layout
 
-	// car can be plugged only if it's in a charging area 
+	// car can be plugged only if it's in a charging area 	#connectedPlug =
+ 1 implies (connectedPlug.~plugs).safeAreaPosition =
 \end_layout
 
 \begin_layout Plain Layout
 
-	#connectedPlug = 1 implies (connectedPlug.~plugs).safeAreaPosition = carPosition
-  
+								carPosition
 \end_layout
 
 \begin_layout Plain Layout
 
-	#connectedPlug = 1 implies not status in Busy 
+ 	#connectedPlug = 1 implies not status in Busy
+\end_layout
+
+\begin_layout Plain Layout
+
+ }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/*---------------------------CAR-STATUS------------------------------*/
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+abstract sig CarStatus{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+one sig Reserved extends CarStatus{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+one sig Available extends CarStatus{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+one sig Busy extends CarStatus{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+one sig UnderMaintenance extends CarStatus {}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/*------------------------------- AREA -------------------------------*/
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig CompetenceArea{
+\end_layout
+
+\begin_layout Plain Layout
+
+	positions : set Position
+\end_layout
+
+\begin_layout Plain Layout
+
+}{
+\end_layout
+
+\begin_layout Plain Layout
+
+	// each competence area belongs to an operator
+\end_layout
+
+\begin_layout Plain Layout
+
+	this in Operator.competenceArea
+\end_layout
+
+\begin_layout Plain Layout
+
+	#positions >0
 \end_layout
 
 \begin_layout Plain Layout
@@ -178,7 +432,47 @@ sig Car{
 
 \begin_layout Plain Layout
 
-sig Position{ }
+sig SafeArea{
+\end_layout
+
+\begin_layout Plain Layout
+
+	capacity: Int,
+\end_layout
+
+\begin_layout Plain Layout
+
+	carsInSafeArea : set Car,
+\end_layout
+
+\begin_layout Plain Layout
+
+	safeAreaPosition : one Position
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+	capacity>0
+\end_layout
+
+\begin_layout Plain Layout
+
+	#carsInSafeArea <= capacity
+\end_layout
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
 \begin_layout Plain Layout
@@ -187,37 +481,158 @@ sig Position{ }
 
 \begin_layout Plain Layout
 
-//CAR STATUS
+sig ChargingArea extends SafeArea{
 \end_layout
 
 \begin_layout Plain Layout
 
-abstract sig CarStatus{}
+	plugs: set Plug,
 \end_layout
 
 \begin_layout Plain Layout
 
-one sig Reserved extends CarStatus{}
+}
 \end_layout
 
 \begin_layout Plain Layout
 
-one sig Available extends CarStatus{}
+{
 \end_layout
 
 \begin_layout Plain Layout
 
-one sig Busy extends CarStatus{}
+	#plugs>0
 \end_layout
 
 \begin_layout Plain Layout
 
-one sig UnderMaintainance extends CarStatus {}
+	#plugs<=capacity
 \end_layout
 
 \begin_layout Plain Layout
 
-sig Date{}
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Plug{
+\end_layout
+
+\begin_layout Plain Layout
+
+	carConnected: lone Car
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+	all p:Plug | p in ChargingArea.plugs
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/*-------------------------------RIDE----------------------------------*/
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Ride{
+\end_layout
+
+\begin_layout Plain Layout
+
+	rideCar: Car,
+\end_layout
+
+\begin_layout Plain Layout
+
+	rideUser: User,
+\end_layout
+
+\begin_layout Plain Layout
+
+	rideStatus: RideStatus
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+{ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+// If the status of the ride is Run, user and his used car have the same
+ position
+\end_layout
+
+\begin_layout Plain Layout
+
+	rideStatus in Run implies rideCar.carPosition = rideUser.userPosition }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/*------------------------------RIDE STATUS------------------------------*/
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+abstract sig RideStatus{}
+\end_layout
+
+\begin_layout Plain Layout
+
+one sig Run extends RideStatus{}
+\end_layout
+
+\begin_layout Plain Layout
+
+one sig Pause extends RideStatus{}
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -237,68 +652,23 @@ status open
 
 \begin_layout Plain Layout
 
-sig Car{ 	
+// Different users have different cars in use and different reserved cars
+ 
 \end_layout
 
 \begin_layout Plain Layout
 
-	connectedPlug: lone Plug,
 \end_layout
 
 \begin_layout Plain Layout
 
-	status: one CarStatus,
+fact {
 \end_layout
 
 \begin_layout Plain Layout
 
-	carPosition: one Position,
-\end_layout
-
-\begin_layout Plain Layout
-
-	//capacity: Int, 
-\end_layout
-
-\begin_layout Plain Layout
-
-	/**batteryLevel: Int */
-\end_layout
-
-\begin_layout Plain Layout
-
-}{
-\end_layout
-
-\begin_layout Plain Layout
-
-	this in User.reservedCar iff status in Reserved
-\end_layout
-
-\begin_layout Plain Layout
-
-	this in User.inUseCar iff status in Busy
-\end_layout
-
-\begin_layout Plain Layout
-
-	this in SafeArea.carsInSafeArea iff status!=Busy
-\end_layout
-
-\begin_layout Plain Layout
-
-	// car can be plugged only if it's in a charging area 
-\end_layout
-
-\begin_layout Plain Layout
-
-	#connectedPlug = 1 implies (connectedPlug.~plugs).safeAreaPosition = carPosition
-  
-\end_layout
-
-\begin_layout Plain Layout
-
-	#connectedPlug = 1 implies not status in Busy 
+	no disj u1,u2:User | u1.inUseCar = u2.inUseCar and #u1.inUseCar=1 	no disj
+ u1,u2:User | u1.reservedCar=u2.reservedCar and #u1.reservedCar = 1 
 \end_layout
 
 \begin_layout Plain Layout
@@ -312,7 +682,8 @@ sig Car{
 
 \begin_layout Plain Layout
 
-sig Position{ }
+// A user can unlock a car if is near that, and has reserved that or is
+ in a pause ride
 \end_layout
 
 \begin_layout Plain Layout
@@ -321,37 +692,811 @@ sig Position{ }
 
 \begin_layout Plain Layout
 
-//CAR STATUS
+fact{ 	
 \end_layout
 
 \begin_layout Plain Layout
 
-abstract sig CarStatus{}
+// can unlock only if reserved and same position
 \end_layout
 
 \begin_layout Plain Layout
 
-one sig Reserved extends CarStatus{}
+	canUnlock = (reservedCar + (rideStatus.Pause).rideUser <: inUseCar) & userPositio
+n.~carPosition
 \end_layout
 
 \begin_layout Plain Layout
 
-one sig Available extends CarStatus{}
+}
 \end_layout
 
 \begin_layout Plain Layout
 
-one sig Busy extends CarStatus{}
 \end_layout
 
 \begin_layout Plain Layout
 
-one sig UnderMaintainance extends CarStatus {}
+// Different operators have disjoint competence area
 \end_layout
 
 \begin_layout Plain Layout
 
-sig Date{}
+\end_layout
+
+\begin_layout Plain Layout
+
+fact{
+\end_layout
+
+\begin_layout Plain Layout
+
+	all disj o1,o2:Operator | o1.competenceArea != o2.competenceArea
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// If a car is in a safe area, they have the same position
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fact {
+\end_layout
+
+\begin_layout Plain Layout
+
+	all c : Car, safeArea: SafeArea | c in safeArea.carsInSafeArea iff c.carPosition
+ = safeArea.safeAreaPosition
+\end_layout
+
+\begin_layout Plain Layout
+
+ }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// CompetenceAreas.positions induces a partition on Position
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fact {
+\end_layout
+
+\begin_layout Plain Layout
+
+	// Empty intersection
+\end_layout
+
+\begin_layout Plain Layout
+
+	all disj c1,c2: CompetenceArea | c1.positions & c2.positions = none 	// There
+ doesn't exist position that are not in a competence area 	all p:Position
+ | p in CompetenceArea.positions
+\end_layout
+
+\begin_layout Plain Layout
+
+ }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// There doesn't exist different safe areas with same position
+\end_layout
+
+\begin_layout Plain Layout
+
+fact {
+\end_layout
+
+\begin_layout Plain Layout
+
+	no disj s1,s2: SafeArea | s1.safeAreaPosition = s2.safeAreaPosition
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// a plug is only in a one charging area
+\end_layout
+
+\begin_layout Plain Layout
+
+fact plugUnique{
+\end_layout
+
+\begin_layout Plain Layout
+
+	no disj c1,c2: ChargingArea | some p:Plug | p in c1.plugs and p in c2.plugs
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// connectedPlug is the same of carConnected transposed
+\end_layout
+
+\begin_layout Plain Layout
+
+fact {
+\end_layout
+
+\begin_layout Plain Layout
+
+	connectedPlug = ~carConnected
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// Set user and car in Ride like in the relation User.inUseCar
+\end_layout
+
+\begin_layout Plain Layout
+
+fact {
+\end_layout
+
+\begin_layout Plain Layout
+
+	(~rideUser).rideCar = inUseCar
+\end_layout
+
+\begin_layout Plain Layout
+
+	#Ride = #inUseCar
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Dynamic Modeling
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C,numbers=left,morekeywords={one},commentstyle={\color{magenta}\itshape},morecomment={[l] { \\ }},morecomment={[s] [\color{blue}] {/**} {*/}}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+/*------------------DINAMIC MODELING PREDICATES-------------------------*/
+\end_layout
+
+\begin_layout Plain Layout
+
+//From available to reserved
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+pred carFromAvailableToReserved [u: User, c: Car, u': User, c': Car] 
+\end_layout
+
+\begin_layout Plain Layout
+
+{ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	//initial conditions for reserving
+\end_layout
+
+\begin_layout Plain Layout
+
+	not u in SuspendedUser
+\end_layout
+
+\begin_layout Plain Layout
+
+	#u.reservedCar = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+	#u.inUseCar = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+	c.status in Available
+\end_layout
+
+\begin_layout Plain Layout
+
+	//informations non involved in reservation don't change
+\end_layout
+
+\begin_layout Plain Layout
+
+	c'.connectedPlug = c.connectedPlug
+\end_layout
+
+\begin_layout Plain Layout
+
+	c'.carPosition = c.carPosition
+\end_layout
+
+\begin_layout Plain Layout
+
+	u'.userPosition = u.userPosition
+\end_layout
+
+\begin_layout Plain Layout
+
+	u'.inUseCar = u.inUseCar
+\end_layout
+
+\begin_layout Plain Layout
+
+	//final conditions
+\end_layout
+
+\begin_layout Plain Layout
+
+	c'.status in Reserved
+\end_layout
+
+\begin_layout Plain Layout
+
+	u'.reservedCar = c'
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//From reserved to busy
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+pred carFromReservedToInUse [u: User, c: Car, u': User, c': Car] {
+\end_layout
+
+\begin_layout Plain Layout
+
+	//initial conditions
+\end_layout
+
+\begin_layout Plain Layout
+
+	u.reservedCar = c
+\end_layout
+
+\begin_layout Plain Layout
+
+	#u.inUseCar = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+	u.canUnlock = c
+\end_layout
+
+\begin_layout Plain Layout
+
+	//final contition
+\end_layout
+
+\begin_layout Plain Layout
+
+	#c'.connectedPlug = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+	u'.inUseCar = c'
+\end_layout
+
+\begin_layout Plain Layout
+
+	c'.status in Busy
+\end_layout
+
+\begin_layout Plain Layout
+
+	all r: Ride | r.rideUser = u' implies r.rideStatus in Run
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//From available to under maintenance
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+pred carFromAvailableToUnderMaintenance [c: Car, c': Car] {
+\end_layout
+
+\begin_layout Plain Layout
+
+	//initial conditions
+\end_layout
+
+\begin_layout Plain Layout
+
+	c.status in Available
+\end_layout
+
+\begin_layout Plain Layout
+
+	//not involved information don't change
+\end_layout
+
+\begin_layout Plain Layout
+
+	c'.connectedPlug = c.connectedPlug
+\end_layout
+
+\begin_layout Plain Layout
+
+	c'.carPosition = c.carPosition
+\end_layout
+
+\begin_layout Plain Layout
+
+	//final condition
+\end_layout
+
+\begin_layout Plain Layout
+
+	c'.status in UnderMaintenance
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// From busy to available
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+pred carFromBusyToAvailable [c: Car, c': Car, u:User, u':User]{
+\end_layout
+
+\begin_layout Plain Layout
+
+	// initial condition
+\end_layout
+
+\begin_layout Plain Layout
+
+	c.status in Busy
+\end_layout
+
+\begin_layout Plain Layout
+
+	c in u.inUseCar
+\end_layout
+
+\begin_layout Plain Layout
+
+	// not involved information don't change
+\end_layout
+
+\begin_layout Plain Layout
+
+	u'.userPosition = u.userPosition
+\end_layout
+
+\begin_layout Plain Layout
+
+	c'.carPosition = c.carPosition
+\end_layout
+
+\begin_layout Plain Layout
+
+	not u' in SuspendedUser
+\end_layout
+
+\begin_layout Plain Layout
+
+	#u'.inUseCar = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+	// final condition 
+\end_layout
+
+\begin_layout Plain Layout
+
+	c'.status in Available
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//Plugging a car
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+pred pluggingCar [c: Car, c': Car, u': User] {
+\end_layout
+
+\begin_layout Plain Layout
+
+	//the user is required to ensure that car.~reservedCar does not change
+\end_layout
+
+\begin_layout Plain Layout
+
+	//initial condition
+\end_layout
+
+\begin_layout Plain Layout
+
+	#c.connectedPlug = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+	c in ChargingArea.carsInSafeArea
+\end_layout
+
+\begin_layout Plain Layout
+
+	//not involved informations don't change
+\end_layout
+
+\begin_layout Plain Layout
+
+	c'.carPosition = c.carPosition
+\end_layout
+
+\begin_layout Plain Layout
+
+	c'.status = c.status
+\end_layout
+
+\begin_layout Plain Layout
+
+	c in User.reservedCar implies (all u: User | u.reservedCar = c implies (
+\end_layout
+
+\begin_layout Plain Layout
+
+									   u'.userPosition = u.userPosition and
+\end_layout
+
+\begin_layout Plain Layout
+
+									   u'.inUseCar = u.inUseCar and
+\end_layout
+
+\begin_layout Plain Layout
+
+									   u'.reservedCar = c' and
+\end_layout
+
+\begin_layout Plain Layout
+
+									   u' not in SuspendedUser))
+\end_layout
+
+\begin_layout Plain Layout
+
+	//final condition
+\end_layout
+
+\begin_layout Plain Layout
+
+	#c'.connectedPlug = 1
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//Stopping a run (to pause status)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+pred rideFromRunToPause [r: Ride, r': Ride, u: User, u': User, c: Car, c':
+ Car] {
+\end_layout
+
+\begin_layout Plain Layout
+
+	//initial condition
+\end_layout
+
+\begin_layout Plain Layout
+
+	r.rideStatus in Run
+\end_layout
+
+\begin_layout Plain Layout
+
+	r.rideUser = u
+\end_layout
+
+\begin_layout Plain Layout
+
+	r.rideCar = c
+\end_layout
+
+\begin_layout Plain Layout
+
+	//informations that do not change
+\end_layout
+
+\begin_layout Plain Layout
+
+	r'.rideCar = c'
+\end_layout
+
+\begin_layout Plain Layout
+
+	r'.rideUser = u'
+\end_layout
+
+\begin_layout Plain Layout
+
+	c'.connectedPlug = c.connectedPlug
+\end_layout
+
+\begin_layout Plain Layout
+
+	c'.status = c.status
+\end_layout
+
+\begin_layout Plain Layout
+
+	c'.carPosition = c.carPosition
+\end_layout
+
+\begin_layout Plain Layout
+
+	u'.userPosition = u.userPosition
+\end_layout
+
+\begin_layout Plain Layout
+
+	//final condition 
+\end_layout
+
+\begin_layout Plain Layout
+
+	r'.rideStatus in Pause
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// Restart a run
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+pred rideFromPauseToRun [r: Ride, r': Ride, u: User, u': User, c: Car, c':
+ Car] {
+\end_layout
+
+\begin_layout Plain Layout
+
+	//initial condition
+\end_layout
+
+\begin_layout Plain Layout
+
+	r.rideStatus in Pause
+\end_layout
+
+\begin_layout Plain Layout
+
+	r.rideUser = u
+\end_layout
+
+\begin_layout Plain Layout
+
+	r.rideCar = c 
+\end_layout
+
+\begin_layout Plain Layout
+
+	//informations that do not change
+\end_layout
+
+\begin_layout Plain Layout
+
+	r'.rideCar = c'
+\end_layout
+
+\begin_layout Plain Layout
+
+	r'.rideUser = u'
+\end_layout
+
+\begin_layout Plain Layout
+
+	c'.connectedPlug = c.connectedPlug
+\end_layout
+
+\begin_layout Plain Layout
+
+	c'.status = c.status
+\end_layout
+
+\begin_layout Plain Layout
+
+	c'.carPosition = c.carPosition
+\end_layout
+
+\begin_layout Plain Layout
+
+	u'.userPosition = u.userPosition
+\end_layout
+
+\begin_layout Plain Layout
+
+	//final condition
+\end_layout
+
+\begin_layout Plain Layout
+
+	r'.rideStatus in Run
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -365,74 +1510,41 @@ Assertions
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=C,numbers=left,morekeywords={one},commentstyle={\color{magenta}\itshape},morecomment={[l] { \\ }},morecomment={[s] [\color{blue}] {/**} {*/}}"
+lstparams "language=C,numbers=left,morekeywords={one, sig, abstract, lone, set, #, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or},commentstyle={\color{blue}\itshape},morecomment={[l] { \\ }},morecomment={[s] [\color{blue}] {/**} {*/}}"
 inline false
 status open
 
 \begin_layout Plain Layout
 
-sig Car{ 	
+/*------------------------------ASSERTIONS-----------------------------------*/
 \end_layout
 
 \begin_layout Plain Layout
 
-	connectedPlug: lone Plug,
 \end_layout
 
 \begin_layout Plain Layout
 
-	status: one CarStatus,
+// RESERVATION
 \end_layout
 
 \begin_layout Plain Layout
 
-	carPosition: one Position,
 \end_layout
 
 \begin_layout Plain Layout
 
-	//capacity: Int, 
+// Two different user can't reserve the same car
 \end_layout
 
 \begin_layout Plain Layout
 
-	/**batteryLevel: Int */
+assert noTwoUserSameReservedCar{
 \end_layout
 
 \begin_layout Plain Layout
 
-}{
-\end_layout
-
-\begin_layout Plain Layout
-
-	this in User.reservedCar iff status in Reserved
-\end_layout
-
-\begin_layout Plain Layout
-
-	this in User.inUseCar iff status in Busy
-\end_layout
-
-\begin_layout Plain Layout
-
-	this in SafeArea.carsInSafeArea iff status!=Busy
-\end_layout
-
-\begin_layout Plain Layout
-
-	// car can be plugged only if it's in a charging area 
-\end_layout
-
-\begin_layout Plain Layout
-
-	#connectedPlug = 1 implies (connectedPlug.~plugs).safeAreaPosition = carPosition
-  
-\end_layout
-
-\begin_layout Plain Layout
-
-	#connectedPlug = 1 implies not status in Busy 
+	no c: Car, disj u1,u2: User | c in u1.reservedCar and c in u2.reservedCar
 \end_layout
 
 \begin_layout Plain Layout
@@ -446,7 +1558,22 @@ sig Car{
 
 \begin_layout Plain Layout
 
-sig Position{ }
+// A user can't reserve more than one car
+\end_layout
+
+\begin_layout Plain Layout
+
+assert noUserTwoReservedCar {
+\end_layout
+
+\begin_layout Plain Layout
+
+	no u: User | #u.reservedCar > 1
+\end_layout
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
 \begin_layout Plain Layout
@@ -455,37 +1582,280 @@ sig Position{ }
 
 \begin_layout Plain Layout
 
-//CAR STATUS
+// If it exists a user that has reserved a car, that car status is reserved
 \end_layout
 
 \begin_layout Plain Layout
 
-abstract sig CarStatus{}
+assert reservedStatus{
 \end_layout
 
 \begin_layout Plain Layout
 
-one sig Reserved extends CarStatus{}
+	all c: Car | (some u: User | u.reservedCar = c) implies c.status in Reserved
 \end_layout
 
 \begin_layout Plain Layout
 
-one sig Available extends CarStatus{}
+}
 \end_layout
 
 \begin_layout Plain Layout
 
-one sig Busy extends CarStatus{}
 \end_layout
 
 \begin_layout Plain Layout
 
-one sig UnderMaintainance extends CarStatus {}
+// A suspended user can't reserve a car
 \end_layout
 
 \begin_layout Plain Layout
 
-sig Date{}
+assert noReservationBySususpended {
+\end_layout
+
+\begin_layout Plain Layout
+
+	no c: Car | (some u: SuspendedUser | u.reservedCar = c)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// A suspended user can't use a car
+\end_layout
+
+\begin_layout Plain Layout
+
+assert noUsedBySususpended {
+\end_layout
+
+\begin_layout Plain Layout
+
+	no c: Car | (some u: SuspendedUser | u.inUseCar = c)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// UNLOCK
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// Users can unlock cars iff the car is in their paused ride, or if they
+ have reserved it, and they are near it
+\end_layout
+
+\begin_layout Plain Layout
+
+assert canUnlockAssert {
+\end_layout
+
+\begin_layout Plain Layout
+
+	all u : User, c : Car | (u.userPosition = c.carPosition and u.reservedCar
+ = c) implies u.canUnlock = c
+\end_layout
+
+\begin_layout Plain Layout
+
+	all r: Ride, u: User, c: Car | (r.rideStatus = Pause and r.rideUser = u and
+ u.userPosition = c.carPosition and r.rideCar = c) implies u.canUnlock = c 
+       
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// UTILIZATION OF CARS
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// A user can't use two machine
+\end_layout
+
+\begin_layout Plain Layout
+
+assert noUserUseTwoCar {
+\end_layout
+
+\begin_layout Plain Layout
+
+	no u: User | #u.inUseCar > 1
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// A user can't use a car reserved by another user
+\end_layout
+
+\begin_layout Plain Layout
+
+assert noUseOfReservedCar {
+\end_layout
+
+\begin_layout Plain Layout
+
+	no u: User, c: Car | u.reservedCar = c and c.status in Busy
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//A user can't use a car that is under maintenance
+\end_layout
+
+\begin_layout Plain Layout
+
+assert noUseCarInMaintenance {
+\end_layout
+
+\begin_layout Plain Layout
+
+	no u: User, c: Car | u.inUseCar = c and c.status in UnderMaintenance
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// If exist a user that is using a car, that car status is Busy
+\end_layout
+
+\begin_layout Plain Layout
+
+assert busyStatus {
+\end_layout
+
+\begin_layout Plain Layout
+
+	all c: Car | (some u: User | u.inUseCar = c) implies c.status in Busy
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// A car is busy iff exists a ride with that car
+\end_layout
+
+\begin_layout Plain Layout
+
+assert busyCarInARIde {
+\end_layout
+
+\begin_layout Plain Layout
+
+	all c: Car | c.status = Busy iff (some r: Ride | r.rideCar = c)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//MAINTENANCE OF CARS
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// If a car is under maintenance, there exists an operator that is repairing
+ it
+\end_layout
+
+\begin_layout Plain Layout
+
+assert inMaintenanceImpliesExistOperator{
+\end_layout
+
+\begin_layout Plain Layout
+
+	all c: Car | (c.status in UnderMaintenance) implies (some o: Operator |
+ c in o.carInMaintenance)
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -494,7 +1864,465 @@ sig Date{}
 \end_layout
 
 \begin_layout Subsection
-Worlds Generated
+Run Commands
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C,numbers=left,morekeywords={one, sig, abstract, lone, set, #, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or},commentstyle={\color{blue}\itshape},morecomment={[l] { \\ }},morecomment={[s] [\color{blue}] {/**} {*/}}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+run carFromAvailableToReserved
+\end_layout
+
+\begin_layout Plain Layout
+
+run carFromReservedToInUse
+\end_layout
+
+\begin_layout Plain Layout
+
+run pluggingCar
+\end_layout
+
+\begin_layout Plain Layout
+
+run carFromAvailableToUnderMaintenance
+\end_layout
+
+\begin_layout Plain Layout
+
+run carFromBusyToAvailable
+\end_layout
+
+\begin_layout Plain Layout
+
+run rideFromRunToPause
+\end_layout
+
+\begin_layout Plain Layout
+
+run rideFromPauseToRun
+\end_layout
+
+\begin_layout Plain Layout
+
+run show
+\end_layout
+
+\begin_layout Plain Layout
+
+check canUnlockAssert
+\end_layout
+
+\begin_layout Plain Layout
+
+check inMaintenanceImpliesExistOperator
+\end_layout
+
+\begin_layout Plain Layout
+
+check busyCarInARIde
+\end_layout
+
+\begin_layout Plain Layout
+
+check noTwoUserSameReservedCar
+\end_layout
+
+\begin_layout Plain Layout
+
+check noUserTwoReservedCar
+\end_layout
+
+\begin_layout Plain Layout
+
+check reservedStatus
+\end_layout
+
+\begin_layout Plain Layout
+
+check noReservationBySususpended
+\end_layout
+
+\begin_layout Plain Layout
+
+check noUsedBySususpended
+\end_layout
+
+\begin_layout Plain Layout
+
+check noUserUseTwoCar
+\end_layout
+
+\begin_layout Plain Layout
+
+check noUseOfReservedCar
+\end_layout
+
+\begin_layout Plain Layout
+
+check busyStatus
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Generated Worlds
+\end_layout
+
+\begin_layout Subsubsection
+Car changing of status
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/immagini alloy/carFromAvailableToUnderMaintenance.png
+	lyxscale 20
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+From Available to Under Maintenance
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/immagini alloy/carFromBusyToAvailable.png
+	lyxscale 20
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+From Busy to Available
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/immagini alloy/carFromReservedToInUse.png
+	lyxscale 20
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+From Reserved to in Use
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Reservation 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/immagini alloy/reservation.png
+	lyxscale 20
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Reservation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Ride changing of status
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/immagini alloy/rideFromPauseToRun.png
+	lyxscale 20
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ride from Pause to Run
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/immagini alloy/rideFromRunToPause.png
+	lyxscale 20
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ride from Run to Pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+General View
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/immagini alloy/general_view_1.png
+	lyxscale 20
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+General View 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/immagini alloy/general_view_2.png
+	lyxscale 20
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+General View 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
