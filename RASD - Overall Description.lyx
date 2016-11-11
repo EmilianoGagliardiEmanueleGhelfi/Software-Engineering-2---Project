@@ -91,15 +91,13 @@ Payment methods
 \begin_layout Standard
 The software relies on external transactional system in order to administer
  in a good way the payment process and to be able to manage exceptional
- situations too (like users unavailability of money USERs).
+ situations too (like user unavailability of money).
  
 \begin_inset Newline newline
 \end_inset
 
-So the system doesn't care about how the payments are done, but only that
- the USER has provided one of the payment methods defined in the assuption
- section.
- 
+So the system doesn't care about how the payments are done, but only about
+ the result of the payment (success or failed).
 \end_layout
 
 \begin_layout Subsubsection
@@ -107,9 +105,9 @@ Car technology
 \end_layout
 
 \begin_layout Standard
-The software to be will use the tecnologies provided by a system already
+The software to be will use the technologies provided by a system already
  present on cars, in order to carry out the needed actions.
- The used API provides a secure connection between cars and the central
+ The used APIs provide a secure connection between cars and the central
  system via internet, and the following commands that the central system
  can impose on car:
 \end_layout
