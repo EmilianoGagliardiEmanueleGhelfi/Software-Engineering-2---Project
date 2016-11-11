@@ -7,7 +7,6 @@ sig Position{}
 abstract sig Person{}
 
 sig User extends Person{
-	//usedCars: set Car,
 	userPosition: one Position,
 	reservedCar: lone Car,
 	inUseCar: lone Car,
@@ -55,8 +54,6 @@ sig Car{
 	connectedPlug: lone Plug,
 	status: one CarStatus,	
 	carPosition: one Position, 
-	capacity: Int
-	//batteryLevel: Int
 }{
 	this in User.reservedCar iff status in Reserved
 	this in User.inUseCar iff status in Busy
@@ -65,7 +62,6 @@ sig Car{
 	// car can be plugged only if it's in a charging area
 	#connectedPlug = 1 implies (connectedPlug.~plugs).safeAreaPosition = carPosition 
 	#connectedPlug = 1 implies not status in Busy 
-	capacity > 0
 }
 // If a car is in a safe area, they have the same position
 fact {
@@ -134,23 +130,16 @@ fact plugUnique{
 }
 // connectedPlug is the same of caConnected transposed
 fact {
-		connectedPlug = ~carConnected
+	connectedPlug = ~carConnected
 }
 
 /*-------------------------------RIDE------------------------------------*/
 sig Ride{
-	cost: Int,
-	duration: Int,
-	passengers: Int,
 	rideCar: Car,
 	rideUser: User,
 	rideStatus: RideStatus
 }
 {
-	cost > 0
-	passengers > 0
-	duration > 0
-	passengers < rideCar.capacity
 	// If the status of the ride is Run, user and his used car have the same position
 	rideStatus in Run implies rideCar.carPosition = rideUser.userPosition
 }
@@ -197,6 +186,7 @@ pred carFromReservedToInUse [u: User, c: Car, u': User, c': Car] {
 	#c'.connectedPlug = 0
 	u'.inUseCar = c'
 	c'.status in Busy
+	all r: Ride | r.rideUser = u' implies r.rideStatus in Run
 }
 
 //From available to under maintenance
@@ -218,6 +208,8 @@ pred carFromBusyToAvailable [c: Car, c': Car, u:User, u':User]{
 	// not involved information don't change
 	u'.userPosition = u.userPosition
 	c'.carPosition = c.carPosition
+	not u' in SuspendedUser
+	#u'.inUseCar = 0
 	// final condition
 	c'.status in Available
 }
@@ -246,35 +238,98 @@ pred rideFromRunToPause [r: Ride, r': Ride, u: User, u': User, c: Car, c': Car] 
 	r.rideUser = u
 	r.rideCar = c
 	//informations that do not change
-	r'.cost = r.cost
-	r'.duration = r.duration
-	r'.passengers = r.passengers
 	r'.rideCar = c'
 	r'.rideUser = u'
 	c'.connectedPlug = c.connectedPlug
 	c'.status = c.status
 	c'.carPosition = c.carPosition
-	c'.capacity = c.capacity
 	u'.userPosition = u.userPosition
 	//final condition
 	r'.rideStatus in Pause
 }
 
+// Restart a run
+pred rideFromPauseToRun [r: Ride, r': Ride, u: User, u': User, c: Car, c': Car] {
+	//initial condition
+	r.rideStatus in Pause
+	r.rideUser = u
+	r.rideCar = c
+	//informations that do not change
+	r'.rideCar = c'
+	r'.rideUser = u'
+	c'.connectedPlug = c.connectedPlug
+	c'.status = c.status
+	c'.carPosition = c.carPosition
+	u'.userPosition = u.userPosition
+	//final condition
+	r'.rideStatus in Run
+}
 /*------------------------------ASSERTIONS-----------------------------------*/
 
-assert inMaintenanceImpliesExistOperator{
-	all c: Car | (c.status in UnderMaintenance) implies (some o: Operator | c in o.carInMaintenance)
+// RESERVATION
+// Two different user can't reserve the same car
+assert noTwoUserSameReservedCar {
+	no c: Car, disj u1,u2: User | c in u1.reservedCar and c in u2.reservedCar
+}
+// A user can't reserve more than one car
+assert noUserTwoReservedCar {
+	no u: User | #u.reservedCar > 1
 }
 
+// If it exists a user that has reserved a car, that car status is reserved
+assert reservedStatus {
+	all c: Car | (some u: User | u.reservedCar = c) implies c.status in Reserved
+}
+
+// A suspended user can't reserve a car
+assert noReservationBySususpended {
+	no c: Car | (some u: SuspendedUser | u.reservedCar = c)
+}
+
+// A suspended user can't use a car
+assert noUsedBySususpended {
+	no c: Car | (some u: SuspendedUser | u.inUseCar = c)
+}
+
+// UNLOCK
+// Users can unlock cars iff the car is in their paused ride, or if they have reserved it, and they are near it
 assert canUnlockAssert {
 	all u : User, c : Car | (u.userPosition = c.carPosition and u.reservedCar = c) implies u.canUnlock = c
 	all r: Ride, u: User, c: Car | (r.rideStatus = Pause and r.rideUser = u and u.userPosition = c.carPosition and r.rideCar = c) implies u.canUnlock = c        
 }
 
-// a car is busy iff exists a ride with that car
+// UTILIZATION OF CARS
+// A user can't use two machine
+assert noUserUseTwoCar {
+	no u: User | #u.inUseCar > 1
+}
+
+// A user can't use a car reserved by another user
+assert noUseOfReservedCar {
+	no u: User, c: Car | u.reservedCar = c and c.status in Busy
+}
+
+//A user can't use a car that is under maintenance
+assert noUseCarInMaintenance {
+	no u: User, c: Car | u.inUseCar = c and c.status in UnderMaintenance
+}
+
+// If exist a user that is using a car, that car status is Busy
+assert busyStatus {
+	all c: Car | (some u: User | u.inUseCar = c) implies c.status in Busy
+}
+
+// A car is busy iff exists a ride with that car
 assert busyCarInARIde {
 	all c: Car | c.status = Busy iff (some r: Ride | r.rideCar = c)
 }
+
+//MAINTENANCE OF CARS
+// If a car is under maintenance, there exists an operator that is repairing it
+assert inMaintenanceImpliesExistOperator{
+	all c: Car | (c.status in UnderMaintenance) implies (some o: Operator | c in o.carInMaintenance)
+}
+
 /*--------------------------------------------------------------------------*/
 
 run carFromAvailableToReserved
@@ -283,11 +338,19 @@ run pluggingCar
 run carFromAvailableToUnderMaintenance
 run carFromBusyToAvailable
 run rideFromRunToPause
-run show for 4 but 3 Position
+run rideFromPauseToRun
+run show
 check canUnlockAssert
 check inMaintenanceImpliesExistOperator
 check busyCarInARIde
-
+check noTwoUserSameReservedCar
+check noUserTwoReservedCar
+check reservedStatus
+check noReservationBySususpended
+check noUsedBySususpended
+check noUserUseTwoCar
+check noUseOfReservedCar
+check busyStatus
 
 
 
