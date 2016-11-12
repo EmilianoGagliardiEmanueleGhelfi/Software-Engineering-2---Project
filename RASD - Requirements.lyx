@@ -92,7 +92,7 @@ In order to satisfy goals in section 1.4 under domain assumptions in Section
 \end_layout
 
 \begin_layout Itemize
-[G1.1] Only USER should be able to reserve a car.
+[G1.1] Only user should be able to reserve a car.
 \end_layout
 
 \begin_deeper
@@ -110,7 +110,7 @@ In order to satisfy goals in section 1.4 under domain assumptions in Section
 \end_layout
 
 \begin_layout Itemize
-[R4] The system shall be able to associate a car to the USER who has reserved
+[R4] The system shall be able to associate a car to the user who has reserved
  it.
  
 \end_layout
@@ -124,12 +124,12 @@ In order to satisfy goals in section 1.4 under domain assumptions in Section
 \end_layout
 
 \begin_layout Itemize
-[D13] USERs doesn't share their password.
+[D13] Users doesn't share their password.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-[G1.2] USER should be able to unlock reserved car when they are close to
+[G1.2] User should be able to unlock reserved car when they are close to
  it.
 \end_layout
 
@@ -152,7 +152,7 @@ In order to satisfy goals in section 1.4 under domain assumptions in Section
 \end_layout
 
 \begin_layout Itemize
-[D2] The USER and GUEST position provided by GPS are accurate.
+[D2] The user and guest position provided by GPS are accurate.
 \end_layout
 
 \begin_layout Itemize
@@ -161,7 +161,7 @@ In order to satisfy goals in section 1.4 under domain assumptions in Section
 
 \end_deeper
 \begin_layout Itemize
-[G1.3] USER should be aware of how much they are going to pay during the
+[G1.3] User should be aware of how much they are going to pay during the
  ride.
 \end_layout
 
@@ -180,13 +180,13 @@ In order to satisfy goals in section 1.4 under domain assumptions in Section
 
 \end_deeper
 \begin_layout Itemize
-[G1.4] If reserved car pass under maintenance, the USER that made the reservation
+[G1.4] If reserved car pass under maintenance, the user that made the reservation
  must be notified.
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-[R12] The system shall be able to notify the USER when his reserved car
+[R12] The system shall be able to notify the user when his reserved car
  switches to under maintainance.
 \end_layout
 
@@ -230,14 +230,14 @@ In order to satisfy goals in section 1.4 under domain assumptions in Section
 \end_layout
 
 \begin_layout Itemize
-[R4] The system shall be able to associate a car to the USER who has reserved
+[R4] The system shall be able to associate a car to the user who has reserved
  it.
  
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-[G3.1] USER or GUEST should be able to search car near his position.
+[G3.1] User or guest should be able to search car near his position.
 \end_layout
 
 \begin_deeper
@@ -254,7 +254,7 @@ In order to satisfy goals in section 1.4 under domain assumptions in Section
 \end_layout
 
 \begin_layout Itemize
-[D2] USERs and GUESTs positions provided by GPS are accurate.
+[D2] Users and guests positions provided by GPS are accurate.
 \end_layout
 
 \begin_layout Itemize
@@ -263,7 +263,7 @@ In order to satisfy goals in section 1.4 under domain assumptions in Section
 
 \end_deeper
 \begin_layout Itemize
-[G3.2] USER or GUEST should be able to search car near a selected position.
+[G3.2] User or guest should be able to search car near a selected position.
 \end_layout
 
 \begin_deeper
@@ -400,7 +400,7 @@ In order to satisfy goals in section 1.4 under domain assumptions in Section
 \end_layout
 
 \begin_layout Itemize
-[R4] The system shall be able to associate a car to the USER who has reserved
+[R4] The system shall be able to associate a car to the user who has reserved
  it.
  
 \end_layout
@@ -431,8 +431,8 @@ In order to satisfy goals in section 1.4 under domain assumptions in Section
 
 \end_deeper
 \begin_layout Itemize
-[G4.7] If a payment fails for a insufficient money availability of the USER,
- the USER should be suspended from the service until the payment is done.
+[G4.7] If a payment fails for a insufficient money availability of the user,
+ the user should be suspended from the service until the payment is done.
 \end_layout
 
 \begin_deeper
@@ -441,16 +441,16 @@ In order to satisfy goals in section 1.4 under domain assumptions in Section
 \end_layout
 
 \begin_layout Itemize
-[R28] The system shall suspend USER that can't afford the payment.
+[R28] The system shall suspend user that can't afford the payment.
 \end_layout
 
 \begin_layout Itemize
-[R29] The system shall unsuspend a USER when his old undone payment is done.
+[R29] The system shall unsuspend a user when his old undone payment is done.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-[G5] USER have to pay an amount of money based on the ride's duration.
+[G5] User have to pay an amount of money based on the ride's duration.
 \end_layout
 
 \begin_deeper
@@ -473,7 +473,7 @@ In order to satisfy goals in section 1.4 under domain assumptions in Section
 
 \end_deeper
 \begin_layout Itemize
-[G6.1] Only OPERATOR must be able to do car mantainance, knowing their position
+[G6.1] Only operator must be able to do car mantainance, knowing their position
  and status.
 \end_layout
 
@@ -504,34 +504,34 @@ In order to satisfy goals in section 1.4 under domain assumptions in Section
 \end_layout
 
 \begin_layout Itemize
-[D9] If a USER detect a malfuncion comunicate it.
+[D9] If a user detect a malfuncion comunicate it.
 \end_layout
 
 \begin_layout Itemize
-[D10] If an OPERATOR is notified by the system about a maintenance need,
+[D10] If an operator is notified by the system about a maintenance need,
  he takes care of that.
 \end_layout
 
 \begin_layout Itemize
-[D11] OPERATORs do not share their credential.
+[D11] Operators do not share their credential.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-[G6.2] USER must be able to communicate to the system cars damages and malfunctio
+[G6.2] User must be able to communicate to the system cars damages and malfunctio
 ns.
  
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-[R33] The system shall offer a functionality that let USERs to comunicate
+[R33] The system shall offer a functionality that let users to comunicate
  malfunctions and damages.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-[G7.1] Only ADMIN must be able to manage safe areas.
+[G7.1] Only admin must be able to manage safe areas.
 \end_layout
 
 \begin_deeper
@@ -544,12 +544,12 @@ ns.
 \end_layout
 
 \begin_layout Itemize
-[D12] OPERATORs do not share their credential.
+[D12] Operators do not share their credential.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-[G7.2] Only ADMIN must be able to manage OPERATORs.
+[G7.2] Only admin must be able to manage operators.
 \end_layout
 
 \begin_deeper
@@ -562,7 +562,7 @@ ns.
 \end_layout
 
 \begin_layout Itemize
-[D12] OPERATORs do not share their credential.
+[D12] Operators do not share their credential.
 \end_layout
 
 \end_deeper
@@ -576,7 +576,7 @@ After having defined main features of our system we can identify some functional
 \end_layout
 
 \begin_layout Itemize
-GUEST, he can:
+Guest, he can:
 \end_layout
 
 \begin_deeper
@@ -594,7 +594,7 @@ Search for a car near a selected location.
 
 \end_deeper
 \begin_layout Itemize
-USER, he can:
+User, he can:
 \end_layout
 
 \begin_deeper
@@ -644,7 +644,7 @@ Restart a ride.
 
 \end_deeper
 \begin_layout Itemize
-OPERATOR, he can:
+Operator, he can:
 \end_layout
 
 \begin_deeper
@@ -666,7 +666,7 @@ Set a car as available or under maintainance.
 
 \end_deeper
 \begin_layout Itemize
-ADMIN, he can:
+Admin, he can:
 \end_layout
 
 \begin_deeper
@@ -687,11 +687,11 @@ Consult car position.
 \end_layout
 
 \begin_layout Itemize
-Add or delete OPERATORs account.
+Add or delete operators account.
 \end_layout
 
 \begin_layout Itemize
-Manage other ADMINs.
+Manage other admins.
 \end_layout
 
 \end_deeper

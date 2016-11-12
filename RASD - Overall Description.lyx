@@ -140,7 +140,7 @@ The cars availability depends heavily on the presence of a staff that does
  availability of cars, and it will provide to operators information that
  helps the cars maintenance.
  Operators will manage damanges to cars and consequence for the responsible,
- so the system will only help the OPERATORs in maintenance, and guarantee
+ so the system will only help the operators in maintenance, and guarantee
  a way to comunicate malfunction and damanges.
 \end_layout
 
@@ -223,7 +223,7 @@ There are no information about cars' maintenance, so in the document is
 \end_layout
 
 \begin_layout Itemize
-In order tp avoid useless resarvations, users can't delete reservations.
+In order to avoid useless resarvations, users can't delete reservations.
 \end_layout
 
 \begin_layout Itemize
@@ -268,7 +268,7 @@ pause
 
  a ride, he can maintain the reservation on the car and he can pay a reduced
  amount of money.
- It could be a good function for USER.
+ It could be a good function for user.
  Pause status expires after 1h and then car returns in the Available state.
  This is done in order to avoid very long pauses.
 \end_layout

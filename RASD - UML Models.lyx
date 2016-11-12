@@ -452,7 +452,7 @@ Login
 \begin_inset Text
 
 \begin_layout Plain Layout
-USER
+User
 \end_layout
 
 \end_inset
@@ -709,7 +709,7 @@ Car Reservation
 \begin_inset Text
 
 \begin_layout Plain Layout
-USER
+User
 \end_layout
 
 \end_inset
@@ -974,7 +974,7 @@ Search for Cars
 \begin_inset Text
 
 \begin_layout Plain Layout
-USER or GUEST
+User or guest
 \end_layout
 
 \end_inset
@@ -1222,7 +1222,7 @@ Unlock Car
 \begin_inset Text
 
 \begin_layout Plain Layout
-USER 
+User 
 \end_layout
 
 \end_inset
@@ -1474,7 +1474,7 @@ Communicate Damages And Malfunctions
 \begin_inset Text
 
 \begin_layout Plain Layout
-USER, OPERATOR
+User, operator
 \end_layout
 
 \end_inset
@@ -1728,7 +1728,7 @@ Communicate Damages And Malfunctions
 \begin_inset Text
 
 \begin_layout Plain Layout
-USER, External Payment service
+User, External Payment service
 \end_layout
 
 \end_inset
@@ -1979,7 +1979,7 @@ Malfunctions detection and Notifications
 \begin_inset Text
 
 \begin_layout Plain Layout
-USER, OPERATOR, CAR
+User, Operator, Car
 \end_layout
 
 \end_inset
