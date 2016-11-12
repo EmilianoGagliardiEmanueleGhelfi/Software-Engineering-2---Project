@@ -1244,7 +1244,7 @@ pred carFromBusyToAvailable [c: Car, c1: Car, u:User, u1:User]{
 
 \begin_layout Plain Layout
 
-	not u' in SuspendedUser
+	not u1 in SuspendedUser
 \end_layout
 
 \begin_layout Plain Layout
@@ -2343,7 +2343,7 @@ Model checking poof
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center

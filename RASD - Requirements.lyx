@@ -771,7 +771,7 @@ Registration
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -811,7 +811,7 @@ Login
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -847,7 +847,7 @@ Map UI
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -883,14 +883,14 @@ User Profile
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename Mockup/RideUI.png
 	lyxscale 20
-	width 50page%
+	width 20page%
 
 \end_inset
 
