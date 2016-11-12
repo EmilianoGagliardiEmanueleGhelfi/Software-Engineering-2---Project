@@ -2010,6 +2010,16 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+Car1, in the competence area of Operator, is available.
+ After an hypotetic failure, it goes under maintenance (it becomes Car0),
+ and Operator takes car of it.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2019,12 +2029,6 @@ From Available to Under Maintenance
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
-Car1, in the competence area of Operator, is available.
- After an hypotetic failure, it goes under maintenance (it becomes Car0),
- and Operator takes car of it.
 \end_layout
 
 \end_inset
@@ -2052,6 +2056,16 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+User1 is using Car1, so Car1 status is Busy.
+ After the ride, Car1 becomes Car0, and the satus becomes Available.
+ User1 becomes User0 with no car in use.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2061,12 +2075,6 @@ From Busy to Available
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
-User1 is using Car1, so Car1 status is Busy.
- After the ride, Car1 becomes Car0, and the satus becomes Available.
- User1 becomes User0 with no car in use.
 \end_layout
 
 \end_inset
@@ -2094,6 +2102,18 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+User1 has as reserved car Car1 and they are in the same position, so User1
+ can unlock Car1.
+ After, User1 becomes User0, Car1 become Car0 with status Busy, and User0
+ is using Car0.
+ The corresponding Ride has been generated.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2103,14 +2123,6 @@ From Reserved to in Use
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
-User1 has as reserved car Car1 and they are in the same position, so User1
- can unlock Car1.
- After, User1 becomes User0, Car1 become Car0 with status Busy, and User0
- is using Car0.
- The corresponding Ride has been generated.
 \end_layout
 
 \end_inset
@@ -2142,6 +2154,17 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+Car1 is available, and User0 doesn't have any reserved car.
+ After, User1 becomes User0, Car1 becomes Car0 with status Reserved, and
+ User0 has Car0 as reserved car.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2151,13 +2174,6 @@ Reservation
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
-Car1 is available, and User0 doesn't have any reserved car.
- After, User1 becomes User0, Car1 becomes Car0 with status Reserved, and
- User0 has Car0 as reserved car.
- 
 \end_layout
 
 \end_inset
@@ -2189,6 +2205,16 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+Ride1 is paused and becomes Ride0 that is Run.
+ A thing to notice is that User1 has as car in use Car1, and they are in
+ the same position, so User1 can unlock the car.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2198,12 +2224,6 @@ Ride from Pause to Run
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
-Ride1 is paused and becomes Ride0 that is Run.
- A thing to notice is that User1 has as car in use Car1, and they are in
- the same position, so User1 can unlock the car.
 \end_layout
 
 \end_inset
@@ -2231,6 +2251,15 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+Ride1 is in Run status and becomes Ride0, that is paused.
+ User1 becomes User0, and now it can unlock the car.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2240,11 +2269,6 @@ Ride from Run to Pause
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
-Ride1 is in Run status and becomes Ride0, that is paused.
- User1 becomes User0, and now it can unlock the car.
 \end_layout
 
 \end_inset
@@ -2276,6 +2300,17 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+Operator is working on Car0, that is under mantainance and in his competence
+ area.
+ User has as reserved car Car1, they are in the same position, so it can
+ unlock the car.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2285,13 +2320,6 @@ General View 1
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
-Operator is working on Car0, that is under mantainance and in his competence
- area.
- User has as reserved car Car1, they are in the same position, so it can
- unlock the car.
 \end_layout
 
 \end_inset
@@ -2319,6 +2347,14 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+Car1 is in CargingArea0, and it is plugged in one of the ChargingArea0 plugs.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2328,10 +2364,6 @@ General View 2
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
-Car1 is in CargingArea0, and it is plugged in one of the ChargingArea0 plugs.
 \end_layout
 
 \end_inset
