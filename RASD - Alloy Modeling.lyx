@@ -99,14 +99,13 @@ Model
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=C,numbers=left,morekeywords={one, sig, abstract, lone, set, #, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or},commentstyle={\color{blue}\itshape},morecomment={[l] { \\ }},morecomment={[s] [\color{blue}] {/**} {*/}}"
+lstparams "language=C,numbers=left,breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or},commentstyle={\color{cyan}}"
 inline false
 status open
 
 \begin_layout Plain Layout
 
-/*------------------------------UTIL---------------------------------*/
- 
+/*-----UTIL------------*/ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -116,8 +115,12 @@ sig Position{}
 
 \begin_layout Plain Layout
 
-/*----------------------------PERSON--------------------------------*/ abstract
- sig Person{}
+/*------PERSON---------*/
+\end_layout
+
+\begin_layout Plain Layout
+
+abstract sig Person{}
 \end_layout
 
 \begin_layout Plain Layout
@@ -262,8 +265,20 @@ sig Operator extends Person{
 
 \begin_layout Plain Layout
 
-/*------------------------------CAR---------------------------------*/ sig
- Car{
+/*------CAR------*/
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Car{
 \end_layout
 
 \begin_layout Plain Layout
@@ -308,8 +323,16 @@ sig Operator extends Person{
 
 \begin_layout Plain Layout
 
-	// car can be plugged only if it's in a charging area 	#connectedPlug =
- 1 implies (connectedPlug.~plugs).safeAreaPosition =
+	// car can be plugged only if it's in a charging area
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	#connectedPlug = 1 implies (connectedPlug.~plugs).safeAreaPosition =
 \end_layout
 
 \begin_layout Plain Layout
@@ -333,8 +356,7 @@ sig Operator extends Person{
 
 \begin_layout Plain Layout
 
-/*---------------------------CAR-STATUS------------------------------*/
- 
+/*------CAR STATUS---------*/
 \end_layout
 
 \begin_layout Plain Layout
@@ -384,7 +406,7 @@ one sig UnderMaintenance extends CarStatus {}
 
 \begin_layout Plain Layout
 
-/*------------------------------- AREA -------------------------------*/
+/*------AREA---------*/
 \end_layout
 
 \begin_layout Plain Layout
@@ -554,8 +576,7 @@ sig Plug{
 
 \begin_layout Plain Layout
 
-/*-------------------------------RIDE----------------------------------*/
- 
+/*------RIDE---------*/ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -594,8 +615,12 @@ sig Ride{
 
 \begin_layout Plain Layout
 
-// If the status of the ride is Run, user and his used car have the same
- position
+/* If the status of the ride is Run, user and his used car
+\end_layout
+
+\begin_layout Plain Layout
+
+have the same position */
 \end_layout
 
 \begin_layout Plain Layout
@@ -609,7 +634,7 @@ sig Ride{
 
 \begin_layout Plain Layout
 
-/*------------------------------RIDE STATUS------------------------------*/
+/*------RIDE STATUS---------*/
 \end_layout
 
 \begin_layout Plain Layout
@@ -646,14 +671,23 @@ Facts
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=C,numbers=left,morekeywords={one},commentstyle={\color{magenta}\itshape},morecomment={[l] { \\ }},morecomment={[s] [\color{blue}] {/**} {*/}}"
+lstparams "language=C,numbers=left,breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or},commentstyle={\color{cyan}}"
 inline false
 status open
 
 \begin_layout Plain Layout
 
-// Different users have different cars in use and different reserved cars
- 
+/* Different users have different cars in use and different
+\end_layout
+
+\begin_layout Plain Layout
+
+reserved cars 
+\end_layout
+
+\begin_layout Plain Layout
+
+*/
 \end_layout
 
 \begin_layout Plain Layout
@@ -668,7 +702,16 @@ fact {
 \begin_layout Plain Layout
 
 	no disj u1,u2:User | u1.inUseCar = u2.inUseCar and #u1.inUseCar=1 	no disj
- u1,u2:User | u1.reservedCar=u2.reservedCar and #u1.reservedCar = 1 
+\end_layout
+
+\begin_layout Plain Layout
+
+			u1,u2:User |
+\end_layout
+
+\begin_layout Plain Layout
+
+			u1.reservedCar=u2.reservedCar and #u1.reservedCar = 1 
 \end_layout
 
 \begin_layout Plain Layout
@@ -682,8 +725,17 @@ fact {
 
 \begin_layout Plain Layout
 
-// A user can unlock a car if is near that, and has reserved that or is
- in a pause ride
+/* A user can unlock a car if is near that,
+\end_layout
+
+\begin_layout Plain Layout
+
+and has reserved that or is in a pause ride
+\end_layout
+
+\begin_layout Plain Layout
+
+*/
 \end_layout
 
 \begin_layout Plain Layout
@@ -702,8 +754,12 @@ fact{
 
 \begin_layout Plain Layout
 
-	canUnlock = (reservedCar + (rideStatus.Pause).rideUser <: inUseCar) & userPositio
-n.~carPosition
+	canUnlock = (reservedCar + (rideStatus.Pause).rideUser <: inUseCar)
+\end_layout
+
+\begin_layout Plain Layout
+
+		& userPosition.~carPosition
 \end_layout
 
 \begin_layout Plain Layout
@@ -759,8 +815,12 @@ fact {
 
 \begin_layout Plain Layout
 
-	all c : Car, safeArea: SafeArea | c in safeArea.carsInSafeArea iff c.carPosition
- = safeArea.safeAreaPosition
+	all c : Car, safeArea: SafeArea | c in safeArea.carsInSafeArea
+\end_layout
+
+\begin_layout Plain Layout
+
+			iff c.carPosition = safeArea.safeAreaPosition
 \end_layout
 
 \begin_layout Plain Layout
@@ -851,7 +911,7 @@ fact plugUnique{
 
 \begin_layout Plain Layout
 
-	no disj c1,c2: ChargingArea | some p:Plug | p in c1.plugs and p in c2.plugs
+	no disj c1,c2: ChargingArea | (some p:Plug |p in c1.plugs and p in c2.plugs)
 \end_layout
 
 \begin_layout Plain Layout
@@ -927,13 +987,17 @@ Dynamic Modeling
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=C,numbers=left,morekeywords={one},commentstyle={\color{magenta}\itshape},morecomment={[l] { \\ }},morecomment={[s] [\color{blue}] {/**} {*/}}"
+lstparams "language=Java,numbers=left,breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or},commentstyle={\color{cyan}},extendedchars=true,deletekeywords={'}"
 inline false
 status open
 
 \begin_layout Plain Layout
 
-/*------------------DINAMIC MODELING PREDICATES-------------------------*/
+/*------DYNAMIC MODELING PREDICATES---------*/
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -943,16 +1007,7 @@ status open
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
-pred carFromAvailableToReserved [u: User, c: Car, u': User, c': Car] 
-\end_layout
-
-\begin_layout Plain Layout
-
-{ 
+pred carFromAvailableToReserved [u: User, c: Car, u': User, c': Car] {
 \end_layout
 
 \begin_layout Plain Layout
@@ -1036,10 +1091,6 @@ pred carFromAvailableToReserved [u: User, c: Car, u': User, c': Car]
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 pred carFromReservedToInUse [u: User, c: Car, u': User, c': Car] {
 \end_layout
 
@@ -1104,10 +1155,6 @@ pred carFromReservedToInUse [u: User, c: Car, u': User, c': Car] {
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 pred carFromAvailableToUnderMaintenance [c: Car, c': Car] {
 \end_layout
 
@@ -1123,7 +1170,7 @@ pred carFromAvailableToUnderMaintenance [c: Car, c': Car] {
 
 \begin_layout Plain Layout
 
-	//not involved information don't change
+	//not involved informations don't change
 \end_layout
 
 \begin_layout Plain Layout
@@ -1158,10 +1205,6 @@ pred carFromAvailableToUnderMaintenance [c: Car, c': Car] {
 \begin_layout Plain Layout
 
 // From busy to available
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -1211,7 +1254,7 @@ pred carFromBusyToAvailable [c: Car, c': Car, u:User, u':User]{
 
 \begin_layout Plain Layout
 
-	// final condition 
+	// final condition
 \end_layout
 
 \begin_layout Plain Layout
@@ -1235,16 +1278,12 @@ pred carFromBusyToAvailable [c: Car, c': Car, u:User, u':User]{
 
 \begin_layout Plain Layout
 
+pred pluggingCar [c: Car, c': Car, u': User] { 
 \end_layout
 
 \begin_layout Plain Layout
 
-pred pluggingCar [c: Car, c': Car, u': User] {
-\end_layout
-
-\begin_layout Plain Layout
-
-	//the user is required to ensure that car.~reservedCar does not change
+//the user is required to ensure that car.~reservedCar does not change
 \end_layout
 
 \begin_layout Plain Layout
@@ -1279,27 +1318,9 @@ pred pluggingCar [c: Car, c': Car, u': User] {
 
 \begin_layout Plain Layout
 
-	c in User.reservedCar implies (all u: User | u.reservedCar = c implies (
-\end_layout
-
-\begin_layout Plain Layout
-
-									   u'.userPosition = u.userPosition and
-\end_layout
-
-\begin_layout Plain Layout
-
-									   u'.inUseCar = u.inUseCar and
-\end_layout
-
-\begin_layout Plain Layout
-
-									   u'.reservedCar = c' and
-\end_layout
-
-\begin_layout Plain Layout
-
-									   u' not in SuspendedUser))
+	c in User.reservedCar implies (all u: User | u.reservedCar = c implies (u'.userPos
+ition = u.userPosition and u'.inUseCar = u.inUseCar and u'.reservedCar = c'
+ and u' not in SuspendedUser))
 \end_layout
 
 \begin_layout Plain Layout
@@ -1324,10 +1345,6 @@ pred pluggingCar [c: Car, c': Car, u': User] {
 \begin_layout Plain Layout
 
 //Stopping a run (to pause status)
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -1393,7 +1410,7 @@ pred rideFromRunToPause [r: Ride, r': Ride, u: User, u': User, c: Car, c':
 
 \begin_layout Plain Layout
 
-	//final condition 
+	//final condition
 \end_layout
 
 \begin_layout Plain Layout
@@ -1413,10 +1430,6 @@ pred rideFromRunToPause [r: Ride, r': Ride, u: User, u': User, c: Car, c':
 \begin_layout Plain Layout
 
 // Restart a run
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -1442,7 +1455,7 @@ pred rideFromPauseToRun [r: Ride, r': Ride, u: User, u': User, c: Car, c':
 
 \begin_layout Plain Layout
 
-	r.rideCar = c 
+	r.rideCar = c
 \end_layout
 
 \begin_layout Plain Layout
@@ -1495,10 +1508,6 @@ pred rideFromPauseToRun [r: Ride, r': Ride, u: User, u': User, c: Car, c':
 }
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -1510,13 +1519,13 @@ Assertions
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=C,numbers=left,morekeywords={one, sig, abstract, lone, set, #, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or},commentstyle={\color{blue}\itshape},morecomment={[l] { \\ }},morecomment={[s] [\color{blue}] {/**} {*/}}"
+lstparams "language=C,numbers=left,breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or},commentstyle={\color{cyan}}"
 inline false
 status open
 
 \begin_layout Plain Layout
 
-/*------------------------------ASSERTIONS-----------------------------------*/
+/*------ ASSERTION ---------*/
 \end_layout
 
 \begin_layout Plain Layout
@@ -1869,7 +1878,7 @@ Run Commands
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=C,numbers=left,morekeywords={one, sig, abstract, lone, set, #, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or},commentstyle={\color{blue}\itshape},morecomment={[l] { \\ }},morecomment={[s] [\color{blue}] {/**} {*/}}"
+lstparams "language=C,numbers=left,breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or},commentstyle={\color{cyan}}"
 inline false
 status open
 
