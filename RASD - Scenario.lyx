@@ -73,7 +73,7 @@
 \begin_body
 
 \begin_layout Section
-Scenario Identifyng
+Scenario Identifying
 \end_layout
 
 \begin_layout Subsection
@@ -105,15 +105,7 @@ He notices, thanks to the map on the app, that there is a parking area next
 \end_layout
 
 \begin_layout Subsection
-Scenario 2 - 
-\begin_inset Quotes eld
-\end_inset
-
-Two Passengers discount
-\begin_inset Quotes erd
-\end_inset
-
-
+Scenario 2 - Two Passengers discount
 \end_layout
 
 \begin_layout Standard
@@ -182,7 +174,7 @@ After that he's able to reserve the car for the special occasion.
 \end_layout
 
 \begin_layout Subsection
-Scenario 4 - OPERATOR maintenance
+Scenario 4 - Operator maintenance
 \end_layout
 
 \begin_layout Standard
@@ -194,11 +186,11 @@ Jonathan is doing his periodical check of the car in his competence area.
 \end_layout
 
 \begin_layout Subsection
-Scenario 5 - OPERATOR notification
+Scenario 5 - Operator notification
 \end_layout
 
 \begin_layout Standard
-Amy is driving an electrical car reserved with 
+Amy is driving an electric car reserved with 
 \begin_inset Formula $\mathit{PowerEnJoy}$
 \end_inset
 
@@ -222,11 +214,11 @@ Now Jonathan can go to the car and make it available again for the next
 \end_layout
 
 \begin_layout Subsection
-Scenario 6 - USER comunicates a malfunction to the system
+Scenario 6 - User comunicates a malfunction to the system
 \end_layout
 
 \begin_layout Standard
-Amy is driving an electrical car reserved with 
+Amy is driving an electric car reserved with 
 \begin_inset Formula $\mathit{PowerEnJoy}$
 \end_inset
 
@@ -267,6 +259,31 @@ Available
 \end_inset
 
  so the car in reservable by users.
+\end_layout
+
+\begin_layout Subsection
+Scenario 7 - Pausing a ride
+\end_layout
+
+\begin_layout Standard
+Paul is going to the supermarket with his fiancée with an elecrtic car.
+ They know that it will not take to much time.
+\begin_inset Newline newline
+\end_inset
+
+As soon as they arrived, Paul, using a 
+\begin_inset Formula $\mathit{PowerEnJoy}$
+\end_inset
+
+ mobile application functionality, pauses the ride.
+ In this way, they manage to do shopping without losing their car reservation.
+ During the shopping they are in a hurry, because they are going to pay
+ also the pausing time, and the pause expires after a period.
+\begin_inset Newline newline
+\end_inset
+
+After the shopping, they return to the car, and Paul unlock that restarting
+ the ride.
 \end_layout
 
 \end_body

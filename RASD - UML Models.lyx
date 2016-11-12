@@ -90,14 +90,14 @@ With the Use Case Diagram are highlighted the main functions of our system
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename UML/png/Model__UseCaseDiagram1_1.png
 	lyxscale 40
-	width 50page%
+	width 40page%
 	clip
 
 \end_inset

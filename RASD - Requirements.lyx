@@ -87,9 +87,8 @@ Requirements
 \end_layout
 
 \begin_layout Standard
-In order to satisfy goals in section [Section Goals] under domain assumptions
- in Section [Section domain Assumption] we've derived requirements for our
- system.
+In order to satisfy goals in section 1.4 under domain assumptions in Section
+ 2.2 we've derived requirements for our system.
 \end_layout
 
 \begin_layout Itemize
