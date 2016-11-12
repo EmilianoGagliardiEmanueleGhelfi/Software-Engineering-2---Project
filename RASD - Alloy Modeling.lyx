@@ -241,17 +241,33 @@ sig Operator extends Person{
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
 	all c : Car | c in carInMaintenance iff c.status = UnderMaintenance 
 \end_layout
 
 \begin_layout Plain Layout
 
-	all c : Car | c in carInMaintenance implies c.carPosition in
+	all c : Car | c in carInMaintenance 
 \end_layout
 
 \begin_layout Plain Layout
 
-										competenceArea.positions
+		implies c.carPosition in competenceArea.positions
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -332,12 +348,7 @@ sig Car{
 
 \begin_layout Plain Layout
 
-	#connectedPlug = 1 implies (connectedPlug.~plugs).safeAreaPosition =
-\end_layout
-
-\begin_layout Plain Layout
-
-								carPosition
+	#connectedPlug = 1 implies (connectedPlug.~plugs).safeAreaPosition = carPosition
 \end_layout
 
 \begin_layout Plain Layout
@@ -702,16 +713,7 @@ fact {
 \begin_layout Plain Layout
 
 	no disj u1,u2:User | u1.inUseCar = u2.inUseCar and #u1.inUseCar=1 	no disj
-\end_layout
-
-\begin_layout Plain Layout
-
-			u1,u2:User |
-\end_layout
-
-\begin_layout Plain Layout
-
-			u1.reservedCar=u2.reservedCar and #u1.reservedCar = 1 
+ u1,u2:User | u1.reservedCar=u2.reservedCar and #u1.reservedCar = 1 
 \end_layout
 
 \begin_layout Plain Layout
@@ -754,12 +756,8 @@ fact{
 
 \begin_layout Plain Layout
 
-	canUnlock = (reservedCar + (rideStatus.Pause).rideUser <: inUseCar)
-\end_layout
-
-\begin_layout Plain Layout
-
-		& userPosition.~carPosition
+	canUnlock = (reservedCar + (rideStatus.Pause).rideUser <: inUseCar) & userPositio
+n.~carPosition
 \end_layout
 
 \begin_layout Plain Layout
@@ -815,12 +813,8 @@ fact {
 
 \begin_layout Plain Layout
 
-	all c : Car, safeArea: SafeArea | c in safeArea.carsInSafeArea
-\end_layout
-
-\begin_layout Plain Layout
-
-			iff c.carPosition = safeArea.safeAreaPosition
+	all c : Car, safeArea: SafeArea | c in safeArea.carsInSafeArea iff c.carPosition
+ = safeArea.safeAreaPosition
 \end_layout
 
 \begin_layout Plain Layout
