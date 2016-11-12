@@ -1007,7 +1007,7 @@ status open
 
 \begin_layout Plain Layout
 
-pred carFromAvailableToReserved [u: User, c: Car, u': User, c': Car] {
+pred carFromAvailableToReserved [u: User, c: Car, u1: User, c1: Car] {
 \end_layout
 
 \begin_layout Plain Layout
@@ -1042,22 +1042,22 @@ pred carFromAvailableToReserved [u: User, c: Car, u': User, c': Car] {
 
 \begin_layout Plain Layout
 
-	c'.connectedPlug = c.connectedPlug
+	c1.connectedPlug = c.connectedPlug
 \end_layout
 
 \begin_layout Plain Layout
 
-	c'.carPosition = c.carPosition
+	c1.carPosition = c.carPosition
 \end_layout
 
 \begin_layout Plain Layout
 
-	u'.userPosition = u.userPosition
+	u1.userPosition = u.userPosition
 \end_layout
 
 \begin_layout Plain Layout
 
-	u'.inUseCar = u.inUseCar
+	u1.inUseCar = u.inUseCar
 \end_layout
 
 \begin_layout Plain Layout
@@ -1067,12 +1067,12 @@ pred carFromAvailableToReserved [u: User, c: Car, u': User, c': Car] {
 
 \begin_layout Plain Layout
 
-	c'.status in Reserved
+	c1.status in Reserved
 \end_layout
 
 \begin_layout Plain Layout
 
-	u'.reservedCar = c'
+	u1.reservedCar = c1
 \end_layout
 
 \begin_layout Plain Layout
@@ -1091,7 +1091,7 @@ pred carFromAvailableToReserved [u: User, c: Car, u': User, c': Car] {
 
 \begin_layout Plain Layout
 
-pred carFromReservedToInUse [u: User, c: Car, u': User, c': Car] {
+pred carFromReservedToInUse [u: User, c: Car, u1: User, c1: Car] {
 \end_layout
 
 \begin_layout Plain Layout
@@ -1121,22 +1121,22 @@ pred carFromReservedToInUse [u: User, c: Car, u': User, c': Car] {
 
 \begin_layout Plain Layout
 
-	#c'.connectedPlug = 0
+	#c1.connectedPlug = 0
 \end_layout
 
 \begin_layout Plain Layout
 
-	u'.inUseCar = c'
+	u1.inUseCar = c1
 \end_layout
 
 \begin_layout Plain Layout
 
-	c'.status in Busy
+	c1.status in Busy
 \end_layout
 
 \begin_layout Plain Layout
 
-	all r: Ride | r.rideUser = u' implies r.rideStatus in Run
+	all r: Ride | r.rideUser = u1 implies r.rideStatus in Run
 \end_layout
 
 \begin_layout Plain Layout
@@ -1155,7 +1155,7 @@ pred carFromReservedToInUse [u: User, c: Car, u': User, c': Car] {
 
 \begin_layout Plain Layout
 
-pred carFromAvailableToUnderMaintenance [c: Car, c': Car] {
+pred carFromAvailableToUnderMaintenance [c: Car, c1: Car] {
 \end_layout
 
 \begin_layout Plain Layout
@@ -1175,12 +1175,12 @@ pred carFromAvailableToUnderMaintenance [c: Car, c': Car] {
 
 \begin_layout Plain Layout
 
-	c'.connectedPlug = c.connectedPlug
+	c1.connectedPlug = c.connectedPlug
 \end_layout
 
 \begin_layout Plain Layout
 
-	c'.carPosition = c.carPosition
+	c1.carPosition = c.carPosition
 \end_layout
 
 \begin_layout Plain Layout
@@ -1190,7 +1190,7 @@ pred carFromAvailableToUnderMaintenance [c: Car, c': Car] {
 
 \begin_layout Plain Layout
 
-	c'.status in UnderMaintenance
+	c1.status in UnderMaintenance
 \end_layout
 
 \begin_layout Plain Layout
@@ -1209,7 +1209,7 @@ pred carFromAvailableToUnderMaintenance [c: Car, c': Car] {
 
 \begin_layout Plain Layout
 
-pred carFromBusyToAvailable [c: Car, c': Car, u:User, u':User]{
+pred carFromBusyToAvailable [c: Car, c1: Car, u:User, u1:User]{
 \end_layout
 
 \begin_layout Plain Layout
@@ -1234,12 +1234,12 @@ pred carFromBusyToAvailable [c: Car, c': Car, u:User, u':User]{
 
 \begin_layout Plain Layout
 
-	u'.userPosition = u.userPosition
+	u1.userPosition = u.userPosition
 \end_layout
 
 \begin_layout Plain Layout
 
-	c'.carPosition = c.carPosition
+	c1.carPosition = c.carPosition
 \end_layout
 
 \begin_layout Plain Layout
@@ -1249,7 +1249,7 @@ pred carFromBusyToAvailable [c: Car, c': Car, u:User, u':User]{
 
 \begin_layout Plain Layout
 
-	#u'.inUseCar = 0
+	#u1.inUseCar = 0
 \end_layout
 
 \begin_layout Plain Layout
@@ -1259,7 +1259,7 @@ pred carFromBusyToAvailable [c: Car, c': Car, u:User, u':User]{
 
 \begin_layout Plain Layout
 
-	c'.status in Available
+	c1.status in Available
 \end_layout
 
 \begin_layout Plain Layout
@@ -1278,7 +1278,7 @@ pred carFromBusyToAvailable [c: Car, c': Car, u:User, u':User]{
 
 \begin_layout Plain Layout
 
-pred pluggingCar [c: Car, c': Car, u': User] { 
+pred pluggingCar [c: Car, c1: Car, u1: User] { 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1308,19 +1308,19 @@ pred pluggingCar [c: Car, c': Car, u': User] {
 
 \begin_layout Plain Layout
 
-	c'.carPosition = c.carPosition
+	c1.carPosition = c.carPosition
 \end_layout
 
 \begin_layout Plain Layout
 
-	c'.status = c.status
+	c1.status = c.status
 \end_layout
 
 \begin_layout Plain Layout
 
-	c in User.reservedCar implies (all u: User | u.reservedCar = c implies (u'.userPos
-ition = u.userPosition and u'.inUseCar = u.inUseCar and u'.reservedCar = c'
- and u' not in SuspendedUser))
+	c in User.reservedCar implies (all u: User | u.reservedCar = c implies (u1.userPos
+ition = u.userPosition and u1.inUseCar = u.inUseCar and u1.reservedCar = c1
+ and u1 not in SuspendedUser))
 \end_layout
 
 \begin_layout Plain Layout
@@ -1330,7 +1330,7 @@ ition = u.userPosition and u'.inUseCar = u.inUseCar and u'.reservedCar = c'
 
 \begin_layout Plain Layout
 
-	#c'.connectedPlug = 1
+	#c1.connectedPlug = 1
 \end_layout
 
 \begin_layout Plain Layout
@@ -1349,7 +1349,7 @@ ition = u.userPosition and u'.inUseCar = u.inUseCar and u'.reservedCar = c'
 
 \begin_layout Plain Layout
 
-pred rideFromRunToPause [r: Ride, r': Ride, u: User, u': User, c: Car, c':
+pred rideFromRunToPause [r: Ride, r1: Ride, u: User, u1: User, c: Car, c1:
  Car] {
 \end_layout
 
@@ -1380,32 +1380,32 @@ pred rideFromRunToPause [r: Ride, r': Ride, u: User, u': User, c: Car, c':
 
 \begin_layout Plain Layout
 
-	r'.rideCar = c'
+	r1.rideCar = c1
 \end_layout
 
 \begin_layout Plain Layout
 
-	r'.rideUser = u'
+	r1.rideUser = u1
 \end_layout
 
 \begin_layout Plain Layout
 
-	c'.connectedPlug = c.connectedPlug
+	c1.connectedPlug = c.connectedPlug
 \end_layout
 
 \begin_layout Plain Layout
 
-	c'.status = c.status
+	c1.status = c.status
 \end_layout
 
 \begin_layout Plain Layout
 
-	c'.carPosition = c.carPosition
+	c1.carPosition = c.carPosition
 \end_layout
 
 \begin_layout Plain Layout
 
-	u'.userPosition = u.userPosition
+	u1.userPosition = u.userPosition
 \end_layout
 
 \begin_layout Plain Layout
@@ -1415,7 +1415,7 @@ pred rideFromRunToPause [r: Ride, r': Ride, u: User, u': User, c: Car, c':
 
 \begin_layout Plain Layout
 
-	r'.rideStatus in Pause
+	r1.rideStatus in Pause
 \end_layout
 
 \begin_layout Plain Layout
@@ -1434,7 +1434,7 @@ pred rideFromRunToPause [r: Ride, r': Ride, u: User, u': User, c: Car, c':
 
 \begin_layout Plain Layout
 
-pred rideFromPauseToRun [r: Ride, r': Ride, u: User, u': User, c: Car, c':
+pred rideFromPauseToRun [r: Ride, r1: Ride, u: User, u1: User, c: Car, c1:
  Car] {
 \end_layout
 
@@ -1465,32 +1465,32 @@ pred rideFromPauseToRun [r: Ride, r': Ride, u: User, u': User, c: Car, c':
 
 \begin_layout Plain Layout
 
-	r'.rideCar = c'
+	r1.rideCar = c1
 \end_layout
 
 \begin_layout Plain Layout
 
-	r'.rideUser = u'
+	r1.rideUser = u1
 \end_layout
 
 \begin_layout Plain Layout
 
-	c'.connectedPlug = c.connectedPlug
+	c1.connectedPlug = c.connectedPlug
 \end_layout
 
 \begin_layout Plain Layout
 
-	c'.status = c.status
+	c1.status = c.status
 \end_layout
 
 \begin_layout Plain Layout
 
-	c'.carPosition = c.carPosition
+	c1.carPosition = c.carPosition
 \end_layout
 
 \begin_layout Plain Layout
 
-	u'.userPosition = u.userPosition
+	u1.userPosition = u.userPosition
 \end_layout
 
 \begin_layout Plain Layout
@@ -1500,7 +1500,7 @@ pred rideFromPauseToRun [r: Ride, r': Ride, u: User, u': User, c: Car, c':
 
 \begin_layout Plain Layout
 
-	r'.rideStatus in Run
+	r1.rideStatus in Run
 \end_layout
 
 \begin_layout Plain Layout
@@ -2326,6 +2326,46 @@ General View 2
 \end_layout
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Model checking poof
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/immagini alloy/alloy execution.png
+	lyxscale 20
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Solver results screenshot
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
