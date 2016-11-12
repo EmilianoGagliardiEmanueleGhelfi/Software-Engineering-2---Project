@@ -712,8 +712,13 @@ fact {
 
 \begin_layout Plain Layout
 
-	no disj u1,u2:User | u1.inUseCar = u2.inUseCar and #u1.inUseCar=1 	no disj
- u1,u2:User | u1.reservedCar=u2.reservedCar and #u1.reservedCar = 1 
+	no disj u1,u2:User | u1.inUseCar = u2.inUseCar and #u1.inUseCar=1 
+\end_layout
+
+\begin_layout Plain Layout
+
+	no disj u1,u2:User | u1.reservedCar=u2.reservedCar and #u1.reservedCar = 1
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -851,9 +856,17 @@ fact {
 
 \begin_layout Plain Layout
 
-	all disj c1,c2: CompetenceArea | c1.positions & c2.positions = none 	// There
- doesn't exist position that are not in a competence area 	all p:Position
- | p in CompetenceArea.positions
+	all disj c1,c2: CompetenceArea | c1.positions & c2.positions = none 
+\end_layout
+
+\begin_layout Plain Layout
+
+	// There doesn't exist position that are not in a competence area
+\end_layout
+
+\begin_layout Plain Layout
+
+	all p:Position | p in CompetenceArea.positions
 \end_layout
 
 \begin_layout Plain Layout
