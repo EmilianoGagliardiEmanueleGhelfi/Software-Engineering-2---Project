@@ -6,5 +6,5 @@ Computer Science and Engineering,
 Politecnico di Milano
 
 Authors: <br>
-Emiliano Gagliardi <br>
-Emanuele Ghelfi
+Emiliano Gagliardi 878539 <br>
+Emanuele Ghelfi 875550
