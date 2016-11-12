@@ -1995,7 +1995,7 @@ Car changing of status
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2021,6 +2021,12 @@ From Available to Under Maintenance
 
 \end_layout
 
+\begin_layout Plain Layout
+Car1, in the competence area of Operator, is available.
+ After an hypotetic failure, it goes under maintenance (it becomes Car0),
+ and Operator takes car of it.
+\end_layout
+
 \end_inset
 
 
@@ -2031,7 +2037,7 @@ From Available to Under Maintenance
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2058,7 +2064,9 @@ From Busy to Available
 \end_layout
 
 \begin_layout Plain Layout
-
+User1 is using Car1, so Car1 status is Busy.
+ After the ride, Car1 becomes Car0, and the satus becomes Available.
+ User1 becomes User0 with no car in use.
 \end_layout
 
 \end_inset
@@ -2071,11 +2079,7 @@ From Busy to Available
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2102,7 +2106,11 @@ From Reserved to in Use
 \end_layout
 
 \begin_layout Plain Layout
-
+User1 has as reserved car Car1 and they are in the same position, so User1
+ can unlock Car1.
+ After, User1 becomes User0, Car1 become Car0 with status Busy, and User0
+ is using Car0.
+ The corresponding Ride has been generated.
 \end_layout
 
 \end_inset
@@ -2119,11 +2127,7 @@ Reservation
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2150,7 +2154,10 @@ Reservation
 \end_layout
 
 \begin_layout Plain Layout
-
+Car1 is available, and User0 doesn't have any reserved car.
+ After, User1 becomes User0, Car1 becomes Car0 with status Reserved, and
+ User0 has Car0 as reserved car.
+ 
 \end_layout
 
 \end_inset
@@ -2167,7 +2174,7 @@ Ride changing of status
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2194,7 +2201,9 @@ Ride from Pause to Run
 \end_layout
 
 \begin_layout Plain Layout
-
+Ride1 is paused and becomes Ride0 that is Run.
+ A thing to notice is that User1 has as car in use Car1, and they are in
+ the same position, so User1 can unlock the car.
 \end_layout
 
 \end_inset
@@ -2207,11 +2216,7 @@ Ride from Pause to Run
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2238,7 +2243,8 @@ Ride from Run to Pause
 \end_layout
 
 \begin_layout Plain Layout
-
+Ride1 is in Run status and becomes Ride0, that is paused.
+ User1 becomes User0, and now it can unlock the car.
 \end_layout
 
 \end_inset
@@ -2255,11 +2261,7 @@ General View
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2286,7 +2288,10 @@ General View 1
 \end_layout
 
 \begin_layout Plain Layout
-
+Operator is working on Car0, that is under mantainance and in his competence
+ area.
+ User has as reserved car Car1, they are in the same position, so it can
+ unlock the car.
 \end_layout
 
 \end_inset
@@ -2299,7 +2304,7 @@ General View 1
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2326,7 +2331,7 @@ General View 2
 \end_layout
 
 \begin_layout Plain Layout
-
+Car1 is in CargingArea0, and it is plugged in one of the ChargingArea0 plugs.
 \end_layout
 
 \end_inset
