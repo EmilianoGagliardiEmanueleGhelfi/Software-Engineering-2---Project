@@ -10,6 +10,6 @@ Politecnico di Milano
 For each release related documents are in "Release" folder.
 Each part of the project is in the folder named "*partName* - Development".
 
-## Authors: <br>
+### Authors: <br>
 Emiliano Gagliardi 878539 <br>
 Emanuele Ghelfi 875550
