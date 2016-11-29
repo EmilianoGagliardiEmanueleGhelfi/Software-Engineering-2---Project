@@ -124,7 +124,15 @@ In order to satisfy goals in section 1.4 under domain assumptions in Section
 \end_layout
 
 \begin_layout Itemize
-[D13] Users doesn't share their password.
+[R36] The system shall provide reservation functionality.
+\end_layout
+
+\begin_layout Itemize
+[D13] Users don't share their password.
+\end_layout
+
+\begin_layout Itemize
+[D3] Cars provide remote communication API.
 \end_layout
 
 \end_deeper
