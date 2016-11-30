@@ -86,8 +86,68 @@ High level component and their interaction
 Component view
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Standard
+I'm not inserting the image because of the diagram still needs a refactor
+\end_layout
 
+\begin_layout Subsubsection
+Car proxy component
+\end_layout
+
+\begin_layout Standard
+Car proxy is the abstraction of cars in the server.
+ It must be invoked by other internal subsystems that need information about
+ cars physical status (real time informations), like position, battery life
+ etc.
+ This component absolutely doesn't care about information related to reservation
+s or rides.
+ 
+\begin_inset Newline newline
+\end_inset
+
+The main purpose of this component is to request cars using their API, but
+ its implementations should also guarantee that the systems working on cars
+ don't have to support high amount of parallel request.
+ In order to do that, car proxy will use the database, storing a physical
+ characteristic related to the timestamp of the API call that has provided
+ that information.
+ When a request arrives, car proxy decides which data should be provided:
+ the one got through the API call to the car, or the one stored in the database.
+ If the stored data are sufficiently recent then they can be provided, otherwise
+ it is needed to make the request.
+\begin_inset Newline newline
+\end_inset
+
+As it can be seen in the diagram, this component has a considerable fan-in,
+ it could be necessary in future to make it scalable.
+\end_layout
+
+\begin_layout Subsubsection
+Car monitoring component
+\end_layout
+
+\begin_layout Standard
+This component is substantially a daemon.
+ It periodically asks to the car proxy component the informations that operators
+ need to do car maintenance.
+ If a damage has been detected, the notification component should be called,
+ in order to communicate it to an operator.
+\end_layout
+
+\begin_layout Subsection
+Deployment view
+\end_layout
+
+\begin_layout Subsection
+Runtime view
+\end_layout
+
+\begin_layout Subsection
+Component interface
+\end_layout
+
+\begin_layout Subsection
+Selected architectural styles and patterns
 \end_layout
 
 \end_body
