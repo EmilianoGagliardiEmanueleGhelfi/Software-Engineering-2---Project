@@ -70,7 +70,23 @@
 
 \begin_body
 
-\begin_layout Standard
+\begin_layout Section
+Architectural design
+\end_layout
+
+\begin_layout Subsection
+Overview
+\end_layout
+
+\begin_layout Subsection
+High level component and their interaction
+\end_layout
+
+\begin_layout Subsection
+Component view
+\end_layout
+
+\begin_layout Subsection
 
 \end_layout
 
