@@ -78,8 +78,90 @@ Architectural design
 Overview
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename DD Images/Architectures/Arch Overview.png
+	lyxscale 30
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+High level architecture
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 High level component and their interaction
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename DD Images/Diagrams/High Level component.png
+	lyxscale 30
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+High level component diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -87,7 +169,30 @@ Component view
 \end_layout
 
 \begin_layout Standard
-I'm not inserting the image because of the diagram still needs a refactor
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Component diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -134,12 +239,215 @@ This component is substantially a daemon.
  in order to communicate it to an operator.
 \end_layout
 
+\begin_layout Subsubsection
+Ride manager
+\end_layout
+
+\begin_layout Standard
+Ride manager is the component that takes care abut the data in the server
+ corresponding to rides in the real world.
+ Furthermore, when a ride is set to pause, it use the car proxy component
+ to lock or unlock the car.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Reservation manager
+\end_layout
+
+\begin_layout Standard
+This component manages users reservation request, setting the status of
+ a car from available to reserved and vice versa.
+ It should also take care about reservation expiration, resetting the car
+ state from reserved to available, and taxing the user through the component
+ payment manager.
+\end_layout
+
+\begin_layout Subsubsection
+Registration manager
+\end_layout
+
+\begin_layout Standard
+This component accepts request from guest of joining the Power Enjoy service.
+ It checks if the guest has a valid drive license and adds it to the users.
+ It also verifies the validity of the payment informations received by the
+ guest using the services provided by the payment manager component.
+\end_layout
+
+\begin_layout Subsubsection
+Profile manager
+\end_layout
+
+\begin_layout Standard
+This component reply to users that want to see their past utilization of
+ the power enjoy services.
+\end_layout
+
+\begin_layout Subsubsection
+Customer messages handler
+\end_layout
+
+\begin_layout Standard
+This component receives messages about users regarding malfunctions of cars,
+ and use the notification manager to notify the operator that should take
+ care about that.
+\end_layout
+
+\begin_layout Subsubsection
+Authentication manager
+\end_layout
+
+\begin_layout Standard
+The authentication manager the component that manages the login of user,
+ operator, and administrator, and administrates session.
+\end_layout
+
+\begin_layout Subsubsection
+Car search engine
+\end_layout
+
+\begin_layout Standard
+This component interrogates the car proxy component and get cars position,
+ performing the two type of car research.
+\end_layout
+
+\begin_layout Subsubsection
+Car manager 
+\end_layout
+
+\begin_layout Standard
+The car manager component can be used by operators to change car status
+ in the server.
+ For instance, if an operator is going to work on a car, it should use this
+ component to switch the car status to 
+\begin_inset Quotes eld
+\end_inset
+
+under maintenance
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Administrator functionality provider
+\end_layout
+
+\begin_layout Standard
+This component provides the functionalities accessible only by the administrator
+s that are listed in the RASD document.
+\end_layout
+
+\begin_layout Subsubsection
+Payment manager
+\end_layout
+
+\begin_layout Standard
+This component uses external API of the accepted payment service.
+ It should be used not only for carry out the payments, but also to verify
+ during the registration of a user that the provided payment informations
+ are correct.
+\end_layout
+
+\begin_layout Subsubsection
+Notification manager
+\end_layout
+
+\begin_layout Standard
+Notification manager is used to send notifications to users (when their
+ reserved car changes status), and to operator (when the system detects
+ that an intervention on a car is needed, or a user make a communication).
+ 
+\end_layout
+
+\begin_layout Subsection
+Data model
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Class diagram of the data model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Deployment view
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename DD Images/Diagrams/Deployment Diagram.png
+	lyxscale 30
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Deployment view
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Runtime view
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Subsection
