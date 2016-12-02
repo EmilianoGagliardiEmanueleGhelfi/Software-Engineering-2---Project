@@ -130,18 +130,29 @@ Get status: the car sends to the central system detailed information about
 \end_layout
 
 \begin_layout Subsubsection
-Operators, maintenance, malfunctions and damanges.
+Operators, maintenance, malfunctions and damages.
 \end_layout
 
 \begin_layout Standard
 The cars availability depends heavily on the presence of a staff that does
  cars maintenance.
- So the sotware to be relies on the presence of the staff in order to guarantee
+ So the software to be relies on the presence of the staff in order to guarantee
  availability of cars, and it will provide to operators information that
  helps the cars maintenance.
- Operators will manage damanges to cars and consequence for the responsible,
+ Operators will manage damages to cars and consequence for the responsible,
  so the system will only help the operators in maintenance, and guarantee
- a way to comunicate malfunction and damanges.
+ a way to communicate malfunction and damages.
+\end_layout
+
+\begin_layout Subsubsection
+Drive license
+\end_layout
+
+\begin_layout Standard
+When a guest register to the system, the system should check that it has
+ a valid drive license.
+ In order to do that the system will use EUCARIS, the European car and driving
+ license information system, through remote API call.
 \end_layout
 
 \begin_layout Subsection
@@ -157,7 +168,7 @@ Domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[D3] Cars provide remote comunication API.
+[D3] Cars provide remote communication API.
 \end_layout
 
 \begin_layout Itemize
@@ -181,7 +192,7 @@ Domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[D9] If a user detect a malfuncion comunicate it.
+[D9] If a user detect a malfunction comunicate it.
 \end_layout
 
 \begin_layout Itemize
@@ -206,7 +217,7 @@ Assumptions
 \end_layout
 
 \begin_layout Standard
-There are few point that aren't well specified in the assignement document.
+There are few point that aren't well specified in the assignment document.
  The purpose of this section is to formalize some facts that complete the
  specification.
 \end_layout
@@ -223,7 +234,7 @@ There are no information about cars' maintenance, so in the document is
 \end_layout
 
 \begin_layout Itemize
-In order to avoid useless resarvations, users can't delete reservations.
+In order to avoid useless reservations, users can't delete reservations.
 \end_layout
 
 \begin_layout Itemize
@@ -314,7 +325,7 @@ These documents will be released in order to well-organize the work in the
 
 : Requirements Analysis and Specification Document, to well-understand the
  given problem and to analyze system's boundaries and goal.
- RASD is also important to understan system's requirements and specifications
+ RASD is also important to understand system's requirements and specifications
  in order to reach the goals.
 \end_layout
 
@@ -335,7 +346,7 @@ Design Document, to define the structure of the the system, his tiers, and
  This document is supposed to be written before the integration test really
  happens.
  Moreover this document needs to explain to the developer team what to test,
- in which sequence, which tools are needed for testing and wich need to
+ in which sequence, which tools are needed for testing and which need to
  be developed.
 \end_layout
 
