@@ -105,6 +105,12 @@ Interactions between components
 Main algorithms of the system
 \end_layout
 
+\begin_layout Standard
+The main purpose is to gain a general understanding of how and why the system
+ is decomposed and how individual components work together.
+ 
+\end_layout
+
 \begin_layout Subsection
 Scope
 \end_layout
@@ -132,8 +138,235 @@ y of cars, their status and their positions.
  
 \end_layout
 
+\begin_layout Subsection
+Definitions, Acronyms, Abbreviation
+\end_layout
+
+\begin_layout Itemize
+RASD: Requirements and Specifications Document
+\end_layout
+
+\begin_layout Itemize
+DD: Design Document (this document)
+\end_layout
+
+\begin_layout Itemize
+JSON
+\end_layout
+
+\begin_layout Itemize
+REST
+\end_layout
+
+\begin_layout Itemize
+RESTful
+\end_layout
+
+\begin_layout Itemize
+HTTP
+\end_layout
+
+\begin_layout Itemize
+JDBC
+\end_layout
+
+\begin_layout Itemize
+API
+\end_layout
+
+\begin_layout Subsection
+Reference Documents
+\end_layout
+
+\begin_layout Itemize
+RASD released before this document.
+\end_layout
+
+\begin_layout Itemize
+Assignments AA 2016-2017.
+\end_layout
+
+\begin_layout Itemize
+DD from previous years.
+\end_layout
+
+\begin_layout Subsection
+Document Structure
+\end_layout
+
 \begin_layout Standard
-//to improve
+\begin_inset Formula $\mathbf{Introduction}$
+\end_inset
+
+: this is a general overview of the document.
+\begin_inset Newline newline
+\end_inset
+
+The 
+\begin_inset Formula $\mathit{Purpose}$
+\end_inset
+
+ part describe the audience and the main goals of this document.
+\begin_inset Newline newline
+\end_inset
+
+The 
+\begin_inset Formula $\mathit{Scope}$
+\end_inset
+
+ part has to provide a description and scope of the software and explain
+ the goals, objectives and benefits of the project.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\mathit{Reference}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathit{Documents}$
+\end_inset
+
+ are previous documents of this project and documents used as examples and
+ reference.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\mathbf{\mathbf{Architectural}}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Design}$
+\end_inset
+
+: this section explain the relationship between the modules to achieve the
+ complete functionality of the system (requirements defined in the RASD).
+\begin_inset Newline newline
+\end_inset
+
+It contains an high level overview of how responsibility of the system were
+ partitioned and then assigned to subsystem (components).
+ 
+\begin_inset Newline newline
+\end_inset
+
+In this part of the document are identified each high level subsystem and
+ the roles or responsibility assigned to it in order to achieve a more detailed
+ comprehension of the software to be.
+ It's also described how these components collaborate with each other in
+ order to achieve desired functionality.
+ There is a focus on the interface provided by individual components in
+ 
+\begin_inset Formula $\mathit{Component}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathit{Interfaces}$
+\end_inset
+
+ section.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\mathit{Deployment}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathit{View}$
+\end_inset
+
+ gives a description of how the software to be it's intended to be deployed.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\mathit{Runtime}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathit{View}$
+\end_inset
+
+ gives a description of the interaction between components in the most important
+ use case of the system.
+\begin_inset Newline newline
+\end_inset
+
+In the section of 
+\begin_inset Formula $\mathit{Selected}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathit{Architectural}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathit{Styles}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathit{and}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathit{Patterns}$
+\end_inset
+
+ are described which styles and patterns have been followed in the realization
+ of the system.
+ There is a focus on the rationale of these decisions.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\mathbf{Algorithm}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Design}$
+\end_inset
+
+: this section explains the most important algorithm of the software to
+ be.
+ Pseudo–code has been used in order to avoid unnecessary implementation
+ details.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\mathbf{User}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Interface}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Design}$
+\end_inset
+
+: this section refers to the same section in RASD and provides some extensions.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\mathbf{Requirements}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Traceability}$
+\end_inset
+
+: this section describe how requirements defined in RASD have been mapped
+ to system components defined in section 2.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \end_body
