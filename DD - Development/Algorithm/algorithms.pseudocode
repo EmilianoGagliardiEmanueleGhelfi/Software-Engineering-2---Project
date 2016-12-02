@@ -1,0 +1,106 @@
+
+// function of search engine
+// optionSearch is the option related to the search
+// userPosition in the current position of user
+Function searchCar(OptionSearch optionSearch, Position userPosition){
+    // list of cars to return
+    List toReturnCars;
+    // get max distance of car to user from optionSearch
+    var maxDistance = optionSearch.distance;
+    // get all cars from database
+    List cars = DB.getCars();
+    For Car car in cars {
+        var carPosition = CarProxy.getCarPosition(car.id);
+        var carToUser = calculateDistance(carPosition,userPosition);
+        // if distance is lower than selected distance, add car to toReturnCars
+        if(carToUser<maxDistance)
+            toReturnCars.add(car);
+        }
+
+    return toReturnCars;
+}
+
+// function of ride manager
+Function calculateCost(Ride ride){
+    // calculate cost due to time
+    var timeCost = ride.duration*Constants.costPerMinute;
+    // get max discount from ride object
+    var discount = ride.maxDiscount;
+    // get fee related to ride
+    var fee = ride.fee;
+    // apply discount and fee to ride cost
+    var realCost = applyDiscountAndFee (timeCost,discount,fee);
+    // pass all to payment manager
+    PaymentManager.doPayment(realCost,ride.user);
+}
+
+//function of reservation manager
+Function doReservation(User user, Car car, Hour hour){
+    // if user has already some reservation can't reserve a car
+    If user.currentReservation>0 
+        return Error
+
+    // if car is reserved or is busy return error
+    If car.isReserved or car.isBusy 
+        return Error
+
+    // if user is suspended, it can't do a reservation
+    If user.isSuspended
+        return Error
+
+    //  users must be able to reserve a car for up to one hour before they pick it up.
+    If Time.currentHour+1>hour
+        return Error
+
+    user.reservedCar = car;
+    create new Reservation(car,user,hour);
+    update DB information
+}
+
+// function of ride manager
+Function unlockCar(User user, Car car){
+
+    var userPosition = user.position;
+
+    // get car position from carProxy
+    var carPosition = CarProxy.getCarPosition(car.id);
+
+    If car is not reserved by user
+        return Error
+
+    If carPosition and userPosition Are near
+        //create a new ride
+        ride = new Ride(car,user);
+        ride.setState(CREATED);
+        // ask car proxy to unlock car
+        CarProxy.unlockCar(car.id);
+        // register an observer to the car 
+        CarProxy.registerObserver(car.id,new CarObserver());
+
+    Else return Error
+}
+
+// callback of carobserver called by car when engine starts
+Function engineStartCallback(Car car){
+    
+    get ride of car
+
+    //set started state to ride
+    ride.setState(STARTED);
+}
+
+//callback of carObserver called by car when engine stops
+Function engineStopCallback(Car car){
+    same as engineStart but set state STOPPED
+}
+
+
+
+
+
+
+
+
+
+
+
