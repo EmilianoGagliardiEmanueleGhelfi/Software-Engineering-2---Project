@@ -175,6 +175,14 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename DD Images/Diagrams/Component diagram (detailed).png
+	lyxscale 30
+	width 50page%
+
+\end_inset
+
 
 \end_layout
 
@@ -182,7 +190,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Component diagram
+More detailed component diagram
 \end_layout
 
 \end_inset
@@ -444,10 +452,6 @@ Deployment view
 
 \begin_layout Subsection
 Runtime view
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \begin_layout Subsection
