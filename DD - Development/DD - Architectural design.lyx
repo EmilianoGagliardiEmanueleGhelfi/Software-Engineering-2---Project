@@ -26,7 +26,9 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -79,6 +81,7 @@ Overview
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Float figure
 wide false
 sideways false
@@ -113,44 +116,69 @@ High level architecture
 
 \end_layout
 
+\begin_layout Standard
+In this section is presented an high level architecture.
+ It shows how is structured the system and the main interaction between
+ subsystems.
+\begin_inset Newline newline
+\end_inset
+
+There is a WebServer with Nginx technology that serves static content (like
+ .html, .js, .css) to browser.
+ When WebServer receives certain API calls it acts as reverse proxy.
+ Proxying is used to distribute load among several servers.
+ When web server proxies a request, it send the request to the Application
+ Server, fetches the response and sends back to the client.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Application server contains the business logic of the software to be and
+ interacts with the Database Server and with the CarOS.
+\begin_inset Newline newline
+\end_inset
+
+Mobile Application only makes API calls to WebServer and receives back the
+ JSON response of Application Server.
+\begin_inset Newline newline
+\end_inset
+
+This project starts as a monolithic application because of simplicity of
+ development, but with particular attention to the modularization.
+ So, in case will be the need of scaling, the refactoring to micro-services
+ won't be difficult.
+ 
+\end_layout
+
 \begin_layout Subsection
-Data model
+High level components and their interaction
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename DD Images/Diagrams/Model class diagram.png
-	lyxscale 30
-	width 50page%
-
+In this section are presented the high level component and it's described
+ how they interact with each other.The client component is made of the Web
+ Browser and the Mobile Application.
+ Both communicates with the server through its interface.
+\begin_inset Newline newline
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Data class diagram
-\end_layout
-
+The application server communicates with DBMS through DBMS API and with
+ CarOS through it's API.
+\begin_inset Newline newline
 \end_inset
 
-
-\end_layout
-
+In this way the central system always knows the status (position, battery,
+ etc.) of all cars and also cars can initiate a communication with server
+ when they need to communicate important event.
+ This is done with observer pattern as specified later in this document.
+\begin_inset Newline newline
 \end_inset
 
-This is the class diagram of the data core (likely during the coding phase
- a more detailed data structure will come up).
+The communication between client and server can be synchronous or asynchronous
+ depending on the kind of interaction.
+ The server can communicate asynchronously with client with notification
+ or messages (email).This is the class diagram of the data core (likely during
+ the coding phase a more detailed data structure will come up).
  There are two important comsideration to do about this model: the first
  one is that the two relations user-reservation and user-ride will guarantee
  the reconstruction of users “story” in the use of the Power Enjoy service,
@@ -175,7 +203,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename DD Images/Diagrams/High Level component.png
-	lyxscale 30
+	lyxscale 70
 	width 50page%
 
 \end_inset
@@ -195,10 +223,6 @@ High level component diagram
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -209,6 +233,7 @@ Component view
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Float figure
 wide false
 sideways false
@@ -429,14 +454,42 @@ Deployment view
 \end_layout
 
 \begin_layout Standard
+The deployment diagram shows the hardware of the system and the software
+ that it's installed on it.
+\begin_inset Newline newline
+\end_inset
+
+In this diagram there is the Mobile Application installed on Mobile Phone
+ of the user.
+\begin_inset Newline newline
+\end_inset
+
+The browser runs on user/operator/admin PC.
+\begin_inset Newline newline
+\end_inset
+
+The Application Server and the Web Server are on different Nodes and on
+ different environment.
+ In this way they are totally decoupled and it's ensured the scalability
+ of the system.
+ The DBMS runs on a different node in order to not overload a node with
+ a huge load.
+\begin_inset Newline newline
+\end_inset
+
+If the need of scalability becomes more important for the system there could
+ be more application server on different nodes with a load balancer before
+ them.
+ This is compatible with a cloud approach.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
 \begin_inset Float figure
 wide false
 sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -474,12 +527,157 @@ Deployment view
 Runtime view
 \end_layout
 
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename DD Images/Diagrams/Runtime - Unlock Car.png
+	lyxscale 30
+	width 80page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Unlock Car
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Component interface
 \end_layout
 
 \begin_layout Subsection
 Selected architectural styles and patterns
+\end_layout
+
+\begin_layout Subsubsection
+Tiers
+\end_layout
+
+\begin_layout Standard
+The system will be divided into 5 tiers:
+\end_layout
+
+\begin_layout Enumerate
+Database Server 
+\end_layout
+
+\begin_layout Enumerate
+Application Server
+\end_layout
+
+\begin_layout Enumerate
+Web Server
+\end_layout
+
+\begin_layout Enumerate
+Mobile Application
+\end_layout
+
+\begin_layout Enumerate
+Car
+\end_layout
+
+\begin_layout Standard
+Note that here the car is considered as a tier but actually is a blackbox
+ capable of receive request from our system and capable to make request
+ and call some interfaces provided by components of the system
+\end_layout
+
+\begin_layout Subsubsection
+Layers
+\end_layout
+
+\begin_layout Standard
+As said before the system will be divided into 3 Layers:
+\end_layout
+
+\begin_layout Itemize
+Presentation Layer: it's distributed on the mobile application or on the
+ Web Server.
+\end_layout
+
+\begin_layout Itemize
+Business Layer: it's on the Application Server.
+\end_layout
+
+\begin_layout Itemize
+Data Layer: it's on the Database Server.
+\end_layout
+
+\begin_layout Subsubsection
+Protocols
+\end_layout
+
+\begin_layout Standard
+In this section is described how different tier communicate with each other
+ and how they exchange data.
+\end_layout
+
+\begin_layout Subsubsection*
+JDBC
+\end_layout
+
+\begin_layout Standard
+Used by the Application Server to communicate with the database server.
+ JDBC API is the standard for database-independent connectivity between
+ the Java programming language and a wide range of databases SQL databases
+ and other tabular data sources.
+ The JDBC API provides a call-level API for SQL-based database access.
+\end_layout
+
+\begin_layout Subsubsection*
+RESTful API
+\end_layout
+
+\begin_layout Standard
+Used by both Mobile Application and Web Application to access the services
+ provided by Application Server component.
+\end_layout
+
+\begin_layout Subsubsection
+Design Patterns
+\end_layout
+
+\begin_layout Subsubsection*
+Client-Server
+\end_layout
+
+\begin_layout Subsubsection*
+Monolithic
+\end_layout
+
+\begin_layout Subsubsection*
+Proxy
+\end_layout
+
+\begin_layout Subsubsection*
+Observer
 \end_layout
 
 \end_body

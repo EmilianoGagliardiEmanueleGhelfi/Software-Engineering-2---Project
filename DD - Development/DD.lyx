@@ -70,6 +70,79 @@
 
 \begin_body
 
+\begin_layout Title
+\begin_inset Formula $\mathbf{Power}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{EnJoy}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\mathbf{D}$
+\end_inset
+
+esign 
+\begin_inset Formula $\mathbf{D}$
+\end_inset
+
+ocument
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Software Engineering 2
+\begin_inset Newline newline
+\end_inset
+
+A.A.
+ 2016/2017 
+\begin_inset Newline newline
+\end_inset
+
+Version 1.0
+\end_layout
+
+\begin_layout Author
+Emanuele Ghelfi (mat.
+ 875550)
+\begin_inset Newline newline
+\end_inset
+
+ Emiliano Gagliardi (mat.
+ 878539)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input

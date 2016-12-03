@@ -6,6 +6,7 @@
 \origin unavailable
 \textclass article
 \use_default_options true
+\master DD.lyx
 \maintain_unincluded_children false
 \language english
 \language_package default
@@ -27,6 +28,7 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -70,9 +72,462 @@
 
 \begin_body
 
+\begin_layout Section
+Requirements Traceability
+\end_layout
+
 \begin_layout Standard
+In this section is described how requirements defined in the RASD are mapped
+ to components described in this section.
+ The set of components have to fulfill all the requirements defined in the
+ RASD.
+\begin_inset Newline newline
+\end_inset
+
+It is understood that Mobile Application and CarOS are used in interactions
+ with users and cars so here aren't listed in order to avoid useless repetition.
+ Also the Persistency Manager is used in order to keep coherency with data.
+\begin_inset Newline newline
+\end_inset
+
+Here there is a list of all goals of out system (component here are associated
+ to goals but indirectly to all requirements that ensure the fulfillment
+ of the goal).
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{[G1.1]}$
+\end_inset
+
+Only user should be able to reserve a car.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Authentication}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Manager}$
+\end_inset
+
+: manages user logins and sessions.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Reservation}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Manager}$
+\end_inset
+
+: manages reservation and allows only registered user to make a reservation.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Registration}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Manager}$
+\end_inset
+
+: allows the registration of guests and manages all information related
+ to registration.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{[G1.2]}$
+\end_inset
+
+User should be able to unlock reserved car when they are close to it.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Ride}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Manager}$
+\end_inset
+
+: allows user to unlock a car.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Reservation}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Manager}$
+\end_inset
+
+: allows user to reserve a car.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Car}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Proxy}$
+\end_inset
+
+: allows communication with car.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{[G1.3]}$
+\end_inset
+
+User should be aware of how much they are going to pay during the ride.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Ride}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Manager}$
+\end_inset
+
+: communicates to the car the current ride cost.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Car}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Proxy}$
+\end_inset
+
+: same as before.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{[G1.4]}$
+\end_inset
+
+If reserved car pass under maintenance, the user that made the reservation
+ must be notified.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Car}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Monitoring}$
+\end_inset
+
+: monitors periodically the status of the cars and calls notification manager.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Notification}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Manager}$
+\end_inset
+
+: notifies user and operators.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Car}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Proxy}$
+\end_inset
+
 
 \end_layout
 
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{[G1.5]}$
+\end_inset
+
+User should be able to set pause status during a ride.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Ride}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Manager}$
+\end_inset
+
+: manages all stuff related to the ride.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{[G1.6]}$
+\end_inset
+
+User should be able to restart a paused ride.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Ride}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Manager}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{[G2]}$
+\end_inset
+
+The reservation of two (or more) cars at a time must be forbidden.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Reservation}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Manager}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{[G3]}$
+\end_inset
+
+Users and Guests must be able to search cars.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Car}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Search}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Engine}$
+\end_inset
+
+: searches car with respect to user's preferences.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Car}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Proxy}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{[G4]}$
+\end_inset
+
+Induce users to keep a virtuous behavior.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Ride}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Manager}$
+\end_inset
+
+: manages the calculation of discounts and fees related to a ride.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Car}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Proxy}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Payment}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Manager}$
+\end_inset
+
+: manages the payments.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Reservation}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Manager}$
+\end_inset
+
+: if a reservation expires it manages the fee.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{[G5]}$
+\end_inset
+
+Users have to pay an amount of money based on the ride’s duration.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Ride}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Manager}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Payment}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Manager}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{[G6]}$
+\end_inset
+
+Guarantee a ready maintenance of cars.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Car}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Monitoring}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Notification}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Manager}$
+\end_inset
+
+:notifies operators when a car needs maintenance.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Car}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Manager}$
+\end_inset
+
+: allows operators to know car status and car positions.
+ Allows also operators to set car as available after maintenance.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Customer}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Message}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Handler}$
+\end_inset
+
+: receives messages from users about malfunctions and notifies operators
+ through notification manager.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Car}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Proxy}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{[G7]}$
+\end_inset
+
+Admins must be able to manage the system.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{Administrative}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Functionality}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Provider}$
+\end_inset
+
+: allows administrators to manage safe areas and operators
+\end_layout
+
+\end_deeper
 \end_body
 \end_document
