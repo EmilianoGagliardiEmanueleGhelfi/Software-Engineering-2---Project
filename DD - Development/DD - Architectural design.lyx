@@ -85,10 +85,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename DD Images/Architectures/Arch Overview.png
@@ -118,7 +114,7 @@ High level architecture
 \end_layout
 
 \begin_layout Subsection
-High level component and their interaction
+Data model
 \end_layout
 
 \begin_layout Standard
@@ -128,8 +124,52 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename DD Images/Diagrams/Model class diagram.png
+	lyxscale 30
+	width 50page%
+
+\end_inset
+
 
 \end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Data class diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+This is the class diagram of the data core (likely during the coding phase
+ a more detailed data structure will come up).
+ There are two important comsideration to do about this model: the first
+ one is that the two relations user-reservation and user-ride will guarantee
+ the reconstruction of users “story” in the use of the Power Enjoy service,
+ and the second one related to a bit more technical solution about car system.
+ In the car class there are some informations that in general shouldn’t
+ be stored, like battery life and position, because they change rapidly.
+ The explanation of this decision is in the component diagram description,
+ in particular in the explanation of how the car proxy component works.
+\end_layout
+
+\begin_layout Subsection
+High level component and their interaction
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -369,39 +409,19 @@ Notification manager is used to send notifications to users (when their
  
 \end_layout
 
-\begin_layout Subsection
-Data model
+\begin_layout Subsubsection
+Car listener 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Class diagram of the data model
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
+This is a subcomponent of the ride component, that is instantiated for a
+ ride when the car is successfully unlocked.
+ After the unlock of a car, probably the engine will be turned on.
+ This component fulfil the problem of getting the engine ignition time,
+ in order to calculate the correct ride cost.
+ The runtime flow is explained with a sequence diagram in the section Runtime
+ view.
+ 
 \end_layout
 
 \begin_layout Subsection
