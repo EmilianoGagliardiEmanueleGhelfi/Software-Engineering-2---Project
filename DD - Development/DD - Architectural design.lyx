@@ -600,15 +600,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename DD Images/Diagrams/Runtime - Registration.png
 	lyxscale 30
-	width 80page%
+	width 70page%
 
 \end_inset
 
@@ -627,13 +623,19 @@ Registration runtime view
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+The client application request is sent to the registration manager component,
+ that have to verify that the payment information and the driver license
+ are valid.
+ To do this, as mentioned in the product perspective section of the RASD
+ document, external service are used.
+ Then, if the information are valid, a new user is created and inserted
+ in the database, and the result of the operation is sent to the user.
 \end_layout
 
 \begin_layout Subsubsection
@@ -655,7 +657,7 @@ status open
 \begin_inset Graphics
 	filename DD Images/Diagrams/Runtime - Car Search.png
 	lyxscale 30
-	width 80page%
+	width 70page%
 
 \end_inset
 
@@ -674,13 +676,17 @@ Car search runtime view
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+The user through the application insert the information needed in order
+ to do the research, then the information are sent to the search engine
+ that performs the research using the algorithm described in the algorithm
+ section of this document.
+ The position of the cars are obtained interrogating the car proxy component.
 \end_layout
 
 \begin_layout Subsubsection
@@ -694,15 +700,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename DD Images/Diagrams/Runtime - Reservation.png
 	lyxscale 30
-	width 80page%
+	width 70page%
 
 \end_inset
 
@@ -721,13 +723,16 @@ Car reservation runtime view
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+When the request is received the reservation manager check if it the user
+ can reserve the car identified by carID, and send back the outcome.
+ Then if the reservation is allowed, the reservation manager delegates to
+ the ride manager the managing of the car picking up.
 \end_layout
 
 \begin_layout Subsubsection
@@ -749,7 +754,7 @@ status open
 \begin_inset Graphics
 	filename DD Images/Diagrams/Runtime - Unlock Car.png
 	lyxscale 30
-	width 80page%
+	width 70page%
 
 \end_inset
 
@@ -768,13 +773,18 @@ Unlock car runtime view
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+When a client make the unlock request, the system verifies that the request
+ owner is allowed to unlock the specified car.
+ This operation is carried out checking two things: that the user has actually
+ reserved the car, and that it is sufficiently close to that car.
+ Then through the car proxy the car is unlocked, and the outcome is sent
+ to the user.
 \end_layout
 
 \begin_layout Subsubsection
@@ -796,7 +806,7 @@ status open
 \begin_inset Graphics
 	filename DD Images/Diagrams/Runtime - EndRide.png
 	lyxscale 30
-	width 80page%
+	width 70page%
 
 \end_inset
 
@@ -820,6 +830,19 @@ End ride runtime view
 
 \end_layout
 
+\begin_layout Standard
+The stopEngineCallback remote method is called by the car system on the
+ subcomponent of the ride manager (car listener) when the stop of the engine
+ is detected.
+ The call contains as parameter the cadID, so the ride manager component
+ can find in the persistent data the user that is riding the car.
+ In this way the system can ask to a user that has stop the engine if it
+ wants to end the ride, or put it in pause (it is necessary to manage the
+ situations in which there is no reply).
+ Then if the ride is finished, the payment can be carried out through the
+ payment method API call.
+\end_layout
+
 \begin_layout Subsubsection
 Car monitoring
 \end_layout
@@ -837,9 +860,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename DD Images/Diagrams/Runtime -Car Monitoring.png
+	filename DD Images/Diagrams/Runtime - Car Monitoring.png
 	lyxscale 30
-	width 80page%
+	width 70page%
 
 \end_inset
 
@@ -858,13 +881,18 @@ Car monitoring runtime view
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Here is explained how the system try to keep cars in a good state.
+ The car monitoring component makes periodic requests to the cars system,
+ asking if the system needs some kind of operators intervention.
+ If for instance a malfunction is detected, or the battery level is too
+ low, the central system can notify the operator that is working in that
+ area.
 \end_layout
 
 \begin_layout Subsubsection
@@ -886,7 +914,7 @@ status open
 \begin_inset Graphics
 	filename DD Images/Diagrams/Runtime - Communicate Malfunction.png
 	lyxscale 30
-	width 80page%
+	width 70page%
 
 \end_inset
 
@@ -912,6 +940,21 @@ Communication of a malfunction runtime view
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+In this diagram is explained how a user can communicate to the system eventual
+ cars problem.
+ Further, when an operator decides to work on a car, it can set its status
+ to 
+\begin_inset Quotes eld
+\end_inset
+
+under maintenance
+\begin_inset Quotes erd
+\end_inset
+
+, so no user can reserve it.
 \end_layout
 
 \begin_layout Subsection
