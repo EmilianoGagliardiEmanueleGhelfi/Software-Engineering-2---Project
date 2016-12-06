@@ -179,7 +179,7 @@ The communication between client and server can be synchronous or asynchronous
  The server can communicate asynchronously with client with notification
  or messages (email).This is the class diagram of the data core (likely during
  the coding phase a more detailed data structure will come up).
- There are two important comsideration to do about this model: the first
+ There are two important consideration to do about this model: the first
  one is that the two relations user-reservation and user-ride will guarantee
  the reconstruction of users “story” in the use of the Power Enjoy service,
  and the second one related to a bit more technical solution about car system.
@@ -187,10 +187,6 @@ The communication between client and server can be synchronous or asynchronous
  be stored, like battery life and position, because they change rapidly.
  The explanation of this decision is in the component diagram description,
  in particular in the explanation of how the car proxy component works.
-\end_layout
-
-\begin_layout Subsection
-High level component and their interaction
 \end_layout
 
 \begin_layout Standard
@@ -633,7 +629,7 @@ The client application request is sent to the registration manager component,
  that have to verify that the payment information and the driver license
  are valid.
  To do this, as mentioned in the product perspective section of the RASD
- document, external service are used.
+ document, external services are used.
  Then, if the information are valid, a new user is created and inserted
  in the database, and the result of the operation is sent to the user.
 \end_layout
