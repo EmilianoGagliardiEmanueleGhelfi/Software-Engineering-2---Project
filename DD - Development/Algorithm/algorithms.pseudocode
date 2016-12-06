@@ -83,7 +83,7 @@ Function unlockCar(User user, Car car){
 // callback of carobserver called by car when engine starts
 Function engineStartCallback(Car car){
     
-    get ride of car
+    ride = get ride of car
 
     //set started state to ride
     ride.setState(STARTED);

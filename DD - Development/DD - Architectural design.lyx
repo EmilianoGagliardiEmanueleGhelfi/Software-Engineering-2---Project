@@ -553,6 +553,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename DD Images/Diagrams/Deployment Diagram.png
 	lyxscale 30
@@ -666,8 +667,16 @@ Car
 
 \begin_layout Standard
 Note that here the car is considered as a tier but actually is a blackbox
- capable of receive request from our system and capable to make request
- and call some interfaces provided by components of the system
+ capable of receive request from our system and to call some interfaces
+ provided by components of the system.
+ 
+\begin_inset Newline newline
+\end_inset
+
+This division is in order to not overload any machine.
+ Application Server and Web Server are deployed on different machine because
+ if due to great load there will be the need of another Application Server
+ will be easier to instantiate another machine.
 \end_layout
 
 \begin_layout Subsubsection
@@ -689,6 +698,14 @@ Business Layer: it's on the Application Server.
 
 \begin_layout Itemize
 Data Layer: it's on the Database Server.
+\end_layout
+
+\begin_layout Standard
+Divide layers is important for decoupling and for dividing responsibilities.
+ In this way different developers can focus on different tasks abstracting
+ from other layers.
+ Diving in layers is also important for mental clearness because in the
+ case of a problem it should be clear where the problem is located.
 \end_layout
 
 \begin_layout Subsubsection
@@ -729,16 +746,51 @@ Design Patterns
 Client-Server
 \end_layout
 
+\begin_layout Standard
+Client server is the base of the architecture.
+ The central system is the server and provides services to both web application
+ and mobile application.
+ The central server communicates with car that acts as a server with respect
+ to central system.
+ 
+\end_layout
+
 \begin_layout Subsubsection*
 Monolithic
+\end_layout
+
+\begin_layout Standard
+It's decided to use a monolithic approach because of simplicity of development.
+ Particular attention is give to decoupling and modularization.
+ In this way the refactoring to micro-services will be easy if there will
+ be the need of scalability.
+ With the attention to decoupling a cloud approach it's possible and it's
+ possible to deploy different part of the system on different machines.
 \end_layout
 
 \begin_layout Subsubsection*
 Proxy
 \end_layout
 
+\begin_layout Standard
+Proxy Pattern is used to communicate with the car.
+ Car Proxy is the abstraction of the car in the system.
+ When a component needs to communicate with the car, it calls the method
+ provided by car proxy.
+ Then car proxy decides wether to call car API or to get information from
+ the DB.
+\end_layout
+
 \begin_layout Subsubsection*
 Observer
+\end_layout
+
+\begin_layout Standard
+Observer Pattern is used to get callback from car's important event like
+ engine start or engine stop.
+ CarObserver is instantiated when the user unlocks the car and the car is
+ informed that it needs to call the observer when an important event takes
+ place.
 \end_layout
 
 \end_body
