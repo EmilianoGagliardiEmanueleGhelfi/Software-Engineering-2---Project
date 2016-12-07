@@ -116,7 +116,8 @@ Here is the list of components and their interfaces.
 \end_layout
 
 \begin_layout Itemize
-doRegistration(username,password): creates a new user if possible.
+doRegistration(username, password, paymentInformation, driveLicense): creates
+ a new user if possible.
 \end_layout
 
 \begin_layout Standard
@@ -147,11 +148,12 @@ doReservation(userId, reservationInfo): creates a new reservation and starts
 \end_layout
 
 \begin_layout Itemize
-unlockRequest(userId,carId): calls unlock interface provided by Car Proxy
+unlockRequest(userId, carId, userPosition): calls unlock interface provided
+ by Car Proxy
 \end_layout
 
 \begin_layout Itemize
-lockRequest(userId,carId): the same as before.
+lockRequest(userId, carId): the same as before.
 \end_layout
 
 \begin_layout Itemize
@@ -218,7 +220,7 @@ tion regarding malfunctions or damages to the system.
 \end_layout
 
 \begin_layout Itemize
-doLogin(username,password): manages login and sessions.
+doLogin(username, password): manages login and sessions.
 \end_layout
 
 \begin_layout Standard
@@ -253,7 +255,7 @@ sendNotification(notificationInfo, notificationType): sends a notification
 \end_layout
 
 \begin_layout Itemize
-searchCars(position,radius): searches for cars near the position.
+searchCars(position, radius): searches for cars near the position.
 \end_layout
 
 \begin_layout Standard
@@ -268,7 +270,7 @@ searchCars(position,radius): searches for cars near the position.
 \end_layout
 
 \begin_layout Itemize
-setCarStatus(carId,status): set the status of car
+setCarStatus(carId, status): set the status of car
 \end_layout
 
 \begin_layout Itemize
@@ -300,7 +302,7 @@ lockCar(userId)
 \end_layout
 
 \begin_layout Itemize
-addSafeArea(position,safeAreaType): adds a safe area.
+addSafeArea(position, safeAreaType): adds a safe area.
  SafeAreaType stands for simple safe area or charging area.
 \end_layout
 
@@ -309,19 +311,19 @@ deleteSafeArea(safeAreaId)
 \end_layout
 
 \begin_layout Itemize
-addOperator(username,password,competenceArea)
+addOperator(username, password, competenceArea)
 \end_layout
 
 \begin_layout Itemize
-deleteOperator(username,password)
+deleteOperator(username, password)
 \end_layout
 
 \begin_layout Itemize
-addAdmin(username,password)
+addAdmin(username, password)
 \end_layout
 
 \begin_layout Itemize
-deleteAdmin(username,password)
+deleteAdmin(username, password)
 \end_layout
 
 \begin_layout Standard
@@ -352,15 +354,15 @@ deleteAdmin(username,password)
 \end_layout
 
 \begin_layout Itemize
-lockCar
+lockCar(carId)
 \end_layout
 
 \begin_layout Itemize
-unlockCar
+unlockCar(carId)
 \end_layout
 
 \begin_layout Itemize
-getCarStatus
+getCarStatus(carId)
 \end_layout
 
 \begin_layout Standard
@@ -377,6 +379,11 @@ getCarStatus
 \begin_layout Itemize
 doPayment(userId): it calls the external payment API in order to complete
  the payment.
+\end_layout
+
+\begin_layout Itemize
+verifyValidity(paymentInformation): it calls the external payment API to
+ check if the information are valid.
 \end_layout
 
 \begin_layout Standard

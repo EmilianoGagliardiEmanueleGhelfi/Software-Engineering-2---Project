@@ -479,9 +479,9 @@
 													"showShadow": true,
 													"containerChangeable": false,
 													"containerExtending": false,
-													"left": 1382,
+													"left": 1360,
 													"top": 106,
-													"width": 391,
+													"width": 434,
 													"height": 13,
 													"autoResize": false,
 													"alpha": 1.5707963267948966,
@@ -491,7 +491,7 @@
 													},
 													"edgePosition": 1,
 													"underline": false,
-													"text": "1 : Register(paymentInformation, driveLicence, newLoginCredential)",
+													"text": "1 : doRegistration(username, password, paymentInformation, driveLicense)",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -1053,9 +1053,9 @@
 													"showShadow": true,
 													"containerChangeable": false,
 													"containerExtending": false,
-													"left": 1740,
+													"left": 1727,
 													"top": 136,
-													"width": 191,
+													"width": 217,
 													"height": 13,
 													"autoResize": false,
 													"alpha": 1.5707963267948966,
@@ -1065,7 +1065,7 @@
 													},
 													"edgePosition": 1,
 													"underline": false,
-													"text": "2 : AreValid(paymentInformation)",
+													"text": "2 : verifyValidity(paymentInformation)",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -1223,9 +1223,9 @@
 													"showShadow": true,
 													"containerChangeable": false,
 													"containerExtending": false,
-													"left": 1964,
+													"left": 1953,
 													"top": 144,
-													"width": 191,
+													"width": 220,
 													"height": 13,
 													"autoResize": false,
 													"alpha": 1.5707963267948966,
@@ -1235,7 +1235,7 @@
 													},
 													"edgePosition": 1,
 													"underline": false,
-													"text": "3 : AreValid(paymentInformation)",
+													"text": "3 : checkValidity(paymentInformation)",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -1258,7 +1258,7 @@
 													"showShadow": true,
 													"containerChangeable": false,
 													"containerExtending": false,
-													"left": 2059,
+													"left": 2063,
 													"top": 129,
 													"width": 0,
 													"height": 13,
@@ -1292,7 +1292,7 @@
 													"showShadow": true,
 													"containerChangeable": false,
 													"containerExtending": false,
-													"left": 2059,
+													"left": 2063,
 													"top": 164,
 													"width": 0,
 													"height": 13,
@@ -1326,7 +1326,7 @@
 													"showShadow": true,
 													"containerChangeable": false,
 													"containerExtending": false,
-													"left": 2166,
+													"left": 2174,
 													"top": 160,
 													"width": 14,
 													"height": 29,
@@ -1349,7 +1349,7 @@
 												"$ref": "AAAAAAFYxWgJ/uOolEE="
 											},
 											"lineStyle": 0,
-											"points": "1952:160;2166:160",
+											"points": "1952:160;2174:160",
 											"nameLabel": {
 												"$ref": "AAAAAAFYxYRKPOzJu2A="
 											},
@@ -1393,7 +1393,7 @@
 													"showShadow": true,
 													"containerChangeable": false,
 													"containerExtending": false,
-													"left": 2022,
+													"left": 2026,
 													"top": 188,
 													"width": 72,
 													"height": 13,
@@ -1428,7 +1428,7 @@
 													"showShadow": true,
 													"containerChangeable": false,
 													"containerExtending": false,
-													"left": 2058,
+													"left": 2062,
 													"top": 203,
 													"width": 0,
 													"height": 13,
@@ -1462,7 +1462,7 @@
 													"showShadow": true,
 													"containerChangeable": false,
 													"containerExtending": false,
-													"left": 2059,
+													"left": 2063,
 													"top": 168,
 													"width": 0,
 													"height": 13,
@@ -1519,7 +1519,7 @@
 												"$ref": "AAAAAAFYxYQIPOyttnE="
 											},
 											"lineStyle": 0,
-											"points": "2166:184;1952:184",
+											"points": "2174:184;1952:184",
 											"nameLabel": {
 												"$ref": "AAAAAAFYxYU3muzsYFI="
 											},
@@ -1788,7 +1788,7 @@
 															"showShadow": true,
 															"containerChangeable": false,
 															"containerExtending": false,
-															"left": 32,
+															"left": 48,
 															"top": 0,
 															"width": 0,
 															"height": 13,
@@ -1813,7 +1813,7 @@
 															"showShadow": true,
 															"containerChangeable": false,
 															"containerExtending": false,
-															"left": 2117,
+															"left": 2125,
 															"top": 47,
 															"width": 111,
 															"height": 26,
@@ -1839,7 +1839,7 @@
 															"showShadow": true,
 															"containerChangeable": false,
 															"containerExtending": false,
-															"left": 32,
+															"left": 48,
 															"top": 0,
 															"width": 106,
 															"height": 13,
@@ -1865,7 +1865,7 @@
 															"showShadow": true,
 															"containerChangeable": false,
 															"containerExtending": false,
-															"left": 32,
+															"left": 48,
 															"top": 0,
 															"width": 0,
 															"height": 13,
@@ -1885,7 +1885,7 @@
 													"showShadow": true,
 													"containerChangeable": false,
 													"containerExtending": false,
-													"left": 2112,
+													"left": 2120,
 													"top": 40,
 													"width": 121,
 													"height": 40,
@@ -1921,7 +1921,7 @@
 													"showShadow": true,
 													"containerChangeable": false,
 													"containerExtending": false,
-													"left": 2173,
+													"left": 2181,
 													"top": 80,
 													"width": 1,
 													"height": 135,
@@ -1937,7 +1937,7 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 2112,
+											"left": 2120,
 											"top": 40,
 											"width": 121,
 											"height": 175,
@@ -2889,7 +2889,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFYxTsEAZRE4hU="
 									},
-									"name": "Register",
+									"name": "doRegistration",
 									"source": {
 										"$ref": "AAAAAAFYxUKpkONAkTM="
 									},
@@ -2898,7 +2898,7 @@
 									},
 									"visibility": "public",
 									"messageSort": "synchCall",
-									"arguments": "paymentInformation, driveLicence, newLoginCredential",
+									"arguments": "username, password, paymentInformation, driveLicense",
 									"isConcurrentIteration": false
 								},
 								{
@@ -2907,7 +2907,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFYxTsEAZRE4hU="
 									},
-									"name": "AreValid",
+									"name": "verifyValidity",
 									"source": {
 										"$ref": "AAAAAAFYxUMgbONkCOQ="
 									},
@@ -2925,7 +2925,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFYxTsEAZRE4hU="
 									},
-									"name": "AreValid",
+									"name": "checkValidity",
 									"source": {
 										"$ref": "AAAAAAFYxWgJ/eOhP6I="
 									},
@@ -4968,9 +4968,9 @@
 													"showShadow": true,
 													"containerChangeable": false,
 													"containerExtending": false,
-													"left": 120,
+													"left": 46,
 													"top": 97,
-													"width": 134,
+													"width": 282,
 													"height": 13,
 													"autoResize": false,
 													"alpha": 1.5707963267948966,
@@ -4980,7 +4980,7 @@
 													},
 													"edgePosition": 1,
 													"underline": false,
-													"text": "1 : reserve(carID, user)",
+													"text": "1 : doReservation(user, carID, hour, passengers)",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -5138,9 +5138,9 @@
 													"showShadow": true,
 													"containerChangeable": false,
 													"containerExtending": false,
-													"left": 311,
+													"left": 294,
 													"top": 144,
-													"width": 113,
+													"width": 146,
 													"height": 13,
 													"autoResize": false,
 													"alpha": 1.5031023155393017,
@@ -5150,7 +5150,7 @@
 													},
 													"edgePosition": 1,
 													"underline": false,
-													"text": "2 : check(car, user)",
+													"text": "2 : check(car, user, hour)",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -6097,19 +6097,19 @@
 													"showShadow": true,
 													"containerChangeable": false,
 													"containerExtending": false,
-													"left": 263,
+													"left": 280,
 													"top": 272,
-													"width": 196,
+													"width": 229,
 													"height": 13,
 													"autoResize": false,
-													"alpha": 1.9028547412028276,
-													"distance": 61.35144660071187,
+													"alpha": 1.7871359651293692,
+													"distance": 93.17188417113823,
 													"hostEdge": {
 														"$ref": "AAAAAAFY1dr2Q2haKIo="
 													},
 													"edgePosition": 1,
 													"underline": false,
-													"text": "4 : createReservation(user, carID)",
+													"text": "4 : createReservation(user, carID, hour)",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -6765,7 +6765,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFYxalPPe8p4rA="
 									},
-									"name": "reserve",
+									"name": "doReservation",
 									"source": {
 										"$ref": "AAAAAAFYxang++86L6Y="
 									},
@@ -6774,7 +6774,7 @@
 									},
 									"visibility": "public",
 									"messageSort": "synchCall",
-									"arguments": "carID, user",
+									"arguments": "user, carID, hour, passengers",
 									"isConcurrentIteration": false
 								},
 								{
@@ -6792,7 +6792,7 @@
 									},
 									"visibility": "public",
 									"messageSort": "synchCall",
-									"arguments": "car, user",
+									"arguments": "car, user, hour",
 									"isConcurrentIteration": false
 								},
 								{
@@ -6827,7 +6827,7 @@
 									},
 									"visibility": "public",
 									"messageSort": "synchCall",
-									"arguments": "user, carID",
+									"arguments": "user, carID, hour",
 									"isConcurrentIteration": false
 								},
 								{
@@ -9797,6 +9797,7 @@
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
+							"type": "",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -9814,6 +9815,7 @@
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
+							"type": "",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -9831,6 +9833,7 @@
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
+							"type": "",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,

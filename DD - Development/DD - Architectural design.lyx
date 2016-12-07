@@ -59,9 +59,9 @@
 \color #008000
 \end_index
 \leftmargin 15page%
-\topmargin 15pheight%
+\topmargin 10pheight%
 \rightmargin 15page%
-\bottommargin 15pheight%
+\bottommargin 10pheight%
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -307,7 +307,7 @@ status open
 
 
 \backslash
-begin{adjustwidth*}{-1cm}{-1cm}
+begin{adjustwidth}{-0cm}{-0cm}
 \end_layout
 
 \end_inset
@@ -331,7 +331,7 @@ status open
 \begin_inset Graphics
 	filename DD Images/Diagrams/Component diagram (detailed).png
 	lyxscale 30
-	width 100text%
+	height 140text%
 	rotateAngle 90
 
 \end_inset
@@ -364,16 +364,9 @@ status open
 
 
 \backslash
-end{adjustwidth*} 
+end{adjustwidth} 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
 \end_inset
 
 
