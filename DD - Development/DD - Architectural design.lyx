@@ -1002,11 +1002,16 @@ In this diagram is shown an example of the functioning of the car proxy.
  car should be done, if the stored value is sufficiently recent or not.
  In this way it can decides if it is necessary to make an actual remote
  request, or the if cached value can be used.
- 
 \end_layout
 
-\begin_layout Subsection
-Component interface
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "DD - component-interfaces.lyx"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
