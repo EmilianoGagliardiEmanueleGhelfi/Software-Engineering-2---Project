@@ -299,22 +299,6 @@ This is the core of the data stored in the db.
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{adjustwidth}{-0cm}{-0cm}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 Component view
 \end_layout
@@ -331,7 +315,7 @@ status open
 \begin_inset Graphics
 	filename DD Images/Diagrams/Component diagram (detailed).png
 	lyxscale 30
-	height 140text%
+	height 130text%
 	rotateAngle 90
 
 \end_inset
@@ -349,22 +333,6 @@ More detailed component diagram
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{adjustwidth} 
 \end_layout
 
 \end_inset
