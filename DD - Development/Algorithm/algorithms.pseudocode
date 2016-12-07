@@ -35,7 +35,7 @@ Function calculateCost(Ride ride){
 }
 
 //function of reservation manager
-Function doReservation(User user, Car car, Hour hour){
+Function doReservation(User user, Car car, Hour hour, int passengers){
     // if user has already some reservation can't reserve a car
     If user.currentReservation>0 
         return Error
@@ -53,8 +53,8 @@ Function doReservation(User user, Car car, Hour hour){
         return Error
 
     user.reservedCar = car;
-    create new Reservation(car,user,hour);
-    update DB information
+    create new Reservation(car,user,hour,passengers);
+    update DB information;
 }
 
 // function of ride manager
@@ -83,7 +83,7 @@ Function unlockCar(User user, Car car){
 // callback of carobserver called by car when engine starts
 Function engineStartCallback(Car car){
     
-    ride = get ride of car
+    ride = get ride related to car;
 
     //set started state to ride
     ride.setState(STARTED);
@@ -92,6 +92,34 @@ Function engineStartCallback(Car car){
 //callback of carObserver called by car when engine stops
 Function engineStopCallback(Car car){
     same as engineStart but set state STOPPED
+}
+
+// function of car proxy called by other components
+Function getCarStatus(Car car){
+    
+    // get the time of last update from the db
+    lastStatusUpdate = get last update of car from DB;
+
+    // if the last update is sufficiently recenent return that status
+    // Cache function
+    If lastStatusUpdate is recent
+        return status from DB;
+
+    // if the last update is not recent the status could have changed so request status to the car
+    If lastStatusUpdate is not recent
+        get ip of the car;
+        create new status request to car;
+        wait car response;
+        status = car response;
+        return status;
+}
+
+// function of car proxy called by other components when they need to unlock a car
+Function unlockCar (String carId){
+    get ip of the car;
+    create a new unlock request to car;
+    wait car response;
+    return response;
 }
 
 
