@@ -5,6 +5,9 @@
 \save_transient_properties true
 \origin unavailable
 \textclass article
+\begin_preamble
+\usepackage{changepage}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -31,7 +34,7 @@
 \spacing single
 \use_hyperref false
 \papersize default
-\use_geometry false
+\use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -55,6 +58,10 @@
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 15page%
+\topmargin 15pheight%
+\rightmargin 15page%
+\bottommargin 15pheight%
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -92,7 +99,7 @@ status open
 \begin_inset Graphics
 	filename DD Images/Architectures/Arch Overview.png
 	lyxscale 30
-	width 50page%
+	width 100text%
 
 \end_inset
 
@@ -200,7 +207,7 @@ status open
 \begin_inset Graphics
 	filename DD Images/Diagrams/High Level component.png
 	lyxscale 70
-	width 50page%
+	width 100text%
 
 \end_inset
 
@@ -243,7 +250,7 @@ status open
 \begin_inset Graphics
 	filename DD Images/Diagrams/Model class diagram.png
 	lyxscale 30
-	width 50page%
+	width 100text%
 
 \end_inset
 
@@ -285,6 +292,29 @@ This is the core of the data stored in the db.
  proxy component, in the following section.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{adjustwidth*}{-1cm}{-1cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Component view
 \end_layout
@@ -301,7 +331,8 @@ status open
 \begin_inset Graphics
 	filename DD Images/Diagrams/Component diagram (detailed).png
 	lyxscale 30
-	width 80page%
+	width 100text%
+	rotateAngle 90
 
 \end_inset
 
@@ -320,6 +351,29 @@ More detailed component diagram
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{adjustwidth*} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -499,7 +553,7 @@ Car listener
 This is a subcomponent of the ride component, that is instantiated for a
  ride when the car is successfully unlocked.
  After the unlock of a car, probably the engine will be turned on.
- This component fulfil the problem of getting the engine ignition time,
+ This component fulfill the problem of getting the engine ignition time,
  in order to calculate the correct ride cost.
  The runtime flow is explained with a sequence diagram in the section Runtime
  view.
@@ -553,7 +607,7 @@ status open
 \begin_inset Graphics
 	filename DD Images/Diagrams/Deployment Diagram.png
 	lyxscale 30
-	width 50page%
+	width 100text%
 
 \end_inset
 
@@ -600,7 +654,7 @@ status open
 \begin_inset Graphics
 	filename DD Images/Diagrams/Runtime - Registration.png
 	lyxscale 30
-	width 70page%
+	width 100text%
 
 \end_inset
 
@@ -653,7 +707,7 @@ status open
 \begin_inset Graphics
 	filename DD Images/Diagrams/Runtime - Car Search.png
 	lyxscale 30
-	width 70page%
+	width 100text%
 
 \end_inset
 
@@ -700,7 +754,7 @@ status open
 \begin_inset Graphics
 	filename DD Images/Diagrams/Runtime - Reservation.png
 	lyxscale 30
-	width 70page%
+	width 100text%
 
 \end_inset
 
@@ -750,7 +804,7 @@ status open
 \begin_inset Graphics
 	filename DD Images/Diagrams/Runtime - Unlock Car.png
 	lyxscale 30
-	width 70page%
+	width 100text%
 
 \end_inset
 
@@ -802,7 +856,7 @@ status open
 \begin_inset Graphics
 	filename DD Images/Diagrams/Runtime - EndRide.png
 	lyxscale 30
-	width 70page%
+	width 100text%
 
 \end_inset
 
@@ -858,7 +912,7 @@ status open
 \begin_inset Graphics
 	filename DD Images/Diagrams/Runtime - Car Monitoring.png
 	lyxscale 30
-	width 70page%
+	width 100text%
 
 \end_inset
 
@@ -902,15 +956,12 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
+\noindent
 \align center
 \begin_inset Graphics
 	filename DD Images/Diagrams/Runtime - Communicate Malfunction.png
 	lyxscale 30
-	width 70page%
+	width 100text%
 
 \end_inset
 
@@ -972,7 +1023,7 @@ status open
 \begin_inset Graphics
 	filename DD Images/Diagrams/Runtime - Car Proxy.png
 	lyxscale 30
-	width 70page%
+	width 100text%
 
 \end_inset
 
