@@ -235,8 +235,8 @@ doLogin(username, password): manages login and sessions.
 \end_layout
 
 \begin_layout Itemize
-sendNotification(notificationInfo, notificationType): sends a notification
- of type notificationType with the content notificationInfo.
+sendNotification(notificationInfo, notificationType, receiver): sends a
+ notification of type notificationType with the content notificationInfo.
 \end_layout
 
 \begin_layout Standard
