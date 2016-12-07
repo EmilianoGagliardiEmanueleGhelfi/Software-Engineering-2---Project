@@ -151,27 +151,23 @@ DD: Design Document (this document)
 \end_layout
 
 \begin_layout Itemize
-JSON
+JSON: JavaScript Object Notation
 \end_layout
 
 \begin_layout Itemize
-REST
+REST: Representational State Transfer
 \end_layout
 
 \begin_layout Itemize
-RESTful
+JDBC: Java Database Connectivity
 \end_layout
 
 \begin_layout Itemize
-HTTP
+API: Application Programming Interface
 \end_layout
 
 \begin_layout Itemize
-JDBC
-\end_layout
-
-\begin_layout Itemize
-API
+JEE: Java Enterprise Edition
 \end_layout
 
 \begin_layout Subsection

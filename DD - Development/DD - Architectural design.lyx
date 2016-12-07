@@ -560,31 +560,31 @@ Deployment view
 \begin_layout Standard
 The deployment diagram shows the hardware of the system and the software
  that it's installed on it.
-\begin_inset Newline newline
-\end_inset
-
-In this diagram there is the Mobile Application installed on Mobile Phone
- of the user.
-\begin_inset Newline newline
-\end_inset
-
-The browser runs on user/operator/admin PC.
-\begin_inset Newline newline
-\end_inset
-
-The Application Server and the Web Server are on different Nodes and on
+ The Mobile application is installed on Mobile Phone of the user while the
+ browser runs on PC of the user/operator/admin.
+ The Application Server and the Web Server are on different Nodes and on
  different environment.
  In this way they are totally decoupled and it's ensured the scalability
  of the system.
- The DBMS runs on a different node in order to not overload a node with
- a huge load.
-\begin_inset Newline newline
-\end_inset
-
-If the need of scalability becomes more important for the system there could
- be more application server on different nodes with a load balancer before
- them.
+ The DBMS runs on a different node in order to not overload a node.
+ If the need of scalability becomes more important for the system there
+ could be more application server on different nodes with a load balancer
+ before them.
  This is compatible with a cloud approach.
+ In figure the web server serves the static content such as html, javascript
+ and css.
+ On the web server it's installed the reverse proxy module in order to act
+ as a reverse proxy with respect to the Application Server.
+ In this figure it's clear that the dbms is accessible only from the application
+ server and the application server it's called only by the web server.
+ The business logic runs on the Application server on J2EE container like
+ WildFly(the new name of jBoss).
+ WildFly provides full access to the functionality that Java Enterprise
+ Edition provides including EJB and many other technlogies.
+ The web server could be Nginx because it uses an asynchronous event-driven
+ architecture to handle a massive amount of connections.
+ This architecture makes handling high and fluctuating loads much more predictab
+le in terms of RAM usage, CPU usage, and latency.
  
 \end_layout
 
@@ -1155,12 +1155,19 @@ Used by the Application Server to communicate with the database server.
 \end_layout
 
 \begin_layout Subsubsection*
-RESTful API
+REST API
 \end_layout
 
 \begin_layout Standard
 Used by both Mobile Application and Web Application to access the services
  provided by Application Server component.
+ Rest stands for Representation State Transfer.
+ It relies on a stateless, client-server, cacheable communication protocol
+ and the HTTP protocol is used.
+ The Application use HTTP request to post data, read data and delete data.
+ Rest approach permits the fact that the server and the client can interact
+ in complex ways without the client knowing anything beforehand about the
+ server and the resources it hosts.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1185,12 +1192,40 @@ Monolithic
 \end_layout
 
 \begin_layout Standard
-It's decided to use a monolithic approach because of simplicity of development.
+The software to be follows the Monolithic pattern.
  Particular attention is give to decoupling and modularization.
  In this way the refactoring to micro-services will be easy if there will
  be the need of scalability.
  With the attention to decoupling a cloud approach it's possible and it's
  possible to deploy different part of the system on different machines.
+\begin_inset Newline newline
+\end_inset
+
+This pattern has been decided because of its benefits:
+\end_layout
+
+\begin_layout Itemize
+Simple to Develop: the goal of current development tools and IDEs is to
+ support the development of monolithic applications.
+\end_layout
+
+\begin_layout Itemize
+Simple to Deploy: you simply need to deploy the WAR file (or directory hierarchy
+) on the appropriate runtime.
+\end_layout
+
+\begin_layout Itemize
+Simple to Scale: you can scale the application by running multiple copies
+ of the application behind a load balancer.
+\end_layout
+
+\begin_layout Standard
+However once application becomes large this approach has a number of drawback
+ so there's the need to decoupling components as much as possible in order
+ to make possible the "migration" to micro-services, most of well known
+ internet service have initially started with a monolithic architecture
+ and then migrated to a micro-services architecture.
+ 
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1204,6 +1239,25 @@ Proxy Pattern is used to communicate with the car.
  provided by car proxy.
  Then car proxy decides wether to call car API or to get information from
  the DB.
+\begin_inset Newline newline
+\end_inset
+
+Proxy The intent of the proxy is: 
+\end_layout
+
+\begin_layout Standard
+• Provide a surrogate or placeholder for another object to control access
+ to it.
+\end_layout
+
+\begin_layout Standard
+• Use an extra level of indirection to support distributed, controlled,
+ or intelligent access.
+\end_layout
+
+\begin_layout Standard
+• Add a wrapper and delegation to protect the real component from undue
+ complexity.
 \end_layout
 
 \begin_layout Subsubsection*

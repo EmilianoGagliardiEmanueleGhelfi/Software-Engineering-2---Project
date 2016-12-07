@@ -74,81 +74,118 @@
 Algorithm Design
 \end_layout
 
+\begin_layout Standard
+In this section are described the most important algorithm of the software
+ to be.
+\begin_inset Newline newline
+\end_inset
+
+Algorithms are divided by component in order to disambiguate functions with
+ the same name but executed by different component.
+\begin_inset Newline newline
+\end_inset
+
+Algorithms are written in a sort of pseudocode to maintain an high level
+ of abstraction and to make them more clear and readable.
+ 
+\end_layout
+
 \begin_layout Subsection
-Search Car
+Search Engine Algorithms
+\end_layout
+
+\begin_layout Subsubsection*
+Search Cars
 \end_layout
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,numbers=left,stepnumber=5,breaklines=true,morekeywords={If,=,For, var, :,Function}"
+lstparams "language=C,numbers=left,numberstyle={\scriptsize},breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or, For, Function, var, =, List},commentstyle={\color{cyan}}"
 inline false
 status open
 
 \begin_layout Plain Layout
+
 // function of search engine
 \end_layout
 
 \begin_layout Plain Layout
+
 // optionSearch is the option related to the search
 \end_layout
 
 \begin_layout Plain Layout
+
 // userPosition in the current position of user
 \end_layout
 
 \begin_layout Plain Layout
+
 Function searchCar(OptionSearch optionSearch, Position userPosition){
 \end_layout
 
 \begin_layout Plain Layout
+
     // list of cars to return
 \end_layout
 
 \begin_layout Plain Layout
+
     List toReturnCars;
 \end_layout
 
 \begin_layout Plain Layout
+
     // get max distance of car to user from optionSearch
 \end_layout
 
 \begin_layout Plain Layout
+
     var maxDistance = optionSearch.distance;
 \end_layout
 
 \begin_layout Plain Layout
+
     // get all cars from database
 \end_layout
 
 \begin_layout Plain Layout
+
     List cars = DB.getCars();
 \end_layout
 
 \begin_layout Plain Layout
+
     For Car car in cars {
 \end_layout
 
 \begin_layout Plain Layout
+
         var carPosition = CarProxy.getCarPosition(car.id);
 \end_layout
 
 \begin_layout Plain Layout
+
         var carToUser = calculateDistance(carPosition,userPosition);
 \end_layout
 
 \begin_layout Plain Layout
+
         // if distance is lower than selected distance, add car to toReturnCars
 \end_layout
 
 \begin_layout Plain Layout
+
         if(carToUser<maxDistance)
 \end_layout
 
 \begin_layout Plain Layout
+
             toReturnCars.add(car);
 \end_layout
 
 \begin_layout Plain Layout
+
         }
 \end_layout
 
@@ -157,264 +194,13 @@ Function searchCar(OptionSearch optionSearch, Position userPosition){
 \end_layout
 
 \begin_layout Plain Layout
+
     return toReturnCars;
 \end_layout
 
 \begin_layout Plain Layout
+
 }
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-//function of reservation manager
-\end_layout
-
-\begin_layout Plain Layout
-Function doReservation(User user, Car car, Hour hour){
-\end_layout
-
-\begin_layout Plain Layout
-    // if user has already some reservation can't reserve a car
-\end_layout
-
-\begin_layout Plain Layout
-    If user.currentReservation>0 
-\end_layout
-
-\begin_layout Plain Layout
-        return Error
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-    // if car is reserved or is busy return error
-\end_layout
-
-\begin_layout Plain Layout
-    If car.isReserved or car.isBusy 
-\end_layout
-
-\begin_layout Plain Layout
-        return Error
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-    // if user is suspended, it can't do a reservation
-\end_layout
-
-\begin_layout Plain Layout
-    If user.isSuspended
-\end_layout
-
-\begin_layout Plain Layout
-        return Error
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-    //  users must be able to reserve a car for up to one hour before they
- pick it up.
-\end_layout
-
-\begin_layout Plain Layout
-    If Time.currentHour+1>hour
-\end_layout
-
-\begin_layout Plain Layout
-        return Error
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-    user.reservedCar = car;
-\end_layout
-
-\begin_layout Plain Layout
-    create new Reservation(car,user,hour);
-\end_layout
-
-\begin_layout Plain Layout
-    update DB information
-\end_layout
-
-\begin_layout Plain Layout
-}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-// function of ride manager
-\end_layout
-
-\begin_layout Plain Layout
-Function unlockCar(User user, Car car){
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-    var userPosition = user.position;
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-    // get car position from carProxy
-\end_layout
-
-\begin_layout Plain Layout
-    var carPosition = CarProxy.getCarPosition(car.id);
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-    If car is not reserved by user
-\end_layout
-
-\begin_layout Plain Layout
-        return Error
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-    If carPosition and userPosition Are near
-\end_layout
-
-\begin_layout Plain Layout
-        //create a new ride
-\end_layout
-
-\begin_layout Plain Layout
-        ride = new Ride(car,user);
-\end_layout
-
-\begin_layout Plain Layout
-        ride.setState(CREATED);
-\end_layout
-
-\begin_layout Plain Layout
-        // ask car proxy to unlock car
-\end_layout
-
-\begin_layout Plain Layout
-        CarProxy.unlockCar(car.id);
-\end_layout
-
-\begin_layout Plain Layout
-        // register an observer to the car 
-\end_layout
-
-\begin_layout Plain Layout
-        CarProxy.registerObserver(car.id,new CarObserver());
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-    Else return Error
-\end_layout
-
-\begin_layout Plain Layout
-}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-// callback of carobserver called by car when engine starts
-\end_layout
-
-\begin_layout Plain Layout
-Function engineStartCallback(Car car){
-\end_layout
-
-\begin_layout Plain Layout
-    
-\end_layout
-
-\begin_layout Plain Layout
-    ride = get ride of car
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-    //set started state to ride
-\end_layout
-
-\begin_layout Plain Layout
-    ride.setState(STARTED);
-\end_layout
-
-\begin_layout Plain Layout
-}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-//callback of carObserver called by car when engine stops
-\end_layout
-
-\begin_layout Plain Layout
-Function engineStopCallback(Car car){
-\end_layout
-
-\begin_layout Plain Layout
-    same as engineStart but set state STOPPED
-\end_layout
-
-\begin_layout Plain Layout
-}
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -427,12 +213,16 @@ Function engineStopCallback(Car car){
 \end_layout
 
 \begin_layout Subsection
+Ride Manager Algorithms
+\end_layout
+
+\begin_layout Subsubsection*
 Calculate Cost
 \end_layout
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,numbers=left,stepnumber=5,breaklines=true,morekeywords={If,=,For, var, :,Function}"
+lstparams "language=C,numbers=left,numberstyle={\scriptsize},breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or, For, Function, var, =, List},commentstyle={\color{cyan}}"
 inline false
 status open
 
@@ -506,13 +296,221 @@ Function calculateCost(Ride ride){
 
 \end_layout
 
+\begin_layout Subsubsection*
+Unlock Car
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C,numbers=left,numberstyle={\scriptsize},breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or, For, Function, var, =, List},commentstyle={\color{cyan}}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+// function of ride manager
+\end_layout
+
+\begin_layout Plain Layout
+
+Function unlockCar(User user, String carID, Position userPosition){
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // get car position from carProxy
+\end_layout
+
+\begin_layout Plain Layout
+
+    var carPosition = CarProxy.getCarPosition(carID);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    If car is not reserved by user
+\end_layout
+
+\begin_layout Plain Layout
+
+        return Error
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    If carPosition and userPosition Are near
+\end_layout
+
+\begin_layout Plain Layout
+
+        //create a new ride
+\end_layout
+
+\begin_layout Plain Layout
+
+        ride = new Ride(carID,user);
+\end_layout
+
+\begin_layout Plain Layout
+
+        ride.setState(CREATED);
+\end_layout
+
+\begin_layout Plain Layout
+
+        // ask car proxy to unlock car
+\end_layout
+
+\begin_layout Plain Layout
+
+        CarProxy.unlockCar(carID);
+\end_layout
+
+\begin_layout Plain Layout
+
+        // register an observer to the car 
+\end_layout
+
+\begin_layout Plain Layout
+
+        CarProxy.registerObserver(carID,new CarObserver());
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Else return Error
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
+Car Observer Algorithms
+\end_layout
+
+\begin_layout Subsubsection*
+Engine Start Callback
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C,numbers=left,numberstyle={\scriptsize},breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or, For, Function, var, =, List},commentstyle={\color{cyan}}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+// callback of carobserver called by car when engine starts
+\end_layout
+
+\begin_layout Plain Layout
+
+Function engineStartCallback(String carID){
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    ride = get ride related to car;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    //set started state to ride
+\end_layout
+
+\begin_layout Plain Layout
+
+    ride.setState(STARTED);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Engine Stop Callback
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C,numbers=left,numberstyle={\scriptsize},breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or, For, Function, var, =, List},commentstyle={\color{cyan}}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+//callback of carObserver called by car when engine stops
+\end_layout
+
+\begin_layout Plain Layout
+
+Function engineStopCallback(String carID){
+\end_layout
+
+\begin_layout Plain Layout
+
+    same as engineStart but set state STOPPED
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Reservation Manager Algorithms
+\end_layout
+
+\begin_layout Subsubsection*
 Do Reservation
 \end_layout
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,numbers=left,stepnumber=5,breaklines=true,morekeywords={If,=,For, var, :,Function}"
+lstparams "language=C,numbers=left,numberstyle={\scriptsize},breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or, For, Function, var, =, List},commentstyle={\color{cyan}}"
 inline false
 status open
 
@@ -523,7 +521,7 @@ status open
 
 \begin_layout Plain Layout
 
-Function doReservation(User user, Car car, Hour hour){
+Function doReservation(User user, String carID, Hour hour, int passengers){
 \end_layout
 
 \begin_layout Plain Layout
@@ -610,12 +608,12 @@ Function doReservation(User user, Car car, Hour hour){
 
 \begin_layout Plain Layout
 
-    create new Reservation(car,user,hour);
+    create new Reservation(car,user,hour,passengers);
 \end_layout
 
 \begin_layout Plain Layout
 
-    update DB information
+    update DB information;
 \end_layout
 
 \begin_layout Plain Layout
@@ -629,46 +627,42 @@ Function doReservation(User user, Car car, Hour hour){
 \end_layout
 
 \begin_layout Subsection
-Unlock Car
+Car Proxy
+\end_layout
+
+\begin_layout Subsubsection*
+Get Car Status
 \end_layout
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,numbers=left,stepnumber=5,breaklines=true,morekeywords={If,=,For, var, :,Function}"
+lstparams "language=C,numbers=left,numberstyle={\scriptsize},breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or, For, Function, var, =, List},commentstyle={\color{cyan}}"
 inline false
 status open
 
 \begin_layout Plain Layout
 
-// function of ride manager
+// function of car proxy called by other components
 \end_layout
 
 \begin_layout Plain Layout
 
-Function unlockCar(User user, Car car){
+Function getCarStatus(String carID){
 \end_layout
 
 \begin_layout Plain Layout
 
+    
 \end_layout
 
 \begin_layout Plain Layout
 
-    var userPosition = user.position;
+    // get the time of last update from the db
 \end_layout
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
-    // get car position from carProxy
-\end_layout
-
-\begin_layout Plain Layout
-
-    var carPosition = CarProxy.getCarPosition(car.id);
+    lastStatusUpdate = get last update of car from DB;
 \end_layout
 
 \begin_layout Plain Layout
@@ -677,56 +671,22 @@ Function unlockCar(User user, Car car){
 
 \begin_layout Plain Layout
 
-    If car is not reserved by user
+    // if the last update is sufficiently recenent return that status
 \end_layout
 
 \begin_layout Plain Layout
 
-        return Error
+    // Cache function
 \end_layout
 
 \begin_layout Plain Layout
 
+    If lastStatusUpdate is recent
 \end_layout
 
 \begin_layout Plain Layout
 
-    If carPosition and userPosition Are near
-\end_layout
-
-\begin_layout Plain Layout
-
-        //create a new ride
-\end_layout
-
-\begin_layout Plain Layout
-
-        ride = new Ride(car,user);
-\end_layout
-
-\begin_layout Plain Layout
-
-        ride.setState(CREATED);
-\end_layout
-
-\begin_layout Plain Layout
-
-        // ask car proxy to unlock car
-\end_layout
-
-\begin_layout Plain Layout
-
-        CarProxy.unlockCar(car.id);
-\end_layout
-
-\begin_layout Plain Layout
-
-        // register an observer to the car 
-\end_layout
-
-\begin_layout Plain Layout
-
-        CarProxy.registerObserver(car.id,new CarObserver());
+        return status from DB;
 \end_layout
 
 \begin_layout Plain Layout
@@ -735,7 +695,89 @@ Function unlockCar(User user, Car car){
 
 \begin_layout Plain Layout
 
-    Else return Error
+    // if the last update is not recent the status could have changed so
+ request status to the car
+\end_layout
+
+\begin_layout Plain Layout
+
+    If lastStatusUpdate is not recent
+\end_layout
+
+\begin_layout Plain Layout
+
+        get ip of the car;
+\end_layout
+
+\begin_layout Plain Layout
+
+        create new status request to car;
+\end_layout
+
+\begin_layout Plain Layout
+
+        wait car response;
+\end_layout
+
+\begin_layout Plain Layout
+
+        status = car response;
+\end_layout
+
+\begin_layout Plain Layout
+
+        return status;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Unlock Car
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C,numbers=left,numberstyle={\scriptsize},breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or, For, Function, var, =, List},commentstyle={\color{cyan}}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+// function of car proxy called by other components when they need to unlock
+ a car
+\end_layout
+
+\begin_layout Plain Layout
+
+Function unlockCar (String carId){
+\end_layout
+
+\begin_layout Plain Layout
+
+    get ip of the car;
+\end_layout
+
+\begin_layout Plain Layout
+
+    create a new unlock request to car;
+\end_layout
+
+\begin_layout Plain Layout
+
+    wait car response;
+\end_layout
+
+\begin_layout Plain Layout
+
+    return response;
 \end_layout
 
 \begin_layout Plain Layout
