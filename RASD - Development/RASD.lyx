@@ -126,7 +126,7 @@ A.A.
 \begin_inset Newline newline
 \end_inset
 
-Version 1.0
+Version 1.1
 \end_layout
 
 \begin_layout Author
@@ -246,21 +246,7 @@ filename "RASD - Alloy Modeling.lyx"
 
 \begin_inset CommandInset include
 LatexCommand input
-filename "RASD - Used Tools.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\begin_inset CommandInset include
-LatexCommand input
-filename "RASD - Hours of Work.lyx"
+filename "RASD - Appendix.lyx"
 
 \end_inset
 

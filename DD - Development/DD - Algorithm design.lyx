@@ -105,7 +105,7 @@ Search Cars
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=C,numbers=left,numberstyle={\scriptsize},breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or, For, Function, var, =, List},commentstyle={\color{cyan}}"
+lstparams "language=C,numbers=left,numberstyle={\scriptsize},breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or, For, Function, var, =, List, get, create, update, return, wait, new, Else, DB},commentstyle={\color{cyan}}"
 inline false
 status open
 
@@ -227,7 +227,7 @@ Calculate Cost
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=C,numbers=left,numberstyle={\scriptsize},breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or, For, Function, var, =, List},commentstyle={\color{cyan}}"
+lstparams "language=C,numbers=left,numberstyle={\scriptsize},breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or, For, Function, var, =, List, get, create, update, return, wait, new, Else, DB},commentstyle={\color{cyan}}"
 inline false
 status open
 
@@ -307,7 +307,7 @@ Unlock Car
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=C,numbers=left,numberstyle={\scriptsize},breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or, For, Function, var, =, List},commentstyle={\color{cyan}}"
+lstparams "language=C,numbers=left,numberstyle={\scriptsize},breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or, For, Function, var, =, List, get, create, update, return, wait, new, Else, DB, Are},commentstyle={\color{cyan}}"
 inline false
 status open
 
@@ -422,7 +422,7 @@ Engine Start Callback
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=C,numbers=left,numberstyle={\scriptsize},breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or, For, Function, var, =, List},commentstyle={\color{cyan}}"
+lstparams "language=C,numbers=left,numberstyle={\scriptsize},breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or, For, Function, var, =, List, get, create, update, return, wait, new, Else, DB},commentstyle={\color{cyan}}"
 inline false
 status open
 
@@ -515,7 +515,7 @@ Do Reservation
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=C,numbers=left,numberstyle={\scriptsize},breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or, For, Function, var, =, List},commentstyle={\color{cyan}}"
+lstparams "language=C,numbers=left,numberstyle={\scriptsize},breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or, For, Function, var, =, List, get, create, update, return, wait, new, Else, DB},commentstyle={\color{cyan}}"
 inline false
 status open
 
@@ -641,7 +641,7 @@ Get Car Status
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=C,numbers=left,numberstyle={\scriptsize},breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or, For, Function, var, =, List},commentstyle={\color{cyan}}"
+lstparams "language=C,numbers=left,numberstyle={\scriptsize},breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or, For, Function, var, =, List, get, create, update, return, wait, new, Else},commentstyle={\color{cyan}}"
 inline false
 status open
 
@@ -750,7 +750,7 @@ Unlock Car
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=C,numbers=left,numberstyle={\scriptsize},breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or, For, Function, var, =, List},commentstyle={\color{cyan}}"
+lstparams "language=C,numbers=left,numberstyle={\scriptsize},breaklines=true,showstringspaces=false,morekeywords={one, sig, abstract, lone, set, ##, assert, pred, check, run, implies, iff, let, as, else, sum, univ, disj fun, iden, extends, open, no, none, fact, all, but, as, Int, in, or, For, Function, var, =, List, get, create, update, return, wait, new, Else},commentstyle={\color{cyan}}"
 inline false
 status open
 

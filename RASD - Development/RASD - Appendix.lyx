@@ -26,8 +26,19 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
-\use_hyperref false
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize default
 \use_geometry false
 \use_package amsmath 1
@@ -70,33 +81,38 @@
 
 \begin_body
 
-\begin_layout Subsection
-Used Tools
+\begin_layout Section
+Appendix
 \end_layout
 
 \begin_layout Standard
-The tools used to create this RASD document are:
+\begin_inset CommandInset include
+LatexCommand input
+filename "RASD - Used Tools.lyx"
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Itemize
-Github: for version control.
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "RASD - Hours of Work.lyx"
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Itemize
-Lyx: to redact and organize this document.
-\end_layout
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "RASD - Changelog.lyx"
 
-\begin_layout Itemize
-StarUML: to create UML diagrams (class diagram, sequence diagram, statechart
- diagram, use case diagrams).
-\end_layout
+\end_inset
 
-\begin_layout Itemize
-Alloy Analyzer 4.2: to check the correctness and consistency of the model.
-\end_layout
 
-\begin_layout Itemize
-Balsamiq Mockups 3: to create UI Mockups.
 \end_layout
 
 \end_body
