@@ -35,7 +35,7 @@ Function calculateCost(Ride ride){
 }
 
 //function of reservation manager
-Function doReservation(User user, Car car, Hour hour, int passengers){
+Function doReservation(User user, String carID, Hour hour, int passengers){
     // if user has already some reservation can't reserve a car
     If user.currentReservation>0 
         return Error
@@ -58,30 +58,28 @@ Function doReservation(User user, Car car, Hour hour, int passengers){
 }
 
 // function of ride manager
-Function unlockCar(User user, Car car){
-
-    var userPosition = user.position;
+Function unlockCar(User user, String carID, Position userPosition){
 
     // get car position from carProxy
-    var carPosition = CarProxy.getCarPosition(car.id);
+    var carPosition = CarProxy.getCarPosition(carID);
 
     If car is not reserved by user
         return Error
 
     If carPosition and userPosition Are near
         //create a new ride
-        ride = new Ride(car,user);
+        ride = new Ride(carID,user);
         ride.setState(CREATED);
         // ask car proxy to unlock car
-        CarProxy.unlockCar(car.id);
+        CarProxy.unlockCar(carID);
         // register an observer to the car 
-        CarProxy.registerObserver(car.id,new CarObserver());
+        CarProxy.registerObserver(carID,new CarObserver());
 
     Else return Error
 }
 
 // callback of carobserver called by car when engine starts
-Function engineStartCallback(Car car){
+Function engineStartCallback(String carID){
     
     ride = get ride related to car;
 
@@ -90,12 +88,12 @@ Function engineStartCallback(Car car){
 }
 
 //callback of carObserver called by car when engine stops
-Function engineStopCallback(Car car){
+Function engineStopCallback(String carID){
     same as engineStart but set state STOPPED
 }
 
 // function of car proxy called by other components
-Function getCarStatus(Car car){
+Function getCarStatus(String carID){
     
     // get the time of last update from the db
     lastStatusUpdate = get last update of car from DB;
@@ -115,7 +113,7 @@ Function getCarStatus(Car car){
 }
 
 // function of car proxy called by other components when they need to unlock a car
-Function unlockCar (String carId){
+Function unlockCar (String carID){
     get ip of the car;
     create a new unlock request to car;
     wait car response;
