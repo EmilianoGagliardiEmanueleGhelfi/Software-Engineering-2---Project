@@ -213,6 +213,10 @@ StarUML: to create UML diagrams (component diagram, data model diagram,
  deployment diagram, sequence diagram, statechart diagram, use case diagrams).
 \end_layout
 
+\begin_layout Itemize
+draw.io : to create some diagrams.
+\end_layout
+
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
