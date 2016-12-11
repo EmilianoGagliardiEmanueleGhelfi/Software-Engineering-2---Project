@@ -86,7 +86,7 @@ User Experience Diagrams
 \end_layout
 
 \begin_layout Standard
-In this section the navigation flow of the user in the application.
+In this section the navigation flow of the user in the application is explained.
 \end_layout
 
 \begin_layout Standard
@@ -94,11 +94,7 @@ In this section the navigation flow of the user in the application.
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -117,6 +113,13 @@ status collapsed
 
 \begin_layout Plain Layout
 Login Diagram
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Login-Diagram"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -138,11 +141,7 @@ Login Diagram
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -161,6 +160,89 @@ status collapsed
 
 \begin_layout Plain Layout
 Navigation Flow
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Navigation-Flow"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Login-Diagram"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Navigation-Flow"
+
+\end_inset
+
+ show the high level navigation flow of the user in the application.
+\end_layout
+
+\begin_layout Standard
+The next figures show the mapping between screens, functionality and related
+ components.
+ In this way the functions provided by each component are clear and understandab
+le.
+ It's useful also for developers in order to understand dependencies between
+ functions and components.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename DD Images/UX Diagrams/Navigation Flow Detailed.png
+	lyxscale 30
+	height 130text%
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Navigation Flow Detailed 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Navigation-Flow-Detailed"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -175,6 +257,251 @@ Navigation Flow
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename DD Images/UX Diagrams/Registration.png
+	lyxscale 30
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Registration Screen
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Registration-Screen"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename DD Images/UX Diagrams/Administrator.png
+	lyxscale 30
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Administrator Page
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Administrator-Page"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename DD Images/UX Diagrams/Operator.png
+	lyxscale 30
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Operator Page
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Operator-Page"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Navigation-Flow-Detailed"
+
+\end_inset
+
+,
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Registration-Screen"
+
+\end_inset
+
+,
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Administrator-Page"
+
+\end_inset
+
+,
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Operator-Page"
+
+\end_inset
+
+, are not standard UX Diagrams because there isn't only a focus on the navigatio
+n flow of the user in the application.
+ The focus is also on functionality and components.
+ This approach has been used because the navigation flow of the user can
+ change in the future but the mapping between functionality and components
+ needs to be clear at this level of analysis.
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Navigation-Flow-Detailed"
+
+\end_inset
+
+ is the navigation flow of the user.
+ Here there is the profile page, the search page and the ride page.
+\end_layout
+
+\begin_layout Standard
+In the profile page the user can see his/her information and edit them using
+ the Profile Manager Component.
+ 
+\end_layout
+
+\begin_layout Standard
+In the search page the user can search cars and reserve them by filling
+ a form.
+ Search is performed by the Search Car Engine.
+ 
+\end_layout
+
+\begin_layout Standard
+In the ride page the user can manage its ride by pausing or restarting it.
+ In this page the user can also unlock the reserved car.
+ These functionality regarding the ride are performed by the Ride Manager.
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Registration-Screen"
+
+\end_inset
+
+ is the registration screen that uses the Registration Manager component.
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Administrator-Page"
+
+\end_inset
+
+ is the Administrator Page.
+ In this panel administrators can use their functionalities.
+ The Administrator Functionality Provider is the component responsible for
+ them.
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Operator-Page"
+
+\end_inset
+
+ is the Operator Page.
+ Operators can manage cars by the Car Manager Component.
+ Operators can also receive notifications through the Notification Receiver
+ Component.
 \end_layout
 
 \end_body

@@ -163,8 +163,8 @@ High level components and their interaction
 
 \begin_layout Standard
 In this section the high level component are presented and it's described
- how they interact with each other.The client component is made of the Web
- Browser and the Mobile Application.
+ how they interact with each other.
+ The client component is made of the Web Browser and the Mobile Application.
  Both communicates with the server through its interface.
 \begin_inset Newline newline
 \end_inset
@@ -527,8 +527,15 @@ Deployment view
 \end_layout
 
 \begin_layout Standard
-The deployment diagram shows the hardware of the system and the software
- that it's installed on it.
+The deployment diagram in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Deployment-view"
+
+\end_inset
+
+ shows the hardware of the system and the software that it's installed on
+ it.
  The Mobile application is installed on Mobile Phone of the user while the
  browser runs on PC of the user/operator/admin.
  The Application Server and the Web Server are on different Nodes and on
@@ -540,8 +547,14 @@ The deployment diagram shows the hardware of the system and the software
  could be more application server on different nodes with a load balancer
  before them.
  This is compatible with a cloud approach.
- In figure the web server serves the static content such as html, javascript
- and css.
+ In Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Deployment-view"
+
+\end_inset
+
+ the web server serves the static content such as html, javascript and css.
  On the web server it's installed the reverse proxy module in order to act
  as a reverse proxy with respect to the Application Server.
  In this figure it's clear that the dbms is accessible only from the application
@@ -580,7 +593,14 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Deployment view
+Deployment view 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Deployment-view"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
