@@ -70,8 +70,630 @@
 
 \begin_body
 
-\begin_layout Standard
+\begin_layout Section
+Integration Strategy
+\end_layout
 
+\begin_layout Subsection
+Entry Criteria
+\end_layout
+
+\begin_layout Standard
+Entry criteria are used to determine when integration testing activity should
+ start.
+ Criteria are necessary conditions on the project status in order to start
+ integration testing.
+\end_layout
+
+\begin_layout Standard
+The Entry Criteria for Power EnJoy system are the following:
+\end_layout
+
+\begin_layout Enumerate
+Project development is complete
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:Development is complete"
+
+\end_inset
+
+ //TODO check
+\end_layout
+
+\begin_layout Enumerate
+Unit testing must have been performed 
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:Unit-testing"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Environment for integration testing is complete.
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:Environment"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+All previous documents have been released (RASD and DD).
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:All-previous-documents"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Point 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:Unit-testing"
+
+\end_inset
+
+ is because there is the need to be sure that sub-modules are internally
+ correct before trying to integrate them.
+ In this way bugs can only derive from interactions between sub-modules.
+\end_layout
+
+\begin_layout Standard
+Point 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:Environment"
+
+\end_inset
+
+ is because before integration testing there is the need to have all required
+ data source that will be find in the production environment.
+ In this way testing will be efficient and effective.
+ 
+\end_layout
+
+\begin_layout Standard
+Point 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:All-previous-documents"
+
+\end_inset
+
+ is because developers need to have clear all the requirements of the software
+ to be (from RASD).
+ Also modules and their interactions in order to fulfill requirements need
+ to be stated (from DD).
+ 
+\end_layout
+
+\begin_layout Subsection
+Elements to be integrated
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Elements-to-be"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This subsection refers to component described in the DD and explain which
+ components need to be integrated in order to have the complete Power EnJoy
+ system.
+\end_layout
+
+\begin_layout Standard
+In the system to be there are some components (high level components) that
+ rely on lower lever components.
+ 
+\end_layout
+
+\begin_layout Standard
+The latter are shared among different subsystems in a way to offer the same
+ functionality to all components.
+ The elements to be integrated in to ensure functionalities of our system
+ are overlapping because of the software architecture of the system.
+ 
+\end_layout
+
+\begin_layout Standard
+This is not a problem and the components with the highest fan-in of dependencies
+ are the most critical of the system so they need to be tested with several
+ components.
+ 
+\end_layout
+
+\begin_layout Standard
+Here are listed all groups of components that need to be integrated with
+ the related function:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbf{Car}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Communication}$
+\end_inset
+
+: includes Car Proxy, CarOS and Car Listener component of Ride Manager.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbf{Registration}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Functionality}$
+\end_inset
+
+: includes Registration Manager and Payment manager.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbf{Reservation}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Functionality}$
+\end_inset
+
+: includes the Reservation Manager and the Ride Manager.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbf{Ride}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Functionality}$
+\end_inset
+
+: includes Ride Manager, Payment Manager and Car Communication.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbf{Search}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Functionality}$
+\end_inset
+
+: includes Car Search Engine and Car Communication.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbf{Car}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Management}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Functionality}$
+\end_inset
+
+: includes Car Manager and Car Communication.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbf{Notification}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Functionality}$
+\end_inset
+
+: includes Notification Manager and Notification Receiver.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbf{Monitoring}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Functionality}$
+\end_inset
+
+: includes Car Monitoring, Car Communication and Notification Functionality.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbf{Customer}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Communication}$
+\end_inset
+
+: includes Customer Message Handler and Notification Functionality.
+ 
+\end_layout
+
+\begin_layout Standard
+Other components are Administrative Functionality Provider, Profile Manager
+ and Authentication Manager, these components do not depend on other components
+ and for them integration it's only with respect to the entire system.
+ They are autonomous and atomic components.
+\end_layout
+
+\begin_layout Standard
+Notice that all components rely on the Data Model that relies on the DBMS
+ API offered by the DBMS.
+ 
+\end_layout
+
+\begin_layout Standard
+All components listed below needs to be integrated together in order to
+ obtain the 
+\begin_inset Formula $\mathbf{Application}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Server}$
+\end_inset
+
+ Subsystem.
+ 
+\end_layout
+
+\begin_layout Standard
+The last step is to integrate all client components (Mobile and Web App)
+ together with the Application Server.
+\end_layout
+
+\begin_layout Standard
+After all the integrations the system is complete.
+\end_layout
+
+\begin_layout Subsection
+Integration Testing Strategy
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Integration-Testing-Strategy"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The integration testing strategy used in this project is a mixture of critical-m
+odule-first and bottom-up.
+ 
+\end_layout
+
+\begin_layout Standard
+Integration testing and build plan are strictly related so the development
+ should also follow these approaches.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Critical-Module-First Rationale
+\end_layout
+
+\begin_layout Standard
+Critical Module First is the strategy used to support the integration of
+ higher level subsystems .
+ Since higher level subsystem are independent one from the other there isn't
+ an established precedence ordering.
+ Critical Module First has been selected because in this way riskiest component
+ are developed first and tested first.
+ Riskiest components are components with important or complex functionalities
+ and components with the highest fan-in.
+ An error or a malfunction in these components will compromise all the software
+ to be.
+ These malfunctions need to be discovered (and corrected) as soon as possible
+ so these components have to be tested a lot.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Bottom-up Rationale
+\end_layout
+
+\begin_layout Standard
+Bottom Up approach is used internally with respect to subsystems.
+ In this way the the integration proceed from lower level subcomponents.
+ By doing this there is the possibility to test component's behavior in
+ early stage of development and improve parallelism and efficiency.
+ Bottom-up approach requires the development of drivers for higher level
+ components not yet developed.
+ 
+\end_layout
+
+\begin_layout Standard
+The decision to write drivers instead of stub is because, in practical scenarios
+, behavior of stubs is not that simple as it seems.
+ The called module, most of the time involves complex business logic like
+ connecting to a database.
+ As a result creating Stubs becomes as complex and time taking as the real
+ module.
+ In some cases, Stub module may turn out to be bigger than stimulated module.
+ 
+\end_layout
+
+\begin_layout Standard
+Drivers, instead, are the dummy programs which are used to call the functions
+ of the lowest module in case when the calling function does not exists.
+\end_layout
+
+\begin_layout Subsection
+Sequence of Component/Function Integration
+\end_layout
+
+\begin_layout Standard
+This section is strictly related to the integration testing strategy described
+ in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Integration-Testing-Strategy"
+
+\end_inset
+
+.
+ In this section is explained the sequence in which components need to be
+ integrated and tested.
+ 
+\end_layout
+
+\begin_layout Standard
+Since it's used a bottom up approach to integrate subsystems it's important
+ to define a precedence relationship between modules.
+ In this section a dotted arrow from component C to component C' means that
+ component C depends on component C'.
+ This component C' needs to be developed and integrated before C in a bottom-up
+ approach.
+\end_layout
+
+\begin_layout Subsubsection
+Software Integration Sequence
+\end_layout
+
+\begin_layout Standard
+This subsection explains how subcomponents are integrated together in order
+ to obtain higher level components defined in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Elements-to-be"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Data Model
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/Data Model.png
+	lyxscale 30
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Data Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Data Model depends on the DBMS and its schema.
+ This component is one of the most important component of the software architect
+ure since all other components rely on it in order to perform their tasks.
+ .
+ So the choice of starting from this component comes from the critical module
+ first approach.
+\end_layout
+
+\begin_layout Standard
+The Data model needs to use in a proper way the APIs provided by DBMS.
+ The DBMS schema is designed in parallel with respect to the data model
+ since they are highly inter-connected.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Car Communication
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/Car Communication.png
+	lyxscale 30
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Car Communication
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Car Communication is the most critical module, almost al components rely
+ on it.
+ Car proxy relies on the Data Model so the Data Model is the first component
+ that needs to be developed (as before).
+ The CarOS component depends on the Car Listener that is a subcomponent
+ of the Ride Manager but for now it's a stub because the ride manager will
+ be developed later.
+ This is an exception of the bottom up approach but Car Listener at this
+ moment is useless for the integration because it receives only callback
+ from the car event.
+\end_layout
+
+\begin_layout Subsubsection*
+Ride Functionality
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/Ride Functionality.png
+	lyxscale 20
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ride Functionality
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Registration Functionality
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/Registration Functionality.png
+	lyxscale 20
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Registration Functionality
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since the strategy is bottom up, Payment Manager and Data Model need to
+ be developed first and then Registration Manager is integrated.
+ 
 \end_layout
 
 \end_body
