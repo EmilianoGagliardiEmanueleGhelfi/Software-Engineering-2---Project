@@ -70,8 +70,186 @@
 
 \begin_body
 
-\begin_layout Standard
+\begin_layout Section
+Introduction
+\end_layout
 
+\begin_layout Subsection
+Revision history
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Version
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Date
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Authors
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/*TODO*/
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Emanuele Ghelfi, Emiliano Gagliardi
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Initial release
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Purpose and scope
+\end_layout
+
+\begin_layout Standard
+This document aims to the organization of the integration test for the PowerEnjo
+y project.
+ 
+\begin_inset Newline newline
+\end_inset
+
+The main purpose of this document are:
+\end_layout
+
+\begin_layout Itemize
+The decomposition of the components set defined in the Design Document in
+ subsystems.
+\end_layout
+
+\begin_layout Itemize
+Foreach subsystem, the definition of an integration strategy to be applied
+ internally.
+\end_layout
+
+\begin_layout Itemize
+The definition of an integration strategy between the subcomponents.
+\end_layout
+
+\begin_layout Standard
+In the definition of an integration strategy, the most relevant points are:
+\end_layout
+
+\begin_layout Itemize
+The entry criteria, that specifies the status that the coding phase have
+ to reach before carry out the test.
+\end_layout
+
+\begin_layout Itemize
+The order in which the subcomponents have to be integrated, directly followed
+ by the definition of drivers and stubs if needed.
+\end_layout
+
+\begin_layout Subsection
+Definition, Acronyms, Abbreviations
+\end_layout
+
+\begin_layout Itemize
+RASD: requirement analysis and specification document.
+\end_layout
+
+\begin_layout Itemize
+DD: design document.
+\end_layout
+
+\begin_layout Itemize
+ITPD: integration test plan document.
+\end_layout
+
+\begin_layout Itemize
+API: application programming interface.
+\end_layout
+
+\begin_layout Subsection
+Reference Documents
+\end_layout
+
+\begin_layout Standard
+The reference documents used for the development of the integration test
+ planning are:
+\end_layout
+
+\begin_layout Itemize
+The assignment document
+\end_layout
+
+\begin_layout Itemize
+The PowerEnjoy RASD
+\end_layout
+
+\begin_layout Itemize
+The PowerEnjoy DD
 \end_layout
 
 \end_body

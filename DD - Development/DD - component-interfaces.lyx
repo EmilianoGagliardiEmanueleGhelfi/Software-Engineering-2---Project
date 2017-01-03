@@ -377,8 +377,8 @@ getCarStatus(carId)
 \end_layout
 
 \begin_layout Itemize
-doPayment(userId): it calls the external payment API in order to complete
- the payment.
+doPayment(paymentInformation, price): it calls the external payment API
+ in order to complete the payment.
 \end_layout
 
 \begin_layout Itemize

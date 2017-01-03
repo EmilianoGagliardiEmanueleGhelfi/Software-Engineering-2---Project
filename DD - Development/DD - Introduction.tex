@@ -1,0 +1,97 @@
+
+\section{Introduction}
+
+\subsection{Purpose}
+
+This software design document describes the architectures and the
+system design of Power EnJoy. It's mainly intended for developers
+but it has a hierarchical structure. It completes the RASD and defines
+the component that led to the satisfaction of the goals previous defined.
+It starts from an high level description of the architecture and then
+it goes into detail. \\
+This document has to identify:
+\begin{itemize}
+\item Architecture of the system
+\item Interactions between components
+\item Main algorithms of the system
+\end{itemize}
+The main purpose is to gain a general understanding of how and why
+the system is decomposed and how individual components work together. 
+
+\subsection{Scope}
+
+PowerEnJoy is a software that manages a car sharing service for electric
+cars. The aim of this software is to make the reservation of cars
+simple and quick. So the system should provide users with real time
+information about availability of cars, their status and their positions.After
+the reservation, users can directly get their car in pre-defined parking
+areas. The service will be accessible only to registered users, giving
+some personal information and data needed to the payment. The price
+of the ride is computed with a fixed amount of money per minute, displayed
+by the car, and finally charged. To avoid useless reservation, that
+is to say that a user doesn\textquoteright t pick up the car, the
+reservation expires after a fixed time, the car returns available,
+and the user is charged with a fee. Cars must be locked in the safe
+areas, and only users that have made the reservation can unlock them.
+The software has to provide also management functionality for administrators
+and operators in order to ensure a simple managing of the system. 
+
+\subsection{Definitions, Acronyms, Abbreviation}
+\begin{itemize}
+\item RASD: Requirements and Specifications Document
+\item DD: Design Document (this document)
+\item JSON: JavaScript Object Notation
+\item REST: Representational State Transfer
+\item JDBC: Java Database Connectivity
+\item API: Application Programming Interface
+\item JEE: Java Enterprise Edition
+\end{itemize}
+
+\subsection{Reference Documents}
+\begin{itemize}
+\item RASD released before this document.
+\item Assignments AA 2016-2017.
+\item DD from previous years.
+\end{itemize}
+
+\subsection{Document Structure}
+
+$\mathbf{Introduction}$: this is a general overview of the document.\\
+The $\mathit{Purpose}$ part describe the audience and the main goals
+of this document.\\
+The $\mathit{Scope}$ part has to provide a description and scope
+of the software and explain the goals, objectives and benefits of
+the project.\\
+$\mathit{Reference}$ $\mathit{Documents}$ are previous documents
+of this project and documents used as examples and reference.\\
+$\mathbf{\mathbf{Architectural}}$ $\mathbf{Design}$: this section
+explains the relationship between the modules to achieve the complete
+functionality of the system (requirements defined in the RASD).\\
+It contains an high level overview of how responsibilities of the
+system were partitioned and then assigned to subsystem (components).
+\\
+In this part of the document are identified each high level subsystem
+and the roles or responsibility assigned to it in order to achieve
+a more detailed comprehension of the software to be. It's also described
+how these components collaborate with each other in order to achieve
+desired functionality. There is a focus on the interface provided
+by individual components in $\mathit{Component}$ $\mathit{Interfaces}$
+section.\\
+$\mathit{Deployment}$ $\mathit{View}$ gives a description of how
+the software to be it's intended to be deployed.\\
+$\mathit{Runtime}$ $\mathit{View}$ gives a description of the interaction
+between components in the most important use case of the system.\\
+In the section of $\mathit{Selected}$ $\mathit{Architectural}$ $\mathit{Styles}$
+$\mathit{and}$ $\mathit{Patterns}$ are described which styles and
+patterns have been followed in the realization of the system. There
+is a focus on the rationale of these decisions.\\
+$\mathbf{Algorithm}$ $\mathbf{Design}$: this section explains the
+most important algorithms of the software to be. Pseudo\textendash code
+has been used in order to avoid unnecessary implementation details.
+\\
+$\mathbf{User}$ $\mathbf{Interface}$ $\mathbf{Design}$: this section
+refers to the same section in RASD and provides some extensions.\\
+$\mathbf{Requirements}$ $\mathbf{Traceability}$: this section describe
+how requirements defined in RASD have been mapped to system components
+defined in section 2. \\
+
