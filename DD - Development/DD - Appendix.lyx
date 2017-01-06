@@ -217,6 +217,14 @@ StarUML: to create UML diagrams (component diagram, data model diagram,
 draw.io : to create some diagrams.
 \end_layout
 
+\begin_layout Subsection
+Changelog
+\end_layout
+
+\begin_layout Itemize
+1.2 removed startRide in RideManager component interface
+\end_layout
+
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem

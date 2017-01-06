@@ -157,10 +157,6 @@ lockRequest(userId, carId): the same as before.
 \end_layout
 
 \begin_layout Itemize
-startRide(ride): called when the user wants to start a ride.
-\end_layout
-
-\begin_layout Itemize
 pauseRide(ride): called when the user wants to pause a ride.
 \end_layout
 
