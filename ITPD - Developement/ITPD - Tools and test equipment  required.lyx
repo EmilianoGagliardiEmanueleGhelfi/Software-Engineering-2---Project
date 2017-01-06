@@ -70,8 +70,253 @@
 
 \begin_body
 
-\begin_layout Standard
+\begin_layout Section
+Tools and Test Equipment Required
+\end_layout
 
+\begin_layout Standard
+In this section are specified all tools and test equipment required in order
+ to perform integration testing of the previous sections.
+\end_layout
+
+\begin_layout Subsection
+Testing Tools
+\end_layout
+
+\begin_layout Standard
+Testing tools are required in order to perform in an effective way tests
+ described before.
+ Since for the server part JEE technology has been used, there is the need
+ of testing framework compatible with that technology.
+ 
+\end_layout
+
+\begin_layout Standard
+The first testing tool needed is 
+\begin_inset Formula $\mathbf{Arquillian}$
+\end_inset
+
+.
+ Arquillian makes easy to create integration testing.
+ 
+\end_layout
+
+\begin_layout Standard
+In the integration testing phase Arquillian is used for:
+\end_layout
+
+\begin_layout Itemize
+Managing the lifecycle of the container (or containers) 
+\end_layout
+
+\begin_layout Itemize
+Bundling the test case, dependent classes and resources into a ShrinkWrap
+ archive (or archives) 
+\end_layout
+
+\begin_layout Itemize
+Deploying the archive (or archives) to the container (or containers) 
+\end_layout
+
+\begin_layout Itemize
+Enriching the test case by providing dependency injection and other declarative
+ services
+\end_layout
+
+\begin_layout Itemize
+Executing the tests inside (or against) the container 
+\end_layout
+
+\begin_layout Itemize
+Capturing the results and returning them to the test runner for reporting
+\end_layout
+
+\begin_layout Standard
+With Arquillian integration phase is accelerated.
+ 
+\end_layout
+
+\begin_layout Standard
+Although the integration strategy is bottom up, sometimes there is the need
+ of stub.
+ In order to create stubs we need something like 
+\begin_inset Formula $\mathbf{Mockito}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Mockito allows to:
+\end_layout
+
+\begin_layout Itemize
+Abstract dependencies
+\end_layout
+
+\begin_layout Itemize
+Have predictable results
+\end_layout
+
+\begin_layout Itemize
+Check the interaction between the caller and the mocked object.
+\end_layout
+
+\begin_layout Standard
+In order to do be more effective will be used 
+\begin_inset Formula $\mathbf{JUnit}$
+\end_inset
+
+ framework.
+ JUnit is a framework used mainly for Unit Testing but it can be also used
+ for integration testing (for example to test if the interaction between
+ components is happing in the correct way).
+ There is the possibility to test if the correct parameter are passed to
+ certain methods, if the method returns the expected result or raises the
+ excepted exceptions.
+\end_layout
+
+\begin_layout Standard
+In order to perform some performance test 
+\begin_inset Formula $\mathbf{Apache}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{JMeter}$
+\end_inset
+
+ will be used.
+ It can be used to simulate a heavy load on a server, network or object
+ to test its strength or to analyze overall performance under different
+ load types.
+ In our software JMeter can be useful also for parametric test on Authentication
+ Manager and for testing the performance of the Car Proxy component.
+ 
+\end_layout
+
+\begin_layout Standard
+Since the software to be will be running on different platforms, in order
+ to test the client part are necessary all debuggers and testing tool related
+ to the target OS (Windows Phone, Android, iOS).
+ 
+\end_layout
+
+\begin_layout Standard
+Notice that to perform the tests described in the previous sections some
+ 
+\begin_inset Formula $\mathbf{manual}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{testing}$
+\end_inset
+
+ will be necessary.
+ This is intended in term of preparing correct test data for every test
+ case.
+ 
+\end_layout
+
+\begin_layout Subsection
+Test Equipment
+\end_layout
+
+\begin_layout Standard
+Some test equipment are required to test the software to be.
+ Test equipment is divided among the different part of the system they are
+ needed.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Mobile Side
+\end_layout
+
+\begin_layout Standard
+Since the application will be running on different platforms there is the
+ necessity to ensure the correct behavior on them.
+\end_layout
+
+\begin_layout Standard
+For testing the client side of the software the following devices are required:
+\end_layout
+
+\begin_layout Itemize
+Some Android smartphones and tablets with several screen sizes and resolution.
+\end_layout
+
+\begin_layout Itemize
+Some WP smartphones with several screen sizes and resolutions.
+\end_layout
+
+\begin_layout Itemize
+One iOS smartphone for each generation.
+\end_layout
+
+\begin_layout Itemize
+One iOS tablet for each generation.
+\end_layout
+
+\begin_layout Subsubsection*
+Web Side
+\end_layout
+
+\begin_layout Standard
+The web application will be tested using different notebooks and desktop
+ computers.
+ Like what concern the mobile side, the computers need to have different
+ screen size and different resolutions.
+ 
+\end_layout
+
+\begin_layout Standard
+The web application need to be tested with different browsers (e.g.
+ Safari, Google Chrome, Firefox, Opera, Microsoft Edge).
+ It's important also to test the web side on the mobile devices listed above.
+\end_layout
+
+\begin_layout Subsubsection*
+Car Side
+\end_layout
+
+\begin_layout Standard
+The most critical part of the system regards the interaction with the car.
+ In order to test this part some 
+\begin_inset Formula $\mathbf{cars}$
+\end_inset
+
+ with the carOS (described in the previous documents) are necessary.
+ 
+\end_layout
+
+\begin_layout Standard
+Notice that the carOS won't be tested because there is the assumption that
+ is a commercial system already present on the market.
+ What will be tested will be the interaction between the software to be
+ and that system.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Server Side
+\end_layout
+
+\begin_layout Standard
+The testing environment needs to be very similar to the production environment
+ to minimize the possibility of production error.
+ The DBMS and JEE container will be the same as the production.
+ 
+\end_layout
+
+\begin_layout Standard
+Also the OS of the Application Server needs to be the same as the OS of
+ the production environment.
+ 
+\end_layout
+
+\begin_layout Standard
+For the sake of limit testing cost the testing version of the environment
+ could be a scaled down version of the production environment.
 \end_layout
 
 \end_body
