@@ -696,25 +696,25 @@ The response confirm the validity, the database is updated with the information
 \end_layout
 
 \begin_layout Itemize
-an empty username
+An empty username
 \end_layout
 
 \begin_layout Itemize
-an empty password
+An empty password
 \end_layout
 
 \begin_layout Itemize
-a password that doesn't satisfies the general criteria of passwords (length,
+A password that doesn't satisfies the general criteria of passwords (length,
  contains certain character...)
 \end_layout
 
 \begin_layout Itemize
-a drive license that is not valid, like with an empty field or a field with
+A drive license that is not valid, like with an empty field or a field with
  wrong format (number of character, or doesn't satisfies a regular expression)
 \end_layout
 
 \begin_layout Itemize
-not well formed payment information
+Not well formed payment information
 \end_layout
 
 \begin_layout Subsection
@@ -845,19 +845,19 @@ A CarListener instance is correctly created, and the car os is informed
 \end_layout
 
 \begin_layout Itemize
-a user that doesn't exist
+A user that doesn't exist
 \end_layout
 
 \begin_layout Itemize
-a car that doesn't exist
+A car that doesn't exist
 \end_layout
 
 \begin_layout Itemize
-a car that hasn't been reserved by the user
+A car that hasn't been reserved by the user
 \end_layout
 
 \begin_layout Itemize
-a date or time that is in the past
+A date or time that is in the past
 \end_layout
 
 \begin_layout Subsubsection
@@ -1003,15 +1003,15 @@ rideInit is called and terminates correctly, the database is updated with
 \end_layout
 
 \begin_layout Itemize
-an empty userId
+An empty userId
 \end_layout
 
 \begin_layout Itemize
-a userId that doesn't exist
+A userId that doesn't exist
 \end_layout
 
 \begin_layout Itemize
-invalid reservationInfo (date or time in the past, car that doesn't exist)
+Invalid reservationInfo (date or time in the past, car that doesn't exist)
 \end_layout
 
 \begin_layout Subsection
@@ -1113,7 +1113,7 @@ A not valid input exception is raised
 \begin_inset Text
 
 \begin_layout Plain Layout
-valid paymentInformation and price
+Valid paymentInformation and price
 \end_layout
 
 \end_inset
@@ -1140,24 +1140,16 @@ The payment is carried out
 \end_layout
 
 \begin_layout Itemize
-An empty userId 
-\end_layout
-
-\begin_layout Itemize
-A userId that doesn't exist
-\end_layout
-
-\begin_layout Itemize
 Not well formed payment information (what does not well formed paymentInformatio
 n means is defined in 2.1.1 section)
 \end_layout
 
 \begin_layout Itemize
-paymentInformation that doesn't correspond to a real account
+PaymentInformation that doesn't correspond to a real account
 \end_layout
 
 \begin_layout Itemize
-negative price
+Negative price
 \end_layout
 
 \begin_layout Subsubsection
@@ -1166,7 +1158,7 @@ External call to Ride manager
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="2">
+<lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="5cm">
@@ -1195,7 +1187,7 @@ unlockRequest(userId, carId, userPosition)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+INPUT
 \end_layout
 
 \end_inset
@@ -1204,7 +1196,7 @@ unlockRequest(userId, carId, userPosition)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+EFFECT
 \end_layout
 
 \end_inset
@@ -1215,7 +1207,7 @@ unlockRequest(userId, carId, userPosition)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+One, some, or all null parameter
 \end_layout
 
 \end_inset
@@ -1224,7 +1216,48 @@ unlockRequest(userId, carId, userPosition)
 \begin_inset Text
 
 \begin_layout Plain Layout
+A null value exception is raised
+\end_layout
 
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+One, some, or all invalid* parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A not valid parameter exception is raised
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valid userId, carId, but a position that is distant from the car position
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The unlock method of car proxy is not called, the response reports that
+ the car can't be unlock
 \end_layout
 
 \end_inset
@@ -1235,7 +1268,7 @@ unlockRequest(userId, carId, userPosition)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Valid userId, carId, and a position that is near to the car position
 \end_layout
 
 \end_inset
@@ -1244,7 +1277,9 @@ unlockRequest(userId, carId, userPosition)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+The unlock method of car proxy is correctly called, and if it terminates
+ correctly the response confirm, otherwise the response reports that it
+ is not possible to unlock the car
 \end_layout
 
 \end_inset
@@ -1255,8 +1290,35 @@ unlockRequest(userId, carId, userPosition)
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+*An invalid list of parameter could contain
+\end_layout
+
+\begin_layout Itemize
+An empty userId
+\end_layout
+
+\begin_layout Itemize
+A userId that doesn't exist
+\end_layout
+
+\begin_layout Itemize
+A carId that doesn't exist
+\end_layout
+
+\begin_layout Itemize
+A car that hasn't been reserved by the user
+\end_layout
+
+\begin_layout Itemize
+Position in wrong format
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="2">
+<lyxtabular version="3" rows="5" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="5cm">
@@ -1285,7 +1347,7 @@ lockRequest(userId, carId)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+INPUT
 \end_layout
 
 \end_inset
@@ -1294,7 +1356,7 @@ lockRequest(userId, carId)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+EFFECT
 \end_layout
 
 \end_inset
@@ -1305,7 +1367,7 @@ lockRequest(userId, carId)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+One, some, or all null parameter
 \end_layout
 
 \end_inset
@@ -1314,7 +1376,27 @@ lockRequest(userId, carId)
 \begin_inset Text
 
 \begin_layout Plain Layout
+A null value exception is raised
+\end_layout
 
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+One, or both invalid* parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A not valid parameter exception is raised
 \end_layout
 
 \end_inset
@@ -1375,7 +1457,7 @@ startRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+INPUT
 \end_layout
 
 \end_inset
@@ -1384,7 +1466,7 @@ startRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+EFFECT
 \end_layout
 
 \end_inset
@@ -1395,7 +1477,7 @@ startRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+One, some, or all null parameter
 \end_layout
 
 \end_inset
@@ -1404,7 +1486,7 @@ startRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+A null value exception is raised
 \end_layout
 
 \end_inset
@@ -1415,7 +1497,7 @@ startRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+One, some, or all invalid* parameter
 \end_layout
 
 \end_inset
@@ -1424,7 +1506,7 @@ startRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+A not valid parameter exception is raised
 \end_layout
 
 \end_inset
@@ -1465,7 +1547,7 @@ pauseRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+INPUT
 \end_layout
 
 \end_inset
@@ -1474,7 +1556,7 @@ pauseRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+EFFECT
 \end_layout
 
 \end_inset
@@ -1485,7 +1567,7 @@ pauseRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+One, some, or all null parameter
 \end_layout
 
 \end_inset
@@ -1494,7 +1576,7 @@ pauseRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+A null value exception is raised
 \end_layout
 
 \end_inset
@@ -1505,7 +1587,7 @@ pauseRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+One, some, or all invalid* parameter
 \end_layout
 
 \end_inset
@@ -1514,7 +1596,7 @@ pauseRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+A not valid parameter exception is raised
 \end_layout
 
 \end_inset
@@ -1555,7 +1637,7 @@ terminateRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+INPUT
 \end_layout
 
 \end_inset
@@ -1564,7 +1646,7 @@ terminateRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+EFFECT
 \end_layout
 
 \end_inset
@@ -1575,7 +1657,7 @@ terminateRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+One, some, or all null parameter
 \end_layout
 
 \end_inset
@@ -1584,7 +1666,7 @@ terminateRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+A null value exception is raised
 \end_layout
 
 \end_inset
@@ -1595,7 +1677,7 @@ terminateRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+One, some, or all invalid* parameter
 \end_layout
 
 \end_inset
@@ -1604,7 +1686,7 @@ terminateRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+A not valid parameter exception is raised
 \end_layout
 
 \end_inset
@@ -1645,7 +1727,7 @@ terminateRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+INPUT
 \end_layout
 
 \end_inset
@@ -1654,7 +1736,7 @@ terminateRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+EFFECT
 \end_layout
 
 \end_inset
@@ -1665,7 +1747,7 @@ terminateRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+One, some, or all null parameter
 \end_layout
 
 \end_inset
@@ -1674,7 +1756,7 @@ terminateRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+A null value exception is raised
 \end_layout
 
 \end_inset
@@ -1685,7 +1767,7 @@ terminateRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+One, some, or all invalid* parameter
 \end_layout
 
 \end_inset
@@ -1694,7 +1776,7 @@ terminateRide(ride)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+A not valid parameter exception is raised
 \end_layout
 
 \end_inset
