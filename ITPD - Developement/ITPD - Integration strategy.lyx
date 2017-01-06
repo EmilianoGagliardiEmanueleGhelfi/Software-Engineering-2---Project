@@ -26,7 +26,9 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -87,17 +89,6 @@ Entry criteria are used to determine when integration testing activity should
 
 \begin_layout Standard
 The Entry Criteria for Power EnJoy system are the following:
-\end_layout
-
-\begin_layout Enumerate
-Project development is complete
-\begin_inset CommandInset label
-LatexCommand label
-name "enu:Development is complete"
-
-\end_inset
-
- //TODO check
 \end_layout
 
 \begin_layout Enumerate
@@ -164,7 +155,8 @@ reference "enu:Environment"
  is because before integration testing there is the need to have all required
  data source that will be find in the production environment.
  In this way testing will be efficient and effective.
- 
+ Integration testing need also Tools and Test Equipment specified later
+ in this document.
 \end_layout
 
 \begin_layout Standard
@@ -330,9 +322,36 @@ Here are listed all groups of components that need to be integrated with
 \end_layout
 
 \begin_layout Standard
-Other components are Administrative Functionality Provider, Profile Manager
- and Authentication Manager, these components do not depend on other components
- and for them integration it's only with respect to the entire system.
+Other components are 
+\begin_inset Formula $\mathbf{Administrative}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Functionality}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Provider}$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbf{Profile}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Manager}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{Authentication}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Manager}$
+\end_inset
+
+, these components do not depend on other components and for them integration
+ it's only with respect to the entire system.
  They are autonomous and atomic components.
 \end_layout
 
@@ -587,7 +606,7 @@ Car Communication
 \end_layout
 
 \begin_layout Standard
-Car Communication is the most critical module, almost al components rely
+Car Communication is the most critical module, almost all components rely
  on it.
  Car proxy relies on the Data Model so the Data Model is the first component
  that needs to be developed (as before).
@@ -607,11 +626,7 @@ Ride Functionality
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -644,6 +659,18 @@ Ride Functionality
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Ride Functionality is the subcomponent that manages all the flow of the
+ ride.
+ It needs to be integrated with Payment Manager, Car Communication, Notification
+ Manager and, of course, with the Data Model.
+ In this integration there is the necessity to test the payment part, the
+ unlock and lock calls and the notification to the user.
+ At this level of integration the Notification Manager could be a stub since
+ it's not an important component in order to test the ride flow.
+ 
 \end_layout
 
 \begin_layout Subsubsection*
@@ -691,8 +718,581 @@ Registration Functionality
 \end_layout
 
 \begin_layout Standard
-Since the strategy is bottom up, Payment Manager and Data Model need to
- be developed first and then Registration Manager is integrated.
+The Registration Functionality is a subcomponent independent from the previous
+ subcomponents so it can be developed and integrated in parallel with respect
+ to them.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Reservation Functionality
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/Reservation Functionality.png
+	lyxscale 30
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Reservation Functionality
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Reservation Manager and the Ride Manager needs to be integrated together
+ because of the dependency between them.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Search Functionality
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/Search Functionality.png
+	lyxscale 30
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Search Functionality
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In order to test the search functionality the Car Search Engine needs to
+ be integrated with the Car Communication subcomponent.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Notification Functionality
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/Notification Manager.png
+	lyxscale 30
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Notification Functionality
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At this point all critical subcomponents have been integrated.
+ The integration can proceed with the Notification Functionality.
+ Since the client application could be not yet ready it can be a stub.
+ The important test here is that the notification are correctly received
+ by the Notification Receiver and that the response is received correctly
+ by the Notification Manager.
+\end_layout
+
+\begin_layout Subsubsection*
+Monitoring Functionality
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/Monitoring Functionality.png
+	lyxscale 30
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Monitoring Functionality
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No components depends on the Car Monitoring component so it can be integrated
+ lastly.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Customer Communication
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/Customer Communication.png
+	lyxscale 30
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Customer Communication
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Customer Message Handler component depends only on Notification Functionalit
+y and no other component depend on it.
+ Like Monitoring Functionality component it can be integrated lastly following
+ the critical Module First Approach.
+\end_layout
+
+\begin_layout Subsubsection*
+Car Management Functionality
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/Car Manager Functionality.png
+	lyxscale 30
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Car Management Functionality
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Car management functionality is a backend-component necessary for administrators
+ and operators, it's independent for the user-part of the system.
+\end_layout
+
+\begin_layout Subsubsection*
+Other Integrations
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/Profile Manager.png
+	lyxscale 30
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Profile Manager
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/Auth Manager.png
+	lyxscale 30
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Authentication Manager
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/Administrative Functionality Provider.png
+	lyxscale 30
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Administrative Functionality Provider
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Subsystem Integration Sequence
+\end_layout
+
+\begin_layout Standard
+In this part for simplicity the server part is divided into three main component
+s: the User-part, the Administrative-part and the Operator-part.
+\end_layout
+
+\begin_layout Standard
+The components share some subcomponents between them.
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Formula $\mathbf{User-part}$
+\end_inset
+
+ is made of the following components:
+\end_layout
+
+\begin_layout Itemize
+Ride Functionality
+\end_layout
+
+\begin_layout Itemize
+Registration Functionality
+\end_layout
+
+\begin_layout Itemize
+Reservation Functionality
+\end_layout
+
+\begin_layout Itemize
+Search Functionality
+\end_layout
+
+\begin_layout Itemize
+Notification Functionality
+\end_layout
+
+\begin_layout Itemize
+Customer Communication
+\end_layout
+
+\begin_layout Itemize
+Profile Manager
+\end_layout
+
+\begin_layout Itemize
+Authentication Manager
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Formula $\mathbf{Administrative-part}$
+\end_inset
+
+ of the system is made of the following components:
+\end_layout
+
+\begin_layout Itemize
+Administrative Functionality Provider
+\end_layout
+
+\begin_layout Itemize
+Car Manager Functionality
+\end_layout
+
+\begin_layout Itemize
+Monitoring Functionality
+\end_layout
+
+\begin_layout Itemize
+Authentication Manager
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Formula $\mathbf{Operator-part}$
+\end_inset
+
+ of the system is made the following components:
+\end_layout
+
+\begin_layout Itemize
+Car Manager Functionality
+\end_layout
+
+\begin_layout Itemize
+Monitoring Functionality
+\end_layout
+
+\begin_layout Itemize
+Notification Functionality
+\end_layout
+
+\begin_layout Itemize
+Search Functionality
+\end_layout
+
+\begin_layout Itemize
+Authentication Manager
+\end_layout
+
+\begin_layout Standard
+At this point the client applications of the Users, Operators and Administrators
+ need to be integrated with the relative parts of the system.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/Subsystems.png
+	lyxscale 30
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Subsystems Integration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now the system is fully integrated.
  
 \end_layout
 
