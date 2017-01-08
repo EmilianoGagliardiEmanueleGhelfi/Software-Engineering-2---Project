@@ -543,7 +543,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Data Model.png
+	filename Images/Data Model.png
 	lyxscale 30
 	width 100text%
 
@@ -603,7 +603,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Car Communication.png
+	filename Images/Car Communication.png
 	lyxscale 30
 	width 100text%
 
@@ -659,7 +659,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Ride Functionality.png
+	filename Images/Ride Functionality.png
 	lyxscale 20
 	width 100text%
 
@@ -715,7 +715,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Registration Functionality.png
+	filename Images/Registration Functionality.png
 	lyxscale 20
 	width 100text%
 
@@ -765,7 +765,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Reservation Functionality.png
+	filename Images/Reservation Functionality.png
 	lyxscale 30
 	width 100text%
 
@@ -814,7 +814,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Search Functionality.png
+	filename Images/Search Functionality.png
 	lyxscale 30
 	width 100text%
 
@@ -863,7 +863,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Notification Manager.png
+	filename Images/Notification Manager.png
 	lyxscale 30
 	width 100text%
 
@@ -915,7 +915,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Monitoring Functionality.png
+	filename Images/Monitoring Functionality.png
 	lyxscale 30
 	width 100text%
 
@@ -964,7 +964,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Customer Communication.png
+	filename Images/Customer Communication.png
 	lyxscale 30
 	width 100text%
 
@@ -1014,7 +1014,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Car Manager Functionality.png
+	filename Images/Car Manager Functionality.png
 	lyxscale 30
 	width 100text%
 
@@ -1062,7 +1062,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Profile Manager.png
+	filename Images/Profile Manager.png
 	lyxscale 30
 	width 100text%
 
@@ -1101,7 +1101,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Auth Manager.png
+	filename Images/Auth Manager.png
 	lyxscale 30
 	width 100text%
 
@@ -1140,7 +1140,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Administrative Functionality Provider.png
+	filename Images/Administrative Functionality Provider.png
 	lyxscale 30
 	width 100text%
 
@@ -1289,7 +1289,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Subsystems.png
+	filename Images/Subsystems.png
 	lyxscale 30
 	width 100text%
 

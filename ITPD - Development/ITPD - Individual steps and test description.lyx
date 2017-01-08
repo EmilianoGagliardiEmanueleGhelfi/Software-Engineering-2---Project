@@ -76,12 +76,13 @@ Individual steps and test description
 
 \begin_layout Standard
 In this section are described the tests that have to be performed to integrate
- component belonging to the same subsystem, in the order that is specified
- in the section /*TODO*/.
- Each step is characterized by the caller and the called component, and
- by all the methods that are invoked by the caller on the called.
- Foreach method are defined some representative inputs and the corresponding
- expected effects.
+ components belonging to the same subsystem; each subsection corresponds
+ to a subsystem.
+ The way in which the tests are described is the following: for the components
+ that expose methods to the extern, with inputs that comes from, there is
+ a detailed specification of the inputs (like in a unit test some representative
+ or critical inputs are specified), while for the internal interfaces is
+ made the assumption that 
 \end_layout
 
 \begin_layout Subsection
@@ -94,7 +95,7 @@ Car uses the CarlListener component callback methods
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="2">
+<lyxtabular version="3" rows="3" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="5cm">
@@ -139,51 +140,11 @@ EFFECT
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-A null parameter
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-A null value exception is raised
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-An invalid parameter
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-An invalid parameter exception is raised
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-A valid parameter
+The car engine starts
 \end_layout
 
 \end_inset
@@ -192,7 +153,9 @@ A valid parameter
 \begin_inset Text
 
 \begin_layout Plain Layout
-A timer (needed to compute the ride cost) is correctly initialized and starts
+The carOS get the event and call the carListener method.
+ A timer (needed to compute the ride cost) is correctly initialized and
+ starts in the server
 \end_layout
 
 \end_inset
@@ -210,30 +173,7 @@ A timer (needed to compute the ride cost) is correctly initialized and starts
 \begin_inset Newline newline
 \end_inset
 
-An invalid parameter could be:
-\end_layout
 
-\begin_layout Itemize
-A carId that doesn't exist
-\end_layout
-
-\begin_layout Itemize
-An empty carId
-\end_layout
-
-\begin_layout Itemize
-A carId of a car that is under maintenance
-\end_layout
-
-\begin_layout Itemize
-A carId of a car that is not in a ride
-\end_layout
-
-\begin_layout Itemize
-A carId of a car that have not been reserved
-\end_layout
-
-\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
 <features tabularvalignment="middle">
@@ -1039,7 +979,8 @@ All well formed, but the paymentInformation doesn't correspond to a real
 \begin_inset Text
 
 \begin_layout Plain Layout
-The response reports that the paymentInformation are not accepted
+The payment manager methods are correctly called, and the response reports
+ that the paymentInformation are not accepted
 \end_layout
 
 \end_inset
@@ -2697,7 +2638,7 @@ Car monitoring subsystem
 \end_layout
 
 \begin_layout Subsection
-Notification manager subsystem
+Customer comnumication subsystem
 \end_layout
 
 \end_body
