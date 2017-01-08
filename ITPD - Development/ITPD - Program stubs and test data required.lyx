@@ -70,6 +70,55 @@
 
 \begin_body
 
+\begin_layout Section
+Program Stubs and Test Data Required
+\end_layout
+
+\begin_layout Subsection
+Stubs and drivers required in the subsystems testing
+\end_layout
+
+\begin_layout Standard
+Here are listed for each subsystem the stubs and the drivers required in
+ order to perform the tests as soon as possible during the development.
+\end_layout
+
+\begin_layout Subsubsection*
+Data model
+\end_layout
+
+\begin_layout Subsubsection*
+Car communication
+\end_layout
+
+\begin_layout Subsubsection*
+Ride functionality
+\end_layout
+
+\begin_layout Subsubsection*
+Reservation functionality
+\end_layout
+
+\begin_layout Subsubsection*
+Search functionality
+\end_layout
+
+\begin_layout Subsubsection*
+Notification Functionality
+\end_layout
+
+\begin_layout Subsubsection*
+Monitoring Functionality
+\end_layout
+
+\begin_layout Subsubsection*
+Customer Communication
+\end_layout
+
+\begin_layout Subsubsection*
+Car Management Functionality
+\end_layout
+
 \begin_layout Standard
 
 \end_layout
