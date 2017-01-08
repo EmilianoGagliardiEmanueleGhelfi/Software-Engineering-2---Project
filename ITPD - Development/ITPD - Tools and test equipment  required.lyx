@@ -230,8 +230,9 @@ In order to perform some performance test
  It can be used to simulate a heavy load on a server, network or object
  to test its strength or to analyze overall performance under different
  load types.
- In our software JMeter can be useful also for parametric test on Authentication
- Manager and for testing the performance of the Car Proxy component.
+ In our software JMeter can be useful also for parametric and automated
+ test on Authentication Manager and for testing the performance of the Car
+ Proxy component.
  
 \end_layout
 
@@ -331,6 +332,27 @@ The most critical part of the system regards the interaction with the car.
 \end_layout
 
 \begin_layout Standard
+It could be useful (but maybe not feasible) for testing purposes to have
+ an 
+\begin_inset Formula $\mathbf{hardware}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{software}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{system}$
+\end_inset
+
+ that simulates the car with carOS installed on it.
+ This could be used to test the system interaction with the carOS in an
+ easier way with respect to test it on the car itself.
+ This must be discussed with the company of the carOS.
+ 
+\end_layout
+
+\begin_layout Standard
 Notice that the carOS won't be tested because there is the assumption that
  is a commercial system already present on the market.
  What will be tested will be the interaction between the software to be
@@ -345,13 +367,13 @@ Server Side
 \begin_layout Standard
 The testing environment needs to be very similar to the production environment
  to minimize the possibility of production error.
- The DBMS and JEE container will be the same as the production.
+ The DBMS and the Application Server will be the same as the production.
  
 \end_layout
 
 \begin_layout Standard
-Also the OS of the Application Server needs to be the same as the OS of
- the production environment.
+Also the OS under the Application Server needs to be the same as the OS
+ of the production environment.
  
 \end_layout
 
