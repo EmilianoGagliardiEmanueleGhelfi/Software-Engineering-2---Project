@@ -88,7 +88,7 @@ Entry criteria are used to determine when integration testing activity should
 \end_layout
 
 \begin_layout Standard
-The Entry Criteria for Power EnJoy system are the following:
+The Entry Criteria for Power EnJoy integration test are the following:
 \end_layout
 
 \begin_layout Enumerate
@@ -155,8 +155,15 @@ reference "enu:Environment"
  is because before integration testing there is the need to have all required
  data source that will be find in the production environment.
  In this way testing will be efficient and effective.
- Integration testing need also Tools and Test Equipment specified later
- in this document.
+ Integration testing need also Tools and Test Equipment specified in section
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Tools-and-Test"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -167,11 +174,32 @@ reference "enu:All-previous-documents"
 
 \end_inset
 
- is because developers need to have clear all the requirements of the software
- to be (from RASD).
+ is because all the requirements of the software to be need to be specified
+ (from RASD).
  Also modules and their interactions in order to fulfill requirements need
  to be stated (from DD).
  
+\end_layout
+
+\begin_layout Standard
+Before a specific integration test can begin the following things must have
+ been delivered:
+\end_layout
+
+\begin_layout Itemize
+Input Data that cover all test cases.
+\end_layout
+
+\begin_layout Itemize
+Target Data (desired output for the Input Data).
+\end_layout
+
+\begin_layout Itemize
+Drivers/stubs (if necessary).
+\end_layout
+
+\begin_layout Itemize
+System status (involves DB status and components status).
 \end_layout
 
 \begin_layout Subsection
@@ -477,12 +505,12 @@ reference "subsec:Integration-Testing-Strategy"
 \end_layout
 
 \begin_layout Standard
-Since it's used a bottom up approach to integrate subsystems it's important
- to define a precedence relationship between modules.
+Since it's used a bottom up approach to integrate subsystems, it's important
+ to define a precedence relationship between components.
  In this section a dotted arrow from component C to component C' means that
  component C depends on component C'.
- This component C' needs to be developed and integrated before C in a bottom-up
- approach.
+ This means that component C' needs to be developed and integrated before
+ C in a bottom-up approach.
 \end_layout
 
 \begin_layout Subsubsection
@@ -515,7 +543,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Images/Data Model.png
+	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Data Model.png
 	lyxscale 30
 	width 100text%
 
@@ -575,7 +603,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Images/Car Communication.png
+	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Car Communication.png
 	lyxscale 30
 	width 100text%
 
@@ -631,7 +659,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Images/Ride Functionality.png
+	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Ride Functionality.png
 	lyxscale 20
 	width 100text%
 
@@ -687,7 +715,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Images/Registration Functionality.png
+	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Registration Functionality.png
 	lyxscale 20
 	width 100text%
 
@@ -737,7 +765,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Images/Reservation Functionality.png
+	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Reservation Functionality.png
 	lyxscale 30
 	width 100text%
 
@@ -786,7 +814,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Images/Search Functionality.png
+	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Search Functionality.png
 	lyxscale 30
 	width 100text%
 
@@ -835,7 +863,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Images/Notification Manager.png
+	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Notification Manager.png
 	lyxscale 30
 	width 100text%
 
@@ -887,7 +915,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Images/Monitoring Functionality.png
+	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Monitoring Functionality.png
 	lyxscale 30
 	width 100text%
 
@@ -936,7 +964,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Images/Customer Communication.png
+	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Customer Communication.png
 	lyxscale 30
 	width 100text%
 
@@ -986,7 +1014,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Images/Car Manager Functionality.png
+	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Car Manager Functionality.png
 	lyxscale 30
 	width 100text%
 
@@ -1034,7 +1062,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Images/Profile Manager.png
+	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Profile Manager.png
 	lyxscale 30
 	width 100text%
 
@@ -1073,7 +1101,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Images/Auth Manager.png
+	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Auth Manager.png
 	lyxscale 30
 	width 100text%
 
@@ -1112,7 +1140,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Images/Administrative Functionality Provider.png
+	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Administrative Functionality Provider.png
 	lyxscale 30
 	width 100text%
 
@@ -1256,12 +1284,12 @@ At this point the client applications of the Users, Operators and Administrators
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Images/Subsystems.png
+	filename /Users/emanueleghelfi/Development/SWE2-Project/ITPD - Development/Images/Subsystems.png
 	lyxscale 30
 	width 100text%
 
@@ -1289,11 +1317,6 @@ Subsystems Integration
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Now the system is fully integrated.
- 
 \end_layout
 
 \end_body

@@ -72,6 +72,13 @@
 
 \begin_layout Section
 Tools and Test Equipment Required
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Tools-and-Test"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -163,17 +170,51 @@ Check the interaction between the caller and the mocked object.
 \end_layout
 
 \begin_layout Standard
-In order to do be more effective will be used 
+In order to do be more effective 
 \begin_inset Formula $\mathbf{JUnit}$
 \end_inset
 
- framework.
+ framework will be used.
  JUnit is a framework used mainly for Unit Testing but it can be also used
  for integration testing (for example to test if the interaction between
  components is happing in the correct way).
  There is the possibility to test if the correct parameter are passed to
  certain methods, if the method returns the expected result or raises the
  excepted exceptions.
+\end_layout
+
+\begin_layout Standard
+Another testing tool that could be useful is 
+\begin_inset Formula $\mathbf{JUnitEE}$
+\end_inset
+
+ .
+ This framework extends the standard JUnit so that it can execute unit tests
+ in an application server container.
+ It is configured in the J2EE Web module of a unit test application, and
+ it uses a TestRunner to output HTML or XML test results.
+ It also includes a TestServlet for an entry point to JUnit test cases.
+ Building your test harness as a standard J2EE Web offers several benefits:
+ 
+\end_layout
+
+\begin_layout Itemize
+Tests are packaged in a J2EE Web module (in a WAR file), which is easy to
+ deploy and execute.
+ 
+\end_layout
+
+\begin_layout Itemize
+Test cases look just like production code, and they can use the same Java
+ beans that you use as a facade for your EJBs.
+\end_layout
+
+\begin_layout Itemize
+Tests can be automated by using an 
+\begin_inset Formula $\mathbf{Ant}$
+\end_inset
+
+ script.
 \end_layout
 
 \begin_layout Standard
