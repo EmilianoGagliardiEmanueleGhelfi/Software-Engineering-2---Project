@@ -76,11 +76,11 @@ Individual steps and test description
 
 \begin_layout Standard
 In this section are described the tests that have to be performed to integrate
- components belonging to the same subsystem; each subsection corresponds
- to a subsystem.
- The way in which the tests are described is the following: for each interaction
- between two component, some possible inputs and expected effects are listed,
- the same for the method calls incoming from the extern.
+ component belonging to the same subsystem.
+ Each step is characterized by the caller and the called component, and
+ by all the methods that are invoked by the caller on the called.
+ Foreach method are deﬁned some representative inputs and the corresponding
+ expected effects.
 \end_layout
 
 \begin_layout Subsection
