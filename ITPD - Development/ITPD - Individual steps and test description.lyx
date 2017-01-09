@@ -78,11 +78,9 @@ Individual steps and test description
 In this section are described the tests that have to be performed to integrate
  components belonging to the same subsystem; each subsection corresponds
  to a subsystem.
- The way in which the tests are described is the following: for the components
- that expose methods to the extern, with inputs that comes from, there is
- a detailed specification of the inputs (like in a unit test some representative
- or critical inputs are specified), while for the internal interfaces is
- made the assumption that 
+ The way in which the tests are described is the following: for each interaction
+ between two component, some possible inputs and expected effects are listed,
+ the same for the method calls incoming from the extern.
 \end_layout
 
 \begin_layout Subsection
@@ -95,7 +93,7 @@ Car uses the CarlListener component callback methods
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="2">
+<lyxtabular version="3" rows="5" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="5cm">
@@ -140,11 +138,51 @@ EFFECT
 </cell>
 </row>
 <row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A null parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A null value exception is raised
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+An invalid parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+An invalid parameter exception is raised
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-The car engine starts
+A valid parameter
 \end_layout
 
 \end_inset
@@ -153,9 +191,7 @@ The car engine starts
 \begin_inset Text
 
 \begin_layout Plain Layout
-The carOS get the event and call the carListener method.
- A timer (needed to compute the ride cost) is correctly initialized and
- starts in the server
+The ride manager is notified that the engine of the given car started
 \end_layout
 
 \end_inset
@@ -273,7 +309,7 @@ A valid parameter
 \begin_inset Text
 
 \begin_layout Plain Layout
-The ride manager is notified that the engine of the given has stopped
+The ride manager is notified that the engine of the given car stopped
 \end_layout
 
 \end_inset
@@ -682,6 +718,10 @@ The car API are correctly called
 </row>
 </lyxtabular>
 
+\end_inset
+
+
+\begin_inset Newline newline
 \end_inset
 
 
@@ -2143,9 +2183,13 @@ An invalid parameter is the same as an invalid parameter for pauseRide
 Car management subsystem
 \end_layout
 
+\begin_layout Subsubsection
+External call to car manager
+\end_layout
+
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="2">
+<lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="5cm">
@@ -2230,11 +2274,32 @@ A not valid parameter exception is raised, and it is reported in the response
 </cell>
 </row>
 <row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CarId corresponds to a car that is reserved, status is set to under maintenance
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The status is correctly modified in the database, the user that made the
+ reservation is find and the notification manager is called
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-CarId corresponds to a car that is in a ride, status is reserved
+CarId corresponds to a car that is under maintenance, status is set to available
 \end_layout
 
 \end_inset
@@ -2243,7 +2308,7 @@ CarId corresponds to a car that is in a ride, status is reserved
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+The status is correctly modified in the database
 \end_layout
 
 \end_inset
@@ -2261,7 +2326,7 @@ CarId corresponds to a car that is in a ride, status is reserved
 \begin_inset Newline newline
 \end_inset
 
-An invalid list of parameter could contains:
+An invalid list of parameter could contain:
 \end_layout
 
 \begin_layout Itemize
@@ -2274,6 +2339,10 @@ A carId that doesn't exist
 
 \begin_layout Itemize
 A not valid status (the valid status are listed in the RASD document)
+\end_layout
+
+\begin_layout Itemize
+A non compatible car status changing
 \end_layout
 
 \begin_layout Standard
@@ -2367,7 +2436,7 @@ A not valid parameter exception is raised, and it is reported in the response
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+A valid parameter
 \end_layout
 
 \end_inset
@@ -2376,7 +2445,7 @@ A not valid parameter exception is raised, and it is reported in the response
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+The car status is returned
 \end_layout
 
 \end_inset
@@ -2485,7 +2554,7 @@ A not valid parameter exception is raised, and it is reported in the response
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+A valid parameter
 \end_layout
 
 \end_inset
@@ -2494,7 +2563,7 @@ A not valid parameter exception is raised, and it is reported in the response
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+The car proxy is correctly called
 \end_layout
 
 \end_inset
@@ -2603,7 +2672,7 @@ A not valid parameter exception is raised, and it is reported in the response
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+A valid parameter
 \end_layout
 
 \end_inset
@@ -2612,7 +2681,7 @@ A not valid parameter exception is raised, and it is reported in the response
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+The car proxy is correctly called
 \end_layout
 
 \end_inset
@@ -2627,18 +2696,348 @@ A not valid parameter exception is raised, and it is reported in the response
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+An invalid parameter could be:
+\end_layout
+
+\begin_layout Itemize
+An empty carId
+\end_layout
+
+\begin_layout Itemize
+A carId that doesn't exist
 \end_layout
 
 \begin_layout Subsection
 Search functionality subsystem
 \end_layout
 
+\begin_layout Subsubsection
+External call to car search engine
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="5cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+searchCars(position, radius)
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INPUT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+EFFECT
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A null parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A null value exception is raised, and it is reported in the response
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+An invalid parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A not valid parameter exception is raised, and it is reported in the response
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A valid list of parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The car proxy is correctly called, and the correct list of car is returned
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+An invalid list of parameter could contain:
+\end_layout
+
+\begin_layout Itemize
+Wrong format position
+\end_layout
+
+\begin_layout Itemize
+Negative radius
+\end_layout
+
 \begin_layout Subsection
 Car monitoring subsystem
 \end_layout
 
+\begin_layout Standard
+This subsystem doesn't expose methods, it works like a daemon and uses car
+ proxy and notification manager components.
+ So are defined some events that could happen, and the expected behavior
+ of the car monitoring component.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="5cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A car needs an operator intervention
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+After an acceptable time interval, the car monitoring component asks to
+ car proxy the car status, detects the malfunction, and correctly calls
+ the notification manager
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Customer communication subsystem
+\end_layout
+
+\begin_layout Subsubsection
+Call to NotificationManager from another subsystem
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="5cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sendNotiﬁcation(notiﬁcationInfo, notiﬁcationType, receiver)
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INPUT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+EFFECT
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A null parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A null value exception is raised, and it is reported in the response
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+An invalid parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A not valid parameter exception is raised, and it is reported in the response
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A valid list of parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The notification is correctly sent to the client
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+This call should be tested with all type of client.
+ 
+\begin_inset Newline newline
+\end_inset
+
+A list of invalid parameter could contain:
+\end_layout
+
+\begin_layout Itemize
+Invalid notificationType
+\end_layout
+
+\begin_layout Itemize
+Empty notificationInfo
+\end_layout
+
+\begin_layout Itemize
+A receiver that does not exist
 \end_layout
 
 \end_body
