@@ -231,6 +231,10 @@ ITPD: integration test plan document.
 API: application programming interface.
 \end_layout
 
+\begin_layout Itemize
+IT: Integration test
+\end_layout
+
 \begin_layout Subsection
 Reference Documents
 \end_layout

@@ -124,6 +124,18 @@ name "enu:All-previous-documents"
 
 \end_layout
 
+\begin_layout Enumerate
+For each integration the sub-integrations must have been correctly tested.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:For-each-integration"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -179,6 +191,27 @@ reference "enu:All-previous-documents"
  Also modules and their interactions in order to fulfill requirements need
  to be stated (from DD).
  
+\end_layout
+
+\begin_layout Standard
+Point 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:For-each-integration"
+
+\end_inset
+
+ means that if a test involves the integration of component A with component
+ B (when A depends on B), the last must have been correctly integrated with
+ all its dependencies before starting the integration test.
+ This is due to the bottom-up approach selected later (Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Integration-Testing-Strategy"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -646,6 +679,137 @@ Car Communication is the most critical module, almost all components rely
  from the car event.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathbf{Test}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Case}$
+\end_inset
+
+: IT1 in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Car-communication-subsystem"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Registration Functionality
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/Registration Functionality.png
+	lyxscale 20
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Registration Functionality
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Registration Functionality is a subcomponent independent from the previous
+ subcomponents so it can be developed and integrated in parallel with respect
+ to them.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathbf{Test}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Case}$
+\end_inset
+
+: IT2 in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Registration-functionality-subsy"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection*
 Ride Functionality
 \end_layout
@@ -701,55 +865,46 @@ Ride Functionality is the subcomponent that manages all the flow of the
  
 \end_layout
 
-\begin_layout Subsubsection*
-Registration Functionality
-\end_layout
-
 \begin_layout Standard
-\align center
-\begin_inset Float figure
-wide false
-sideways false
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename Images/Registration Functionality.png
-	lyxscale 20
-	width 100text%
-
+\begin_inset Formula $\mathbf{Test}$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Registration Functionality
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The Registration Functionality is a subcomponent independent from the previous
- subcomponents so it can be developed and integrated in parallel with respect
- to them.
  
+\begin_inset Formula $\mathbf{Case}$
+\end_inset
+
+: IT3 in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Ride-functionality-subsystem"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection*
@@ -801,6 +956,48 @@ The Reservation Manager and the Ride Manager needs to be integrated together
  
 \end_layout
 
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathbf{Test}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Case}$
+\end_inset
+
+: IT4 in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Reservation-functionality-subsys"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection*
 Search Functionality
 \end_layout
@@ -848,6 +1045,48 @@ Search Functionality
 In order to test the search functionality the Car Search Engine needs to
  be integrated with the Car Communication subcomponent.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathbf{Test}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Case}$
+\end_inset
+
+: IT5 in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Search-functionality-subsystem"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection*
@@ -903,6 +1142,94 @@ At this point all critical subcomponents have been integrated.
 \end_layout
 
 \begin_layout Subsubsection*
+Customer Communication
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/Customer Communication.png
+	lyxscale 30
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Customer Communication
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Customer Message Handler component depends only on Notification Functionalit
+y and no other component depend on it.
+ Like Monitoring Functionality component it can be integrated lastly following
+ the critical Module First Approach.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathbf{Test}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Case}$
+\end_inset
+
+: IT6 in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Customer-communication-subsystem"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
 Monitoring Functionality
 \end_layout
 
@@ -951,54 +1278,46 @@ No components depends on the Car Monitoring component so it can be integrated
  
 \end_layout
 
-\begin_layout Subsubsection*
-Customer Communication
-\end_layout
-
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename Images/Customer Communication.png
-	lyxscale 30
-	width 100text%
+\begin_inset Formula $\mathbf{Test}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Case}$
+\end_inset
+
+: IT7 in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Car-monitoring-subsystem"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Customer Communication
-\end_layout
-
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The Customer Message Handler component depends only on Notification Functionalit
-y and no other component depend on it.
- Like Monitoring Functionality component it can be integrated lastly following
- the critical Module First Approach.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1047,6 +1366,48 @@ Car Management Functionality
 \begin_layout Standard
 Car management functionality is a backend-component necessary for administrators
  and operators, it's independent for the user-part of the system.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathbf{Test}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Case}$
+\end_inset
+
+: IT8 in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Car-management-subsystem"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection*

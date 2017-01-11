@@ -259,6 +259,30 @@ Notice that to perform the tests described in the previous sections some
  
 \end_layout
 
+\begin_layout Standard
+As a summary, the following testing tools are required:
+\end_layout
+
+\begin_layout Itemize
+Arquillian
+\end_layout
+
+\begin_layout Itemize
+Mockito
+\end_layout
+
+\begin_layout Itemize
+JUnit
+\end_layout
+
+\begin_layout Itemize
+JUnitEE
+\end_layout
+
+\begin_layout Itemize
+JMeter
+\end_layout
+
 \begin_layout Subsection
 Test Equipment
 \end_layout
@@ -323,32 +347,20 @@ Car Side
 
 \begin_layout Standard
 The most critical part of the system regards the interaction with the car.
- In order to test this part some 
-\begin_inset Formula $\mathbf{cars}$
-\end_inset
-
- with the carOS (described in the previous documents) are necessary.
- 
 \end_layout
 
 \begin_layout Standard
 It could be useful (but maybe not feasible) for testing purposes to have
- an 
-\begin_inset Formula $\mathbf{hardware}$
-\end_inset
-
- and 
-\begin_inset Formula $\mathbf{software}$
-\end_inset
-
- 
-\begin_inset Formula $\mathbf{system}$
-\end_inset
-
- that simulates the car with carOS installed on it.
+ a board that simulates the car with carOS installed on it.
  This could be used to test the system interaction with the carOS in an
  easier way with respect to test it on the car itself.
  This must be discussed with the company of the carOS.
+ 
+\end_layout
+
+\begin_layout Standard
+Also a software that simulates the car and his OS is needed to make testing
+ simpler.
  
 \end_layout
 

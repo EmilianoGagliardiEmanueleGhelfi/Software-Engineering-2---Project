@@ -210,7 +210,7 @@ Lyx: to redact and organize this document.
 
 \begin_layout Itemize
 StarUML: to create UML diagrams (component diagram, data model diagram,
- deployment diagram, sequence diagram, statechart diagram, use case diagrams).
+ deployment diagram, sequence diagram, state-chart diagram, use case diagrams).
 \end_layout
 
 \begin_layout Bibliography
@@ -280,7 +280,7 @@ key "key-3"
 
 \end_inset
 
-www.stackoverflow.com
+http://www.stackoverflow.com
 \end_layout
 
 \end_body
