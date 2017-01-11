@@ -71,48 +71,165 @@
 \begin_body
 
 \begin_layout Section
-Program Stubs and Test Data Required
-\end_layout
-
-\begin_layout Subsection
-Stubs and drivers required in the subsystems testing
+Program Stubs and Driver
 \end_layout
 
 \begin_layout Standard
 Here are listed for each subsystem the stubs and the drivers required in
  order to perform the tests as soon as possible during the development.
+ The drivers and the stubs are only listed because the method that have
+ to be called by each driver, or exposed by each stub, can be simply deducted
+ from the section 3.
 \end_layout
 
 \begin_layout Subsubsection*
-Data model
+Data model drivers
 \end_layout
 
 \begin_layout Subsubsection*
 Car communication
 \end_layout
 
+\begin_layout Standard
+This is the exception of the bottom-up method, infact the car uses the CarListen
+er component, but it is a part of the RideComponent that have to be developed
+ and tested later than the car communication subsystem.
+ So there will be the need of a CarListener stub.
+\begin_inset Newline newline
+\end_inset
+
+The needed driver are the following:
+\end_layout
+
+\begin_layout Itemize
+CarProxy driver
+\end_layout
+
+\begin_layout Itemize
+CarProxyCaller driver that simulates the calls to the car proxy from a generic
+ other subsystem
+\end_layout
+
 \begin_layout Subsubsection*
 Ride functionality
+\end_layout
+
+\begin_layout Standard
+In section 2 is specified that the NotificationManager component at this
+ level could be a stub, so there is the need of a NotificationManager stub.
+\begin_inset Newline newline
+\end_inset
+
+The needed driver are the following:
+\end_layout
+
+\begin_layout Itemize
+RideManager driver
+\end_layout
+
+\begin_layout Itemize
+RideManagerCaller driver that simulates the calls to the RideManager from
+ a generic client.
+\end_layout
+
+\begin_layout Subsubsection*
+Registration functionality
+\end_layout
+
+\begin_layout Standard
+The needed driver are the following:
+\end_layout
+
+\begin_layout Itemize
+RegistrationManager driver
+\end_layout
+
+\begin_layout Itemize
+RegistrationManagerCaller driver that simulates the calls to the RegistrationMan
+ager from a generic client.
 \end_layout
 
 \begin_layout Subsubsection*
 Reservation functionality
 \end_layout
 
+\begin_layout Standard
+The needed driver are the following:
+\end_layout
+
+\begin_layout Itemize
+ReservationManager driver
+\end_layout
+
+\begin_layout Itemize
+ReservationManagerCaller driver that simulates the calls to the ReservationManag
+er from a generic client.
+\end_layout
+
 \begin_layout Subsubsection*
 Search functionality
+\end_layout
+
+\begin_layout Standard
+The needed driver are the following:
+\end_layout
+
+\begin_layout Itemize
+SearchEngine driver
+\end_layout
+
+\begin_layout Itemize
+SearchEngineCaller driver that simulates the calls to the SearchEngine from
+ a generic client.
 \end_layout
 
 \begin_layout Subsubsection*
 Notification Functionality
 \end_layout
 
+\begin_layout Standard
+In this integration the client application could be a stub, so there is
+ the need of a ClientApplication stub that expose the methods that the Notificat
+ionReceiver could call.
+\begin_inset Newline newline
+\end_inset
+
+The needed driver are the following:
+\end_layout
+
+\begin_layout Itemize
+NotificationManager driver
+\end_layout
+
+\begin_layout Itemize
+NotificationManagerCaller driver that simulates the calls to the NotificationMan
+ager from a generic other subsystem.
+\end_layout
+
 \begin_layout Subsubsection*
 Monitoring Functionality
 \end_layout
 
+\begin_layout Standard
+The only needed driver in this subsystem integration is the CarMonitoring
+ component driver.
+\end_layout
+
 \begin_layout Subsubsection*
 Customer Communication
+\end_layout
+
+\begin_layout Standard
+The needed driver are the following:
+\end_layout
+
+\begin_layout Itemize
+CustomerMessageHandler driver
+\end_layout
+
+\begin_layout Itemize
+CustomerMessageHandlerCaller driver that simulates the calls to the CustomerMess
+ageHandler from a generic client.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -120,7 +237,16 @@ Car Management Functionality
 \end_layout
 
 \begin_layout Standard
+The needed driver are the following:
+\end_layout
 
+\begin_layout Itemize
+CarManager driver
+\end_layout
+
+\begin_layout Itemize
+CarManagerCaller driver that simulates the calls to the CarManager from
+ a generic client.
 \end_layout
 
 \end_body
