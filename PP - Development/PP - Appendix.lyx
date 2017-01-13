@@ -105,31 +105,39 @@ Hours of Work
 \end_layout
 
 \begin_layout Itemize
-27/12/16: 4 h, Overview of the problem
+24/11/16: 4 h, Overview of the problem
 \end_layout
 
 \begin_layout Itemize
-29/12/16 4 h, Integration Strategy
+29/11/16 5 h, Focus on architecture
 \end_layout
 
 \begin_layout Itemize
-4/1/17: 1 h, Integration Strategy
+30/11/16: 5 h, Diagrams
 \end_layout
 
 \begin_layout Itemize
-5/1/17: 4 h, Tools and test Equipment
+1/12/16: 1 h, introduction
 \end_layout
 
 \begin_layout Itemize
-8/1/17: 1 h, Refinement
+2/12/16: 3 h, Architecture Overview, diagrams, algorithms, data model
 \end_layout
 
 \begin_layout Itemize
-13/1/17: 2 h, Refinement
+3/12/16: 3 h, Comments on architecture, requirements traceability
+\end_layout
+
+\begin_layout Itemize
+6/12/16: 4 h, Components and interfaces
+\end_layout
+
+\begin_layout Itemize
+7/12/16: 3 h, Algorithms and refactoring
 \end_layout
 
 \begin_layout Standard
-Total hours: 16 h
+Total hours: 28 h
 \begin_inset Newline newline
 \end_inset
 
