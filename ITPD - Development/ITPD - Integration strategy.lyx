@@ -622,6 +622,14 @@ The Data model needs to use in a proper way the APIs provided by DBMS.
  
 \end_layout
 
+\begin_layout Standard
+Test for the integration of the Data Model with the DBMS are not provided
+ in this document since the interfaces of the data model may vary depending
+ on the schema.
+ Performing this integration testing is basically checking if the Data Model
+ updates correctly the DBMS.
+\end_layout
+
 \begin_layout Subsubsection*
 Car Communication
 \end_layout
@@ -1141,6 +1149,48 @@ At this point all critical subcomponents have been integrated.
  by the Notification Manager.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathbf{Test}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Case}$
+\end_inset
+
+: IT6 in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Notification-functionality-subsystem"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection*
 Customer Communication
 \end_layout
@@ -1214,7 +1264,7 @@ status open
 \begin_inset Formula $\mathbf{Case}$
 \end_inset
 
-: IT6 in Section 
+: IT7 in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Customer-communication-subsystem"
@@ -1305,7 +1355,7 @@ status open
 \begin_inset Formula $\mathbf{Case}$
 \end_inset
 
-: IT7 in Section 
+: IT8 in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Car-monitoring-subsystem"
@@ -1395,7 +1445,7 @@ status open
 \begin_inset Formula $\mathbf{Case}$
 \end_inset
 
-: IT8 in Section 
+: IT9 in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Car-management-subsystem"
@@ -1444,7 +1494,45 @@ Profile Manager
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
 \begin_layout Plain Layout
+\begin_inset Formula $\mathbf{Test}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Case}$
+\end_inset
+
+: IT10 in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Profile-manager"
+
+\end_inset
+
 
 \end_layout
 
@@ -1493,6 +1581,48 @@ Authentication Manager
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathbf{Test}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Case}$
+\end_inset
+
+: IT11 in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Authentication-manager"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -1523,6 +1653,48 @@ Administrative Functionality Provider
 \end_layout
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathbf{Test}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Case}$
+\end_inset
+
+: IT12 in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Administrative-functionality-pro"
+
+\end_inset
+
 
 \end_layout
 

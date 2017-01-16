@@ -2519,7 +2519,7 @@ A receiver that does not exist
 \end_layout
 
 \begin_layout Subsection
-Customer communication subsystem
+Customer communication subsystem (IT7) 
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Customer-communication-subsystem"
@@ -2675,7 +2675,7 @@ A sender user that does not exist
 \end_layout
 
 \begin_layout Subsection
-Car monitoring subsystem (IT7) 
+Car monitoring subsystem (IT8) 
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Car-monitoring-subsystem"
@@ -2729,7 +2729,7 @@ After an acceptable time interval, the car monitoring component asks to
 \end_layout
 
 \begin_layout Subsection
-Car management subsystem (IT8) 
+Car management subsystem (IT9) 
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Car-management-subsystem"
@@ -3267,7 +3267,7 @@ A carId that doesn't exist
 \end_layout
 
 \begin_layout Subsection
-Profile manager
+Profile manager (IT10)
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Profile-manager"
@@ -3407,7 +3407,7 @@ A not well formed userId
 \end_layout
 
 \begin_layout Subsection
-Authentication manager
+Authentication manager (IT11) 
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Authentication-manager"
@@ -3573,7 +3573,7 @@ an empty password
 \end_layout
 
 \begin_layout Subsection
-Administrative functionality provider
+Administrative functionality provider (IT12) 
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Administrative-functionality-pro"
