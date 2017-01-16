@@ -149,35 +149,19 @@ Total hours: 16 h
 \end_layout
 
 \begin_layout Itemize
-24/11/16: 4 h, Overview of the problem
+27/12/16: 4 h, Overview of the problem
 \end_layout
 
 \begin_layout Itemize
-29/11/16 5 h, Focus on architecture
+29/12/16 1 h, Introduction
 \end_layout
 
 \begin_layout Itemize
-30/11/16: 5 h, Diagrams
+3/1/17: 5 h, Individual step and test description 
 \end_layout
 
 \begin_layout Itemize
-1/12/16: 1 h, introduction
-\end_layout
-
-\begin_layout Itemize
-2/12/16: 3 h, Architecture Overview, diagrams, algorithms, data model
-\end_layout
-
-\begin_layout Itemize
-3/12/16: 3 h, Comments on architecture, requirements traceability
-\end_layout
-
-\begin_layout Itemize
-6/12/16: 4 h, Components and interfaces
-\end_layout
-
-\begin_layout Itemize
-7/12/16: 3 h, Algorithms and refactoring
+11/1/16: 3 h, Program driver and stubs
 \end_layout
 
 \begin_layout Standard
