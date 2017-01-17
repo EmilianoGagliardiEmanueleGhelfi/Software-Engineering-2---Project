@@ -220,67 +220,7 @@ key "key-1"
 
 \end_inset
 
-http://jmeter.apache.org/
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-2"
-
-\end_inset
-
-http://arquillian.org/
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-3"
-
-\end_inset
-
-http://site.mockito.org/
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-4"
-
-\end_inset
-
-http://junit.org/junit4/
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-5"
-
-\end_inset
-
-http://www.softwaretestinghelp.com/what-is-integration-testing/
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-6"
-
-\end_inset
-
-http://softwaretestingfundamentals.com/integration-testing/
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-3"
-
-\end_inset
-
-http://www.stackoverflow.com
+COCOMO || Model Definition Manual
 \end_layout
 
 \end_body
