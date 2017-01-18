@@ -126,7 +126,7 @@ The ILF are the following:
 
 \begin_layout Itemize
 User information: login information, history of the system usage, the weight
- is AVERAGE.
+ is HIGH.
 \end_layout
 
 \begin_layout Itemize
@@ -214,7 +214,7 @@ AVERAGE
 \begin_inset Text
 
 \begin_layout Plain Layout
-10
+15
 \end_layout
 
 \end_inset
@@ -348,7 +348,7 @@ LOW
 \begin_inset Newline newline
 \end_inset
 
-The resulting FPs are: 46
+The resulting FPs are: 51
 \end_layout
 
 \begin_layout Subsubsection
@@ -372,6 +372,10 @@ Users payment information: AVERAGE
 Users drive license: AVERAGE
 \end_layout
 
+\begin_layout Itemize
+Mobile map service call: LOW
+\end_layout
+
 \begin_layout Standard
 And in the table the assigned weights and FPs:
 \begin_inset Newline newline
@@ -382,7 +386,7 @@ And in the table the assigned weights and FPs:
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="3">
+<lyxtabular version="3" rows="4" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="2cm">
@@ -446,7 +450,7 @@ AVERAGE
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -455,7 +459,7 @@ Users drive license
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -464,11 +468,40 @@ AVERAGE
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mobile map service call
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+LOW
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
 \end_layout
 
 \end_inset
@@ -486,7 +519,7 @@ AVERAGE
 \begin_inset Newline newline
 \end_inset
 
-The resulting FPs are: 14
+The resulting FPs are: 18
 \end_layout
 
 \begin_layout Subsubsection
@@ -519,6 +552,11 @@ Reserve a car: operation that involve some check of information and some
 \begin_layout Itemize
 Lock/Unlock a car: this operations involve the check of positions and car
  communication, the weight is HIGH
+\end_layout
+
+\begin_layout Itemize
+Registration: operations that consist in the check of some information,
+ and in the use of different external API, the weight is AVERAGE
 \end_layout
 
 \begin_layout Standard
@@ -557,7 +595,7 @@ In the following table are listed functionalities and related FPs:
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="9" columns="3">
+<lyxtabular version="3" rows="10" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="2cm">
@@ -615,6 +653,35 @@ LOW
 
 \begin_layout Plain Layout
 3x2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Registration
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+AVERAGE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
 \end_layout
 
 \end_inset
@@ -835,7 +902,7 @@ LOW
 \begin_inset Newline newline
 \end_inset
 
-The resulting FPs are: 49
+The resulting FPs are: 53
 \end_layout
 
 \begin_layout Subsubsection
@@ -852,7 +919,7 @@ The EO involved in the PowerEnjoy system are:
 \end_layout
 
 \begin_layout Itemize
-User and operator notification: simple information sent to the user, the
+Users and operators notification: simple information sent to the user, the
  weight is AVERAGE
 \end_layout
 
@@ -1183,7 +1250,7 @@ AVERAGE
 \begin_inset Newline newline
 \end_inset
 
-The resulting FPs are: 13
+The resulting FPs are: 17
 \end_layout
 
 \begin_layout Subsubsection
@@ -1230,7 +1297,7 @@ Internal logic files
 \begin_inset Text
 
 \begin_layout Plain Layout
-41
+51
 \end_layout
 
 \end_inset
@@ -1250,7 +1317,7 @@ External interface files
 \begin_inset Text
 
 \begin_layout Plain Layout
-14
+18
 \end_layout
 
 \end_inset
@@ -1270,7 +1337,7 @@ External inputs
 \begin_inset Text
 
 \begin_layout Plain Layout
-49
+53
 \end_layout
 
 \end_inset
@@ -1310,7 +1377,7 @@ External inquiries
 \begin_inset Text
 
 \begin_layout Plain Layout
-13
+17
 \end_layout
 
 \end_inset
@@ -1328,7 +1395,7 @@ External inquiries
 \begin_inset Newline newline
 \end_inset
 
-The total amount of FPs is 132, that considering Java Enterprise Edition
+The total amount of FPs is 149, that considering Java Enterprise Edition
  as a development platform (low SLOC/UFP is 15, high SLOC/UFP is 67) brings
  to the following estimation:
 \end_layout
@@ -1336,7 +1403,7 @@ The total amount of FPs is 132, that considering Java Enterprise Edition
 \begin_layout Standard
 \begin_inset Formula 
 \[
-SLOC_{LOWER}=15\times132=1980
+SLOC_{LOWER}=15\times149=2235
 \]
 
 \end_inset
@@ -1347,7 +1414,7 @@ SLOC_{LOWER}=15\times132=1980
 \begin_layout Standard
 \begin_inset Formula 
 \[
-SLOCK_{UPPER}=67\times132=8844
+SLOCK_{UPPER}=67\times132=9983
 \]
 
 \end_inset
