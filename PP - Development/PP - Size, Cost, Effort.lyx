@@ -1401,6 +1401,25 @@ The total amount of FPs is 149, that considering Java Enterprise Edition
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
 \begin_inset Formula 
 \[
 SLOC_{LOWER}=15\times149=2235
@@ -1411,11 +1430,26 @@ SLOC_{LOWER}=15\times149=2235
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Formula 
 \[
-SLOCK_{UPPER}=67\times132=9983
+SLOC_{UPPER}=67\times132=9983
 \]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "PP - Cocomo.lyx"
 
 \end_inset
 

@@ -85,5 +85,40 @@
 Risk Management
 \end_layout
 
+\begin_layout Standard
+This section address the problem of finding the main risks that can incur
+ during the project development.
+\end_layout
+
+\begin_layout Standard
+In order to characterize risks they are divided into categories.
+\end_layout
+
+\begin_layout Subsubsection*
+Product Size Risks
+\end_layout
+
+\begin_layout Standard
+Product risks are related to the size of the project.
+\end_layout
+
+\begin_layout Standard
+The size of the project in terms on SLOC could be an underestimation.
+ This could cause a reduced scheduling and to a reduced cost estimation.
+\end_layout
+
+\begin_layout Standard
+The number of user is an important factor because an underestimation of
+ the number of user.
+ If the actual number of user is many times the number of expected user
+ could be a problem.
+ In this case the project architecture should be re-designed from scratch.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
 \end_body
 \end_document
