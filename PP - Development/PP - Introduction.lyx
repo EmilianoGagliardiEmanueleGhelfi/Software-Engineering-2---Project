@@ -85,5 +85,256 @@
 Introduction
 \end_layout
 
+\begin_layout Subsection
+Revision History
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Version
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Date
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Author
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Summary
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22/01/17
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Emanuele Ghelfi & Emiliano Gagliardi
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Initial Release
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Purpose and Scope
+\end_layout
+
+\begin_layout Standard
+The Project Plan document aims at giving an estimation of the total effort
+ requested by the project using Function Points and COCOMO II.
+ In this way the project has also an estimation for the duration and for
+ requested budget.
+ The overall duration is used in giving a schedule to the project and in
+ allocating resources.
+\end_layout
+
+\begin_layout Standard
+In section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Project-size,-cost"
+
+\end_inset
+
+ the Function Points and COCOMO approaches are used to estimate the size,
+ the cost and effort of the project.
+ The size in given in terms of SLOC (Source Lines Of Code) and the effort
+ is given in terms of PM (Person Month).
+ 
+\end_layout
+
+\begin_layout Standard
+In section 3 (//todo: add reference) a schedule for the project is proposed
+ by taken into account all possible activities required by the project and
+ the relationship precedence between them.
+\end_layout
+
+\begin_layout Standard
+In section 4 (// todo: add reference) the resources (in terms of people)
+ are assigned to each activity.
+ The resource allocation is done by taken into account predispositions and
+ preferences of the team members.
+\end_layout
+
+\begin_layout Standard
+In section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Risk-Management"
+
+\end_inset
+
+ risks related to the project are analyzed.
+ For each risks is given a probability and a possible strategy in order
+ to avoid it or to recover it.
+ Notice that some risks are unpredictable or unrecoverable.
+\end_layout
+
+\begin_layout Subsection
+Definitions, Acronyms and Abbreviations
+\end_layout
+
+\begin_layout Itemize
+FP: Function Point
+\end_layout
+
+\begin_layout Itemize
+PM: Person Month
+\end_layout
+
+\begin_layout Itemize
+SLOC: Source Lines Of Code
+\end_layout
+
+\begin_layout Itemize
+KSLOC: Kilo Source Lines Of Code
+\end_layout
+
+\begin_layout Itemize
+ILF: Internal logic file 
+\end_layout
+
+\begin_layout Itemize
+ELF: External logic file
+\end_layout
+
+\begin_layout Itemize
+EI: External Input
+\end_layout
+
+\begin_layout Itemize
+EO: External Output
+\end_layout
+
+\begin_layout Itemize
+EQ: External Inquiries
+\end_layout
+
+\begin_layout Itemize
+DBMS: Database Management System
+\end_layout
+
+\begin_layout Itemize
+API: Application Programming Interface
+\end_layout
+
+\begin_layout Itemize
+ETA: Estimated Time of Arrival
+\end_layout
+
+\begin_layout Itemize
+UI: User Interface
+\end_layout
+
+\begin_layout Itemize
+GUI: Graphical User Interface
+\end_layout
+
+\begin_layout Itemize
+SE: Schedule Equation
+\end_layout
+
+\begin_layout Itemize
+PP: Project Plan
+\end_layout
+
+\begin_layout Subsection
+Reference Documents
+\end_layout
+
+\begin_layout Standard
+Notice that documents in RELEASE folder are related to the project and documents
+ in Reference Documents are external documents used as references.
+\end_layout
+
+\begin_layout Itemize
+Assignments AA 206-2017.pdf (In Reference Documents folder)
+\end_layout
+
+\begin_layout Itemize
+PP.pdf : Project Plan from previous year (In Reference Documents folder)
+\end_layout
+
+\begin_layout Itemize
+CII_modelman2000.pdf: Manual of COCOMO II (In Reference Documents folder)
+\end_layout
+
+\begin_layout Itemize
+Power EnJoy RASD (in RELEASE folder)
+\end_layout
+
+\begin_layout Itemize
+Power Enjoy DD (in RELEASE folder)
+\end_layout
+
+\begin_layout Itemize
+Power EnJoy ITPD (in RELEASE folder)
+\end_layout
+
 \end_body
 \end_document

@@ -83,6 +83,13 @@
 
 \begin_layout Subsection
 Cost and Effort Estimation: COCOMO II
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Cost-and-Effort"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -95,6 +102,17 @@ COCOMO stands for COnstructive COst MOdel.
 \begin_layout Standard
 The estimation is achieved through a complex, non linear model that takes
  into account the characteristics of product and process.
+\end_layout
+
+\begin_layout Standard
+Tables in this sections are taken from 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-1"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection

@@ -105,35 +105,15 @@ Hours of Work
 \end_layout
 
 \begin_layout Itemize
-24/11/16: 4 h, Overview of the problem
+17/01/17: 4 h, Overview of the problem, COCOMO
 \end_layout
 
 \begin_layout Itemize
-29/11/16 5 h, Focus on architecture
+18/01/17 2 h, Risks Managements
 \end_layout
 
 \begin_layout Itemize
-30/11/16: 5 h, Diagrams
-\end_layout
-
-\begin_layout Itemize
-1/12/16: 1 h, introduction
-\end_layout
-
-\begin_layout Itemize
-2/12/16: 3 h, Architecture Overview, diagrams, algorithms, data model
-\end_layout
-
-\begin_layout Itemize
-3/12/16: 3 h, Comments on architecture, requirements traceability
-\end_layout
-
-\begin_layout Itemize
-6/12/16: 4 h, Components and interfaces
-\end_layout
-
-\begin_layout Itemize
-7/12/16: 3 h, Algorithms and refactoring
+19/01/17: 2 h, Introduction
 \end_layout
 
 \begin_layout Standard
@@ -185,6 +165,10 @@ StarUML: to create UML diagrams (component diagram, data model diagram,
  deployment diagram, sequence diagram, state-chart diagram, use case diagrams).
 \end_layout
 
+\begin_layout Itemize
+Excel: to compute formulas.
+\end_layout
+
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
@@ -193,6 +177,16 @@ key "key-1"
 \end_inset
 
 COCOMO || Model Definition Manual
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+http://www.ifpug.org
 \end_layout
 
 \end_body
