@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2016-10-01" view-index="0" gantt-divider-location="497" resource-divider-location="300" version="2.8.1" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2016-11-01" view-index="0" gantt-divider-location="635" resource-divider-location="300" version="2.8.1" locale="en_US">
     <description/>
     <view zooming-state="default:8" id="gantt-chart">
-        <field id="tpd3" name="Name" width="247" order="0"/>
-        <field id="tpd4" name="Begin date" width="122" order="1"/>
-        <field id="tpd5" name="End date" width="122" order="2"/>
+        <field id="tpd3" name="Name" width="293" order="0"/>
+        <field id="tpd4" name="Begin date" width="168" order="1"/>
+        <field id="tpd5" name="End date" width="168" order="2"/>
     </view>
     <view id="resource-table">
         <field id="0" name="Name" width="209" order="0"/>
@@ -33,17 +33,42 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="24" name="Meeting with customers" meeting="false" start="2016-10-03" duration="1" complete="0" expand="true"/>
-        <task id="25" name="Stakeholder identification" meeting="false" start="2016-10-04" duration="1" complete="0" expand="true"/>
-        <task id="26" name="Definition of goals" color="#8cb6ce" meeting="false" start="2016-10-05" duration="2" complete="0" expand="true"/>
-        <task id="28" name="World modeling" color="#8cb6ce" meeting="false" start="2016-10-06" duration="4" complete="0" expand="true"/>
-        <task id="29" name="Assumption and requirements" color="#8cb6ce" meeting="false" start="2016-10-07" duration="3" complete="0" expand="true"/>
-        <task id="30" name="Definition of main functionalities" color="#8cb6ce" meeting="false" start="2016-10-10" duration="1" complete="0" expand="true"/>
-        <task id="35" name="Definition of some use cases" color="#8cb6ce" meeting="false" start="2016-10-11" duration="2" complete="0" expand="true"/>
-        <task id="37" name="First requirements list version" color="#8cb6ce" meeting="false" start="2016-10-12" duration="1" complete="0" expand="true"/>
-        <task id="39" name="Meeting with car os provider" meeting="false" start="2016-10-12" duration="1" complete="0" expand="true"/>
-        <task id="40" name="UI mockups" color="#8cb6ce" meeting="false" start="2016-10-13" duration="2" complete="0" expand="true"/>
-        <task id="44" name="Initial cost and effort estimation" color="#8cb6ce" meeting="false" start="2016-10-14" duration="1" complete="0" expand="true"/>
+        <task id="57" name="RASD" meeting="false" start="2016-10-03" duration="13" complete="0" expand="false">
+            <task id="58" name="Meeting with customers" meeting="false" start="2016-10-03" duration="1" complete="0" expand="true"/>
+            <task id="59" name="Stakeholder identification" meeting="false" start="2016-10-04" duration="1" complete="0" expand="true"/>
+            <task id="60" name="Definition of goals" color="#8cb6ce" meeting="false" start="2016-10-05" duration="2" complete="0" expand="true"/>
+            <task id="61" name="World modeling" color="#8cb6ce" meeting="false" start="2016-10-06" duration="4" complete="0" expand="true"/>
+            <task id="62" name="Assumption and requirements" color="#8cb6ce" meeting="false" start="2016-10-07" duration="3" complete="0" expand="true"/>
+            <task id="63" name="Definition of main functionalities" color="#8cb6ce" meeting="false" start="2016-10-10" duration="1" complete="0" expand="true"/>
+            <task id="64" name="Initial cost and effort estimation" color="#8cb6ce" meeting="false" start="2016-10-11" duration="1" complete="0" expand="true"/>
+            <task id="65" name="Definition of some use cases" color="#8cb6ce" meeting="false" start="2016-10-12" duration="2" complete="0" expand="true"/>
+            <task id="66" name="First requirements list version" color="#8cb6ce" meeting="false" start="2016-10-12" duration="1" complete="0" expand="true"/>
+            <task id="67" name="Meeting with car os provider" meeting="false" start="2016-10-12" duration="1" complete="0" expand="true"/>
+            <task id="68" name="UI mockups" color="#8cb6ce" meeting="false" start="2016-10-13" duration="2" complete="0" expand="true"/>
+            <task id="69" name="Meeting with customer" color="#8cb6ce" meeting="false" start="2016-10-17" duration="1" complete="0" expand="true"/>
+            <task id="70" name="Revision of the RASD" color="#8cb6ce" meeting="false" start="2016-10-18" duration="1" complete="0" expand="true"/>
+            <task id="71" name="First release of the RASD" color="#8cb6ce" meeting="false" start="2016-10-19" duration="1" complete="0" expand="true"/>
+        </task>
+        <task id="72" name="DD" meeting="false" start="2016-10-20" duration="24" complete="0" expand="false">
+            <task id="74" name="High level architecture" meeting="false" start="2016-10-20" duration="1" complete="0" expand="true"/>
+            <task id="75" name="Tecnologies choice" color="#8cb6ce" meeting="false" start="2016-10-21" duration="1" complete="0" expand="true"/>
+            <task id="78" name="Main components identification" color="#8cb6ce" meeting="false" start="2016-10-24" duration="1" complete="0" expand="true"/>
+            <task id="80" name="Meetign with customer" meeting="false" start="2016-10-25" duration="1" complete="0" expand="true"/>
+            <task id="82" name="Data model definition" color="#8cb6ce" meeting="false" start="2016-10-26" duration="4" complete="0" expand="true"/>
+            <task id="83" name="Component definition" color="#8cb6ce" meeting="false" start="2016-10-27" duration="4" complete="0" expand="true"/>
+            <task id="121" name="Identification of useful external systems" meeting="false" start="2016-11-02" duration="1" complete="0" expand="true"/>
+            <task id="87" name="Cost and effort estimation refinement" color="#8cb6ce" meeting="false" start="2016-11-02" duration="1" complete="0" expand="true"/>
+            <task id="89" name="Detailed component diagram" color="#8cb6ce" meeting="false" start="2016-11-03" duration="3" complete="0" expand="true"/>
+            <task id="92" name="User experience diagrams" color="#8cb6ce" meeting="false" start="2016-11-08" duration="3" complete="0" expand="true"/>
+            <task id="94" name="Runtime diagrams" color="#8cb6ce" meeting="false" start="2016-11-08" duration="3" complete="0" expand="true"/>
+            <task id="101" name="Requirement traceability" color="#8cb6ce" meeting="false" start="2016-11-11" duration="1" complete="0" expand="true"/>
+            <task id="106" name="Design of some algorithms" color="#8cb6ce" meeting="false" start="2016-11-14" duration="3" complete="0" expand="true"/>
+            <task id="108" name="Revision of architecture" color="#8cb6ce" meeting="false" start="2016-11-15" duration="2" complete="0" expand="true"/>
+            <task id="111" name="Final UI design" color="#8cb6ce" meeting="false" start="2016-11-17" duration="2" complete="0" expand="true"/>
+            <task id="112" name="Meeting with cusomer" color="#8cb6ce" meeting="false" start="2016-11-21" duration="1" complete="0" expand="true"/>
+            <task id="116" name="First DD realease" color="#8cb6ce" meeting="false" start="2016-11-22" duration="1" complete="0" expand="true"/>
+        </task>
+        <task id="123" name="Developement" color="#8cb6ce" meeting="false" start="2016-11-01" duration="1" complete="0" expand="true"/>
     </tasks>
     <resources/>
     <allocations/>
