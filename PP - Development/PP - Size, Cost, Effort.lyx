@@ -83,6 +83,13 @@
 
 \begin_layout Section
 Project size, cost and effort estimation
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Project-size,-cost"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -96,6 +103,13 @@ As the title says this section provide an estimation of the project size,
 
 \begin_layout Subsection
 Size estimation
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Size-estimation"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

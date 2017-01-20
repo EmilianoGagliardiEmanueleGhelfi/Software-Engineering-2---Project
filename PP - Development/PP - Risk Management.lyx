@@ -83,6 +83,13 @@
 
 \begin_layout Section
 Risk Management
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Risk-Management"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -94,17 +101,24 @@ This section address the problem of finding the main risks that can incur
 In order to characterize risks they are divided into categories.
 \end_layout
 
+\begin_layout Subsection
+Project Risks
+\end_layout
+
 \begin_layout Subsubsection*
 Product Size Risks
 \end_layout
 
 \begin_layout Standard
-Product risks are related to the size of the project.
+Product Size risks are related to the size of the project.
 \end_layout
 
 \begin_layout Standard
 The size of the project in terms on SLOC could be an underestimation.
  This could cause a reduced scheduling and to a reduced cost estimation.
+ A possible strategy for tackle this risk could be planning for two releases,
+ the first one with a limited set of functionalities and the second with
+ the full set of functionalities.
 \end_layout
 
 \begin_layout Standard
@@ -112,11 +126,676 @@ The number of user is an important factor because an underestimation of
  the number of user.
  If the actual number of user is many times the number of expected user
  could be a problem.
- In this case the project architecture should be re-designed from scratch.
- 
+ This problem must be taken into account in the definition of the software
+ architecture.
+ The architecture must be modular and must support extensions.
+\end_layout
+
+\begin_layout Subsubsection*
+People Management Risks
 \end_layout
 
 \begin_layout Standard
+These risks are related to the management of people involved in the project.
+ Developers of the company need to be part of the whole, involved in important
+ decision regarding technology or approach to problems.
+ If developers become un-motivated, they become a risk because the whole
+ project (and the future projects) could be compromised.
+\end_layout
+
+\begin_layout Standard
+Key points are:
+\end_layout
+
+\begin_layout Itemize
+Consistency
+\end_layout
+
+\begin_layout Itemize
+Respect
+\end_layout
+
+\begin_layout Itemize
+Inclusion
+\end_layout
+
+\begin_layout Itemize
+Honesty
+\end_layout
+
+\begin_layout Subsubsection*
+Unfeasible feature
+\end_layout
+
+\begin_layout Standard
+Some feature requested by the customer could be unfeasible and this could
+ be discovered only at the developing time.
+ In order to avoid this risk all requirements must be analyzed in a proper
+ way by technical experts.
+ Unfeasible requirements must be discovered at an early stage of the project
+ and there must be a discussion with the customer.
+\end_layout
+
+\begin_layout Subsubsection*
+Acceptance of the System 
+\end_layout
+
+\begin_layout Standard
+Not acceptance of the system from users and company could be a risk.
+ This product could be difficult to use by people not used to these services.
+ In order to avoid this risk the market strategy is very important.
+ The launch of the product might be correlated with discounts, tutorials
+ or special offers.
+\end_layout
+
+\begin_layout Subsection
+Technical Risks
+\end_layout
+
+\begin_layout Subsubsection*
+CarOS Risks
+\end_layout
+
+\begin_layout Standard
+Technical risks can be caused by a lack of support by the carOS provider.
+ The carOS provider could terminate the support for its technology.
+ In this case the organization should search another provider of the same
+ technology or thinking about developing its own technology.
+ For developing a new technology could be reasonable to hire some experts
+ in embedded technology since could be difficult and could require some
+ knowledge.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Software dependency Risks
+\end_layout
+
+\begin_layout Standard
+The reason made for the carOS problem should be extended also for the other
+ software dependencies like driving license validation and payment.
+ The contingency plan could be also the same: change dependency or developing
+ a new technology that does the same things.
+\end_layout
+
+\begin_layout Subsubsection*
+Technology to be built
+\end_layout
+
+\begin_layout Standard
+The technology to use could be new for team members and the difficulty of
+ development can be underestimate.
+ Also with the selected technology some functionality of the project could
+ be difficult to implement.
+ There can be new technologies more effective and useful.
+ For this reason all the team members need to follow technology trends.
+ They need to follow also upgrading courses in order to improve competencies
+ and achieve an high level of competencies in other technologies not used
+ in the project.
+\end_layout
+
+\begin_layout Subsection
+Business Risks
+\end_layout
+
+\begin_layout Standard
+The followings are business risks that for definition can't have a recovering
+ strategy.
+ They are related to market changes or environmental changes.
+\end_layout
+
+\begin_layout Subsubsection*
+Strategic Risks
+\end_layout
+
+\begin_layout Standard
+If the development of the product will be slow could happen some strategic
+ risk.
+ The market car sharing could become saturated and the product could not
+ fit anymore the strategy of the company.
+\end_layout
+
+\begin_layout Subsubsection*
+Market Risks
+\end_layout
+
+\begin_layout Standard
+Another risk could be a change in the behavior of our stakeholders.
+ Car sharing could be no more useful because of other services more efficient
+ and less expensive.
+\end_layout
+
+\begin_layout Subsubsection*
+Budget Risks
+\end_layout
+
+\begin_layout Standard
+The budget could become reduced, this could cause some issues related to
+ the quality of the software to be.
+ 
+\end_layout
+
+\begin_layout Subsection
+Risks Summary
+\end_layout
+
+\begin_layout Standard
+In the following tables risks are summarized, a probability is given to
+ each risks and the impact is estimated.
+ Notice that the strategy is not reported because is already described in
+ the related section.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features tabularvalignment="middle" tabularwidth="100text%">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Project Risks
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Risk
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Probability
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Impact
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Product Size
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+High
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Average
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+People Management
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Average
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+High
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Unfeasible Feature
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Low
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+High
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Acceptance of the system
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Average
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+High
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle" tabularwidth="100text%">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Technical Risks
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Risk
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Probability
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Impact
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Car OS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Low
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+High
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Software Dependencies
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Low
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+High
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Technology to be built
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Low
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+High
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle" tabularwidth="100text%">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Business Risks
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Risk
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Probability
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Impact
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Strategic
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Low
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+High
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Market
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Average
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+High
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Budget
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Low
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Average
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
 
 \end_layout
 
