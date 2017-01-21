@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2016-07-01" view-index="0" gantt-divider-location="672" resource-divider-location="300" version="2.8.1" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2017-12-31" view-index="0" gantt-divider-location="699" resource-divider-location="300" version="2.8.1" locale="en_US">
     <description/>
-    <view zooming-state="default:11" id="gantt-chart">
-        <field id="tpd3" name="Name" width="305" order="0"/>
-        <field id="tpd4" name="Begin date" width="181" order="1"/>
-        <field id="tpd5" name="End date" width="180" order="2"/>
+    <view zooming-state="default:5" id="gantt-chart">
+        <field id="tpd3" name="Name" width="312" order="0"/>
+        <field id="tpd4" name="Begin date" width="191" order="1"/>
+        <field id="tpd5" name="End date" width="190" order="2"/>
     </view>
     <view id="resource-table">
         <field id="0" name="Name" width="209" order="0"/>
@@ -49,7 +49,7 @@
             <task id="70" name="Revision of the RASD" color="#8cb6ce" meeting="false" start="2016-10-18" duration="1" complete="0" expand="true"/>
             <task id="71" name="First release of the RASD" color="#8cb6ce" meeting="false" start="2016-10-19" duration="1" complete="0" expand="true"/>
         </task>
-        <task id="72" name="DD" meeting="false" start="2016-10-20" duration="24" complete="0" expand="true">
+        <task id="72" name="DD" meeting="false" start="2016-10-20" duration="24" complete="0" expand="false">
             <task id="74" name="High level architecture" meeting="false" start="2016-10-20" duration="1" complete="0" expand="true"/>
             <task id="75" name="Tecnologies choice" color="#8cb6ce" meeting="false" start="2016-10-21" duration="1" complete="0" expand="true"/>
             <task id="78" name="Main components identification" color="#8cb6ce" meeting="false" start="2016-10-24" duration="1" complete="0" expand="true"/>
@@ -68,8 +68,8 @@
             <task id="112" name="Meeting with cusomer" color="#8cb6ce" meeting="false" start="2016-11-21" duration="1" complete="0" expand="true"/>
             <task id="116" name="First DD realease" color="#8cb6ce" meeting="false" start="2016-11-22" duration="1" complete="0" expand="true"/>
         </task>
-        <task id="123" name="Developement" color="#8cb6ce" meeting="false" start="2016-12-01" duration="283" complete="0" expand="true">
-            <task id="125" name="Subcomponents developement" color="#8cb6ce" meeting="false" start="2016-12-01" duration="180" complete="0" expand="true"/>
+        <task id="123" name="Development" color="#8cb6ce" meeting="false" start="2016-12-01" duration="285" complete="0" expand="false">
+            <task id="125" name="Subcomponents development" color="#8cb6ce" meeting="false" start="2016-12-01" duration="180" complete="0" expand="true"/>
             <task id="126" name="Unit testing" color="#8cb6ce" meeting="false" start="2016-12-01" duration="180" complete="0" expand="true"/>
             <task id="127" name="Integration testing internal subcomponents" color="#8cb6ce" meeting="false" start="2017-01-30" duration="180" complete="0" expand="true"/>
             <task id="128" name="Server component integration testing" color="#8cb6ce" meeting="false" start="2017-09-13" duration="60" complete="0" expand="true"/>
@@ -77,9 +77,17 @@
             <task id="140" name="Clients developement" color="#8cb6ce" meeting="false" start="2016-12-26" duration="60" complete="0" expand="true"/>
             <task id="142" name="Clients unit testing" color="#8cb6ce" meeting="false" start="2016-12-26" duration="60" complete="0" expand="true"/>
             <task id="144" name="Client and server integration testing" color="#8cb6ce" meeting="false" start="2017-11-22" duration="28" complete="0" expand="true"/>
-            <task id="147" name="Meeting with customer" meeting="false" start="2018-01-01" duration="1" complete="0" expand="true"/>
+            <task id="147" name="Meeting with customer" meeting="false" start="2018-01-02" duration="1" complete="0" expand="true"/>
+            <task id="160" name="Server first release" meeting="false" start="2018-01-02" duration="1" complete="0" expand="true"/>
+            <task id="159" name="Clients first release" color="#8cb6ce" meeting="false" start="2018-01-03" duration="1" complete="0" expand="true"/>
         </task>
-        <task id="150" name="Deployment" meeting="false" start="2016-07-01" duration="1" complete="0" expand="true"/>
+        <task id="150" name="Deployment" meeting="false" start="2018-01-03" duration="3" complete="0" expand="true">
+            <task id="156" name="System deployment" meeting="false" start="2018-01-03" duration="1" complete="0" expand="true"/>
+            <task id="161" name="Teaching meeting with administrators" meeting="false" start="2018-01-05" duration="1" complete="0" expand="true"/>
+            <task id="164" name="Teaching meeting with operators" meeting="false" start="2018-01-05" duration="1" complete="0" expand="true"/>
+            <task id="166" name="Last meeting with customer" meeting="false" start="2018-01-05" duration="1" complete="0" expand="true"/>
+        </task>
+        <task id="167" name="dummy task" meeting="false" start="2018-01-01" duration="1" complete="0" expand="true"/>
     </tasks>
     <resources/>
     <allocations/>
