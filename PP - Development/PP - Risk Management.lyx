@@ -188,118 +188,27 @@ Not acceptance of the system from users and company could be a risk.
  or special offers.
 \end_layout
 
-\begin_layout Subsection
-Technical Risks
-\end_layout
-
-\begin_layout Subsubsection*
-CarOS Risks
-\end_layout
-
-\begin_layout Standard
-Technical risks can be caused by a lack of support by the carOS provider.
- The carOS provider could terminate the support for its technology.
- In this case the organization should search another provider of the same
- technology or thinking about developing its own technology.
- For developing a new technology could be reasonable to hire some experts
- in embedded technology since could be difficult and could require some
- knowledge.
- 
-\end_layout
-
-\begin_layout Subsubsection*
-Software dependency Risks
-\end_layout
-
-\begin_layout Standard
-The reason made for the carOS problem should be extended also for the other
- software dependencies like driving license validation and payment.
- The contingency plan could be also the same: change dependency or developing
- a new technology that does the same things.
-\end_layout
-
-\begin_layout Subsubsection*
-Technology to be built
-\end_layout
-
-\begin_layout Standard
-The technology to use could be new for team members and the difficulty of
- development can be underestimate.
- Also with the selected technology some functionality of the project could
- be difficult to implement.
- There can be new technologies more effective and useful.
- For this reason all the team members need to follow technology trends.
- They need to follow also upgrading courses in order to improve competencies
- and achieve an high level of competencies in other technologies not used
- in the project.
-\end_layout
-
-\begin_layout Subsection
-Business Risks
-\end_layout
-
-\begin_layout Standard
-The followings are business risks that for definition can't have a recovering
- strategy.
- They are related to market changes or environmental changes.
-\end_layout
-
-\begin_layout Subsubsection*
-Strategic Risks
-\end_layout
-
-\begin_layout Standard
-If the development of the product will be slow could happen some strategic
- risk.
- The market car sharing could become saturated and the product could not
- fit anymore the strategy of the company.
-\end_layout
-
-\begin_layout Subsubsection*
-Market Risks
-\end_layout
-
-\begin_layout Standard
-Another risk could be a change in the behavior of our stakeholders.
- Car sharing could be no more useful because of other services more efficient
- and less expensive.
-\end_layout
-
-\begin_layout Subsubsection*
-Budget Risks
-\end_layout
-
-\begin_layout Standard
-The budget could become reduced, this could cause some issues related to
- the quality of the software to be.
- 
-\end_layout
-
-\begin_layout Subsection
-Risks Summary
-\end_layout
-
-\begin_layout Standard
-In the following tables risks are summarized, a probability is given to
- each risks and the impact is estimated.
- Notice that the strategy is not reported because is already described in
- the related section.
-\end_layout
-
 \begin_layout Standard
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="3">
-<features tabularvalignment="middle" tabularwidth="100text%">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="0pt">
-<column alignment="center" valignment="top">
 <row>
 <cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Project Risks
+\begin_inset Formula $\mathbf{Project}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Risks}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -328,7 +237,10 @@ Project Risks
 \begin_inset Text
 
 \begin_layout Plain Layout
-Risk
+\begin_inset Formula $\mathbf{Risk}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -337,7 +249,10 @@ Risk
 \begin_inset Text
 
 \begin_layout Plain Layout
-Probability
+\begin_inset Formula $\mathbf{Probability}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -346,7 +261,10 @@ Probability
 \begin_inset Text
 
 \begin_layout Plain Layout
-Impact
+\begin_inset Formula $\mathbf{Impact}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -475,24 +393,84 @@ High
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection
+Technical Risks
+\end_layout
 
+\begin_layout Subsubsection*
+CarOS Risks
+\end_layout
+
+\begin_layout Standard
+Technical risks can be caused by a lack of support by the carOS provider.
+ The carOS provider could terminate the support for its technology.
+ In this case the organization should search another provider of the same
+ technology or thinking about developing its own technology.
+ For developing a new technology could be reasonable to hire some experts
+ in embedded technology since could be difficult and could require some
+ knowledge.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Software dependency Risks
+\end_layout
+
+\begin_layout Standard
+The reason made for the carOS problem should be extended also for the other
+ software dependencies like driving license validation and payment.
+ The contingency plan could be also the same: change dependency or developing
+ a new technology that does the same things.
+\end_layout
+
+\begin_layout Subsubsection*
+Technology to be built
+\end_layout
+
+\begin_layout Standard
+The technology to use could be new for team members and the difficulty of
+ development can be underestimate.
+ Also with the selected technology some functionality of the project could
+ be difficult to implement.
+ There can be new technologies more effective and useful.
+ For this reason all the team members need to follow technology trends.
+ They need to follow also upgrading courses in order to improve competencies
+ and achieve an high level of competencies in other technologies not used
+ in the project.
+\end_layout
+
+\begin_layout Subsubsection*
+Data Loss
+\end_layout
+
+\begin_layout Standard
+Data loss can be due for several reasons like an un-correct way of using
+ tools or a system/hardware failure.
+ This risk can be avoided doing multiple periodical backup of the whole
+ project and of the whole data of the projects.
 \end_layout
 
 \begin_layout Standard
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="3">
-<features tabularvalignment="middle" tabularwidth="100text%">
+<lyxtabular version="3" rows="6" columns="3">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top">
 <row>
-<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none" width="5cm">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Technical Risks
+\begin_inset Formula $\mathbf{Technical}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Risks}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -521,7 +499,10 @@ Technical Risks
 \begin_inset Text
 
 \begin_layout Plain Layout
-Risk
+\begin_inset Formula $\mathbf{Risk}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -530,7 +511,10 @@ Risk
 \begin_inset Text
 
 \begin_layout Plain Layout
-Probability
+\begin_inset Formula $\mathbf{Probability}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -539,7 +523,10 @@ Probability
 \begin_inset Text
 
 \begin_layout Plain Layout
-Impact
+\begin_inset Formula $\mathbf{Impact}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -604,11 +591,40 @@ High
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 Technology to be built
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Low
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+High
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Data Loss
 \end_layout
 
 \end_inset
@@ -639,20 +655,79 @@ High
 
 \end_layout
 
+\begin_layout Subsection
+Business Risks
+\end_layout
+
+\begin_layout Standard
+The followings are business risks that for definition can't have a recovering
+ strategy.
+ They are related to market changes or environmental changes.
+\end_layout
+
+\begin_layout Subsubsection*
+Strategic Risks
+\end_layout
+
+\begin_layout Standard
+If the development of the product will be slow could happen some strategic
+ risk.
+ The market car sharing could become saturated and the product could not
+ fit anymore the strategy of the company.
+\end_layout
+
+\begin_layout Subsubsection*
+Market Risks
+\end_layout
+
+\begin_layout Standard
+Another risk could be a change in the behavior of our stakeholders.
+ Car sharing could be no more useful because of other services more efficient
+ and less expensive.
+\end_layout
+
+\begin_layout Subsubsection*
+Budget Risks
+\end_layout
+
+\begin_layout Standard
+The budget could become reduced, this could cause some issues related to
+ the quality of the software to be.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Competitors Risks
+\end_layout
+
+\begin_layout Standard
+CarSharing service could be implemented by other companies in a better way
+ or in a less expensive way.
+ In order to avoid this risk the PowerEnjoy Service should be unique and
+ implemented in the better way.
+\end_layout
+
 \begin_layout Standard
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="3">
-<features tabularvalignment="middle" tabularwidth="100text%">
+<lyxtabular version="3" rows="6" columns="3">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top">
 <row>
-<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none" width="5cm">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Business Risks
+\begin_inset Formula $\mathbf{Business}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{Risks}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -681,7 +756,10 @@ Business Risks
 \begin_inset Text
 
 \begin_layout Plain Layout
-Risk
+\begin_inset Formula $\mathbf{Risk}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -690,7 +768,10 @@ Risk
 \begin_inset Text
 
 \begin_layout Plain Layout
-Probability
+\begin_inset Formula $\mathbf{Probability}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -699,7 +780,10 @@ Probability
 \begin_inset Text
 
 \begin_layout Plain Layout
-Impact
+\begin_inset Formula $\mathbf{Impact}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -764,7 +848,7 @@ High
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -773,7 +857,7 @@ Budget
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -782,7 +866,7 @@ Low
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -792,10 +876,43 @@ Average
 \end_inset
 </cell>
 </row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Competitors
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Moderate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+High
+\end_layout
+
+\end_inset
+</cell>
+</row>
 </lyxtabular>
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
