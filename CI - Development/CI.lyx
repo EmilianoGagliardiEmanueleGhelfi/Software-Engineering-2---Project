@@ -163,6 +163,13 @@ filename "CI - Issues from checklist.lyx"
 \end_inset
 
 
+\begin_inset CommandInset include
+LatexCommand input
+filename "CI - Issues second Part.lyx"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

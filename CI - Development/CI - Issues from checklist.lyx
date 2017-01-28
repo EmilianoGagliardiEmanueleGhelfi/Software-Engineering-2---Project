@@ -78,41 +78,35 @@ List of issues found by applying the checklist
 Naming Conventions
 \end_layout
 
-\begin_layout Standard
-1.
- All class names, interface names, method names, class variables, method
+\begin_layout Enumerate
+All class names, interface names, method names, class variables, method
  variables, and constants used should have meaningful names and do what
  the name suggests.
 \end_layout
 
-\begin_layout Standard
-2.
- If one-character variables are used, they are used only for temporary “throwawa
-y” variables, such as those used in for loops.
+\begin_layout Enumerate
+If one-character variables are used, they are used only for temporary “throwaway
+” variables, such as those used in for loops.
 \end_layout
 
-\begin_layout Standard
-3.
- Class names are nouns, in mixed case, with the first letter of each word
+\begin_layout Enumerate
+Class names are nouns, in mixed case, with the first letter of each word
  in capitalized.
  Examples: class Raster; class ImageSprite;
 \end_layout
 
-\begin_layout Standard
-4.
- Interface names should be capitalized like classes.
+\begin_layout Enumerate
+Interface names should be capitalized like classes.
 \end_layout
 
-\begin_layout Standard
-5.
- Method names should be verbs, with the first letter of each addition word
+\begin_layout Enumerate
+Method names should be verbs, with the first letter of each addition word
  capitalized.
  Examples: getBackground(); computeTemperature().
 \end_layout
 
-\begin_layout Standard
-6.
- Class variables, also called attributes, are mixed case, but might begin
+\begin_layout Enumerate
+Class variables, also called attributes, are mixed case, but might begin
  with an underscore (‘ ’) followed by a lowercase first letter.
  All the remaining words in the variable name have their first letter capitalize
 d.
@@ -120,49 +114,781 @@ d.
  
 \end_layout
 
-\begin_layout Standard
-7.
- Constants are declared using all uppercase with words separated by an underscor
-e.
- Examples: MIN WIDTH; MAX HEIGHT.
+\begin_layout Enumerate
+Constants are declared using all uppercase with words separated by an underscore.
+ Examples: MIN_WIDTH; MAX_HEIGHT.
  
+\end_layout
+
+\begin_layout Standard
+No issues found in naming conventions.
 \end_layout
 
 \begin_layout Subsubsection
-2.2 Indention 
+Indention 
 \end_layout
 
-\begin_layout Standard
-8.
- Three or four spaces are used for indentation and done so consistently.
+\begin_layout Enumerate
+Three or four spaces are used for indentation and done so consistently.
+ 
+\end_layout
+
+\begin_layout Enumerate
+No tabs are used to indent.
  
 \end_layout
 
 \begin_layout Standard
-9.
- No tabs are used to indent.
- 
+No issues found in indentions.
 \end_layout
 
 \begin_layout Subsubsection
 Braces
 \end_layout
 
-\begin_layout Standard
-10.
- Consistent bracing style is used, either the preferred “Allman” style (first
+\begin_layout Enumerate
+Consistent bracing style is used, either the preferred “Allman” style (first
  brace goes underneath the opening block) or the “Kernighan and Ritchie”
  style (first brace is on the same line of the instruction that opens the
  new block).
  
 \end_layout
 
-\begin_layout Standard
-11.
- All if, while, do-while, try-catch, and for statements that have only one
+\begin_layout Enumerate
+All if, while, do-while, try-catch, and for statements that have only one
  statement to execute are surrounded by curly braces.
- Exam- ple: Avoid this: if ( condition ) doThis(); Instead do this: if (
- condition ) { doThis(); } 
+ Example: Avoid this: if ( condition ) doThis(); Instead do this: if ( condition
+ ) { doThis(); } 
+\end_layout
+
+\begin_layout Standard
+No issues found
+\end_layout
+
+\begin_layout Subsubsection
+File Organization
+\end_layout
+
+\begin_layout Enumerate
+Blank lines and optional comments are used to separate sections (beginning
+ comments, package/import statements, class/interface declarations which
+ include class variable/attributes declarations, constructors, and methods).
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+/**************************************************************
+\end_layout
+
+\begin_layout Plain Layout
+
+ * Licensed to the Apache Software Foundation (ASF) under one
+\end_layout
+
+\begin_layout Plain Layout
+
+ * or more contributor license agreements.
+  See the NOTICE file
+\end_layout
+
+\begin_layout Plain Layout
+
+ * distributed with this work for additional information
+\end_layout
+
+\begin_layout Plain Layout
+
+ * regarding copyright ownership.
+  The ASF licenses this file
+\end_layout
+
+\begin_layout Plain Layout
+
+ * to you under the Apache License, Version 2.0 (the
+\end_layout
+
+\begin_layout Plain Layout
+
+ * "License"); you may not use this file except in compliance
+\end_layout
+
+\begin_layout Plain Layout
+
+ * with the License.
+  You may obtain a copy of the License at
+\end_layout
+
+\begin_layout Plain Layout
+
+ *
+\end_layout
+
+\begin_layout Plain Layout
+
+ * http://www.apache.org/licenses/LICENSE-2.0
+\end_layout
+
+\begin_layout Plain Layout
+
+ *
+\end_layout
+
+\begin_layout Plain Layout
+
+ * Unless required by applicable law or agreed to in writing,
+\end_layout
+
+\begin_layout Plain Layout
+
+ * software distributed under the License is distributed on an
+\end_layout
+
+\begin_layout Plain Layout
+
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+\end_layout
+
+\begin_layout Plain Layout
+
+ * KIND, either express or implied.
+  See the License for the
+\end_layout
+
+\begin_layout Plain Layout
+
+ * specific language governing permissions and limitations
+\end_layout
+
+\begin_layout Plain Layout
+
+ * under the License.
+\end_layout
+
+\begin_layout Plain Layout
+
+ **************************************************************/
+\end_layout
+
+\begin_layout Plain Layout
+
+package org.apache.ofbiz.webapp.event;
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+There is no blank line between beginning comments and package statement.
+\end_layout
+
+\begin_layout Enumerate
+Where practical, line length does not exceed 80 characters.
+\begin_inset Newline newline
+\end_inset
+
+According to the general principles of 
+\begin_inset Quotes eld
+\end_inset
+
+breaking after a comma
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+breaking before an operator
+\begin_inset Quotes erd
+\end_inset
+
+ when a statement doesn't fit in a single line, the following lines have
+ been found for this point (considering only modification that doesn't compromis
+e the readability):
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ModelService model = dispatcher.getDispatchContext().getModelService(serviceName);
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+At line 182, with 99 characters.
+ The line should breaks before the last dot operator.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Debug.logError("Trying to call Service [" + serviceName + "] that is not
+ exported.", module);
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+At line 192, with 114 characters.
+ The breaking of the line on one of the two 
+\begin_inset Quotes eld
+\end_inset
+
++
+\begin_inset Quotes erd
+\end_inset
+
+ operators compromises the readability, at least the line can be broken
+ after the comma.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+sendError(response, "Problem processing the service, check your parameters.",
+ serviceName);
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+At line 203, with 112 characters.
+ The line could be broken after each comma, separating the parameters.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+XMLStreamReader reader = XMLInputFactory.newInstance().createXMLStreamReader(new
+ StringReader(xmlResults));
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+At line 242, with 120 characters.
+ The line should be broken before the second dot operator.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+OMElement resService = factory.createOMElement(new QName(serviceName + "Response"
+));
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+At line 250, with 97 characters.
+ The line should be broken before the first dot operator
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+OMAttribute defaultNS = factory.createOMAttribute("xmlns", null, ModelService.TNS)
+;
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+At line 259, with 96 character.
+ The line should be broken separating the parameters of factory.createOMAttribute.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+OMAttribute defaultNS = factory.createOMAttribute("xmlns", null, ModelService.TNS)
+;
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+At line 308, with 96 characters.
+ The same as the previous considered line.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+When line length must exceed 80 characters, it does NOT exceed 120 characters.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize},breaklines=true,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+*@see org.apache.ofbiz.webapp.event.EventHandler#invoke(ConfigXMLReader.Event,ConfigXM
+LReader.RequestMap, javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServl
+etResponse)
+\end_layout
+
+\begin_layout Plain Layout
+
+*/
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+At line 78, the characters are 192.
+ The comment is on a single line.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public String invoke(Event event, RequestMap requestMap, HttpServletRequest
+ request, HttpServletResponse response) throws EventHandlerException {
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+At line 80, the characters are 150.
+ The line should be broken on the second parameter comma and on the throws
+ clause.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+sb.append("<li><a href=
+\backslash
+"").append(locationUri).append("/").append(model.name).append("?wsdl
+\backslash
+">");
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+At line 131, the characters are 127.
+ The line should be broken before the third dot operator.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize},breaklines=true,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Map<String, Object> parameters = UtilGenerics.cast(SoapSerializer.deserialize(serv
+iceElement.toString(), delegator));
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+At line 179, the characters are 130.
+ It is better to reduce the call nesting, defining temporal variables only
+ to improve the readability.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "basicstyle={\scriptsize},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+throw new EventHandlerException("One service call expected, but received:
+ " + numServiceCallRequests.toString());
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+At line 232, the characters are 126.
+ The line should be broken before the 
+\begin_inset Quotes eld
+\end_inset
+
++
+\begin_inset Quotes erd
+\end_inset
+
+ operator.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "basicstyle={\scriptsize},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+private void createAndSendSOAPResponse(Map<String, Object> serviceResults,
+ String serviceName, HttpServletResponse response) throws EventHandlerException
+ {
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+At line 236, the characters are 160.
+ The line should be broken on the parameters comma and on the throw clause.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+StAXOMBuilder resultsBuilder = (StAXOMBuilder) OMXMLBuilderFactory.createStAXOMBu
+ilder(OMAbstractFactory.getOMFactory(), reader);
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+At line 243, the characters are 142.
+ The line should be broken before the dot operator.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+private void sendError(HttpServletResponse res, String errorMessage, String
+ serviceName) throws EventHandlerException {
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+At line 278, the characters are 124.
+ The line should be broken on the parameters comma and on the throw clause.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+private void sendError(HttpServletResponse res, List<String> errorMessages,
+ String serviceName) throws EventHandlerException {
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+At line 283, the characters are 131.
+ The line should be broken on the parameters comma and on the throw clause.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+XMLStreamReader xmlReader = XMLInputFactory.newInstance().createXMLStreamReader(ne
+w StringReader(xmlResults));
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+At line 291, the characters are 123.
+ The line should be broken before the second dot operator.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+StAXOMBuilder resultsBuilder = (StAXOMBuilder) OMXMLBuilderFactory.createStAXOMBu
+ilder(OMAbstractFactory.getOMFactory(), xmlReader);
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+At line 292, the characters are 145.
+ The line should be broken before the second dot operator.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+OMElement errMsg = factory.createOMElement(new QName((serviceName != null
+ ? serviceName : "") + "Response"));
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+At line 299, the characters are 122.
+ A temporal variable should be used to reduce the call nesting and to improve
+ the readability.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Wrapping Lines
+\end_layout
+
+\begin_layout Enumerate
+Line break occurs after a comma or an operator.
+\end_layout
+
+\begin_layout Enumerate
+Higher-level breaks are used.
+\end_layout
+
+\begin_layout Enumerate
+A new statement is aligned with the beginning of the expression at the same
+ level as the previous line.
+\end_layout
+
+\begin_layout Standard
+In the class there are no line breaks.
+\end_layout
+
+\begin_layout Subsubsection
+Comments
+\end_layout
+
+\begin_layout Enumerate
+Comments are used to adequately explain what the class, interface, methods,
+ and blocks of code are doing.
+\begin_inset Newline newline
+\end_inset
+
+//TODO
+\end_layout
+
+\begin_layout Enumerate
+Commented out code contains a reason for being commented out and a date
+ it can be removed from the source file if determined it is no longer needed.
+\end_layout
+
+\begin_layout Subsubsection
+Java Source Files
+\end_layout
+
+\begin_layout Enumerate
+Each Java source file contains a single public class or interface.
+\end_layout
+
+\begin_layout Enumerate
+The public class is the first class or interface in the file.
+\end_layout
+
+\begin_layout Enumerate
+Check that the external program interfaces are implemented consistently
+ with what is described in the javadoc.
+\end_layout
+
+\begin_layout Enumerate
+Check that the javadoc is complete (i.e., it covers all classes and files
+ part of the set of classes assigned to you).
+\end_layout
+
+\begin_layout Subsubsection
+Package and Import Statements
+\end_layout
+
+\begin_layout Enumerate
+If any package statements are needed, they should be the first non- comment
+ statements.
+ Import statements follow.
+\end_layout
+
+\begin_layout Subsubsection
+Class and Interface Declarations
+\end_layout
+
+\begin_layout Enumerate
+Order into the class declaration and body
+\begin_inset Newline newline
+\end_inset
+
+No issues found.
+\end_layout
+
+\begin_layout Enumerate
+Methods are grouped by functionality rather than by scope or accessibility.
+\begin_inset Newline newline
+\end_inset
+
+In the inspected class there is only one useful public method that is invoke.
+ The init method is only imposed by the interface implementation.
+ The functionality grouping is respected because all the other methods are
+ private methods that decompose some invoke method operations (they are
+ all called by the invoke method).
+\end_layout
+
+\begin_layout Enumerate
+Check that the code is free of duplicates, long methods, big classes, breaking
+ encapsulation, as well as if coupling and cohesion are adequate.
+\begin_inset Newline newline
+\end_inset
+
+The code is free of duplicates.
+\begin_inset Newline newline
+\end_inset
+
+The invoke method starts at line 80 and ends at line 221, too much lines
+ for a method.
+ A part consist of error handling, that can be separated in a private method.
+ Another big code block has to be executed only if a condition is satisfied
+ (wsdlReq != null), and has the objective to obtain some information about
+ the request (service, dispatcher context) so it can be separated from the
+ method and decomposed.
+ 
 \end_layout
 
 \end_body
