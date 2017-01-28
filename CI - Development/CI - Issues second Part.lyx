@@ -1,0 +1,477 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Subsubsection
+Initialization and Declarations
+\end_layout
+
+\begin_layout Standard
+28.
+ Check that variables and class members are of the correct type.
+ Check that they have the right visibility (public/private/protected).
+ 
+\end_layout
+
+\begin_layout Standard
+29.
+ Check that variables are declared in the proper scope.
+ 
+\end_layout
+
+\begin_layout Standard
+30.
+ Check that constructors are called when a new object is desired.
+ 
+\end_layout
+
+\begin_layout Standard
+31.
+ Check that all object references are initialized before use.
+\end_layout
+
+\begin_layout Standard
+32.
+ Variables are initialized where they are declared, unless dependent upon
+ a computation.
+ 
+\end_layout
+
+\begin_layout Standard
+33.
+ Declarations appear at the beginning of blocks (A block is any code surrounded
+ by curly braces ‘{’ and ‘}’).
+ The exception is a variable can be declared in a for loop.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Method Calls 
+\end_layout
+
+\begin_layout Standard
+34.
+ Check that parameters are presented in the correct order.
+\end_layout
+
+\begin_layout Standard
+35.
+ Check that the correct method is being called, or should it be a different
+ method with a similar name.
+ 
+\end_layout
+
+\begin_layout Standard
+36.
+ Check that method returned values are used properly.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Arrays
+\end_layout
+
+\begin_layout Standard
+37.
+ Check that there are no off-by-one errors in array indexing (that is, all
+ required array elements are correctly accessed through the index).
+ 
+\end_layout
+
+\begin_layout Standard
+38.
+ Check that all array (or other collection) indexes have been prevented
+ from going out-of-bounds.
+\end_layout
+
+\begin_layout Standard
+39.
+ Check that constructors are called when a new array item is desired.
+\end_layout
+
+\begin_layout Subsubsection
+Object Comparison
+\end_layout
+
+\begin_layout Standard
+40.
+ Check that all objects (including Strings) are compared with equals and
+ not with ==.
+\end_layout
+
+\begin_layout Subsubsection
+Output Format 
+\end_layout
+
+\begin_layout Standard
+41.
+ Check that displayed output is free of spelling and grammatical errors.
+\end_layout
+
+\begin_layout Standard
+42.
+ Check that error messages are comprehensive and provide guidance as to
+ how to correct the problem.
+\end_layout
+
+\begin_layout Standard
+43.
+ Check that the output is formatted correctly in terms of line stepping
+ and spacing.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Computation, Comparisons and Assignments 
+\end_layout
+
+\begin_layout Standard
+44.
+ Check that the implementation avoids “brutish programming”: (see http://users.cs
+c.calpoly.edu/~jdalbey/SWE/CodeSmells/bonehead.
+ html).
+ 
+\end_layout
+
+\begin_layout Standard
+45.
+ Check order of computation/evaluation,operator precedence and parenthesizing.
+ 
+\end_layout
+
+\begin_layout Standard
+46.
+ Check the liberal use of parenthesis is used to avoid operator precedence
+ problems.
+\end_layout
+
+\begin_layout Standard
+47.
+ Check that all denominators of a division are prevented from being zero.
+ 
+\end_layout
+
+\begin_layout Standard
+48.
+ Check that integer arithmetic, especially division, are used appropriately
+ to avoid causing unexpected truncation/rounding.
+ 
+\end_layout
+
+\begin_layout Standard
+49.
+ Check that the comparison and Boolean operators are correct.
+\end_layout
+
+\begin_layout Standard
+50.
+ Check throw-catch expressions, and check that the error condition is actually
+ legitimate.
+ 
+\end_layout
+
+\begin_layout Standard
+51.
+ Check that the code is free of any implicit type conversions.
+\end_layout
+
+\begin_layout Subsubsection
+Exceptions 
+\end_layout
+
+\begin_layout Standard
+52.
+ Check that the relevant exceptions are caught.
+\end_layout
+
+\begin_layout Standard
+53.
+ Check that the appropriate action are taken for each catch block.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ // log the request message
+\end_layout
+
+\begin_layout Plain Layout
+
+            if (Debug.verboseOn()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                try {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    Debug.logInfo("Request Message:
+\backslash
+n" + reqEnv + "
+\backslash
+n", module);
+\end_layout
+
+\begin_layout Plain Layout
+
+                } catch (Throwable t) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                }
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this case there are no reason for inserting a try-catch block since the
+ Throwable is never thrown and there no actions in the block.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+// log the response message
+\end_layout
+
+\begin_layout Plain Layout
+
+            if (Debug.verboseOn()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                try {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    Debug.logInfo("Response Message:
+\backslash
+n" + resEnv + "
+\backslash
+n", module);
+\end_layout
+
+\begin_layout Plain Layout
+
+                } catch (Throwable t) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                }
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+// log the response message
+\end_layout
+
+\begin_layout Plain Layout
+
+            if (Debug.verboseOn()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                try {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    Debug.logInfo("Response Message:
+\backslash
+n" + resEnv + "
+\backslash
+n", module);
+\end_layout
+
+\begin_layout Plain Layout
+
+                } catch (Throwable t) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                }
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Like before.
+\end_layout
+
+\begin_layout Subsubsection
+Flow of Control
+\end_layout
+
+\begin_layout Standard
+54.
+ In a switch statement, check that all cases are addressed by break or return.
+ 
+\end_layout
+
+\begin_layout Standard
+55.
+ Check that all switch statements have a default branch.
+ 
+\end_layout
+
+\begin_layout Standard
+56.
+ Check that all loops are correctly formed, with the appropriate initialization,
+ increment and termination expressions.
+\end_layout
+
+\begin_layout Subsubsection
+Files
+\end_layout
+
+\begin_layout Standard
+57.
+ Check that all files are properly declared and opened.
+ 
+\end_layout
+
+\begin_layout Standard
+58.
+ Check that all files are closed properly, even in the case of an error.
+ 
+\end_layout
+
+\begin_layout Standard
+59.
+ Check that EOF conditions are detected and handled correctly.
+ 
+\end_layout
+
+\begin_layout Standard
+60.
+ Check that all file exceptions are caught and dealt with accordingly.
+\end_layout
+
+\end_body
+\end_document

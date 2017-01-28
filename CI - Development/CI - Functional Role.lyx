@@ -74,5 +74,95 @@
 Functional role of the assigned class
 \end_layout
 
+\begin_layout Standard
+SOAPEventHandler class is a class responsible for managing soap events.
+ It's the implementation of the Event Handler interface.
+\end_layout
+
+\begin_layout Standard
+Simple Object Access Protocol (SOAP) is a protocol for exchanging structured
+ information in a decentralized, distributed environment.
+ It is XML-based and consists of three parts:
+\end_layout
+
+\begin_layout Itemize
+An envelope that defines a framework for describing what is in a message
+ and how to process the message
+\end_layout
+
+\begin_layout Itemize
+A set of encoding rules for expressing instances of application defined
+ data types 
+\end_layout
+
+\begin_layout Itemize
+A convention for representing remote procedure calls and responses
+\end_layout
+
+\begin_layout Standard
+SOAPEventHandler takes a series of service to call, a delegator and a dispatcher.
+\end_layout
+
+\begin_layout Standard
+Parses the request and calls the dispatcher with the services to call.
+\end_layout
+
+\begin_layout Standard
+The functional role of the class has been understood by looking at the JavaDoc
+ and at the code and trying to understand the class logic.
+\end_layout
+
+\begin_layout Subsubsection*
+Init Method
+\end_layout
+
+\begin_layout Standard
+Initializes the handler.
+ Since handlers use the singleton pattern this method should only be called
+ the first time the handler is used.
+ 
+\end_layout
+
+\begin_layout Standard
+ServletContext parameter may be needed by the handler in order to lookup
+ properties or XML definition files for rendering pages or handler options.
+\end_layout
+
+\begin_layout Standard
+In this class the context parameter is totally ignored but it's imposed
+ by the init method of EventHandler interface.
+\end_layout
+
+\begin_layout Subsubsection*
+Invoke Method
+\end_layout
+
+\begin_layout Standard
+This method invoke the web event.
+ 
+\end_layout
+
+\begin_layout Standard
+Parameter event contains information about what to execute.
+\end_layout
+
+\begin_layout Standard
+Parameter requestMap contains information about the request-map the event
+ was called from.
+\end_layout
+
+\begin_layout Standard
+Parameter request is the servlet request object.
+\end_layout
+
+\begin_layout Standard
+Parameter response is the servlet response object.
+\end_layout
+
+\begin_layout Standard
+This method returns the result code of the event (i.e.
+ if the event has been done in a proper way or if some error happened).
+\end_layout
+
 \end_body
 \end_document

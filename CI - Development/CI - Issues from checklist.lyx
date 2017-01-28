@@ -74,5 +74,96 @@
 List of issues found by applying the checklist
 \end_layout
 
+\begin_layout Subsubsection
+Naming Conventions
+\end_layout
+
+\begin_layout Standard
+1.
+ All class names, interface names, method names, class variables, method
+ variables, and constants used should have meaningful names and do what
+ the name suggests.
+\end_layout
+
+\begin_layout Standard
+2.
+ If one-character variables are used, they are used only for temporary “throwawa
+y” variables, such as those used in for loops.
+\end_layout
+
+\begin_layout Standard
+3.
+ Class names are nouns, in mixed case, with the first letter of each word
+ in capitalized.
+ Examples: class Raster; class ImageSprite;
+\end_layout
+
+\begin_layout Standard
+4.
+ Interface names should be capitalized like classes.
+\end_layout
+
+\begin_layout Standard
+5.
+ Method names should be verbs, with the first letter of each addition word
+ capitalized.
+ Examples: getBackground(); computeTemperature().
+\end_layout
+
+\begin_layout Standard
+6.
+ Class variables, also called attributes, are mixed case, but might begin
+ with an underscore (‘ ’) followed by a lowercase first letter.
+ All the remaining words in the variable name have their first letter capitalize
+d.
+ Examples: windowHeight, timeSeriesData.
+ 
+\end_layout
+
+\begin_layout Standard
+7.
+ Constants are declared using all uppercase with words separated by an underscor
+e.
+ Examples: MIN WIDTH; MAX HEIGHT.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+2.2 Indention 
+\end_layout
+
+\begin_layout Standard
+8.
+ Three or four spaces are used for indentation and done so consistently.
+ 
+\end_layout
+
+\begin_layout Standard
+9.
+ No tabs are used to indent.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Braces
+\end_layout
+
+\begin_layout Standard
+10.
+ Consistent bracing style is used, either the preferred “Allman” style (first
+ brace goes underneath the opening block) or the “Kernighan and Ritchie”
+ style (first brace is on the same line of the instruction that opens the
+ new block).
+ 
+\end_layout
+
+\begin_layout Standard
+11.
+ All if, while, do-while, try-catch, and for statements that have only one
+ statement to execute are surrounded by curly braces.
+ Exam- ple: Avoid this: if ( condition ) doThis(); Instead do this: if (
+ condition ) { doThis(); } 
+\end_layout
+
 \end_body
 \end_document

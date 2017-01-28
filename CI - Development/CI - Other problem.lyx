@@ -74,5 +74,765 @@
 Other problem
 \end_layout
 
+\begin_layout Subsection
+Return statements
+\end_layout
+
+\begin_layout Standard
+A possible problem may be that the invoke method should return a result
+ code that specifies the result of the event.
+ The invoke method of this class always returns a null string.
+ This could be a problem if the caller method performs some operations on
+ that string.
+ This object should reflect the event result and such a string doesn't say
+ nothing.
+\end_layout
+
+\begin_layout Standard
+While occasionally useful, this construct may make the code more prone to
+ failing with a NullPointerException, and often indicates that the developer
+ doesn't really understand the class' intended semantics.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ if (wsdl != null) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    try {
+\end_layout
+
+\begin_layout Plain Layout
+
+                        OutputStream os = response.getOutputStream();
+\end_layout
+
+\begin_layout Plain Layout
+
+                        response.setContentType("text/xml");
+\end_layout
+
+\begin_layout Plain Layout
+
+                        UtilXml.writeXmlDocument(os, wsdl);
+\end_layout
+
+\begin_layout Plain Layout
+
+                        response.flushBuffer();
+\end_layout
+
+\begin_layout Plain Layout
+
+                    } catch (IOException e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                        throw new EventHandlerException(e);
+\end_layout
+
+\begin_layout Plain Layout
+
+                    }
+\end_layout
+
+\begin_layout Plain Layout
+
+                    return null;
+\end_layout
+
+\begin_layout Plain Layout
+
+                }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Error Handling
+\end_layout
+
+\begin_layout Subsubsection*
+Nested try statements
+\end_layout
+
+\begin_layout Standard
+Nested try statements may result in confusing code, and should probably
+ have their catch and finally sections merged.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+try {
+\end_layout
+
+\begin_layout Plain Layout
+
+            SOAPBody reqBody = reqEnv.getBody();
+\end_layout
+
+\begin_layout Plain Layout
+
+            validateSOAPBody(reqBody);
+\end_layout
+
+\begin_layout Plain Layout
+
+            OMElement serviceElement = reqBody.getFirstElement();
+\end_layout
+
+\begin_layout Plain Layout
+
+            serviceName = serviceElement.getLocalName();
+\end_layout
+
+\begin_layout Plain Layout
+
+            Map<String, Object> parameters = UtilGenerics.cast(SoapSerializer.dese
+rialize(serviceElement.toString(), delegator));
+\end_layout
+
+\begin_layout Plain Layout
+
+            try {
+\end_layout
+
+\begin_layout Plain Layout
+
+                // verify the service is exported for remote execution and
+ invoke it
+\end_layout
+
+\begin_layout Plain Layout
+
+                ModelService model = dispatcher.getDispatchContext().getModelServi
+ce(serviceName);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                if (model == null) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    sendError(response, "Problem processing the service",
+ serviceName);
+\end_layout
+
+\begin_layout Plain Layout
+
+                    Debug.logError("Could not find Service [" + serviceName
+ + "].", module);
+\end_layout
+
+\begin_layout Plain Layout
+
+                    return null;
+\end_layout
+
+\begin_layout Plain Layout
+
+                }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                if (!model.export) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    sendError(response, "Problem processing the service",
+ serviceName);
+\end_layout
+
+\begin_layout Plain Layout
+
+                    Debug.logError("Trying to call Service [" + serviceName
+ + "] that is not exported.", module);
+\end_layout
+
+\begin_layout Plain Layout
+
+                    return null;
+\end_layout
+
+\begin_layout Plain Layout
+
+                }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                Map<String, Object> serviceResults = dispatcher.runSync(serviceNa
+me, parameters);
+\end_layout
+
+\begin_layout Plain Layout
+
+                Debug.logVerbose("[EventHandler] : Service invoked", module);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                createAndSendSOAPResponse(serviceResults, serviceName, response)
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+            } catch (GenericServiceException e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                if (UtilProperties.getPropertyAsBoolean("service", "secureSoapAns
+wer", true)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    sendError(response, "Problem processing the service,
+ check your parameters.", serviceName);
+\end_layout
+
+\begin_layout Plain Layout
+
+                } else {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    if(e.getMessageList() == null) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                        sendError(response, e.getMessage(), serviceName);
+\end_layout
+
+\begin_layout Plain Layout
+
+                    } else {
+\end_layout
+
+\begin_layout Plain Layout
+
+                        sendError(response, e.getMessageList(), serviceName);
+\end_layout
+
+\begin_layout Plain Layout
+
+                    }
+\end_layout
+
+\begin_layout Plain Layout
+
+                    Debug.logError(e, module);
+\end_layout
+
+\begin_layout Plain Layout
+
+                    return null;
+\end_layout
+
+\begin_layout Plain Layout
+
+                }
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+        } catch (Exception e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            sendError(response, e.getMessage(), serviceName);
+\end_layout
+
+\begin_layout Plain Layout
+
+            Debug.logError(e, module);
+\end_layout
+
+\begin_layout Plain Layout
+
+            return null;
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ try {
+\end_layout
+
+\begin_layout Plain Layout
+
+        // setup the response
+\end_layout
+
+\begin_layout Plain Layout
+
+            Debug.logVerbose("[EventHandler] : Setting up response message",
+ module);
+\end_layout
+
+\begin_layout Plain Layout
+
+            String xmlResults = SoapSerializer.serialize(serviceResults);
+\end_layout
+
+\begin_layout Plain Layout
+
+            //Debug.logInfo("xmlResults ==================" + xmlResults,
+ module);
+\end_layout
+
+\begin_layout Plain Layout
+
+            XMLStreamReader reader = XMLInputFactory.newInstance().createXMLStream
+Reader(new StringReader(xmlResults));
+\end_layout
+
+\begin_layout Plain Layout
+
+            StAXOMBuilder resultsBuilder = (StAXOMBuilder) OMXMLBuilderFactory.cr
+eateStAXOMBuilder(OMAbstractFactory.getOMFactory(), reader);
+\end_layout
+
+\begin_layout Plain Layout
+
+            OMElement resultSer = resultsBuilder.getDocumentElement();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+            // create the response soap
+\end_layout
+
+\begin_layout Plain Layout
+
+            SOAPFactory factory = OMAbstractFactory.getSOAP11Factory();
+\end_layout
+
+\begin_layout Plain Layout
+
+            SOAPEnvelope resEnv = factory.createSOAPEnvelope();
+\end_layout
+
+\begin_layout Plain Layout
+
+            SOAPBody resBody = factory.createSOAPBody();
+\end_layout
+
+\begin_layout Plain Layout
+
+            OMElement resService = factory.createOMElement(new QName(serviceName
+ + "Response"));
+\end_layout
+
+\begin_layout Plain Layout
+
+            resService.addChild(resultSer.getFirstElement());
+\end_layout
+
+\begin_layout Plain Layout
+
+            resBody.addChild(resService);
+\end_layout
+
+\begin_layout Plain Layout
+
+            resEnv.addChild(resBody);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+            // The declareDefaultNamespace method doesn't work see (https://issu
+es.apache.org/jira/browse/AXIS2-3156)
+\end_layout
+
+\begin_layout Plain Layout
+
+            // so the following doesn't work:
+\end_layout
+
+\begin_layout Plain Layout
+
+            // resService.declareDefaultNamespace(ModelService.TNS);
+\end_layout
+
+\begin_layout Plain Layout
+
+            // instead, create the xmlns attribute directly:
+\end_layout
+
+\begin_layout Plain Layout
+
+            OMAttribute defaultNS = factory.createOMAttribute("xmlns", null,
+ ModelService.TNS);
+\end_layout
+
+\begin_layout Plain Layout
+
+            resService.addAttribute(defaultNS);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+            // log the response message
+\end_layout
+
+\begin_layout Plain Layout
+
+            if (Debug.verboseOn()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                try {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    Debug.logInfo("Response Message:
+\backslash
+n" + resEnv + "
+\backslash
+n", module);
+\end_layout
+
+\begin_layout Plain Layout
+
+                } catch (Throwable t) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                }
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+            resEnv.serialize(response.getOutputStream());
+\end_layout
+
+\begin_layout Plain Layout
+
+            response.getOutputStream().flush();
+\end_layout
+
+\begin_layout Plain Layout
+
+        } catch (Exception e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            Debug.logError(e, module);
+\end_layout
+
+\begin_layout Plain Layout
+
+            throw new EventHandlerException(e.getMessage(), e);
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Throw inside catch block that ignores the caught exception
+\end_layout
+
+\begin_layout Standard
+It is considered good practice when throwing an exception in response to
+ an exception to wrap the initial exception, so that valuable context informatio
+n such as stack frames and line numbers are not lost.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ } catch (Exception e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    sendError(response, "Unable to obtain WSDL", null);
+\end_layout
+
+\begin_layout Plain Layout
+
+                    throw new EventHandlerException("Unable to obtain WSDL");
+\end_layout
+
+\begin_layout Plain Layout
+
+                }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Performance Issues
+\end_layout
+
+\begin_layout Subsubsection*
+String literals of length one
+\end_layout
+
+\begin_layout Standard
+String literals of length one should not be used in concatenation.
+ These literals may be replaced by equivalent character literals, gaining
+ some performance enhancement.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ sb.append("<li><a href=
+\backslash
+"").append(locationUri).append("/").append(model.name).append("?wsdl
+\backslash
+">");
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+  Debug.logInfo("Request Message:
+\backslash
+n" + reqEnv + "
+\backslash
+n", module);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+   uri.append(":");
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ reqInfo = "/" + reqInfo;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+String Buffer or String Builder without initial capacity
+\end_layout
+
+\begin_layout Standard
+It's a bad practice to instantiate a new StringBuffer or StringBuilder object
+ without specifying its initial capacity.
+ If no initial capacity is specified, a default capacity is used, which
+ will rarely be optimal.
+ Failing to specify initial capacities for StringBuffers may result in performan
+ce issues, if space needs to be reallocated and memory copied when capacity
+ is exceeded.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ Writer writer = response.getWriter();
+\end_layout
+
+\begin_layout Plain Layout
+
+                    StringBuilder sb = new StringBuilder();
+\end_layout
+
+\begin_layout Plain Layout
+
+                    sb.append("<html><head><title>OFBiz SOAP/1.1 Services</title><
+/head>");
+\end_layout
+
+\begin_layout Plain Layout
+
+                    sb.append("<body>No such service.").append("<p>Services:<ul>");
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+  StringBuilder uri = new StringBuilder();
+\end_layout
+
+\begin_layout Plain Layout
+
+        uri.append(request.getScheme());
+\end_layout
+
+\begin_layout Plain Layout
+
+        uri.append("://");
+\end_layout
+
+\begin_layout Plain Layout
+
+        uri.append(request.getServerName());
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
 \end_body
 \end_document
