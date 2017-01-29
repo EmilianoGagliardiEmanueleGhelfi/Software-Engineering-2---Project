@@ -83,7 +83,7 @@
 \end_inset
 
 
-\begin_inset Formula $C$
+\begin_inset Formula $\mathbf{C}$
 \end_inset
 
 ode 
@@ -142,6 +142,21 @@ LatexCommand tableofcontents
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset CommandInset include
+LatexCommand input
+filename "CI - Classes Assigned.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
 \begin_inset CommandInset include
 LatexCommand input
 filename "CI - Functional Role.lyx"
@@ -163,6 +178,9 @@ filename "CI - Issues from checklist.lyx"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
 filename "CI - Issues second Part.lyx"

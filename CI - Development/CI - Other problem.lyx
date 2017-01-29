@@ -97,6 +97,7 @@ While occasionally useful, this construct may make the code more prone to
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=Java,breaklines=true,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -160,6 +161,10 @@ status open
 
 \end_layout
 
+\begin_layout Standard
+This is only an example, at line 106.
+\end_layout
+
 \begin_layout Subsection
 Error Handling
 \end_layout
@@ -176,6 +181,7 @@ Nested try statements may result in confusing code, and should probably
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -416,7 +422,12 @@ wer", true)) {
 \end_layout
 
 \begin_layout Standard
+At line 175.
+\end_layout
+
+\begin_layout Standard
 \begin_inset listings
+lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -622,9 +633,17 @@ n", module);
         }
 \end_layout
 
+\begin_layout Plain Layout
+
+\end_layout
+
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+At line 239.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -640,6 +659,7 @@ n such as stack frames and line numbers are not lost.
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -668,6 +688,363 @@ status open
 
 \end_layout
 
+\begin_layout Standard
+At line 143.
+\end_layout
+
+\begin_layout Subsubsection*
+Overly broad catch block
+\end_layout
+
+\begin_layout Standard
+Catch blocks which have parameters which are more generic than the exceptions
+ thrown by the corresponding try block.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ try {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    Writer writer = response.getWriter();
+\end_layout
+
+\begin_layout Plain Layout
+
+                    StringBuilder sb = new StringBuilder();
+\end_layout
+
+\begin_layout Plain Layout
+
+                    sb.append("<html><head><title>OFBiz SOAP/1.1 Services</title><
+/head>");
+\end_layout
+
+\begin_layout Plain Layout
+
+                    sb.append("<body>No such service.").append("<p>Services:<ul>");
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                    for (String scvName: dctx.getAllServiceNames()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                        ModelService model = dctx.getModelService(scvName);
+\end_layout
+
+\begin_layout Plain Layout
+
+                        if (model.export) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                            sb.append("<li><a href=
+\backslash
+"").append(locationUri).append("/").append(model.name).append("?wsdl
+\backslash
+">");
+\end_layout
+
+\begin_layout Plain Layout
+
+                            sb.append(model.name).append("</a></li>");
+\end_layout
+
+\begin_layout Plain Layout
+
+                        }
+\end_layout
+
+\begin_layout Plain Layout
+
+                    }
+\end_layout
+
+\begin_layout Plain Layout
+
+                    sb.append("</ul></p></body></html>");
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                    writer.write(sb.toString());
+\end_layout
+
+\begin_layout Plain Layout
+
+                    writer.flush();
+\end_layout
+
+\begin_layout Plain Layout
+
+                    return null;
+\end_layout
+
+\begin_layout Plain Layout
+
+                } catch (Exception e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    sendError(response, "Unable to obtain WSDL", null);
+\end_layout
+
+\begin_layout Plain Layout
+
+                    throw new EventHandlerException("Unable to obtain WSDL");
+\end_layout
+
+\begin_layout Plain Layout
+
+                }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At line 123.
+ Catch of Exception is masking IOException and GenericServiceException.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java,numbers=left,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ try {
+\end_layout
+
+\begin_layout Plain Layout
+
+            InputStream inputStream = (InputStream) request.getInputStream();
+\end_layout
+
+\begin_layout Plain Layout
+
+            SOAPModelBuilder builder = (SOAPModelBuilder) OMXMLBuilderFactory.cre
+ateSOAPModelBuilder(inputStream, "UTF-8");
+\end_layout
+
+\begin_layout Plain Layout
+
+            reqEnv = (SOAPEnvelope) builder.getDocumentElement();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+            // log the request message
+\end_layout
+
+\begin_layout Plain Layout
+
+            if (Debug.verboseOn()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                try {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    Debug.logInfo("Request Message:
+\backslash
+n" + reqEnv + "
+\backslash
+n", module);
+\end_layout
+
+\begin_layout Plain Layout
+
+                } catch (Throwable t) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                }
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+        } catch (Exception e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            sendError(response, "Problem processing the service", null);
+\end_layout
+
+\begin_layout Plain Layout
+
+            throw new EventHandlerException("Cannot get the envelope", e);
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At line 155.
+ Catch of Exception is masking IOException.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+  } catch (Exception e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            sendError(response, e.getMessage(), serviceName);
+\end_layout
+
+\begin_layout Plain Layout
+
+            Debug.logError(e, module);
+\end_layout
+
+\begin_layout Plain Layout
+
+            return null;
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At line 215.
+ Catch of Exception is masking exceptions OMException, EventHandlerException,
+ SerializeException, SAXException, ParserConfigurationException and IOException.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ } catch (Exception e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            Debug.logError(e, module);
+\end_layout
+
+\begin_layout Plain Layout
+
+            throw new EventHandlerException(e.getMessage(), e);
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At line 274.
+ Catch of Exception is too broad, masking exceptions SerializeException,
+ FileNotFoundException, IOException, XMLStreamException' and SOAPProcessingExcep
+tion.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+} catch (Exception e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+throw new EventHandlerException(e.getMessage(), e);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At line 323.
+ Catch of Exception is too broad, masking exceptions SerializeException,
+ FileNotFoundException, IOException, XMLStreamException and SOAPProcessingExcept
+ion.
+\end_layout
+
 \begin_layout Subsection
 Performance Issues
 \end_layout
@@ -685,6 +1062,7 @@ String literals of length one should not be used in concatenation.
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -703,7 +1081,12 @@ status open
 \end_layout
 
 \begin_layout Standard
+At line 132.
+\end_layout
+
+\begin_layout Standard
 \begin_inset listings
+lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -722,7 +1105,12 @@ n", module);
 \end_layout
 
 \begin_layout Standard
+At line 163.
+\end_layout
+
+\begin_layout Standard
 \begin_inset listings
+lstparams "language=Java,breaklines=true,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -737,7 +1125,12 @@ status open
 \end_layout
 
 \begin_layout Standard
+At line 334.
+\end_layout
+
+\begin_layout Standard
 \begin_inset listings
+lstparams "language=Java,breaklines=true,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -749,6 +1142,10 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+At line 342.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -767,6 +1164,7 @@ ce issues, if space needs to be reallocated and memory copied when capacity
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -801,7 +1199,12 @@ status open
 \end_layout
 
 \begin_layout Standard
+At line 124.
+\end_layout
+
+\begin_layout Standard
 \begin_inset listings
+lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -831,7 +1234,128 @@ status open
 \end_layout
 
 \begin_layout Standard
+At line 329.
+\end_layout
 
+\begin_layout Subsection
+Method Metrics
+\end_layout
+
+\begin_layout Subsubsection*
+Overly Complex Method
+\end_layout
+
+\begin_layout Standard
+Cyclomatic complexity is basically a measurement of the number of branching
+ points in a method.
+ Methods with too high a cyclomatic complexity may be confusing and difficult
+ to test.
+ 
+\end_layout
+
+\begin_layout Standard
+In this class method invoke has a too high cyclomatic complexity.
+ There are multiple if statements and 21 branching point.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Method with multiple return points
+\end_layout
+
+\begin_layout Standard
+Methods with too many return points may be confusing, and hard to refactor.
+ A return point is either a return statement or the falling through the
+ bottom of a void method or constructor.
+ 
+\end_layout
+
+\begin_layout Standard
+In this class the method invoke has 7 return points.
+\end_layout
+
+\begin_layout Subsection
+Assignments Issues
+\end_layout
+
+\begin_layout Subsubsection*
+Assignment to 'null'
+\end_layout
+
+\begin_layout Standard
+The assignment of a variable to null, outside of declarations may be an
+ issue.
+ While occasionally useful for triggering garbage collection, this construct
+ may make the code more prone to NullPointerExceptions, and often indicates
+ that the developer doesn't really understand the class's intended semantics.
+ 
+\end_layout
+
+\begin_layout Standard
+At line 95, in Invoke method there is the following assignment to null:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+if (serviceName != null) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                Document wsdl = null;
+\end_layout
+
+\begin_layout Plain Layout
+
+                try {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    wsdl = dctx.getWSDL(serviceName, locationUri);
+\end_layout
+
+\begin_layout Plain Layout
+
+                } catch (GenericServiceException e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    serviceName = null;
+\end_layout
+
+\begin_layout Plain Layout
+
+                } catch (WSDLException e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    sendError(response, "Unable to obtain WSDL", serviceName);
+\end_layout
+
+\begin_layout Plain Layout
+
+                    throw new EventHandlerException("Unable to obtain WSDL",
+ e);
+\end_layout
+
+\begin_layout Plain Layout
+
+                }
+\end_layout
+
+\end_inset
+
+The variable serviceName is assigned to null in the catch clause.
+ This could lead to NullPointerException.
 \end_layout
 
 \end_body
