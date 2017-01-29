@@ -807,12 +807,17 @@ Comments are used to adequately explain what the class, interface, methods,
 \begin_inset Newline newline
 \end_inset
 
-//TODO
+The class is poorly commented.
+ There are no descriptions before the class and method declaration.
 \end_layout
 
 \begin_layout Enumerate
 Commented out code contains a reason for being commented out and a date
  it can be removed from the source file if determined it is no longer needed.
+\begin_inset Newline newline
+\end_inset
+
+No issues found.
 \end_layout
 
 \begin_layout Subsubsection
@@ -821,20 +826,42 @@ Java Source Files
 
 \begin_layout Enumerate
 Each Java source file contains a single public class or interface.
+\begin_inset Newline newline
+\end_inset
+
+No issues found.
 \end_layout
 
 \begin_layout Enumerate
 The public class is the first class or interface in the file.
+\begin_inset Newline newline
+\end_inset
+
+No issues found.
 \end_layout
 
 \begin_layout Enumerate
 Check that the external program interfaces are implemented consistently
  with what is described in the javadoc.
+\begin_inset Newline newline
+\end_inset
+
+In the implemented interface document, under the init method description,
+ is said that the implementing classes use the singleton pattern, but it
+ is not respected.
+ Also the init method is implemented but is useless (infact it is empty).
 \end_layout
 
 \begin_layout Enumerate
 Check that the javadoc is complete (i.e., it covers all classes and files
  part of the set of classes assigned to you).
+\begin_inset Newline newline
+\end_inset
+
+The javadoc doesn't contain more information than javadoc of the implemented
+ interface.
+ Also the javadoc of the implemented interface contains very brief description
+ of the methods.
 \end_layout
 
 \begin_layout Subsubsection
@@ -842,9 +869,13 @@ Package and Import Statements
 \end_layout
 
 \begin_layout Enumerate
-If any package statements are needed, they should be the first non- comment
+If any package statements are needed, they should be the first non-comment
  statements.
  Import statements follow.
+\end_layout
+
+\begin_layout Standard
+No issues found for package and import statement.
 \end_layout
 
 \begin_layout Subsubsection
@@ -864,11 +895,11 @@ Methods are grouped by functionality rather than by scope or accessibility.
 \begin_inset Newline newline
 \end_inset
 
-In the inspected class there is only one useful public method that is invoke.
+In the inspected class there is only one useful public method that is the
+ invoke method.
  The init method is only imposed by the interface implementation.
  The functionality grouping is respected because all the other methods are
- private methods that decompose some invoke method operations (they are
- all called by the invoke method).
+ private methods that decompose some of the invoke method operations.
 \end_layout
 
 \begin_layout Enumerate
@@ -877,7 +908,15 @@ Check that the code is free of duplicates, long methods, big classes, breaking
 \begin_inset Newline newline
 \end_inset
 
-The code is free of duplicates.
+The two methods sendError (overload at line 287) and createAndSendSOAPResponse
+ are very similar, they have the same structure, they call the same methods
+ with different parameter.
+\begin_inset Newline newline
+\end_inset
+
+A method that carries out the log writing when the method Debug.verboseOn()
+ returns true should be written, and called in 160, 263, 312 rather than
+ repeating three times the code block.
 \begin_inset Newline newline
 \end_inset
 
@@ -886,8 +925,16 @@ The invoke method starts at line 80 and ends at line 221, too much lines
  A part consist of error handling, that can be separated in a private method.
  Another big code block has to be executed only if a condition is satisfied
  (wsdlReq != null), and has the objective to obtain some information about
- the request (service, dispatcher context) so it can be separated from the
- method and decomposed.
+ the request (service, dispatcher context) so it can be separated in a new
+ method an called.
+\begin_inset Newline newline
+\end_inset
+
+Also the method createAndSendSOAPResponse is too long (from 236 to 276),
+ it is divided in 3 parts that could be separated in different methods (setup,
+ creation, and sending).
+ The splitting could reduce the number of lines of the class, because they
+ could be reused in the sendError method (overload at line 287).
  
 \end_layout
 
