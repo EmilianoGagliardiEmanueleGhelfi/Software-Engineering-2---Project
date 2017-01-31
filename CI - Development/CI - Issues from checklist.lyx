@@ -178,7 +178,7 @@ Blank lines and optional comments are used to separate sections (beginning
 
 
 \begin_inset listings
-lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -319,7 +319,7 @@ e the readability):
 \begin_deeper
 \begin_layout Itemize
 \begin_inset listings
-lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -340,7 +340,7 @@ At line 182, with 99 characters.
 
 \begin_layout Itemize
 \begin_inset listings
-lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -371,7 +371,7 @@ At line 192, with 114 characters.
 
 \begin_layout Itemize
 \begin_inset listings
-lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -393,7 +393,7 @@ At line 203, with 112 characters.
 
 \begin_layout Itemize
 \begin_inset listings
-lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -415,7 +415,7 @@ At line 242, with 120 characters.
 
 \begin_layout Itemize
 \begin_inset listings
-lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -437,7 +437,7 @@ At line 250, with 97 characters.
 
 \begin_layout Itemize
 \begin_inset listings
-lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -459,7 +459,7 @@ At line 259, with 96 character.
 
 \begin_layout Itemize
 \begin_inset listings
-lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -487,7 +487,7 @@ When line length must exceed 80 characters, it does NOT exceed 120 characters.
 \begin_deeper
 \begin_layout Itemize
 \begin_inset listings
-lstparams "language=Java,basicstyle={\scriptsize},breaklines=true,tabsize=4"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,tabsize=4,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -520,7 +520,7 @@ At line 78, the characters are 192.
 
 \begin_layout Itemize
 \begin_inset listings
-lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -543,7 +543,7 @@ At line 80, the characters are 150.
 
 \begin_layout Itemize
 \begin_inset listings
-lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -568,7 +568,7 @@ At line 131, the characters are 127.
 
 \begin_layout Itemize
 \begin_inset listings
-lstparams "language=Java,basicstyle={\scriptsize},breaklines=true,tabsize=4"
+lstparams "language=Java,basicstyle={\scriptsize\sffamily},breaklines=true,showstringspaces=false,tabsize=4,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -591,7 +591,7 @@ At line 179, the characters are 130.
 
 \begin_layout Itemize
 \begin_inset listings
-lstparams "basicstyle={\scriptsize},breaklines=true"
+lstparams "basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -621,7 +621,7 @@ At line 232, the characters are 126.
 
 \begin_layout Itemize
 \begin_inset listings
-lstparams "basicstyle={\scriptsize},breaklines=true"
+lstparams "basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -644,7 +644,7 @@ At line 236, the characters are 160.
 
 \begin_layout Itemize
 \begin_inset listings
-lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -666,7 +666,7 @@ At line 243, the characters are 142.
 
 \begin_layout Itemize
 \begin_inset listings
-lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -688,7 +688,7 @@ At line 278, the characters are 124.
 
 \begin_layout Itemize
 \begin_inset listings
-lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -710,7 +710,7 @@ At line 283, the characters are 131.
 
 \begin_layout Itemize
 \begin_inset listings
-lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -732,7 +732,7 @@ At line 291, the characters are 123.
 
 \begin_layout Itemize
 \begin_inset listings
-lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -754,7 +754,7 @@ At line 292, the characters are 145.
 
 \begin_layout Itemize
 \begin_inset listings
-lstparams "language=Java,basicstyle={\scriptsize},breaklines=true"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -846,10 +846,15 @@ Check that the external program interfaces are implemented consistently
 \begin_inset Newline newline
 \end_inset
 
-In the implemented interface document, under the init method description,
- is said that the implementing classes use the singleton pattern, but it
- is not respected.
- Also the init method is implemented but is useless (infact it is empty).
+In the implemented interface documentation, under the init method description,
+ is said that the implementing classes use the singleton pattern.
+ Actually, the class doesn't directly implements the singleton pattern,
+ but it is created by a factory (EventFactory, that creates all the event
+ handler and puts them in a map).
+ The EventFactory is an attribute of the RequestHandler class that is a
+ singleton, so indirectly the SOAPEventHandler (and so the others event
+ handler) is a singleton.
+ Also the init method is implemented but is useless (in fact it is empty).
 \end_layout
 
 \begin_layout Enumerate
@@ -905,38 +910,42 @@ In the inspected class there is only one useful public method that is the
 \begin_layout Enumerate
 Check that the code is free of duplicates, long methods, big classes, breaking
  encapsulation, as well as if coupling and cohesion are adequate.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_deeper
+\begin_layout Itemize
 The two methods sendError (overload at line 287) and createAndSendSOAPResponse
  are very similar, they have the same structure, they call the same methods
  with different parameter.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
 A method that carries out the log writing when the method Debug.verboseOn()
  returns true should be written, and called in 160, 263, 312 rather than
  repeating three times the code block.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
 The invoke method starts at line 80 and ends at line 221, too much lines
  for a method.
- A part consist of error handling, that can be separated in a private method.
- Another big code block has to be executed only if a condition is satisfied
- (wsdlReq != null), and has the objective to obtain some information about
- the request (service, dispatcher context) so it can be separated in a new
- method an called.
-\begin_inset Newline newline
-\end_inset
+ A part consists of error handling, that can be separated in a private method.
+ Then in the same method two kind of different requests are handled: the
+ one for the WSDL (contains a set of system functions that have been exposed
+ to the Web-based protocols) and the one for an actual service.
+\end_layout
 
+\begin_layout Itemize
 Also the method createAndSendSOAPResponse is too long (from 236 to 276),
  it is divided in 3 parts that could be separated in different methods (setup,
  creation, and sending).
  The splitting could reduce the number of lines of the class, because they
  could be reused in the sendError method (overload at line 287).
- 
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
+\end_deeper
 \end_body
 \end_document
