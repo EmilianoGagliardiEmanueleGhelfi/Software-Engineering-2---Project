@@ -97,7 +97,7 @@ While occasionally useful, this construct may make the code more prone to
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,breaklines=true,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -181,7 +181,7 @@ Nested try statements may result in confusing code, and should probably
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -427,7 +427,7 @@ At line 175.
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -659,7 +659,7 @@ n such as stack frames and line numbers are not lost.
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -704,7 +704,7 @@ Catch blocks which have parameters which are more generic than the exceptions
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -833,7 +833,7 @@ At line 123.
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,numbers=left,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -934,7 +934,7 @@ At line 155.
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -976,7 +976,7 @@ At line 215.
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -1014,7 +1014,7 @@ tion.
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -1062,7 +1062,7 @@ String literals of length one should not be used in concatenation.
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -1086,7 +1086,7 @@ At line 132.
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -1110,7 +1110,7 @@ At line 163.
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,breaklines=true,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -1130,7 +1130,7 @@ At line 334.
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,breaklines=true,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -1164,7 +1164,7 @@ ce issues, if space needs to be reallocated and memory copied when capacity
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -1204,7 +1204,7 @@ At line 124.
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -1297,7 +1297,7 @@ At line 95, in Invoke method there is the following assignment to null:
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -1356,6 +1356,290 @@ if (serviceName != null) {
 
 The variable serviceName is assigned to null in the catch clause.
  This could lead to NullPointerException.
+\end_layout
+
+\begin_layout Subsection
+Bad use of Control Flow Statements
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+		if (serviceName != null) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                Document wsdl = null;
+\end_layout
+
+\begin_layout Plain Layout
+
+                try {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    wsdl = dctx.getWSDL(serviceName, locationUri);
+\end_layout
+
+\begin_layout Plain Layout
+
+                } catch (GenericServiceException e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    serviceName = null;
+\end_layout
+
+\begin_layout Plain Layout
+
+                } catch (WSDLException e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    sendError(response, "Unable to obtain WSDL", serviceName);
+\end_layout
+
+\begin_layout Plain Layout
+
+                    throw new EventHandlerException("Unable to obtain WSDL",
+ e);
+\end_layout
+
+\begin_layout Plain Layout
+
+                }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                if (wsdl != null) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    try {
+\end_layout
+
+\begin_layout Plain Layout
+
+                        OutputStream os = response.getOutputStream();
+\end_layout
+
+\begin_layout Plain Layout
+
+                        response.setContentType("text/xml");
+\end_layout
+
+\begin_layout Plain Layout
+
+                        UtilXml.writeXmlDocument(os, wsdl);
+\end_layout
+
+\begin_layout Plain Layout
+
+                        response.flushBuffer();
+\end_layout
+
+\begin_layout Plain Layout
+
+                    } catch (IOException e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                        throw new EventHandlerException(e);
+\end_layout
+
+\begin_layout Plain Layout
+
+                    }
+\end_layout
+
+\begin_layout Plain Layout
+
+                    return null;
+\end_layout
+
+\begin_layout Plain Layout
+
+                } else {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    sendError(response, "Unable to obtain WSDL", serviceName);
+\end_layout
+
+\begin_layout Plain Layout
+
+                    throw new EventHandlerException("Unable to obtain WSDL");
+\end_layout
+
+\begin_layout Plain Layout
+
+                }
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        if (serviceName == null) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                try {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    Writer writer = response.getWriter();
+\end_layout
+
+\begin_layout Plain Layout
+
+                    StringBuilder sb = new StringBuilder();
+\end_layout
+
+\begin_layout Plain Layout
+
+                    sb.append("<html><head><title>OFBiz SOAP/1.1 Services</title><
+/head>");
+\end_layout
+
+\begin_layout Plain Layout
+
+                    sb.append("<body>No such service.").append("<p>Services:<ul>");
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                    for (String scvName: dctx.getAllServiceNames()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                        ModelService model = dctx.getModelService(scvName);
+\end_layout
+
+\begin_layout Plain Layout
+
+                        if (model.export) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                            sb.append("<li><a href=
+\backslash
+"").append(locationUri).append("/").append(model.name).append("?wsdl
+\backslash
+">");
+\end_layout
+
+\begin_layout Plain Layout
+
+                            sb.append(model.name).append("</a></li>");
+\end_layout
+
+\begin_layout Plain Layout
+
+                        }
+\end_layout
+
+\begin_layout Plain Layout
+
+                    }
+\end_layout
+
+\begin_layout Plain Layout
+
+                    sb.append("</ul></p></body></html>");
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                    writer.write(sb.toString());
+\end_layout
+
+\begin_layout Plain Layout
+
+                    writer.flush();
+\end_layout
+
+\begin_layout Plain Layout
+
+                    return null;
+\end_layout
+
+\begin_layout Plain Layout
+
+                } catch (Exception e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    sendError(response, "Unable to obtain WSDL", null);
+\end_layout
+
+\begin_layout Plain Layout
+
+                    throw new EventHandlerException("Unable to obtain WSDL");
+\end_layout
+
+\begin_layout Plain Layout
+
+                }
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Instead of the use of the if-else construct, at line 95 there is the block
+ that is executed if serviceName is not null and at line 122 there is the
+ complementary condition into an if statement.
+ This could be due to the assignment to null of serviceName at line 100.
+ The second block could be a recovery procedure that has to be called if
+ the exception is raised in the first block or if the service name is null
+ at the beginning.
+ In this way the control flow is difficult to understand.
+ 
 \end_layout
 
 \end_body

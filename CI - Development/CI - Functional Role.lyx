@@ -77,6 +77,11 @@ Functional role of the assigned class
 \begin_layout Standard
 SOAPEventHandler class is a class responsible for managing soap events.
  It's the implementation of the Event Handler interface.
+ 
+\end_layout
+
+\begin_layout Subsection
+SOAP
 \end_layout
 
 \begin_layout Standard
@@ -100,16 +105,276 @@ A convention for representing remote procedure calls and responses
 \end_layout
 
 \begin_layout Standard
-SOAPEventHandler takes a series of service to call, a delegator and a dispatcher.
+The use of XML allows client running on different operative systems and
+ written in different languages to invoke services in the same way.
+ 
 \end_layout
 
 \begin_layout Standard
-Parses the request and calls the dispatcher with the services to call.
+In fact they can ask for the WSDL (Web Service Description Language), that
+ is a XML-based interface definition language, in order to obtain a list
+ of the exposed web services and how to call them.
 \end_layout
 
 \begin_layout Standard
-The functional role of the class has been understood by looking at the JavaDoc
- and at the code and trying to understand the class logic.
+A WSDL document uses the following elements in the definition of network
+ services:
+\end_layout
+
+\begin_layout Itemize
+Types: a container for data type definitions using some type system (such
+ as XSD).
+\end_layout
+
+\begin_layout Itemize
+Message: an abstract, typed definition of the data being communicated.
+ 
+\end_layout
+
+\begin_layout Itemize
+Operation: an abstract description of an action supported by the service.
+\end_layout
+
+\begin_layout Itemize
+Port Type: an abstract set of operations supported by one or more endpoints.
+\end_layout
+
+\begin_layout Itemize
+Binding: a concrete protocol and data format specification for a particular
+ port type.
+ 
+\end_layout
+
+\begin_layout Itemize
+Port: a single endpoint defined as a combination of a binding and a network
+ address.
+ 
+\end_layout
+
+\begin_layout Itemize
+Service: a collection of related endpoints.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here it is an example of a SOAP request.
+ In the SOAP message the GetCustomerInfo operation is requested.
+ Note that only a fragment of the HTTP header is shown.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=XML,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+POST /url HTTP/1.1
+\end_layout
+
+\begin_layout Plain Layout
+
+Host: HostServerName
+\end_layout
+
+\begin_layout Plain Layout
+
+Content-type: text/xml; charset=utf-8
+\end_layout
+
+\begin_layout Plain Layout
+
+Content-length: 350
+\end_layout
+
+\begin_layout Plain Layout
+
+SoapAction: http://tempUri.org/GetCustomerInfo
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+<?xml version="1.0" encoding="utf-8" ?> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<soap:Envelope 
+\end_layout
+
+\begin_layout Plain Layout
+
+    xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" 
+\end_layout
+
+\begin_layout Plain Layout
+
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+\end_layout
+
+\begin_layout Plain Layout
+
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+\end_layout
+
+\begin_layout Plain Layout
+
+ <soap:Body>
+\end_layout
+
+\begin_layout Plain Layout
+
+   <GetCustomerInfo xmlns="http://tempUri.org/">
+\end_layout
+
+\begin_layout Plain Layout
+
+<CustomerID>1</CustomerID> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<OutputParam /> 
+\end_layout
+
+\begin_layout Plain Layout
+
+  </GetCustomerInfo>
+\end_layout
+
+\begin_layout Plain Layout
+
+</soap:Body>
+\end_layout
+
+\begin_layout Plain Layout
+
+</soap:Envelope>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A SOAP response could look something like this:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=XML,basicstyle={\scriptsize\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+<?xml version="1.0"?>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+<soap:Envelope
+\end_layout
+
+\begin_layout Plain Layout
+
+xmlns:soap="http://www.w3.org/2003/05/soap-envelope/"
+\end_layout
+
+\begin_layout Plain Layout
+
+soap:encodingStyle="http://www.w3.org/2003/05/soap-encoding">
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+<soap:Body>
+\end_layout
+
+\begin_layout Plain Layout
+
+  <m:GetPriceResponse xmlns:m="http://www.w3schools.com/prices">
+\end_layout
+
+\begin_layout Plain Layout
+
+    <m:Price>1.90</m:Price>
+\end_layout
+
+\begin_layout Plain Layout
+
+  </m:GetPriceResponse>
+\end_layout
+
+\begin_layout Plain Layout
+
+</soap:Body>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+</soap:Envelope>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+SOAPEventHandler
+\end_layout
+
+\begin_layout Standard
+SOAPEvent handler takes in input a request, checks whether it is a WSDL
+ request or a service request and process it the proper way.
+\end_layout
+
+\begin_layout Standard
+If it is a WSDL request it answers with a description of the exposed services.
+\end_layout
+
+\begin_layout Standard
+If it is a service request it calls the dispatcher with the service name
+ and the parameters in the request.
+ Then it receives the response from the dispatcher, builds a SOAP response
+ for the client and sends it.
+\end_layout
+
+\begin_layout Standard
+The functional role of the class has been understood by understanding the
+ SOAP protocol and then looking at the code since the JavaDoc does not explain
+ the specific handling of the SOAP request but only provides a general descripti
+on of event handling.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -118,9 +383,6 @@ Init Method
 
 \begin_layout Standard
 Initializes the handler.
- Since handlers use the singleton pattern this method should only be called
- the first time the handler is used.
- 
 \end_layout
 
 \begin_layout Standard
@@ -162,6 +424,10 @@ Parameter response is the servlet response object.
 \begin_layout Standard
 This method returns the result code of the event (i.e.
  if the event has been done in a proper way or if some error happened).
+\end_layout
+
+\begin_layout Standard
+This method is the core of the class and it has been already explained before.
 \end_layout
 
 \end_body

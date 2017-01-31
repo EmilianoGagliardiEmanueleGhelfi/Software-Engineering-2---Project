@@ -120,6 +120,7 @@ Declarations appear at the beginning of blocks (A block is any code surrounded
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -429,6 +430,7 @@ Check that the appropriate action are taken for each catch block.
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -487,6 +489,7 @@ This error is present also in the following examples:
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
@@ -536,6 +539,7 @@ n", module);
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,commentstyle={\color{magenta}\itshape},emphstyle={\color{red}},stringstyle={\color{green}},keywordstyle={\color{blue}}"
 inline false
 status open
 
