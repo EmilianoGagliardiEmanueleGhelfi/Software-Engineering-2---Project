@@ -229,6 +229,10 @@ Changelog
 1.3 CarManager uses the component Notification manager
 \end_layout
 
+\begin_layout Itemize
+1.4 Requirement Traceability with all requirements
+\end_layout
+
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem

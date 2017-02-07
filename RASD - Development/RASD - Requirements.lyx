@@ -195,7 +195,7 @@ In order to satisfy goals in section 1.4 under domain assumptions in Section
 \begin_deeper
 \begin_layout Itemize
 [R12] The system shall be able to notify the user when his reserved car
- switches to under maintainance.
+ switches to under maintanance.
 \end_layout
 
 \end_deeper
@@ -285,7 +285,7 @@ In order to satisfy goals in section 1.4 under domain assumptions in Section
 
 \begin_layout Itemize
 [R18] The system shall provide the closest cars to position provided by
- the USER.
+ the user.
 \end_layout
 
 \begin_layout Itemize
@@ -453,7 +453,8 @@ In order to satisfy goals in section 1.4 under domain assumptions in Section
 \end_layout
 
 \begin_layout Itemize
-[R29] The system shall unsuspend a user when his old undone payment is done.
+[R29] The system shall un-suspend a user when his old undone payment is
+ done.
 \end_layout
 
 \end_deeper
@@ -467,7 +468,7 @@ In order to satisfy goals in section 1.4 under domain assumptions in Section
 \end_layout
 
 \begin_layout Itemize
-[R30] The system shall charge an extenernal payment service with doing the
+[R30] The system shall charge an external payment service with doing the
  payment.
 \end_layout
 
@@ -481,7 +482,7 @@ In order to satisfy goals in section 1.4 under domain assumptions in Section
 
 \end_deeper
 \begin_layout Itemize
-[G6.1] Only operator must be able to do car mantainance, knowing their position
+[G6.1] Only operator must be able to do car maintenance, knowing their position
  and status.
 \end_layout
 
@@ -512,7 +513,7 @@ In order to satisfy goals in section 1.4 under domain assumptions in Section
 \end_layout
 
 \begin_layout Itemize
-[D9] If a user detect a malfuncion comunicate it.
+[D9] If a user detect a malfunction comunicate it.
 \end_layout
 
 \begin_layout Itemize
@@ -533,7 +534,7 @@ ns.
 
 \begin_deeper
 \begin_layout Itemize
-[R33] The system shall offer a functionality that let users to comunicate
+[R33] The system shall offer a functionality that let users to communicate
  malfunctions and damages.
 \end_layout
 
@@ -566,7 +567,7 @@ ns.
 \end_layout
 
 \begin_layout Itemize
-[R36] The system shall offer the functionality of add or remove safe areas
+[R36] The system shall offer the functionality of add or remove operators
 \end_layout
 
 \begin_layout Itemize
